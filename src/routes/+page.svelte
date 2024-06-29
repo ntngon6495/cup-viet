@@ -2,7 +2,9 @@
 	let src = '/bao_tri.jpg';
 	let name = 'Bao tri he thong';
 </script>
+
 <div class='container'>
+  <!-- <ProductHot /> -->
   <img {src} alt={name}  />
 </div>
 
@@ -10,7 +12,6 @@
   .container {
     width: 100%;
     height: auto;
-    display: flex;
     justify-content: center;
   }
   img {
