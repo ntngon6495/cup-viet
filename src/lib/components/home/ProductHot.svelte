@@ -316,7 +316,7 @@
   }
 
   .good_seller .recommend_l .seller_count {
-    max-width: 200px;
+    max-width: 180px;
     font-size: 14px;
     font-weight: 500;
     color: #4a4949;
