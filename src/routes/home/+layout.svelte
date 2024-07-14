@@ -1,19 +1,17 @@
-<script>
+<!-- <script>
   import Header from "../../lib/components/Header.svelte";
   import TopNav from "../../lib/components/TopNav.svelte";
   import Footer from "../../lib/components/Footer.svelte";
   import Slide from "../../lib/components/slideShow/Slide.svelte";
-  // import SlideShow from '../lib/components/slideShow/SlideShow.svelte';
-</script>
+</script> -->
 
 <div>
   <div class="container">
-    <Header />
+    <!-- <Header />
     <TopNav />
     <Slide />
-    <!-- <SlideShow />  -->
     <slot />
-    <Footer />
+    <Footer /> -->
   </div>
 </div>
 
