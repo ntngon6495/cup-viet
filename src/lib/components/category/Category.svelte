@@ -1,495 +1,406 @@
+<script>
+  const productList = [
+    {
+      category: "CÚP ITALY",
+      banner: "/images/category/itali/BANNER-1-01.jpg",
+      products: [
+        {
+          id: 1,
+          code: "CTI 0201",
+          name: "Cúp kim loại cao cấp",
+          price: 390000,
+          price_discount: 278000,
+          discount: 57,
+          image: "/images/category/itali/CIT_1.png",
+        },
+        {
+          id: 2,
+          code: "CTI 0317",
+          name: "Cúp kim loại cao cấp",
+          price: 760000,
+          price_discount: 240000,
+          discount: 68,
+          image: "/images/category/itali/CIT_2.png",
+        },
+        {
+          id: 3,
+          code: "CTI 0783",
+          name: "Cúp kim loại cao cấp",
+          price: 230000,
+          price_discount: 106000,
+          discount: 54,
+          image: "/images/category/itali/CIT_3.png",
+        },
+        {
+          id: 4,
+          code: "CTI 0793",
+          name: "Cúp kim loại cao cấp",
+          price: 230000,
+          price_discount: 106000,
+          discount: 54,
+          image: "/images/category/itali/CIT_4.png",
+        },
+        {
+          id: 5,
+          code: "CTI 0711",
+          name: "Cúp kim loại cao cấp",
+          price: 88000,
+          price_discount: 39000,
+          discount: 56,
+          image: "/images/category/itali/CIT_5.png",
+        },
+        {
+          id: 6,
+          code: "CTI 0431",
+          name: "Cúp kim loại cao cấp",
+          price: 440000,
+          price_discount: 160000,
+          discount: 64,
+          image: "/images/category/itali/CIT_6.png",
+        },
+        {
+          id: 7,
+          code: "CTI 0726",
+          name: "Cúp kim loại cao cấp",
+          price: 230000,
+          price_discount: 150000,
+          discount: 54,
+          image: "/images/category/itali/CIT_7.png",
+        },
+      ],
+    },
+    {
+      category: "CÚP TÂY BAN NHA",
+      banner: "/images/category/taybannha/BANNER-2-01.jpg",
+      products: [
+        {
+          id: 1,
+          code: "CSP 0201",
+          name: "Cúp kim loại cao cấp",
+          price: 390000,
+          price_discount: 278000,
+          discount: 57,
+          image: "/images/category/taybannha/CSP_1.png",
+        },
+        {
+          id: 2,
+          code: "CSP 0317",
+          name: "Cúp kim loại cao cấp",
+          price: 240000,
+          price_discount: 160000,
+          discount: 68,
+          image: "/images/category/taybannha/CSP_2.png",
+        },
+        {
+          id: 3,
+          code: "CSP 0783",
+          name: "Cúp kim loại cao cấp",
+          price: 230000,
+          price_discount: 106000,
+          discount: 54,
+          image: "/images/category/taybannha/CSP_3.png",
+        },
+        {
+          id: 4,
+          code: "CSP 0793",
+          name: "Cúp kim loại cao cấp",
+          price: 230000,
+          price_discount: 106000,
+          discount: 54,
+          image: "/images/category/taybannha/CSP_4.png",
+        },
+        {
+          id: 5,
+          code: "CSP 0711",
+          name: "Cúp kim loại cao cấp",
+          price: 88000,
+          price_discount: 39000,
+          discount: 56,
+          image: "/images/category/taybannha/CSP_5.png",
+        },
+        {
+          id: 6,
+          code: "CSP 0431",
+          name: "Cúp kim loại cao cấp",
+          price: 440000,
+          price_discount: 160000,
+          discount: 64,
+          image: "/images/category/taybannha/CSP_6.png",
+        },
+        {
+          id: 7,
+          code: "CSP 0726",
+          name: "Cúp kim loại cao cấp",
+          price: 230000,
+          price_discount: 150000,
+          discount: 54,
+          image: "/images/category/taybannha/CSP_7.png",
+        },
+      ],
+    },
+  ];
+</script>
+
 <div class="">
-  <div class='title' style="text-align:center; color: #d6b80e">
+  <div class="title" style="text-align:center; color: #d6b80e">
     <h2>XẾP HẠNG DANH MỤC THEO MỨC ĐỘ PHỔ BIẾN</h2>
   </div>
-  <div class="active base_content_wrap">
-    <div class="bc_item_ui_section">
-      <ul>
-        <li class="left_p">
-          <div class="big_left_goods_list">
-            <ul
-              class="big_goods_title"
-              style="background-image : url('images/middle_27053.png');"
-            >
-              <li class="tit">CÚP KỸ THUẬT</li>
-              <li class="tit_all">
-                <span
-                  ><a href="/"
-                    >XEM THÊM<img src="/images/arrow-right-white.png" alt="best 1" /></a
-                  ></span
+  {#each productList as item, index}
+    <div class="active base_content_wrap">
+      <div class="bc_item_ui_section">
+        <ul>
+          <li class="left_p">
+            <div class="big_left_goods_list">
+              <ul
+                class="big_goods_title"
+                style={`background-image : url('${item.banner}');`}
+              >
+                <li class="tit">{item.category}</li>
+                <li class="tit_all">
+                  <span
+                    ><a href="/"
+                      >XEM THÊM<img
+                        src="/images/arrow-right-white.png"
+                        alt="best 1"
+                      /></a
+                    ></span
+                  >
+                </li>
+                <!-- <li style="clear:both;"></li> -->
+              </ul>
+              <ul class="big_goods_imgs">
+                <span class="best-badge">1</span>
+                <li style="cursor:pointer;" onclick="location.href ='/' ">
+                  <img
+                    width="440"
+                    height="440"
+                    alt="top 1"
+                    data-srcset="/images/product/7.png"
+                    srcset={item.products[0].image}
+                    class=" ls-is-cached lazyloaded"
+                  />
+                </li>
+              </ul>
+              <ul class="big_goods_infos">
+                <li
+                  class="goodsnm"
+                  style="cursor:pointer;"
+                  onclick="location.href ='/' "
                 >
+                  <span class="goodscd">{item.products[0].code}</span>
+                  <span>- {item.products[0].name}</span>
+                </li>
+                <li class="price">
+                  <strike class="consumer">{item.products[0].price} VNĐ</strike>
+                  <span class="price-dc"
+                    >{item.products[0].discount}%<img
+                      src="images/renewal_price_down.png"
+                      alt="best 1"
+                    /></span
+                  >
+                  {item.products[0].price_discount} VNĐ<span class="won">
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </li>
+          {#each item.products as product, index}
+            {#if index > 0}
+              <li class="right_p small_right_goods_list">
+                <div class="small_goods_infos">
+                  <span class="best-badge">{index + 1}</span>
+                  <span
+                    style="display:block; cursor:pointer"
+                    onclick="location.href ='/' "
+                  >
+                    <img
+                      width="220"
+                      height="220"
+                      alt=""
+                      title=""
+                      data-srcset="upload/product/img4/1661326547l0.JPG"
+                      srcset={product.image}
+                      class=" ls-is-cached lazyloaded"
+                    />
+                  </span>
+                  <div class="goodscd">{product.code}</div>
+                  <div class="goodsnm" onclick="location.href ='/' ">
+                    {product.name}
+                  </div>
+                  <strike>{product.price} VNĐ</strike>
+                  <span class="price-dc"
+                    >{product.discount}%<img
+                      src="images/renewal_price_down.png"
+                      alt="best 2"
+                    /></span
+                  >
+                  <div class="price">
+                    {product.price_discount}<span class="won">VNĐ</span>
+                  </div>
+                </div>
               </li>
-              <!-- <li style="clear:both;"></li> -->
-            </ul>
-            <ul class="big_goods_imgs">
-              <span class="best-badge">1</span>
-              <li
-                style="cursor:pointer;"
+            {/if}
+          {/each}
+
+          <!-- <li class="right_p small_right_goods_list">
+            <div class="small_goods_infos">
+              <span class="best-badge">3</span>
+              <span
+                style="display:block; cursor:pointer"
                 onclick="location.href ='/' "
               >
                 <img
-                  width="440"
-                  height="440"
-                  alt="주석독수리 접목 이글패 중 가장 선호도가 높은 골프이글패 입니다. 중후한 멋이 있는 이글형상골프트로피 제품입니다."
-                  title="주석독수리 접목 이글패 중 가장 선호도가 높은 골프이글패 입니다. 중후한 멋이 있는 이글형상골프트로피 제품입니다."
-                  data-srcset="/images/product/7.png"
-                  srcset="/images/product/7.png"
+                  width="220"
+                  height="220"
+                  alt="주석독수리와 블랙크리스탈의 조화가 아름다운 이글패입니다. 중후함이 엿보이는 베스트셀러 골프이글트로피입니다."
+                  title="주석독수리와 블랙크리스탈의 조화가 아름다운 이글패입니다. 중후함이 엿보이는 베스트셀러 골프이글트로피입니다."
+                  data-srcset="/images/product/5.png"
+                  srcset="/images/product/5.png"
                   class=" ls-is-cached lazyloaded"
                 />
-              </li>
-            </ul>
-            <ul class="big_goods_infos">
-              <li
-                class="goodsnm"
-                style="cursor:pointer;"
-                onclick="location.href ='/' "
+              </span>
+              <div class="goodscd">BD3 0783</div>
+              <div class="goodsnm" onclick="location.href ='/' ">
+                Cúp kim loại cao cấp
+              </div>
+              <strike>500,000원</strike>
+              <span class="price-dc"
+                >54%<img
+                  alt="best 5"
+                  src="images/renewal_price_down.png"
+                /></span
               >
-                <span class="goodscd">TD9 0201</span>
-                <span>Cúp kim loại cao cấp</span>
-              </li>
-              <li class="price">
-                <strike class="consumer">900,000원</strike>
-                <span class="price-dc"
-                  >57%<img src="images/renewal_price_down.png" alt="best 1" /></span
-                >
-                390,000<span class="won">원</span>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="right_p small_right_goods_list">
-          <div class="small_goods_infos">
-            <span class="best-badge">2</span>
-            <span
-              style="display:block; cursor:pointer"
-              onclick="location.href ='/' "
-            >
-              <img
-                width="220"
-                height="220"
-                alt=""
-                title=""
-                data-srcset="upload/product/img4/1661326547l0.JPG"
-                srcset="/images/product/6.png"
-                class=" ls-is-cached lazyloaded"
-              />
-            </span>
-            <div class="goodscd">BS0 0317</div>
-            <div
-              class="goodsnm"
-              onclick="location.href ='/' "
-            >
-              Cúp kim loại cao cấp
+              <div class="price">230,000<span class="won">원</span></div>
             </div>
-            <strike>750,000원</strike>
-            <span class="price-dc"
-              >68%<img src="images/renewal_price_down.png" alt="best 2" /></span
-            >
-            <div class="price">240,000<span class="won">원</span></div>
-          </div>
-        </li>
-        <li class="right_p small_right_goods_list">
-          <div class="small_goods_infos">
-            <span class="best-badge">3</span>
-            <span
-              style="display:block; cursor:pointer"
-              onclick="location.href ='/' "
-            >
-              <img
-                width="220"
-                height="220"
-                alt="주석독수리와 블랙크리스탈의 조화가 아름다운 이글패입니다. 중후함이 엿보이는 베스트셀러 골프이글트로피입니다."
-                title="주석독수리와 블랙크리스탈의 조화가 아름다운 이글패입니다. 중후함이 엿보이는 베스트셀러 골프이글트로피입니다."
-                data-srcset="/images/product/5.png"
-                srcset="/images/product/5.png"
-                class=" ls-is-cached lazyloaded"
-              />
-            </span>
-            <div class="goodscd">BD3 0783</div>
-            <div
-              class="goodsnm"
-              onclick="location.href ='/' "
-            >
-              Cúp kim loại cao cấp
-            </div>
-            <strike>500,000원</strike>
-            <span class="price-dc"
-              >54%<img alt="best 5" src="images/renewal_price_down.png" /></span
-            >
-            <div class="price">230,000<span class="won">원</span></div>
-          </div>
-        </li>
-        <li class="right_p small_right_goods_list">
-          <div class="small_goods_infos">
-            <span class="best-badge">4</span>
-            <span
-              style="display:block; cursor:pointer"
-              onclick="location.href ='/' "
-            >
-              <img
-                width="220"
-                height="220"
-                alt="화려한 골드&amp;크롬 독수리 조형이 돋보이는 유니크한 골프패입니다. 상패&amp;트로피 장인이 직접 맞춤제작하여 고객맞춤 본문, 단체명, 로고 등의 내용을 그대로 새겨드립니다."
-                title="화려한 골드&amp;크롬 독수리 조형이 돋보이는 유니크한 골프패입니다. 상패&amp;트로피 장인이 직접 맞춤제작하여 고객맞춤 본문, 단체명, 로고 등의 내용을 그대로 새겨드립니다."
-                data-srcset="/images/product/4.jpeg"
-                srcset="/images/product/4.jpeg"
-                class=" ls-is-cached lazyloaded"
-              />
-            </span>
-            <div class="goodscd">CD3 0793</div>
-            <div
-              class="goodsnm"
-              onclick="location.href ='/' "
-            >
-              Cúp kim loại cao cấp
-            </div>
-            <strike>500,000원</strike>
-            <span class="price-dc"
-              >54%<img alt="best 5" src="images/renewal_price_down.png" /></span
-            >
-            <div class="price">230,000<span class="won">원</span></div>
-          </div>
-        </li>
-        <li class="right_p small_right_goods_list">
-          <div class="small_goods_infos">
-            <span class="best-badge">5</span>
-            <span
-              style="display:block; cursor:pointer"
-              onclick="location.href ='/' "
-            >
-              <img
-                width="220"
-                height="220"
-                alt=""
-                title=""
-                data-srcset="/images/product/3.jpg"
-                srcset="/images/product/3.jpg"
-                class=" ls-is-cached lazyloaded"
-              />
-            </span>
-            <div class="goodscd">CD7 0711</div>
-            <div
-              class="goodsnm"
-              onclick="location.href ='/' "
-            >
-              Cúp kim loại cao cấp
-            </div>
-            <strike>200,000원</strike>
-            <span class="price-dc"
-              >56%<img alt="best 5" src="images/renewal_price_down.png" /></span
-            >
-            <div class="price">88,000<span class="won">원</span></div>
-          </div>
-        </li>
-        <li class="right_p small_right_goods_list">
-          <div class="small_goods_infos">
-            <span class="best-badge">6</span>
-            <span
-              style="display:block; cursor:pointer"
-              onclick="location.href ='/' "
-            >
-              <img
-                width="220"
-                height="220"
-                alt="주석 독수리트로피 입니다. 웅장한 멋이 있고 위엄있어보이는 골프패로 중후한 골프이글패를 찾으신다면 적합한 모델입니다."
-                title="주석 독수리트로피 입니다. 웅장한 멋이 있고 위엄있어보이는 골프패로 중후한 골프이글패를 찾으신다면 적합한 모델입니다."
-                data-srcset="/images/product/2.jpg"
-                srcset="/images/product/2.jpg"
-                class=" ls-is-cached lazyloaded"
-              />
-            </span>
-            <div class="goodscd">TD8 0431</div>
-            <div
-              class="goodsnm"
-              onclick="location.href ='/' "
-            >
-              Cúp kim loại cao cấp
-            </div>
-            <strike>1,200,000원</strike>
-            <span class="price-dc"
-              >64%<img alt="best 5" src="images/renewal_price_down.png" /></span
-            >
-            <div class="price">440,000<span class="won">원</span></div>
-          </div>
-        </li>
-        <li class="right_p small_right_goods_list">
-          <div class="small_goods_infos">
-            <span class="best-badge">7</span>
-            <span
-              style="display:block; cursor:pointer"
-              onclick="location.href ='/' "
-            >
-              <img
-                width="220"
-                height="220"
-                alt="주석독수리와 블랙크리스탈의 조화가 멋스럽고 아담한 이글트로피를 찾는 고객님들께서 많이 구매하시는 이글패입니다."
-                title="주석독수리와 블랙크리스탈의 조화가 멋스럽고 아담한 이글트로피를 찾는 고객님들께서 많이 구매하시는 이글패입니다."
-                data-srcset="/images/product/1.jpg"
-                srcset="/images/product/1.jpg"
-                class=" ls-is-cached lazyloaded"
-              />
-            </span>
-            <div class="goodscd">TD8 0726</div>
-            <div
-              class="goodsnm"
-              onclick="location.href ='/' "
-            >
-              Cúp kim loại cao cấp
-            </div>
-            <strike>500,000원</strike>
-            <span class="price-dc"
-              >54%<img alt="best 5" src="images/renewal_price_down.png" /></span
-            >
-            <div class="price">230,000<span class="won">원</span></div>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="active base_content_wrap">
-    <div class="bc_item_ui_section">
-      <ul>
-        <li class="left_p">
-          <div class="big_left_goods_list">
-            <ul
-              class="big_goods_title"
-              style="background-image : url('images/middle_27053.png');"
-            >
-              <li class="tit">CÚP KỸ THUẬT</li>
-              <li class="tit_all">
-                <span
-                  ><a href="/"
-                    >XEM THÊM<img src="/images/arrow-right-white.png" alt="best 1" /></a
-                  ></span
-                >
-              </li>
-              <!-- <li style="clear:both;"></li> -->
-            </ul>
-            <ul class="big_goods_imgs">
-              <span class="best-badge">1</span>
-              <li
-                style="cursor:pointer;"
+          </li>
+          <li class="right_p small_right_goods_list">
+            <div class="small_goods_infos">
+              <span class="best-badge">4</span>
+              <span
+                style="display:block; cursor:pointer"
                 onclick="location.href ='/' "
               >
                 <img
-                  width="440"
-                  height="440"
-                  alt="주석독수리 접목 이글패 중 가장 선호도가 높은 골프이글패 입니다. 중후한 멋이 있는 이글형상골프트로피 제품입니다."
-                  title="주석독수리 접목 이글패 중 가장 선호도가 높은 골프이글패 입니다. 중후한 멋이 있는 이글형상골프트로피 제품입니다."
-                  data-srcset="/images/product/7.png"
-                  srcset="/images/product/7.png"
+                  width="220"
+                  height="220"
+                  alt="화려한 골드&amp;크롬 독수리 조형이 돋보이는 유니크한 골프패입니다. 상패&amp;트로피 장인이 직접 맞춤제작하여 고객맞춤 본문, 단체명, 로고 등의 내용을 그대로 새겨드립니다."
+                  title="화려한 골드&amp;크롬 독수리 조형이 돋보이는 유니크한 골프패입니다. 상패&amp;트로피 장인이 직접 맞춤제작하여 고객맞춤 본문, 단체명, 로고 등의 내용을 그대로 새겨드립니다."
+                  data-srcset="/images/product/4.jpeg"
+                  srcset="/images/product/4.jpeg"
                   class=" ls-is-cached lazyloaded"
                 />
-              </li>
-            </ul>
-            <ul class="big_goods_infos">
-              <li
-                class="goodsnm"
-                style="cursor:pointer;"
+              </span>
+              <div class="goodscd">CD3 0793</div>
+              <div class="goodsnm" onclick="location.href ='/' ">
+                Cúp kim loại cao cấp
+              </div>
+              <strike>500,000원</strike>
+              <span class="price-dc"
+                >54%<img
+                  alt="best 5"
+                  src="images/renewal_price_down.png"
+                /></span
+              >
+              <div class="price">230,000<span class="won">원</span></div>
+            </div>
+          </li>
+          <li class="right_p small_right_goods_list">
+            <div class="small_goods_infos">
+              <span class="best-badge">5</span>
+              <span
+                style="display:block; cursor:pointer"
                 onclick="location.href ='/' "
               >
-                <span class="goodscd">TD9 0201</span>
-                <span>Cúp kim loại cao cấp</span>
-              </li>
-              <li class="price">
-                <strike class="consumer">900,000원</strike>
-                <span class="price-dc"
-                  >57%<img src="images/renewal_price_down.png" alt="best 1" /></span
-                >
-                390,000<span class="won">원</span>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="right_p small_right_goods_list">
-          <div class="small_goods_infos">
-            <span class="best-badge">2</span>
-            <span
-              style="display:block; cursor:pointer"
-              onclick="location.href ='/' "
-            >
-              <img
-                width="220"
-                height="220"
-                alt=""
-                title=""
-                data-srcset="upload/product/img4/1661326547l0.JPG"
-                srcset="/images/product/6.png"
-                class=" ls-is-cached lazyloaded"
-              />
-            </span>
-            <div class="goodscd">BS0 0317</div>
-            <div
-              class="goodsnm"
-              onclick="location.href ='/' "
-            >
-              Cúp kim loại cao cấp
+                <img
+                  width="220"
+                  height="220"
+                  alt=""
+                  title=""
+                  data-srcset="/images/product/3.jpg"
+                  srcset="/images/product/3.jpg"
+                  class=" ls-is-cached lazyloaded"
+                />
+              </span>
+              <div class="goodscd">CD7 0711</div>
+              <div class="goodsnm" onclick="location.href ='/' ">
+                Cúp kim loại cao cấp
+              </div>
+              <strike>200,000원</strike>
+              <span class="price-dc"
+                >56%<img
+                  alt="best 5"
+                  src="images/renewal_price_down.png"
+                /></span
+              >
+              <div class="price">88,000<span class="won">원</span></div>
             </div>
-            <strike>750,000원</strike>
-            <span class="price-dc"
-              >68%<img src="images/renewal_price_down.png" alt="best 2" /></span
-            >
-            <div class="price">240,000<span class="won">원</span></div>
-          </div>
-        </li>
-        <li class="right_p small_right_goods_list">
-          <div class="small_goods_infos">
-            <span class="best-badge">3</span>
-            <span
-              style="display:block; cursor:pointer"
-              onclick="location.href ='/' "
-            >
-              <img
-                width="220"
-                height="220"
-                alt="주석독수리와 블랙크리스탈의 조화가 아름다운 이글패입니다. 중후함이 엿보이는 베스트셀러 골프이글트로피입니다."
-                title="주석독수리와 블랙크리스탈의 조화가 아름다운 이글패입니다. 중후함이 엿보이는 베스트셀러 골프이글트로피입니다."
-                data-srcset="/images/product/5.png"
-                srcset="/images/product/5.png"
-                class=" ls-is-cached lazyloaded"
-              />
-            </span>
-            <div class="goodscd">BD3 0783</div>
-            <div
-              class="goodsnm"
-              onclick="location.href ='/' "
-            >
-              Cúp kim loại cao cấp
+          </li>
+          <li class="right_p small_right_goods_list">
+            <div class="small_goods_infos">
+              <span class="best-badge">6</span>
+              <span
+                style="display:block; cursor:pointer"
+                onclick="location.href ='/' "
+              >
+                <img
+                  width="220"
+                  height="220"
+                  alt="주석 독수리트로피 입니다. 웅장한 멋이 있고 위엄있어보이는 골프패로 중후한 골프이글패를 찾으신다면 적합한 모델입니다."
+                  title="주석 독수리트로피 입니다. 웅장한 멋이 있고 위엄있어보이는 골프패로 중후한 골프이글패를 찾으신다면 적합한 모델입니다."
+                  data-srcset="/images/product/2.jpg"
+                  srcset="/images/product/2.jpg"
+                  class=" ls-is-cached lazyloaded"
+                />
+              </span>
+              <div class="goodscd">TD8 0431</div>
+              <div class="goodsnm" onclick="location.href ='/' ">
+                Cúp kim loại cao cấp
+              </div>
+              <strike>1,200,000원</strike>
+              <span class="price-dc"
+                >64%<img
+                  alt="best 5"
+                  src="images/renewal_price_down.png"
+                /></span
+              >
+              <div class="price">440,000<span class="won">원</span></div>
             </div>
-            <strike>500,000원</strike>
-            <span class="price-dc"
-              >54%<img alt="best 5" src="images/renewal_price_down.png" /></span
-            >
-            <div class="price">230,000<span class="won">원</span></div>
-          </div>
-        </li>
-        <li class="right_p small_right_goods_list">
-          <div class="small_goods_infos">
-            <span class="best-badge">4</span>
-            <span
-              style="display:block; cursor:pointer"
-              onclick="location.href ='/' "
-            >
-              <img
-                width="220"
-                height="220"
-                alt="화려한 골드&amp;크롬 독수리 조형이 돋보이는 유니크한 골프패입니다. 상패&amp;트로피 장인이 직접 맞춤제작하여 고객맞춤 본문, 단체명, 로고 등의 내용을 그대로 새겨드립니다."
-                title="화려한 골드&amp;크롬 독수리 조형이 돋보이는 유니크한 골프패입니다. 상패&amp;트로피 장인이 직접 맞춤제작하여 고객맞춤 본문, 단체명, 로고 등의 내용을 그대로 새겨드립니다."
-                data-srcset="/images/product/4.jpeg"
-                srcset="/images/product/4.jpeg"
-                class=" ls-is-cached lazyloaded"
-              />
-            </span>
-            <div class="goodscd">CD3 0793</div>
-            <div
-              class="goodsnm"
-              onclick="location.href ='/' "
-            >
-              Cúp kim loại cao cấp
+          </li>
+          <li class="right_p small_right_goods_list">
+            <div class="small_goods_infos">
+              <span class="best-badge">7</span>
+              <span
+                style="display:block; cursor:pointer"
+                onclick="location.href ='/' "
+              >
+                <img
+                  width="220"
+                  height="220"
+                  alt="주석독수리와 블랙크리스탈의 조화가 멋스럽고 아담한 이글트로피를 찾는 고객님들께서 많이 구매하시는 이글패입니다."
+                  title="주석독수리와 블랙크리스탈의 조화가 멋스럽고 아담한 이글트로피를 찾는 고객님들께서 많이 구매하시는 이글패입니다."
+                  data-srcset="/images/product/1.jpg"
+                  srcset="/images/product/1.jpg"
+                  class=" ls-is-cached lazyloaded"
+                />
+              </span>
+              <div class="goodscd">TD8 0726</div>
+              <div class="goodsnm" onclick="location.href ='/' ">
+                Cúp kim loại cao cấp
+              </div>
+              <strike>500,000원</strike>
+              <span class="price-dc"
+                >54%<img
+                  alt="best 5"
+                  src="images/renewal_price_down.png"
+                /></span
+              >
+              <div class="price">230,000<span class="won">원</span></div>
             </div>
-            <strike>500,000원</strike>
-            <span class="price-dc"
-              >54%<img alt="best 5" src="images/renewal_price_down.png" /></span
-            >
-            <div class="price">230,000<span class="won">원</span></div>
-          </div>
-        </li>
-        <li class="right_p small_right_goods_list">
-          <div class="small_goods_infos">
-            <span class="best-badge">5</span>
-            <span
-              style="display:block; cursor:pointer"
-              onclick="location.href ='/' "
-            >
-              <img
-                width="220"
-                height="220"
-                alt=""
-                title=""
-                data-srcset="/images/product/3.jpg"
-                srcset="/images/product/3.jpg"
-                class=" ls-is-cached lazyloaded"
-              />
-            </span>
-            <div class="goodscd">CD7 0711</div>
-            <div
-              class="goodsnm"
-              onclick="location.href ='/' "
-            >
-              Cúp kim loại cao cấp
-            </div>
-            <strike>200,000원</strike>
-            <span class="price-dc"
-              >56%<img alt="best 5" src="images/renewal_price_down.png" /></span
-            >
-            <div class="price">88,000<span class="won">원</span></div>
-          </div>
-        </li>
-        <li class="right_p small_right_goods_list">
-          <div class="small_goods_infos">
-            <span class="best-badge">6</span>
-            <span
-              style="display:block; cursor:pointer"
-              onclick="location.href ='/' "
-            >
-              <img
-                width="220"
-                height="220"
-                alt="주석 독수리트로피 입니다. 웅장한 멋이 있고 위엄있어보이는 골프패로 중후한 골프이글패를 찾으신다면 적합한 모델입니다."
-                title="주석 독수리트로피 입니다. 웅장한 멋이 있고 위엄있어보이는 골프패로 중후한 골프이글패를 찾으신다면 적합한 모델입니다."
-                data-srcset="/images/product/2.jpg"
-                srcset="/images/product/2.jpg"
-                class=" ls-is-cached lazyloaded"
-              />
-            </span>
-            <div class="goodscd">TD8 0431</div>
-            <div
-              class="goodsnm"
-              onclick="location.href ='/' "
-            >
-              Cúp kim loại cao cấp
-            </div>
-            <strike>1,200,000원</strike>
-            <span class="price-dc"
-              >64%<img alt="best 5" src="images/renewal_price_down.png" /></span
-            >
-            <div class="price">440,000<span class="won">원</span></div>
-          </div>
-        </li>
-        <li class="right_p small_right_goods_list">
-          <div class="small_goods_infos">
-            <span class="best-badge">7</span>
-            <span
-              style="display:block; cursor:pointer"
-              onclick="location.href ='/' "
-            >
-              <img
-                width="220"
-                height="220"
-                alt="주석독수리와 블랙크리스탈의 조화가 멋스럽고 아담한 이글트로피를 찾는 고객님들께서 많이 구매하시는 이글패입니다."
-                title="주석독수리와 블랙크리스탈의 조화가 멋스럽고 아담한 이글트로피를 찾는 고객님들께서 많이 구매하시는 이글패입니다."
-                data-srcset="/images/product/1.jpg"
-                srcset="/images/product/1.jpg"
-                class=" ls-is-cached lazyloaded"
-              />
-            </span>
-            <div class="goodscd">TD8 0726</div>
-            <div
-              class="goodsnm"
-              onclick="location.href ='/' "
-            >
-              Cúp kim loại cao cấp
-            </div>
-            <strike>500,000원</strike>
-            <span class="price-dc"
-              >54%<img alt="best 5" src="images/renewal_price_down.png" /></span
-            >
-            <div class="price">230,000<span class="won">원</span></div>
-          </div>
-        </li>
-      </ul>
+          </li> -->
+        </ul>
+      </div>
     </div>
-  </div>
+  {/each}
 </div>
 
 <style>
@@ -523,7 +434,7 @@
   .big_left_goods_list ul.big_goods_title {
     /* padding-top: 35px; */
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
     height: 135px;
     background-repeat: no-repeat;
@@ -891,8 +802,9 @@
   .base_content_wrap .bc_item_ui_section:not(:last-child) {
     border-bottom: solid 1px #dcdcdc;
   }
-  .tab ul,li {
-    list-style: none
+  .tab ul,
+  li {
+    list-style: none;
   }
 
   .tit_all span a {

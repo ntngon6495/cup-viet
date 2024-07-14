@@ -1,3 +1,62 @@
+<script>
+  let productsHot = [
+    {
+      id: 1,
+      name: "Cúp kim loại",
+      image: "/images/category/itali/CIT_1.png",
+      price: 230000,
+      discount: 68,
+      sold: 210,
+      code: "BS0 0317",
+    },
+    {
+      id: 2,
+      name: "Cúp kim loại premium",
+      image: "/images/category/taybannha/CSP_2.png",
+      price: 390000,
+      discount: 56,
+      sold: 84,
+      code: "TD9 0201",
+    },
+    {
+      id: 3,
+      name: "Cúp kim loại italia",
+      image: "/images/category/itali/CIT_5.png",
+      price: 230000,
+      discount: 54,
+      sold: 48,
+      code: "TD8 0726",
+    },
+    {
+      id: 4,
+      name: "Cúp kim loại tây ban nha",
+      image: "/images/category/taybannha/CSP_4.png",
+      price: 88000,
+      discount: 56,
+      sold: 43,
+      code: "CD7 0711",
+    },
+    {
+      id: 5,
+      name: "Cúp ấn độ",
+      image: "/images/category/itali/CIT_3.png",
+      price: 230000,
+      discount: 54,
+      sold: 35,
+      code: "BD3 0783",
+    },
+    {
+      id: 6,
+      name: "Cúp ấn độ",
+      image: "/images/category/taybannha/CSP_6.png",
+      price: 240000,
+      discount: 52,
+      sold: 28,
+      code: "BD3 0782",
+    },
+  ];
+</script>
+
 <div class="section">
   <div class="hot-seller-main-title">
     <h3 class="title">SẢN PHẨM ĐANG HOT</h3>
@@ -20,198 +79,44 @@
     </div>
   </div>
   <div class="good_seller">
-    <div>
-      <div class="best-items relative">
-        <div class="goods-item-rank">
-          <div class="content">
-            <div class="txt">BEST</div>
-            <div class="rank">1</div>
+    {#each productsHot as product, index}
+      <div>
+        <div class="best-items relative">
+          <div class={`goods-item-rank ${index > 2 ? "orange" : ""}`}>
+            <div class="content">
+              <div class="txt">BEST</div>
+              <div class="rank">{index + 1}</div>
+            </div>
+          </div>
+          <a style="display:block;overflow:hidden;border-radius:50%;" href="/">
+            <img
+              width="180"
+              height="180"
+              class="img-responsive good_seller_img ls-is-cached lazyloaded"
+              alt=""
+              title=""
+              src={product.image}
+            />
+          </a>
+        </div>
+        <div class=" recommend_l">
+          <p class="seller_count">
+            <span>{product.sold}</span> mặt hàng đã được mua trong năm qua
+          </p>
+          <p class="product_code" style="overflow: hidden;">{product.code}</p>
+          <div class="caption">
+            <p class="price">
+              <strike>{product.price} VNĐ</strike>
+              <span class="price-dc"
+                >{product.discount}% <i class="fa fa-long-arrow-down"></i></span
+              >
+            </p>
+            <b>{"updating..."}</b>
+            <!-- <b>240,000<span class="good_seller_font">원</span></b> -->
           </div>
         </div>
-        <a style="display:block;overflow:hidden;border-radius:50%;" href="/">
-          <img
-            width="180"
-            class="img-responsive good_seller_img ls-is-cached lazyloaded"
-            alt=""
-            title=""
-            src="/images/product/1.jpg"
-          />
-        </a>
       </div>
-      <div class=" recommend_l">
-        <p class="seller_count"><span>210</span> mặt hàng đã được mua trong năm qua</p>
-        <p class="product_code" style="overflow: hidden;">BS0 0317</p>
-        <div class="caption">
-          <p class="price">
-            <strike>750,000</strike>
-            <span class="price-dc"
-              >68% <i class="fa fa-long-arrow-down"></i></span
-            >
-          </p>
-          <b>{'updating...'}</b>
-          <!-- <b>240,000<span class="good_seller_font">원</span></b> -->
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="best-items relative">
-        <div class="goods-item-rank">
-          <div class="content">
-            <div class="txt">BEST</div>
-            <div class="rank">2</div>
-          </div>
-        </div>
-        <a style="display:block;overflow:hidden;border-radius:50%;" href="/">
-          <img
-            width="180"
-            class="img-responsive good_seller_img ls-is-cached lazyloaded"
-            alt="주석독수리 접목 이글패 중 가장 선호도가 높은 골프이글패 입니다. 중후한 멋이 있는 이글형상골프트로피 제품입니다."
-            title="주석독수리 접목 이글패 중 가장 선호도가 높은 골프이글패 입니다. 중후한 멋이 있는 이글형상골프트로피 제품입니다."
-            src="/images/product/2.jpg"
-          />
-        </a>
-      </div>
-      <div class=" recommend_l">
-        <p class="seller_count"><span>84</span> mặt hàng đã được mua trong năm qua</p>
-        <p class="product_code" style="overflow: hidden;">TD9 0201</p>
-        <div class="caption">
-          <p class="price">
-            <strike>900,000</strike>
-            <span class="price-dc"
-              >56% <i class="fa fa-long-arrow-down"></i></span
-            >
-          </p>
-          <b>390,000<span class="good_seller_font">원</span></b>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="best-items relative">
-        <div class="goods-item-rank">
-          <div class="content">
-            <div class="txt">BEST</div>
-            <div class="rank">3</div>
-          </div>
-        </div>
-        <a style="display:block;overflow:hidden;border-radius:50%;" href="/">
-          <img
-            width="180"
-            class="img-responsive good_seller_img ls-is-cached lazyloaded"
-            alt="주석독수리와 블랙크리스탈의 조화가 멋스럽고 아담한 이글트로피를 찾는 고객님들께서 많이 구매하시는 이글패입니다."
-            title="주석독수리와 블랙크리스탈의 조화가 멋스럽고 아담한 이글트로피를 찾는 고객님들께서 많이 구매하시는 이글패입니다."
-            src="/images/product/3.jpg"
-          />
-        </a>
-      </div>
-      <div class=" recommend_l">
-        <p class="seller_count"><span>48</span> mặt hàng đã được mua trong năm qua</p>
-        <p class="product_code" style="overflow: hidden;">TD8 0726</p>
-        <div class="caption">
-          <p class="price">
-            <strike>500,000</strike>
-            <span class="price-dc"
-              >54% <i class="fa fa-long-arrow-down"></i></span
-            >
-          </p>
-          <b>230,000<span class="good_seller_font">원</span></b>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="best-items relative">
-        <div class="goods-item-rank orange">
-          <div class="content">
-            <div class="txt">BEST</div>
-            <div class="rank">4</div>
-          </div>
-        </div>
-        <a style="display:block;overflow:hidden;border-radius:50%;" href="/">
-          <img
-            width="180"
-            class="img-responsive good_seller_img ls-is-cached lazyloaded"
-            alt=""
-            title=""
-            src="/images/product/4.jpeg"
-          />
-        </a>
-      </div>
-      <div class=" recommend_l">
-        <p class="seller_count"><span>43</span> mặt hàng đã được mua trong năm qua</p>
-        <p class="product_code" style="overflow: hidden;">CD7 0711</p>
-        <div class="caption">
-          <p class="price">
-            <strike>200,000</strike>
-            <span class="price-dc"
-              >56% <i class="fa fa-long-arrow-down"></i></span
-            >
-          </p>
-          <b>88,000<span class="good_seller_font">원</span></b>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="best-items relative">
-        <div class="goods-item-rank orange">
-          <div class="content">
-            <div class="txt">BEST</div>
-            <div class="rank">5</div>
-          </div>
-        </div>
-        <a style="display:block;overflow:hidden;border-radius:50%;" href="/">
-          <img
-            width="180"
-            class="img-responsive good_seller_img ls-is-cached lazyloaded"
-            alt="주석독수리와 블랙크리스탈의 조화가 아름다운 이글패입니다. 중후함이 엿보이는 베스트셀러 골프이글트로피입니다."
-            title="주석독수리와 블랙크리스탈의 조화가 아름다운 이글패입니다. 중후함이 엿보이는 베스트셀러 골프이글트로피입니다."
-            src="/images/product/5.png"
-          />
-        </a>
-      </div>
-      <div class=" recommend_l">
-        <p class="seller_count"><span>35</span> mặt hàng đã được mua trong năm qua</p>
-        <p class="product_code" style="overflow: hidden;">BD3 0783</p>
-        <div class="caption">
-          <p class="price">
-            <strike>500,000</strike>
-            <span class="price-dc"
-              >54% <i class="fa fa-long-arrow-down"></i></span
-            >
-          </p>
-          <b>230,000<span class="good_seller_font">원</span></b>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="best-items relative">
-        <div class="goods-item-rank orange">
-          <div class="content">
-            <div class="txt">BEST</div>
-            <div class="rank">6</div>
-          </div>
-        </div>
-        <a style="display:block;overflow:hidden;border-radius:50%;" href="/">
-          <img
-            width="180"
-            class="img-responsive good_seller_img ls-is-cached lazyloaded"
-            alt="골드도금독수리와 블랙크리스탈의 조화가 아름다운 이글패입니다. 밝고 경쾌함이이 돋보이는 베스트셀러 골프이글트로피입니다."
-            src="/images/product/6.png"
-          />
-        </a>
-      </div>
-      <div class=" recommend_l">
-        <p class="seller_count"><span>28</span> mặt hàng đã được mua trong năm qua</p>
-        <p class="product_code" style="overflow: hidden;">BD3 0782</p>
-        <div class="caption">
-          <p class="price">
-            <strike>500,000</strike>
-            <span class="price-dc"
-              >52% <i class="fa fa-long-arrow-down"></i></span
-            >
-          </p>
-          <b>240,000<span class="good_seller_font">원</span></b>
-        </div>
-      </div>
-    </div>
+    {/each}
   </div>
   <div class="hot_seller-read-more">
     <p>xem thêm</p>
@@ -400,7 +305,7 @@
   }
   .relative {
     position: relative;
-  } 
+  }
   .hot_seller-read-more {
     text-align: center;
     margin-top: 50px;

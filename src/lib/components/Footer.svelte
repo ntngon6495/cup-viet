@@ -4,7 +4,9 @@
 <div class="footer">
   <div class="footer-wrap">
     <div>
-      <div class=""></div>
+      <div>
+        <img src="/logo-ngang.png" alt="icon ngang" class="icon-ngang" />
+      </div>
       <div class="info-support">
         <div>
           <h3>HỖ TRỢ</h3>
@@ -37,7 +39,7 @@
       </div>
     </div>
     <div class="follow-us">
-      <div class='section-follow-us'>
+      <div class="section-follow-us">
         <h4>FOLLOW US</h4>
         <div class="ic-social-network">
           <img src="/images/ic-facebook.png" alt="facebook" />
@@ -119,7 +121,7 @@
     padding: 5px 20px;
     border-radius: 5px;
   }
-  .section-follow-us h4{
+  .section-follow-us h4 {
     margin: 0;
   }
   .follow-us .section-follow-us .ic-social-network {
@@ -130,5 +132,9 @@
   .follow-us .section-follow-us .ic-social-network img {
     width: 38px;
     height: 38px;
+  }
+  .icon-ngang {
+    margin-left: -10px;
+    max-width: 1000px;
   }
 </style>

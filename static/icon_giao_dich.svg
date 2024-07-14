@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1206.84 841.89">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 6.15px;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        font-family: UTMHelveBold, 'UTM Helve';
+      }
+
+      .cls-1, .cls-3, .cls-4, .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-6 {
+        fill: #cc982b;
+      }
+
+      .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15 {
+        stroke-width: 0px;
+      }
+
+      .cls-7 {
+        fill: #074f99;
+      }
+
+      .cls-16 {
+        fill: #d3d3d3;
+        font-family: UTM-Helve, 'UTM Helve';
+        font-size: 14.07px;
+      }
+
+      .cls-8 {
+        fill: #3fc5ea;
+      }
+
+      .cls-9 {
+        fill: #e01f26;
+      }
+
+      .cls-2 {
+        fill: #010101;
+        font-size: 17.19px;
+      }
+
+      .cls-10 {
+        fill: #1392d1;
+      }
+
+      .cls-3 {
+        font-size: 16.78px;
+      }
+
+      .cls-11 {
+        fill: #379dd8;
+      }
+
+      .cls-12 {
+        fill: #fdc20f;
+      }
+
+      .cls-13 {
+        fill: #f5832d;
+      }
+
+      .cls-4 {
+        font-size: 6.04px;
+      }
+
+      .cls-5 {
+        font-size: 7px;
+      }
+
+      .cls-14 {
+        fill: #015e94;
+      }
+
+      .cls-15 {
+        fill: #004b74;
+      }
+    </style>
+  </defs>
+  <path class="cls-6" d="M343.41,201.63c3.16,1.45,6.28,3.01,9.5,4.3,2.31.93,4.76,1.51,7.16,2.2.46.13.62.3.61.78-.04,6.8-1.31,13.32-4.45,19.4-2.99,5.79-7.19,10.5-12.71,14.02-.74.47-1.31.52-2.09.06-3.6-2.1-6.63-4.83-9.18-8.1-4.11-5.27-6.51-11.27-7.43-17.85-.35-2.51-.41-5.07-.6-7.6-.03-.36.06-.6.47-.68,4.86-1,9.37-2.88,13.7-5.25.97-.53,2.05-.86,3.08-1.29.64,0,1.29,0,1.93,0ZM359,210.5c.23-.75-.22-.96-.93-1.16-1.94-.54-3.9-1.07-5.76-1.84-2.5-1.04-4.91-2.28-7.33-3.49-1.61-.8-3.18-.96-4.81-.11-.9.47-1.82.89-2.71,1.36-3.48,1.87-7.12,3.29-10.96,4.18-.49.11-.67.31-.62.78.18,1.94.27,3.89.54,5.81.83,5.91,2.88,11.36,6.39,16.23,2.4,3.34,5.33,6.12,8.81,8.32.62.39,1.05.34,1.64-.05,2.67-1.79,5.06-3.9,7.11-6.37,5.68-6.83,8.3-14.8,8.64-23.66Z"/>
+  <text class="cls-2" transform="translate(374.73 221.45)"><tspan x="0" y="0">GIAO DỊCH AN TOÀN 100%</tspan></text>
+  <text class="cls-16" transform="translate(376.12 241.21)"><tspan x="0" y="0">Mã khóa SSL an toàn</tspan></text>
+  <g>
+    <g>
+      <rect class="cls-14" x="644.05" y="199.35" width="53.71" height="35.94" rx="6.07" ry="6.07"/>
+      <path class="cls-7" d="M697.76,202.94v28.76c0,1.98-1.61,3.59-3.6,3.59h-39.24c7.81-7.02,24.32-23.96,31.59-35.18l.69-.76h6.96c1.99,0,3.6,1.61,3.6,3.59Z"/>
+      <rect class="cls-12" x="648.44" y="203.76" width="10.22" height="8.63"/>
+      <rect class="cls-13" x="648.44" y="206.93" width="2.84" height="2.29"/>
+      <rect class="cls-13" x="655.75" y="206.93" width="2.84" height="2.29"/>
+      <rect class="cls-8" x="649.12" y="227.9" width="23.81" height="2.42"/>
+      <rect class="cls-8" x="649.34" y="223.07" width="5.79" height="3.35"/>
+      <rect class="cls-8" x="657.92" y="223.07" width="6.5" height="3.35"/>
+      <rect class="cls-8" x="667.09" y="223.07" width="5.79" height="3.35"/>
+      <circle class="cls-12" cx="687.55" cy="225.74" r="5.53"/>
+      <circle class="cls-9" cx="681.73" cy="225.74" r="5.53"/>
+      <text class="cls-5" transform="translate(672.34 210.36)"><tspan x="0" y="0">DEBIT</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-10" x="712.9" y="199.35" width="53.71" height="35.94" rx="6.07" ry="6.07"/>
+      <path class="cls-11" d="M766.61,202.94v28.76c0,1.98-1.61,3.59-3.6,3.59h-39.24c7.81-7.02,24.32-23.96,31.59-35.18l.69-.76h6.96c1.99,0,3.6,1.61,3.6,3.59Z"/>
+      <rect class="cls-12" x="717.29" y="203.76" width="10.22" height="8.63"/>
+      <rect class="cls-13" x="717.29" y="206.93" width="2.84" height="2.29"/>
+      <rect class="cls-13" x="724.6" y="206.93" width="2.84" height="2.29"/>
+      <rect class="cls-15" x="717.97" y="227.9" width="23.81" height="2.42"/>
+      <rect class="cls-15" x="718.19" y="223.07" width="5.79" height="3.35"/>
+      <rect class="cls-15" x="726.76" y="223.07" width="6.5" height="3.35"/>
+      <rect class="cls-15" x="735.94" y="223.07" width="5.79" height="3.35"/>
+      <circle class="cls-12" cx="756.39" cy="225.74" r="5.53"/>
+      <circle class="cls-9" cx="750.58" cy="225.74" r="5.53"/>
+      <text class="cls-4" transform="translate(738.74 210.05)"><tspan x="0" y="0">CREDIT</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-8" x="778.41" y="199.8" width="53.2" height="35.03"/>
+      <rect class="cls-10" x="781.97" y="202.96" width="46.06" height="28.71"/>
+      <text class="cls-3" transform="translate(785.6 222.62)"><tspan x="0" y="0">$</tspan></text>
+      <text class="cls-1" transform="translate(795.21 215.24)"><tspan x="0" y="0">CASH ON</tspan><tspan x="0" y="7.38">DELIVERY</tspan></text>
+    </g>
+  </g>
+</svg>
