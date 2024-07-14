@@ -145,7 +145,7 @@
   <div class="title" style="text-align:center; color: #d6b80e">
     <h2>XẾP HẠNG DANH MỤC THEO MỨC ĐỘ PHỔ BIẾN</h2>
   </div>
-  {#each productList as item, index}
+  {#each productList as item}
     <div class="active base_content_wrap">
       <div class="bc_item_ui_section">
         <ul>
@@ -153,9 +153,9 @@
             <div class="big_left_goods_list">
               <ul
                 class="big_goods_title"
-                style={`background-image : url('${item.banner}');`}
+                style={`background-image : url('${item?.banner}');`}
               >
-                <li class="tit">{item.category}</li>
+                <li class="tit">{item?.category}</li>
                 <li class="tit_all">
                   <span
                     ><a href="/"
@@ -176,7 +176,7 @@
                     height="440"
                     alt="top 1"
                     data-srcset="/images/product/7.png"
-                    srcset={item.products[0].image}
+                    srcset={item.products[0]?.image}
                     class=" ls-is-cached lazyloaded"
                   />
                 </li>
@@ -187,18 +187,19 @@
                   style="cursor:pointer;"
                   onclick="location.href ='/' "
                 >
-                  <span class="goodscd">{item.products[0].code}</span>
-                  <span>- {item.products[0].name}</span>
+                  <span class="goodscd">{item.products[0]?.code}</span>
+                  <span>- {item.products[0]?.name}</span>
                 </li>
                 <li class="price">
-                  <strike class="consumer">{item.products[0].price} VNĐ</strike>
+                  <strike class="consumer">{item.products[0]?.price} VNĐ</strike
+                  >
                   <span class="price-dc"
-                    >{item.products[0].discount}%<img
+                    >{item.products[0]?.discount}%<img
                       src="images/renewal_price_down.png"
                       alt="best 1"
                     /></span
                   >
-                  {item.products[0].price_discount} VNĐ<span class="won">
+                  {item.products[0]?.price_discount} VNĐ<span class="won">
                   </span>
                 </li>
               </ul>
@@ -219,23 +220,23 @@
                       alt=""
                       title=""
                       data-srcset="upload/product/img4/1661326547l0.JPG"
-                      srcset={product.image}
+                      srcset={product?.image}
                       class=" ls-is-cached lazyloaded"
                     />
                   </span>
-                  <div class="goodscd">{product.code}</div>
+                  <div class="goodscd">{product?.code}</div>
                   <div class="goodsnm" onclick="location.href ='/' ">
-                    {product.name}
+                    {product?.name}
                   </div>
-                  <strike>{product.price} VNĐ</strike>
+                  <strike>{product?.price} VNĐ</strike>
                   <span class="price-dc"
-                    >{product.discount}%<img
+                    >{product?.discount}%<img
                       src="images/renewal_price_down.png"
                       alt="best 2"
                     /></span
                   >
                   <div class="price">
-                    {product.price_discount}<span class="won">VNĐ</span>
+                    {product?.price_discount}<span class="won">VNĐ</span>
                   </div>
                 </div>
               </li>
