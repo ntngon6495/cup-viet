@@ -95,20 +95,21 @@
               class="img-responsive good_seller_img ls-is-cached lazyloaded"
               alt=""
               title=""
-              src={product.image}
+              src={product?.image}
             />
           </a>
         </div>
         <div class=" recommend_l">
           <p class="seller_count">
-            <span>{product.sold}</span> mặt hàng đã được mua trong năm qua
+            <span>{product?.sold}</span> mặt hàng đã được mua trong năm qua
           </p>
-          <p class="product_code" style="overflow: hidden;">{product.code}</p>
+          <p class="product_code" style="overflow: hidden;">{product?.code}</p>
           <div class="caption">
             <p class="price">
-              <strike>{product.price} VNĐ</strike>
+              <strike>{product?.price} VNĐ</strike>
               <span class="price-dc"
-                >{product.discount}% <i class="fa fa-long-arrow-down"></i></span
+                >{product?.discount}%
+                <i class="fa fa-long-arrow-down"></i></span
               >
             </p>
             <b>{"updating..."}</b>
