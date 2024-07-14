@@ -4,8 +4,14 @@
     <a href="/">Chính sách</a>
   </div>
   <div class="container__logo">
-    <img class="logo-header" src="/images/logo-header.png" alt="logo header" />
-    <p class="info-company">M.0902 547 808 - E-mail.cupvietvn@gmail.com</p>
+    <div>
+      <img
+        class="logo-header"
+        src="/images/logo-header.png"
+        alt="logo header"
+      />
+      <p class="info-company">M.0902 547 808 - E-mail.cupvietvn@gmail.com</p>
+    </div>
   </div>
   <div class="container__right">
     <ul>
@@ -52,11 +58,8 @@
     padding: 0;
   }
   .container__logo {
-    position: absolute;
+    display: flex;
     text-align: center;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 20px;
     line-height: 18px;
   }
   .logo-header {
