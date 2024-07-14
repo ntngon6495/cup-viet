@@ -468,10 +468,10 @@
     font-size: 32px;
     letter-spacing: -1.28px;
     float: left;
-    display: inline-block;
+    /* display: inline-block; */
   }
 
-  .big_left_goods_list ul.big_goods_title li span.subtxt {
+  /* .big_left_goods_list ul.big_goods_title li span.subtxt {
     font-size: 24px;
     color: #000;
     line-height: 24px;
@@ -494,7 +494,7 @@
     display: inline-block;
     margin-bottom: 5px;
     cursor: pointer;
-  }
+  } */
 
   .big_left_goods_list ul.big_goods_imgs {
     padding-left: 0;
@@ -665,7 +665,7 @@
     margin-left: 2px;
   }
 
-  .image-best-1 {
+  /* .image-best-1 {
     position: absolute;
     top: 0;
     left: 0;
@@ -681,7 +681,7 @@
 
   .bc_slide_menu_wrap ul:not(:first-child) {
     margin-top: 10px;
-  }
+  } */
 
   .bc_slide_menu_wrap ul li {
     position: relative;
@@ -694,7 +694,7 @@
     padding: 5px;
   }
 
-  .bc_slide_menu_wrap ul li .show_slide_txt {
+  /* .bc_slide_menu_wrap ul li .show_slide_txt {
     position: absolute;
     top: 0px;
     z-index: 10;
@@ -797,15 +797,15 @@
     width: 100%;
     height: 1px;
     background-color: #dcdcdc;
-  }
+  } */
 
   .base_content_wrap .bc_item_ui_section:not(:last-child) {
     border-bottom: solid 1px #dcdcdc;
   }
-  .tab ul,
+  /* .tab ul,
   li {
     list-style: none;
-  }
+  } */
 
   .tit_all span a {
     font-size: 13px;
