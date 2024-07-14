@@ -1,4 +1,4 @@
-<script>
+<script lang="js">
   let productsHot = [
     {
       id: 1,
