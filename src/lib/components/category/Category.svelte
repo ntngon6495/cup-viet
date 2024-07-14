@@ -1,4 +1,4 @@
-<script>
+<script lang="js">
   const productList = [
     {
       category: "CÚP ITALY",
@@ -166,11 +166,10 @@
                     ></span
                   >
                 </li>
-                <!-- <li style="clear:both;"></li> -->
               </ul>
               <ul class="big_goods_imgs">
                 <span class="best-badge">1</span>
-                <li style="cursor:pointer;" onclick="location.href ='/' ">
+                <li style="cursor:pointer;">
                   <img
                     width="440"
                     height="440"
@@ -182,11 +181,7 @@
                 </li>
               </ul>
               <ul class="big_goods_infos">
-                <li
-                  class="goodsnm"
-                  style="cursor:pointer;"
-                  onclick="location.href ='/' "
-                >
+                <li class="goodsnm" style="cursor:pointer;">
                   <span class="goodscd">{item.products[0]?.code}</span>
                   <span>- {item.products[0]?.name}</span>
                 </li>
@@ -210,10 +205,7 @@
               <li class="right_p small_right_goods_list">
                 <div class="small_goods_infos">
                   <span class="best-badge">{index + 1}</span>
-                  <span
-                    style="display:block; cursor:pointer"
-                    onclick="location.href ='/' "
-                  >
+                  <span style="display:block; cursor:pointer">
                     <img
                       width="220"
                       height="220"
@@ -225,7 +217,7 @@
                     />
                   </span>
                   <div class="goodscd">{product?.code}</div>
-                  <div class="goodsnm" onclick="location.href ='/' ">
+                  <div class="goodsnm">
                     {product?.name}
                   </div>
                   <strike>{product?.price} VNĐ</strike>
