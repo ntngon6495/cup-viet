@@ -1,5 +1,5 @@
 <script lang="js">
-  const productList = [
+  export let productList = [
     {
       category: "CÚP ITALY",
       banner: "/images/category/itali/BANNER-1-01.jpg",

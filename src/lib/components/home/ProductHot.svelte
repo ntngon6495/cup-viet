@@ -1,5 +1,5 @@
 <script lang="js">
-  let productsHot = [
+  export let productsHot = [
     {
       id: 1,
       name: "Cúp kim loại",
