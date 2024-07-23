@@ -1,15 +1,16 @@
 <script>
-	let src = '/bao_tri.jpg';
-	let name = 'Bao tri he thong';
+  let src = "./bao_tri.jpg";
+  let name = "Bao tri he thong";
 </script>
 
-<div class='container'>
+<div class="container">
   <!-- <ProductHot /> -->
-  <img {src} alt={name}  />
+  <img {src} alt={name} />
 </div>
 
 <style>
   .container {
+    display: flex;
     width: 100%;
     height: auto;
     justify-content: center;
@@ -27,4 +28,3 @@
     }
   }
 </style>
-

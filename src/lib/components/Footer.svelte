@@ -5,7 +5,7 @@
   <div class="footer-wrap">
     <div>
       <div>
-        <img src="/logo-ngang.png" alt="icon ngang" class="icon-ngang" />
+        <!-- <img src="/logo-ngang.png" alt="icon ngang" class="icon-ngang" /> -->
       </div>
       <div class="info-support">
         <div>
