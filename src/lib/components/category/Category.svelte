@@ -171,12 +171,10 @@
                 <span class="best-badge">1</span>
                 <li style="cursor:pointer;">
                   <img
-                    width="440"
-                    height="440"
                     alt="top 1"
                     data-srcset="/images/product/7.png"
                     srcset={item.products[0]?.image}
-                    class=" ls-is-cached lazyloaded"
+                    class="w-[440px] h-[440px] ls-is-cached lazyloaded"
                   />
                 </li>
               </ul>
@@ -207,13 +205,10 @@
                   <span class="best-badge">{index + 1}</span>
                   <span style="display:block; cursor:pointer">
                     <img
-                      width="220"
-                      height="220"
                       alt=""
                       title=""
-                      data-srcset="upload/product/img4/1661326547l0.JPG"
-                      srcset={product?.image}
-                      class=" ls-is-cached lazyloaded"
+                      src={product?.image}
+                      class="h-[220px] w-[220px] ls-is-cached lazyloaded"
                     />
                   </span>
                   <div class="goodscd">{product?.code}</div>
@@ -234,162 +229,6 @@
               </li>
             {/if}
           {/each}
-
-          <!-- <li class="right_p small_right_goods_list">
-            <div class="small_goods_infos">
-              <span class="best-badge">3</span>
-              <span
-                style="display:block; cursor:pointer"
-                onclick="location.href ='/' "
-              >
-                <img
-                  width="220"
-                  height="220"
-                  alt="주석독수리와 블랙크리스탈의 조화가 아름다운 이글패입니다. 중후함이 엿보이는 베스트셀러 골프이글트로피입니다."
-                  title="주석독수리와 블랙크리스탈의 조화가 아름다운 이글패입니다. 중후함이 엿보이는 베스트셀러 골프이글트로피입니다."
-                  data-srcset="/images/product/5.png"
-                  srcset="/images/product/5.png"
-                  class=" ls-is-cached lazyloaded"
-                />
-              </span>
-              <div class="goodscd">BD3 0783</div>
-              <div class="goodsnm" onclick="location.href ='/' ">
-                Cúp kim loại cao cấp
-              </div>
-              <strike>500,000원</strike>
-              <span class="price-dc"
-                >54%<img
-                  alt="best 5"
-                  src="images/renewal_price_down.png"
-                /></span
-              >
-              <div class="price">230,000<span class="won">원</span></div>
-            </div>
-          </li>
-          <li class="right_p small_right_goods_list">
-            <div class="small_goods_infos">
-              <span class="best-badge">4</span>
-              <span
-                style="display:block; cursor:pointer"
-                onclick="location.href ='/' "
-              >
-                <img
-                  width="220"
-                  height="220"
-                  alt="화려한 골드&amp;크롬 독수리 조형이 돋보이는 유니크한 골프패입니다. 상패&amp;트로피 장인이 직접 맞춤제작하여 고객맞춤 본문, 단체명, 로고 등의 내용을 그대로 새겨드립니다."
-                  title="화려한 골드&amp;크롬 독수리 조형이 돋보이는 유니크한 골프패입니다. 상패&amp;트로피 장인이 직접 맞춤제작하여 고객맞춤 본문, 단체명, 로고 등의 내용을 그대로 새겨드립니다."
-                  data-srcset="/images/product/4.jpeg"
-                  srcset="/images/product/4.jpeg"
-                  class=" ls-is-cached lazyloaded"
-                />
-              </span>
-              <div class="goodscd">CD3 0793</div>
-              <div class="goodsnm" onclick="location.href ='/' ">
-                Cúp kim loại cao cấp
-              </div>
-              <strike>500,000원</strike>
-              <span class="price-dc"
-                >54%<img
-                  alt="best 5"
-                  src="images/renewal_price_down.png"
-                /></span
-              >
-              <div class="price">230,000<span class="won">원</span></div>
-            </div>
-          </li>
-          <li class="right_p small_right_goods_list">
-            <div class="small_goods_infos">
-              <span class="best-badge">5</span>
-              <span
-                style="display:block; cursor:pointer"
-                onclick="location.href ='/' "
-              >
-                <img
-                  width="220"
-                  height="220"
-                  alt=""
-                  title=""
-                  data-srcset="/images/product/3.jpg"
-                  srcset="/images/product/3.jpg"
-                  class=" ls-is-cached lazyloaded"
-                />
-              </span>
-              <div class="goodscd">CD7 0711</div>
-              <div class="goodsnm" onclick="location.href ='/' ">
-                Cúp kim loại cao cấp
-              </div>
-              <strike>200,000원</strike>
-              <span class="price-dc"
-                >56%<img
-                  alt="best 5"
-                  src="images/renewal_price_down.png"
-                /></span
-              >
-              <div class="price">88,000<span class="won">원</span></div>
-            </div>
-          </li>
-          <li class="right_p small_right_goods_list">
-            <div class="small_goods_infos">
-              <span class="best-badge">6</span>
-              <span
-                style="display:block; cursor:pointer"
-                onclick="location.href ='/' "
-              >
-                <img
-                  width="220"
-                  height="220"
-                  alt="주석 독수리트로피 입니다. 웅장한 멋이 있고 위엄있어보이는 골프패로 중후한 골프이글패를 찾으신다면 적합한 모델입니다."
-                  title="주석 독수리트로피 입니다. 웅장한 멋이 있고 위엄있어보이는 골프패로 중후한 골프이글패를 찾으신다면 적합한 모델입니다."
-                  data-srcset="/images/product/2.jpg"
-                  srcset="/images/product/2.jpg"
-                  class=" ls-is-cached lazyloaded"
-                />
-              </span>
-              <div class="goodscd">TD8 0431</div>
-              <div class="goodsnm" onclick="location.href ='/' ">
-                Cúp kim loại cao cấp
-              </div>
-              <strike>1,200,000원</strike>
-              <span class="price-dc"
-                >64%<img
-                  alt="best 5"
-                  src="images/renewal_price_down.png"
-                /></span
-              >
-              <div class="price">440,000<span class="won">원</span></div>
-            </div>
-          </li>
-          <li class="right_p small_right_goods_list">
-            <div class="small_goods_infos">
-              <span class="best-badge">7</span>
-              <span
-                style="display:block; cursor:pointer"
-                onclick="location.href ='/' "
-              >
-                <img
-                  width="220"
-                  height="220"
-                  alt="주석독수리와 블랙크리스탈의 조화가 멋스럽고 아담한 이글트로피를 찾는 고객님들께서 많이 구매하시는 이글패입니다."
-                  title="주석독수리와 블랙크리스탈의 조화가 멋스럽고 아담한 이글트로피를 찾는 고객님들께서 많이 구매하시는 이글패입니다."
-                  data-srcset="/images/product/1.jpg"
-                  srcset="/images/product/1.jpg"
-                  class=" ls-is-cached lazyloaded"
-                />
-              </span>
-              <div class="goodscd">TD8 0726</div>
-              <div class="goodsnm" onclick="location.href ='/' ">
-                Cúp kim loại cao cấp
-              </div>
-              <strike>500,000원</strike>
-              <span class="price-dc"
-                >54%<img
-                  alt="best 5"
-                  src="images/renewal_price_down.png"
-                /></span
-              >
-              <div class="price">230,000<span class="won">원</span></div>
-            </div>
-          </li> -->
         </ul>
       </div>
     </div>
@@ -400,6 +239,10 @@
   .bc_item_ui_section {
     height: 720px;
     margin-bottom: 60px;
+  }
+
+  .bc_item_ui_section ul li {
+    list-style: none;
   }
 
   .bc_item_ui_section ul li.left_p {
@@ -464,7 +307,7 @@
     /* display: inline-block; */
   }
 
-  /* .big_left_goods_list ul.big_goods_title li span.subtxt {
+  .big_left_goods_list ul.big_goods_title li span.subtxt {
     font-size: 24px;
     color: #000;
     line-height: 24px;
@@ -487,7 +330,7 @@
     display: inline-block;
     margin-bottom: 5px;
     cursor: pointer;
-  } */
+  }
 
   .big_left_goods_list ul.big_goods_imgs {
     padding-left: 0;
@@ -548,6 +391,7 @@
   }
 
   .big_left_goods_list ul.big_goods_infos .price .price-dc {
+    display: ruby;
     color: #db3a1d;
     font-weight: 500;
     margin-right: 14px;
@@ -635,6 +479,7 @@
   }
 
   .small_right_goods_list .small_goods_infos .price-dc {
+    display: ruby;
     font-size: 14px;
     font-weight: 500;
     color: #db3a1d;
@@ -658,7 +503,7 @@
     margin-left: 2px;
   }
 
-  /* .image-best-1 {
+  .image-best-1 {
     position: absolute;
     top: 0;
     left: 0;
@@ -674,7 +519,7 @@
 
   .bc_slide_menu_wrap ul:not(:first-child) {
     margin-top: 10px;
-  } */
+  }
 
   .bc_slide_menu_wrap ul li {
     position: relative;
@@ -686,111 +531,6 @@
     z-index: 11;
     padding: 5px;
   }
-
-  /* .bc_slide_menu_wrap ul li .show_slide_txt {
-    position: absolute;
-    top: 0px;
-    z-index: 10;
-    height: 100%;
-    color: #fff;
-    display: none;
-    font-size: 16px;
-    text-align: left;
-    padding: 14px 8px 14px 7px;
-  }
-
-  .best_cate_slider {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    margin-top: 40px;
-    margin-bottom: 50px;
-    height: 140px;
-  }
-
-  .best_cate_slider img {
-    width: 100%;
-  }
-
-  .cate-bt {
-    position: absolute;
-    top: 38%;
-    width: 100%;
-    right: 0;
-  }
-
-  .cate-bt img {
-    width: 100%;
-  }
-
-  .swiper-cate-prev {
-    position: absolute;
-    width: 36px;
-    top: 0px;
-    left: -18px;
-    z-index: 1;
-  }
-
-  .swiper-cate-next {
-    position: absolute;
-    width: 36px;
-    top: 0px;
-    right: -18px;
-    z-index: 1;
-  }
-
-  .title1_renewal {
-    font-size: 32px;
-    font-weight: bold;
-    letter-spacing: -0.64px;
-    color: #1b1b1b;
-  }
-
-  .cate_ranking {
-    margin-bottom: 40px;
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  .swiper-cate-pagination {
-    position: absolute;
-    z-index: 1;
-  }
-
-  .bc_section .best_cate_slider .swiper-pagination-bullet {
-    width: 6px;
-    height: 6px;
-    background: #fff;
-    opacity: 0.5;
-    margin: 0 6px !important;
-  }
-
-  .bc_section .best_cate_slider .swiper-pagination-bullet-active {
-    opacity: 1;
-  }
-
-  .bc_section .swiper-pagination-bullet {
-    width: 6px;
-    height: 6px;
-    background: #4a4949;
-    opacity: 0.3;
-    margin: 0 6px !important;
-  }
-
-  .bc_section .swiper-pagination-bullet-active {
-    opacity: 1;
-  }
-
-  .pointer {
-    cursor: pointer;
-  }
-
-  .best-cate-line {
-    margin-bottom: 50px;
-    width: 100%;
-    height: 1px;
-    background-color: #dcdcdc;
-  } */
 
   .base_content_wrap .bc_item_ui_section:not(:last-child) {
     border-bottom: solid 1px #dcdcdc;

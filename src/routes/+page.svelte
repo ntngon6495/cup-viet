@@ -8,7 +8,7 @@
   <img {src} alt={name} />
 </div>
 
-<style>
+<style lang="scss">
   .container {
     display: flex;
     width: 100%;
