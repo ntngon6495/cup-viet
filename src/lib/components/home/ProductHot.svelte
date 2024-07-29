@@ -90,9 +90,7 @@
           </div>
           <a style="display:block;overflow:hidden;border-radius:50%;" href="/">
             <img
-              width="180"
-              height="180"
-              class="img-responsive good_seller_img ls-is-cached lazyloaded"
+              class="w-[180px] h-[180px] img-responsive good_seller_img ls-is-cached lazyloaded"
               alt=""
               title=""
               src={product?.image}
@@ -162,7 +160,7 @@
     margin-right: 24.5px;
   }
 
-  /* .w1200 > .hot_seller_main_title {
+  .w1200 > .hot_seller_main_title {
     text-align: center;
     margin: 32px auto;
   }
@@ -171,7 +169,7 @@
     font-size: 32px;
     letter-spacing: -0.64px;
     color: #4a4949;
-  } */
+  }
 
   .seller_active {
     font-weight: bold !important;
@@ -185,10 +183,6 @@
     font-family: "Noto Sans KR";
   }
 
-  /* .hot_seller_main .re_interest {
-    margin-top: 32px;
-    text-align: center;
-  } */
   .good_seller {
     width: 1200px;
     height: 300px;

@@ -2,53 +2,42 @@
 </script>
 
 <div class="footer">
-  <div class="footer-wrap">
-    <div>
-      <div>
-        <!-- <img src="/logo-ngang.png" alt="icon ngang" class="icon-ngang" /> -->
-      </div>
-      <div class="info-support">
+  <div class="w-full footer-wrap">
+    <div class="grid grid-cols-12">
+      <div class="col-span-9 info-support">
         <div>
           <h3>HỖ TRỢ</h3>
           <p>Phương thức giao hàng</p>
           <p>Phương thức thanh toán</p>
           <p>Chính sách đổi trả & bảo hành</p>
           <p>Thẻ quà tặng cúp việt</p>
-          <p>Câu hỏi thường gặp</p>
+          <p>Chính sách đổi trả & bảo hành</p>
         </div>
         <div>
           <h3>LIÊN HỆ</h3>
           <p>Chăm sóc khách hàng</p>
           <p>Ưu đãi cho doanh nghiệp</p>
-          <p>Đánh giá Website</p>
+          <p>Đánh giá website</p>
         </div>
         <div>
-          <h3>VỀ CÚP VIỆT</h3>
-          <p>Cúp việt là ai</p>
-          <p>Tuyển dụng</p>
-          <p>Thiết kế sinh thái</p>
-          <p>Blog Cúp Việt</p>
+          <h3>về cúp việt</h3>
+          <p>cúp việt là ai</p>
+          <p>tuyển dụng</p>
+          <p>thiết kế sinh thái</p>
+          <p>blog cúp việt</p>
         </div>
         <div>
-          <h3>PHÁP LÝ</h3>
-          <p>Điều khoản mua hàng</p>
-          <p>Chính sách bảo mật</p>
+          <h3>Pháp lý</h3>
+          <p>điều khoản mua hàng</p>
+          <p>chính sách bảo mật</p>
           <p>Bản công bố sản phẩm</p>
-          <p>Thu hồi sản phẩm</p>
+          <p>thu hồi sản phẩm</p>
         </div>
       </div>
-    </div>
-    <div class="follow-us">
-      <div class="section-follow-us">
-        <h4>FOLLOW US</h4>
-        <div class="ic-social-network">
-          <img src="/images/ic-facebook.png" alt="facebook" />
-          <img src="/images/ic-zalo.png" alt="zalo" />
-          <img src="/images/ic-youtube.png" alt="youtube" />
-          <img src="/images/ic-tiktok.png" alt="tiktok" />
-        </div>
+
+      <div class="col-span-3">
+        <img src="/logo-bo-cong-thuong.png" />
       </div>
-      <img src="/logo-bo-cong-thuong.png" alt="bo cong thuong" />
     </div>
   </div>
   <div class="footer-bottom">
@@ -66,18 +55,32 @@
   </div>
 </div>
 
-<style>
-  .footer-wrap {
+<style lang="scss">
+  .info-support {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
-    padding: 20px 0;
-    border-bottom: 1px solid gray;
+    gap: 40px;
+    p {
+      font-size: 14px;
+      text-transform: capitalize;
+      color: #3c3c3c;
+    }
+    h3 {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 20px;
+      color: #4a4949;
+    }
   }
   .footer-bottom {
     width: 100%;
     display: flex;
-    /* justify-content: space-between; */
+    gap: 1rem;
+    padding: 20px 0;
+  }
+  .footer-wrap {
+    width: 100%;
     gap: 1rem;
     padding: 20px 0;
     border-bottom: 1px solid gray;
@@ -102,39 +105,5 @@
     font-size: 1rem;
     line-height: 1.5rem;
     color: #606060;
-  }
-  .info-support {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    gap: 4rem;
-  }
-  .follow-us {
-    padding: 0px 20px;
-    width: 315px;
-  }
-  .follow-us img {
-    width: 315px;
-  }
-  .section-follow-us {
-    background-color: #f5f5f5;
-    padding: 5px 20px;
-    border-radius: 5px;
-  }
-  .section-follow-us h4 {
-    margin: 0;
-  }
-  .follow-us .section-follow-us .ic-social-network {
-    display: flex;
-    gap: 1rem;
-    justify-content: space-between;
-  }
-  .follow-us .section-follow-us .ic-social-network img {
-    width: 38px;
-    height: 38px;
-  }
-  .icon-ngang {
-    margin-left: -10px;
-    max-width: 1000px;
   }
 </style>
