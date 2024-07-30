@@ -61,10 +61,13 @@
     display: flex;
     justify-content: space-between;
     gap: 40px;
+
     p {
       font-size: 14px;
       text-transform: capitalize;
       color: #3c3c3c;
+      letter-spacing: 0.5px;
+      line-height: 2
     }
     h3 {
       text-transform: uppercase;

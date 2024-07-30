@@ -103,14 +103,14 @@
           </p>
           <p class="product_code" style="overflow: hidden;">{product?.code}</p>
           <div class="caption">
-            <p class="price">
+            <!-- <p class="price">
               <strike>{product?.price} VNĐ</strike>
               <span class="price-dc"
                 >{product?.discount}%
                 <i class="fa fa-long-arrow-down"></i></span
               >
-            </p>
-            <b>{"updating..."}</b>
+            </p> -->
+            <a class='hover:text-yellow-600' href='/'>{"Xin liên hệ..."}</a>
             <!-- <b>240,000<span class="good_seller_font">원</span></b> -->
           </div>
         </div>
