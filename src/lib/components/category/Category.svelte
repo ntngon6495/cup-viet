@@ -184,7 +184,8 @@
                   <span>- {item.products[0]?.name}</span>
                 </li>
                 <li class="price">
-                  <strike class="consumer">{item.products[0]?.price} VNĐ</strike
+                  <a class="hover:text-yellow-600" href='/'>Xin liên hệ...</a>
+                  <!-- <strike class="consumer">{item.products[0]?.price} VNĐ</strike
                   >
                   <span class="price-dc"
                     >{item.products[0]?.discount}%<img
@@ -193,7 +194,7 @@
                     /></span
                   >
                   {item.products[0]?.price_discount} VNĐ<span class="won">
-                  </span>
+                  </span> -->
                 </li>
               </ul>
             </div>
@@ -215,7 +216,8 @@
                   <div class="goodsnm">
                     {product?.name}
                   </div>
-                  <strike>{product?.price} VNĐ</strike>
+                  <a class="hover:text-yellow-600" href='/'>Xin liên hệ...</a>
+                  <!-- <strike>{product?.price} VNĐ</strike>
                   <span class="price-dc"
                     >{product?.discount}%<img
                       src="images/renewal_price_down.png"
@@ -224,7 +226,7 @@
                   >
                   <div class="price">
                     {product?.price_discount}<span class="won">VNĐ</span>
-                  </div>
+                  </div> -->
                 </div>
               </li>
             {/if}
@@ -238,7 +240,8 @@
 <style>
   .bc_item_ui_section {
     height: 720px;
-    margin-bottom: 60px;
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
 
   .bc_item_ui_section ul li {
@@ -264,7 +267,6 @@
 
   .big_left_goods_list {
     width: 450px;
-    margin-left: -60px;
   }
 
   .big_left_goods_list ul.big_goods_title {
@@ -533,6 +535,10 @@
   }
 
   .base_content_wrap .bc_item_ui_section:not(:last-child) {
+    border-bottom: solid 1px #dcdcdc;
+  }
+
+  .base_content_wrap {
     border-bottom: solid 1px #dcdcdc;
   }
   /* .tab ul,

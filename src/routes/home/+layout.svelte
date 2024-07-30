@@ -5,12 +5,16 @@
   import Slide from "../../lib/components/slideShow/Slide.svelte";
 </script>
 
-<div>
-  <div class="container">
+<div class='container'>
+  <div>
     <Header />
     <TopNav />
-    <Slide />
-    <slot />
+    <div>
+      <Slide class="block"/>
+    </div>
+    <div>
+      <slot />
+    </div>
     <Footer />
   </div>
 </div>
