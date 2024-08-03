@@ -1,4 +1,18 @@
 <script lang="js">
+  import { Carousel } from "flowbite-svelte";
+
+  export let images = [
+    {
+      alt: "Cosmic timetraveler",
+      src: "/images/category/itali/BANNER-1-01.jpg",
+      title: "cupviet.com",
+    },
+    {
+      alt: "Cosmic timetraveler",
+      src: "/images/category/taybannha/BANNER-2-01.jpg",
+      title: "cupviet.com",
+    },
+  ];
   export let productList = [
     {
       category: "CÚP ITALY",
@@ -11,7 +25,7 @@
           price: 390000,
           price_discount: 278000,
           discount: 57,
-          image: "/images/category/itali/CIT_1.png",
+          image: "/images/category/itali/CIT_415.png",
         },
         {
           id: 2,
@@ -20,7 +34,7 @@
           price: 760000,
           price_discount: 240000,
           discount: 68,
-          image: "/images/category/itali/CIT_2.png",
+          image: "/images/category/itali/CIT_2312-3REV01.png",
         },
         {
           id: 3,
@@ -29,7 +43,7 @@
           price: 230000,
           price_discount: 106000,
           discount: 54,
-          image: "/images/category/itali/CIT_3.png",
+          image: "/images/category/itali/CIT_2312.png",
         },
         {
           id: 4,
@@ -38,7 +52,7 @@
           price: 230000,
           price_discount: 106000,
           discount: 54,
-          image: "/images/category/itali/CIT_4.png",
+          image: "/images/category/itali/CIT_2312N.png",
         },
         {
           id: 5,
@@ -47,7 +61,7 @@
           price: 88000,
           price_discount: 39000,
           discount: 56,
-          image: "/images/category/itali/CIT_5.png",
+          image: "/images/category/itali/CIT_2355.png",
         },
         {
           id: 6,
@@ -56,7 +70,7 @@
           price: 440000,
           price_discount: 160000,
           discount: 64,
-          image: "/images/category/itali/CIT_6.png",
+          image: "/images/category/itali/CIT_2363.png",
         },
         {
           id: 7,
@@ -65,7 +79,7 @@
           price: 230000,
           price_discount: 150000,
           discount: 54,
-          image: "/images/category/itali/CIT_7.png",
+          image: "/images/category/itali/CIT_2367.png",
         },
       ],
     },
@@ -80,7 +94,7 @@
           price: 390000,
           price_discount: 278000,
           discount: 57,
-          image: "/images/category/taybannha/CSP_1.png",
+          image: "/images/category/taybannha/CSP_23-102E.png",
         },
         {
           id: 2,
@@ -89,7 +103,7 @@
           price: 240000,
           price_discount: 160000,
           discount: 68,
-          image: "/images/category/taybannha/CSP_2.png",
+          image: "/images/category/taybannha/CSP_23-102EN.png",
         },
         {
           id: 3,
@@ -98,7 +112,7 @@
           price: 230000,
           price_discount: 106000,
           discount: 54,
-          image: "/images/category/taybannha/CSP_3.png",
+          image: "/images/category/taybannha/CSP_23-126E-GOLD.png",
         },
         {
           id: 4,
@@ -107,7 +121,7 @@
           price: 230000,
           price_discount: 106000,
           discount: 54,
-          image: "/images/category/taybannha/CSP_4.png",
+          image: "/images/category/taybannha/CSP_23-126EN-GOLD.png",
         },
         {
           id: 5,
@@ -116,7 +130,7 @@
           price: 88000,
           price_discount: 39000,
           discount: 56,
-          image: "/images/category/taybannha/CSP_5.png",
+          image: "/images/category/taybannha/CSP_23-2301-Gold.png",
         },
         {
           id: 6,
@@ -125,7 +139,7 @@
           price: 440000,
           price_discount: 160000,
           discount: 64,
-          image: "/images/category/taybannha/CSP_6.png",
+          image: "/images/category/taybannha/CSP_23-2301N-Gold.png",
         },
         {
           id: 7,
@@ -134,7 +148,7 @@
           price: 230000,
           price_discount: 150000,
           discount: 54,
-          image: "/images/category/taybannha/CSP_7.png",
+          image: "/images/category/taybannha/CSP_54-2471.png",
         },
       ],
     },
@@ -145,26 +159,33 @@
   <div class="title" style="text-align:center; color: #d6b80e">
     <h2>XẾP HẠNG DANH MỤC THEO MỨC ĐỘ PHỔ BIẾN</h2>
   </div>
-  {#each productList as item}
+  {#each productList as item, idx}
     <div class="active base_content_wrap">
       <div class="bc_item_ui_section">
         <ul>
           <li class="left_p">
             <div class="big_left_goods_list">
-              <ul
-                class="big_goods_title"
-                style={`background-image : url('${item?.banner}');`}
-              >
-                <li class="tit">{item?.category}</li>
-                <li class="tit_all">
-                  <span
-                    ><a href="/"
-                      >XEM THÊM<img
-                        src="/images/arrow-right-white.png"
-                        alt="best 1"
-                      /></a
-                    ></span
-                  >
+              <ul class="big_goods_title">
+                <li class="w-full">
+                  <div class="relative w-full h-32">
+                    <div
+                      class="h-32 w-full absolute bg-yellow-600 top-0 left-0 opacity-75"
+                    ></div>
+                    <img
+                      class="h-32 object-fill absolute top-0 left-0 opacity-40"
+                      alt=""
+                      src={item?.banner}
+                    />
+                    <div
+                      class="absolute h-32 px-2 flex items-center justify-between font-bold text-2xl text-white w-full"
+                    >
+                      <p class="tit">{item?.category}</p>
+                      <div class="flex items-center text-xl">
+                        <a href="/">XEM THÊM</a>
+                        <img src="/images/arrow-right-white.png" alt="best 1" />
+                      </div>
+                    </div>
+                  </div>
                 </li>
               </ul>
               <ul class="big_goods_imgs">
@@ -184,7 +205,7 @@
                   <span>- {item.products[0]?.name}</span>
                 </li>
                 <li class="price">
-                  <a class="hover:text-yellow-600" href='/'>Xin liên hệ...</a>
+                  <a class="hover:text-yellow-600" href="/">Xin liên hệ...</a>
                   <!-- <strike class="consumer">{item.products[0]?.price} VNĐ</strike
                   >
                   <span class="price-dc"
@@ -216,7 +237,7 @@
                   <div class="goodsnm">
                     {product?.name}
                   </div>
-                  <a class="hover:text-yellow-600" href='/'>Xin liên hệ...</a>
+                  <a class="hover:text-yellow-600" href="/">Xin liên hệ...</a>
                   <!-- <strike>{product?.price} VNĐ</strike>
                   <span class="price-dc"
                     >{product?.discount}%<img
@@ -234,6 +255,16 @@
         </ul>
       </div>
     </div>
+    {#if idx == 0}
+      <div class="max-w-[1200px] relative">
+        <Carousel
+          class="!h-[250px]"
+          imgClass="h-[250px]"
+          {images}
+          duration="3000"
+        />
+      </div>
+    {/if}
   {/each}
 </div>
 
