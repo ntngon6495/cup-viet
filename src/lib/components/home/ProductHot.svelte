@@ -3,7 +3,7 @@
     {
       id: 1,
       name: "Cúp kim loại",
-      image: "/images/category/itali/CIT_1.png",
+      image: "/images/category/itali/CIT_415.png",
       price: 230000,
       discount: 68,
       sold: 210,
@@ -12,7 +12,7 @@
     {
       id: 2,
       name: "Cúp kim loại premium",
-      image: "/images/category/taybannha/CSP_2.png",
+      image: "/images/category/itali/CIT_810.png",
       price: 390000,
       discount: 56,
       sold: 84,
@@ -21,7 +21,7 @@
     {
       id: 3,
       name: "Cúp kim loại italia",
-      image: "/images/category/itali/CIT_5.png",
+      image: "/images/category/itali/CIT_2312.png",
       price: 230000,
       discount: 54,
       sold: 48,
@@ -30,7 +30,7 @@
     {
       id: 4,
       name: "Cúp kim loại tây ban nha",
-      image: "/images/category/taybannha/CSP_4.png",
+      image: "/images/category/itali/CIT_2363.png",
       price: 88000,
       discount: 56,
       sold: 43,
@@ -39,7 +39,7 @@
     {
       id: 5,
       name: "Cúp ấn độ",
-      image: "/images/category/itali/CIT_3.png",
+      image: "/images/category/taybannha/CSP_23-102E.png",
       price: 230000,
       discount: 54,
       sold: 35,
@@ -48,7 +48,7 @@
     {
       id: 6,
       name: "Cúp ấn độ",
-      image: "/images/category/taybannha/CSP_6.png",
+      image: "/images/category/taybannha/CSP_23-2301-Gold.png",
       price: 240000,
       discount: 52,
       sold: 28,
@@ -110,7 +110,7 @@
                 <i class="fa fa-long-arrow-down"></i></span
               >
             </p> -->
-            <a class='hover:text-yellow-600' href='/'>{"Xin liên hệ..."}</a>
+            <a class="hover:text-yellow-600" href="/">{"Xin liên hệ..."}</a>
             <!-- <b>240,000<span class="good_seller_font">원</span></b> -->
           </div>
         </div>
