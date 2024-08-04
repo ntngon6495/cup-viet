@@ -1,14 +1,14 @@
-<div class='top-nav'>
+<div class="top-nav sm:flex hidden">
   <div class="col-xs-2 pull-left">
     <div class="btn-category">
       <div class="bugger">
         <i></i>
       </div>
-        <p>DANH MỤC SẢN PHẨM</p>
+      <p>DANH MỤC SẢN PHẨM</p>
     </div>
   </div>
-  <div class="col-xs-8 gnb-menu pull-left"> 
-    <ul class="scroll_menu1"> 
+  <div class="col-xs-8 gnb-menu pull-left">
+    <ul class="scroll_menu1">
       <li>
         <div class="header-re"></div>
         <a href="/3" class="" style="">Cúp kim loại</a>
@@ -29,13 +29,21 @@
         <div class="header-re"></div>
         <a href="/" class="" style="">Kĩ niệm chương</a>
       </li>
-    <ul class="scroll_menu2" style="position: absolute; left: 50%; transform: translateX(-50%); display: none;">
+      <ul
+        class="scroll_menu2"
+        style="position: absolute; left: 50%; transform: translateX(-50%); display: none;"
+      ></ul>
     </ul>
   </div>
   <form>
     <div class="col-xs-2 search-wrap" style="float:right;">
-      <input type="text" class='input-search'  placeholder="Tìm kiếm sản phẩm" autocomplete="off">
-      <img src='/images/ic-search.svg' alt='key search'/>
+      <input
+        type="text"
+        class="input-search"
+        placeholder="Tìm kiếm sản phẩm"
+        autocomplete="off"
+      />
+      <img src="/images/ic-search.svg" alt="key search" />
     </div>
   </form>
 </div>
@@ -60,8 +68,8 @@
     gap: 2.5rem;
   }
   .btn-category:active {
-      background: #ca965d;
-      color: #fff;
+    background: #ca965d;
+    color: #fff;
   }
   .btn-category p {
     width: 90px;
@@ -69,17 +77,18 @@
   }
   .top-nav {
     padding: 20px 0;
-    display: flex;
     justify-content: space-between;
     align-items: center;
   }
   li {
     list-style: none;
   }
-  a,a:hover,a:focus {
+  a,
+  a:hover,
+  a:focus {
     color: inherit;
     text-decoration: none;
-    cursor: pointer
+    cursor: pointer;
   }
   .search-wrap {
     width: 100%;
@@ -110,41 +119,41 @@
     display: inline-block;
     vertical-align: middle;
     transition: all 0.5s;
-    z-index: 1
+    z-index: 1;
   }
 
   .bugger i {
-      height: 4px;
-      width: 35px;
-      position: absolute;
-      top: calc(50% - 1px);
-      left: 0px;
-      background: #ffe766
+    height: 4px;
+    width: 35px;
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 0px;
+    background: #ffe766;
   }
 
   .bugger i:before {
-      content: "";
-      display: block;
-      width: 30px;
-      height: 3px;
-      position: absolute;
-      background: #000
+    content: "";
+    display: block;
+    width: 30px;
+    height: 3px;
+    position: absolute;
+    background: #000;
   }
 
   .bugger i:after {
-      content: "";
-      display: block;
-      width: 40px;
-      height: 4px;
-      position: absolute;
-      background: #000
+    content: "";
+    display: block;
+    width: 40px;
+    height: 4px;
+    position: absolute;
+    background: #000;
   }
 
   .bugger i:before {
-      top: -9px
+    top: -9px;
   }
 
   .bugger i:after {
-      bottom: -9px
+    bottom: -9px;
   }
 </style>

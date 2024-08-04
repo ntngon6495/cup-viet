@@ -155,90 +155,82 @@
   ];
 </script>
 
-<div class="">
+<div>
   <div class="title" style="text-align:center; color: #d6b80e">
     <h2>XẾP HẠNG DANH MỤC THEO MỨC ĐỘ PHỔ BIẾN</h2>
   </div>
   {#each productList as item, idx}
-    <div class="active base_content_wrap">
-      <div class="bc_item_ui_section">
-        <ul>
-          <li class="left_p">
-            <div class="big_left_goods_list">
-              <ul class="big_goods_title">
-                <li class="w-full">
-                  <div class="relative w-full h-32">
-                    <div
-                      class="h-32 w-full absolute bg-yellow-600 top-0 left-0 opacity-75"
-                    ></div>
-                    <img
-                      class="h-32 object-fill absolute top-0 left-0 opacity-40"
-                      alt=""
-                      src={item?.banner}
-                    />
-                    <div
-                      class="absolute h-32 px-2 flex items-center justify-between font-bold text-2xl text-white w-full"
-                    >
-                      <p class="tit">{item?.category}</p>
-                      <div class="flex items-center text-xl">
-                        <a href="/">XEM THÊM</a>
-                        <img src="/images/arrow-right-white.png" alt="best 1" />
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <ul class="big_goods_imgs">
-                <span class="best-badge">1</span>
-                <li style="cursor:pointer;">
-                  <img
-                    alt="top 1"
-                    data-srcset="/images/product/7.png"
-                    srcset={item.products[0]?.image}
-                    class="w-[440px] h-[440px] ls-is-cached lazyloaded"
-                  />
-                </li>
-              </ul>
-              <ul class="big_goods_infos">
-                <li class="goodsnm" style="cursor:pointer;">
-                  <span class="goodscd">{item.products[0]?.code}</span>
-                  <span>- {item.products[0]?.name}</span>
-                </li>
-                <li class="price">
-                  <a class="hover:text-yellow-600" href="/">Xin liên hệ...</a>
-                  <!-- <strike class="consumer">{item.products[0]?.price} VNĐ</strike
-                  >
-                  <span class="price-dc"
-                    >{item.products[0]?.discount}%<img
-                      src="images/renewal_price_down.png"
-                      alt="best 1"
-                    /></span
-                  >
-                  {item.products[0]?.price_discount} VNĐ<span class="won">
-                  </span> -->
-                </li>
-              </ul>
+    <div class="sm:grid sm:grid-cols-12 gap-4 mt-5">
+      <div class="col-span-5">
+        <div class="relative max-w-[440px] h-32">
+          <div
+            class="h-32 w-full absolute bg-yellow-600 top-0 left-0 opacity-75"
+          ></div>
+          <img
+            class="h-32 object-fill absolute top-0 left-0 opacity-40"
+            alt=""
+            src={item?.banner}
+          />
+          <div
+            class="absolute h-32 px-2 flex items-center justify-between font-bold text-2xl text-white w-full"
+          >
+            <p class="tit">{item?.category}</p>
+            <div class="flex items-center text-xl">
+              <a href="/">XEM THÊM</a>
+              <img src="/images/arrow-right-white.png" alt="best 1" />
             </div>
+          </div>
+        </div>
+        <ul class="big_goods_imgs">
+          <span class="best-badge">1</span>
+          <li style="cursor:pointer;">
+            <img
+              alt="top 1"
+              data-srcset="/images/product/7.png"
+              srcset={item.products[0]?.image}
+              class="w-[440px] h-[440px] ls-is-cached lazyloaded"
+            />
           </li>
-          {#each item.products as product, index}
-            {#if index > 0}
-              <li class="right_p small_right_goods_list">
-                <div class="small_goods_infos">
-                  <span class="best-badge">{index + 1}</span>
-                  <span style="display:block; cursor:pointer">
-                    <img
-                      alt=""
-                      title=""
-                      src={product?.image}
-                      class="h-[220px] w-[220px] ls-is-cached lazyloaded"
-                    />
-                  </span>
-                  <div class="goodscd">{product?.code}</div>
-                  <div class="goodsnm">
-                    {product?.name}
-                  </div>
-                  <a class="hover:text-yellow-600" href="/">Xin liên hệ...</a>
-                  <!-- <strike>{product?.price} VNĐ</strike>
+        </ul>
+        <ul class="big_goods_infos">
+          <li class="goodsnm" style="cursor:pointer;">
+            <span class="goodscd">{item.products[0]?.code}</span>
+            <span>- {item.products[0]?.name}</span>
+          </li>
+          <li class="price">
+            <a class="hover:text-yellow-600" href="/">Xin liên hệ...</a>
+            <!-- <strike class="consumer">{item.products[0]?.price} VNĐ</strike
+                    >
+                    <span class="price-dc"
+                      >{item.products[0]?.discount}%<img
+                        src="images/renewal_price_down.png"
+                        alt="best 1"
+                      /></span
+                    >
+                    {item.products[0]?.price_discount} VNĐ<span class="won">
+                    </span> -->
+          </li>
+        </ul>
+      </div>
+      <div class="right_p small_right_goods_list col-span-7 justify-between">
+        {#each item.products as product, index}
+          {#if index > 0}
+            <div class="small_goods_infos">
+              <span class="best-badge">{index + 1}</span>
+              <span style="display:block; cursor:pointer">
+                <img
+                  alt=""
+                  title=""
+                  src={product?.image}
+                  class="sm:h-[220px] sm:w-[220px] w-[180px] ls-is-cached lazyloaded"
+                />
+              </span>
+              <div class="goodscd">{product?.code}</div>
+              <div class="goodsnm">
+                {product?.name}
+              </div>
+              <a class="hover:text-yellow-600" href="/">Xin liên hệ...</a>
+              <!-- <strike>{product?.price} VNĐ</strike>
                   <span class="price-dc"
                     >{product?.discount}%<img
                       src="images/renewal_price_down.png"
@@ -248,51 +240,41 @@
                   <div class="price">
                     {product?.price_discount}<span class="won">VNĐ</span>
                   </div> -->
-                </div>
-              </li>
-            {/if}
-          {/each}
-        </ul>
+            </div>
+          {/if}
+        {/each}
       </div>
+      {#if idx === 0}
+        <div class="col-span-12 sm:max-w-[1200px] sm:!max-h-[250px] h-[100px]">
+          <Carousel
+            class="rounded-md"
+            imgClass="sm:max-h-[250px] h-[100px]"
+            {images}
+            duration="3000"
+          />
+        </div>
+      {/if}
     </div>
-    {#if idx == 0}
-      <div class="max-w-[1200px] relative">
-        <Carousel
-          class="!h-[250px]"
-          imgClass="h-[250px]"
-          {images}
-          duration="3000"
-        />
-      </div>
-    {/if}
   {/each}
 </div>
 
 <style>
-  .bc_item_ui_section {
-    height: 720px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-
-  .bc_item_ui_section ul li {
+  ul li {
     list-style: none;
   }
 
-  .bc_item_ui_section ul li.left_p {
+  ul li.left_p {
     float: left;
-    height: 720px;
     margin-right: 50px;
   }
 
-  .bc_item_ui_section ul li.right_p {
-    float: left;
+  ul li.right_p {
     height: 360px;
     margin-left: 20px;
   }
 
-  .bc_item_ui_section ul li.right_p:nth-child(2),
-  .bc_item_ui_section ul li.right_p:nth-child(5) {
+  ul li.right_p:nth-child(2),
+  ul li.right_p:nth-child(5) {
     margin-left: 0px;
   }
 
@@ -301,7 +283,6 @@
   }
 
   .big_left_goods_list ul.big_goods_title {
-    /* padding-top: 35px; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -318,7 +299,6 @@
     font-weight: 500;
     letter-spacing: -0.26px;
     display: inline-block;
-    /* float: right; */
     margin-right: 10px;
   }
 
@@ -337,7 +317,6 @@
     font-size: 32px;
     letter-spacing: -1.28px;
     float: left;
-    /* display: inline-block; */
   }
 
   .big_left_goods_list ul.big_goods_title li span.subtxt {
@@ -365,13 +344,13 @@
     cursor: pointer;
   }
 
-  .big_left_goods_list ul.big_goods_imgs {
+  .big_goods_imgs {
     padding-left: 0;
     margin-top: 20px;
     position: relative;
   }
 
-  .big_left_goods_list ul.big_goods_imgs .best-badge {
+  .big_goods_imgs .best-badge {
     position: absolute;
     font-family: Roboto;
     top: 0;
@@ -389,13 +368,13 @@
     line-height: 13px;
   }
 
-  .big_left_goods_list ul.big_goods_infos {
+  .big_goods_infos {
     padding-left: 0;
     text-align: left;
     margin-top: 18px;
   }
 
-  .big_left_goods_list ul.big_goods_infos .goodsnm {
+  .big_goods_infos .goodsnm {
     font-size: 16px;
     letter-spacing: -0.48px;
     color: #1b1b1b;
@@ -403,41 +382,41 @@
     overflow: hidden;
   }
 
-  .big_left_goods_list ul.big_goods_infos .goodscd {
+  .big_goods_infos .goodscd {
     font-family: Roboto;
     font-weight: 600;
     margin-right: 8px;
   }
 
-  .big_left_goods_list ul.big_goods_infos .price {
+  .big_goods_infos .price {
     font-family: Roboto;
     font-size: 24px;
     font-weight: 600;
     color: #1b1b1b;
   }
 
-  .big_left_goods_list ul.big_goods_infos .price .consumer {
+  .big_goods_infos .price .consumer {
     opacity: 0.4;
     font-size: 16px;
     font-weight: 500;
     margin-right: 4px;
   }
 
-  .big_left_goods_list ul.big_goods_infos .price .price-dc {
+  .big_goods_infos .price .price-dc {
     display: ruby;
     color: #db3a1d;
     font-weight: 500;
     margin-right: 14px;
   }
 
-  ul.big_goods_infos .price .price-dc img {
+  .big_goods_infos .price .price-dc img {
     width: 14.5px;
     height: 20px;
     object-fit: contain;
     margin-left: 4px;
   }
 
-  ul.big_goods_infos .price .won {
+  .big_goods_infos .price .won {
     font-size: 14px;
     font-family: NotoSansKR;
     font-weight: 500;
@@ -445,8 +424,8 @@
   }
 
   .small_right_goods_list {
-    width: 220px;
-    height: 305px;
+    display: flex;
+    flex-wrap: wrap;
     margin-bottom: 15px;
   }
 
@@ -459,7 +438,7 @@
     position: relative;
   }
 
-  .bc_item_ui_section .best-badge {
+  .best-badge {
     position: absolute;
     font-family: Roboto;
     top: 0;
@@ -477,11 +456,11 @@
     z-index: 2;
   }
 
-  .bc_item_ui_section .small_right_goods_list:nth-child(n + 4) .best-badge {
+  .small_right_goods_list:nth-child(n + 4) .best-badge {
     background: #d88544;
   }
 
-  .bc_item_ui_section .best-badge:before {
+  .best-badge:before {
     content: "BEST";
     font-family: Roboto;
     font-size: 7px;
@@ -565,25 +544,11 @@
     padding: 5px;
   }
 
-  .base_content_wrap .bc_item_ui_section:not(:last-child) {
-    border-bottom: solid 1px #dcdcdc;
-  }
-
-  .base_content_wrap {
-    border-bottom: solid 1px #dcdcdc;
-  }
-  /* .tab ul,
-  li {
-    list-style: none;
-  } */
-
   .tit_all span a {
     font-size: 13px;
     color: #fff;
     font-weight: 500;
     letter-spacing: -0.26px;
-    /* display: inline-block; */
-    /* float: right; */
     color: inherit;
     transform: skew(-0.001deg);
     text-decoration: none;

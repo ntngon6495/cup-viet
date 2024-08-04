@@ -5,23 +5,18 @@
   import Slide from "../../lib/components/slideShow/Slide.svelte";
 </script>
 
-<div class='container'>
+<div class="container mx-auto sm:p-0 px-2">
+  <Header />
+  <TopNav />
   <div>
-    <Header />
-    <TopNav />
-    <div>
-      <Slide class="block"/>
-    </div>
-    <div>
-      <slot />
-    </div>
-    <Footer />
+    <Slide class="block" />
   </div>
+  <slot />
+  <Footer />
 </div>
 
 <style lang="css">
   .container {
-    width: 1200px;
-    margin: 0 auto;
+    max-width: 1200px;
   }
 </style>
