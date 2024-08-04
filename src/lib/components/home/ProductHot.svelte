@@ -78,7 +78,7 @@
       <span class="hot_seller_menu"><span>CÚP ẤN ĐỘ</span></span>
     </div>
   </div>
-  <div class="good_seller">
+  <div class="good_seller flex flex-wrap">
     {#each productsHot as product, index}
       <div>
         <div class="best-items relative">
@@ -141,7 +141,6 @@
     line-height: 40px;
   }
   .hot_seller {
-    height: 30px;
     text-align: center;
     margin-bottom: 32px;
   }
@@ -184,9 +183,7 @@
   }
 
   .good_seller {
-    width: 1200px;
-    height: 300px;
-    display: flex;
+    max-width: 1200px;
     justify-content: space-between;
   }
 
