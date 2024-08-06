@@ -17,6 +17,7 @@
     {
       category: "CÚP ITALY",
       banner: "/images/category/itali/BANNER-1-01.jpg",
+      url: "category/italia",
       products: [
         {
           id: 1,
@@ -86,6 +87,7 @@
     {
       category: "CÚP TÂY BAN NHA",
       banner: "/images/category/taybannha/BANNER-2-01.jpg",
+      url: "category/taybannha",
       products: [
         {
           id: 1,
@@ -176,7 +178,7 @@
           >
             <p class="tit">{item?.category}</p>
             <div class="flex items-center text-xl">
-              <a href="/">XEM THÊM</a>
+              <a href={`/${item.url}`}>XEM THÊM</a>
               <img src="/images/arrow-right-white.png" alt="best 1" />
             </div>
           </div>
@@ -245,10 +247,12 @@
         {/each}
       </div>
       {#if idx === 0}
-        <div class="col-span-12 sm:max-w-[1200px] sm:!max-h-[250px] h-[100px]">
+        <div
+          class="col-span-12 sm:max-w-[1200px] sm:!max-h-[250px] max-h-[100px]"
+        >
           <Carousel
             class="rounded-md"
-            imgClass="sm:max-h-[250px] h-[100px]"
+            imgClass="sm:max-h-[250px] max-h-[100px]"
             {images}
             duration="3000"
           />

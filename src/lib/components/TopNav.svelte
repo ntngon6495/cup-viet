@@ -39,7 +39,7 @@
     <div class="col-xs-2 search-wrap" style="float:right;">
       <input
         type="text"
-        class="input-search"
+        class="input-search py-2"
         placeholder="Tìm kiếm sản phẩm"
         autocomplete="off"
       />
@@ -97,7 +97,7 @@
     border: none;
     border-radius: 30px;
     padding: 5px 15px;
-    height: 32px;
+    height: 40px;
     background: #f4d804;
   }
   .input-search {
