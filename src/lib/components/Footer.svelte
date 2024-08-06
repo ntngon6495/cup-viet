@@ -39,9 +39,9 @@
           </div>
         </div>
       </div>
-      <div class="col-span-3 sm:px-4 px-2">
+      <div class="col-span-3 sm:px-4 px-2 sm:mt-0 mt-10">
         <div class="bg-gray-50 py-2 px-4 rounded-md">
-          <p class="uppercase font-bold mb-1">follow us</p>
+          <p class="uppercase font-bold sm:text-base text-sm mb-1">follow us</p>
           <div class="h-[6 0px] w-full flex justify-between items-center">
             <img src="/images/ic-facebook.png" class="w-10 h-10" />
             <img src="images/ic-zalo.png" class="w-9 h-9" />
@@ -49,7 +49,10 @@
             <img src="images/ic-tiktok.png" class="w-9 h-9" />
           </div>
         </div>
-        <img class="w-[200px] mx-auto" src="/logo-bo-cong-thuong.png" />
+        <img
+          class="sm:w-[200px] w-[150px] mx-auto"
+          src="/logo-bo-cong-thuong.png"
+        />
       </div>
     </div>
   </div>
@@ -59,9 +62,9 @@
     </div>
   </div>
   <div class="footer-bottom sm:flex sm:gap-4 w-full">
-    <div class="footer-logo sm:w-1/2">
+    <div class="footer-logo sm:w-1/2 sm:mb-0 mb-10">
       <img
-        class="sm:max-w-[450px] sm:max-h-[150px]"
+        class="sm:max-w-[450px] sm:max-h-[150px] max-h-[120px] max-w-[280px] mx-auto"
         src="/images/logo-header.png"
         alt="logo footer"
       />
@@ -80,9 +83,23 @@
 </div>
 
 <style lang="scss">
+  $mobile-width: 480px;
+  $tablet-width: 768px;
+  $desktop-width: 1024px;
+
+  @mixin mobile {
+    @media (max-width: #{$mobile-width - 1px}) {
+      @content;
+    }
+  }
+
   .info-support {
     width: 100%;
     p {
+      @include mobile {
+        font-size: 12px;
+      }
+      color: #606060;
       font-size: 14px;
       font-weight: 500;
       text-transform: capitalize;
@@ -90,6 +107,10 @@
       line-height: 2;
     }
     h3 {
+      @include mobile {
+        font-size: 14px;
+        margin-top: 10px;
+      }
       text-transform: uppercase;
       font-weight: bold;
       font-size: 20px;
@@ -110,6 +131,10 @@
     height: 180px;
     padding-bottom: 10px;
     border-bottom: 4px solid #f1d34f;
+    @include mobile {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
   }
   .footer-info {
     padding: 20px 0;

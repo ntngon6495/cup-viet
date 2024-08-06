@@ -66,38 +66,29 @@
   {transitionParams}
   bind:hidden={hidden1}
   id="sidebar1"
+  class="!bg-yellow-400"
 >
   <div class="flex items-center">
     <p
       id="drawer-label"
-      class="inline-flex items-center text-xl mb-4 text-white"
+      class="inline-flex items-center text-xl mb-4 text-white font-medium uppercase"
     >
       Danh Mục Sản Phẩm
     </p>
     <CloseButton on:click={() => (hidden1 = true)} class="mb-4 text-white" />
   </div>
-  <div class="grid grid-cols-2 flex-row gap-4">
+  <div class="grid grid-cols-1 flex-row gap-4">
     <div class="col-xs-8 gnb-menu pull-left">
-      <ul class="scroll_menu1 text-white font-bold">
+      <ul class="scroll_menu1 text-white font-medium">
         <li>
           <div class="header-re"></div>
-          <a href="/3" class="" style="">Cúp kim loại</a>
+          <a href="/category/italia" class="uppercase">Cúp Italia</a>
         </li>
         <li>
           <div class="header-re"></div>
-          <a href="/" class="" style="">Cúp gốm sứ</a>
-        </li>
-        <li>
-          <div class="header-re"></div>
-          <a href="/" class="" style="">Cúp pha lê</a>
-        </li>
-        <li>
-          <div class="header-re"></div>
-          <a href="/" class="" style="">Cúp kĩ thuật</a>
-        </li>
-        <li>
-          <div class="header-re"></div>
-          <a href="/" class="" style="">Kĩ niệm chương</a>
+          <a href="/category/taybannha" class="uppercase" style=""
+            >Cúp tây ban nha</a
+          >
         </li>
         <ul
           class="scroll_menu2"
