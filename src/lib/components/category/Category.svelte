@@ -164,20 +164,20 @@
   {#each productList as item, idx}
     <div class="sm:grid sm:grid-cols-12 gap-4 mt-5">
       <div class="col-span-5">
-        <div class="relative max-w-[440px] h-32">
+        <div class="relative sm:max-w-[440px] sm:h-32 h-20">
           <div
-            class="h-32 w-full absolute bg-yellow-600 top-0 left-0 opacity-75"
+            class="sm:h-32 h-20 w-full absolute bg-yellow-600 top-0 left-0 opacity-75"
           ></div>
           <img
-            class="h-32 object-fill absolute top-0 left-0 opacity-40"
+            class="sm:h-32 h-20 object-fill absolute top-0 left-0 opacity-40"
             alt=""
             src={item?.banner}
           />
           <div
-            class="absolute h-32 px-2 flex items-center justify-between font-bold text-2xl text-white w-full"
+            class="absolute sm:h-32 h-20 px-2 flex items-center justify-between font-bold text-2xl text-white w-full"
           >
             <p class="tit">{item?.category}</p>
-            <div class="flex items-center text-xl">
+            <div class="flex items-center sm:text-xl text-base">
               <a href={`/${item.url}`}>XEM THÊM</a>
               <img src="/images/arrow-right-white.png" alt="best 1" />
             </div>

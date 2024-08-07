@@ -7,7 +7,6 @@
     BarsOutline,
   } from "flowbite-svelte-icons";
   import { Drawer, Button, CloseButton } from "flowbite-svelte";
-  import { InfoCircleSolid, ArrowRightOutline } from "flowbite-svelte-icons";
   import { sineIn } from "svelte/easing";
   let hidden1 = true;
   let transitionParams = {
@@ -17,47 +16,83 @@
   };
 </script>
 
-<div class="grid grid-cols-12 w-full border-b border-black pb-4">
-  <div class="col-span-1 flex items-start justify-start sm:hidden">
-    <Button class="p-0" on:click={() => (hidden1 = false)}>
-      <BarsOutline class="w-9 h-9 mx-auto text-gray-600" />
-    </Button>
-  </div>
-  <div class="col-span-4 items-center gap-10 text-xl hidden sm:flex">
-    <a href="/">Đặt Hàng/Báo giá</a>
-    <a href="/">Chính sách</a>
-  </div>
-  <div class="sm:col-span-4 col-span-10 flex justify-center">
-    <div>
-      <img
-        class="logo-header"
-        src="/images/logo-header.png"
-        alt="logo header"
-      />
-      <p class="info-company">M.0902 547 808 - E-mail.cupvietvn@gmail.com</p>
+<div class="sm:relative fixed top-0 bg-white z-[49]">
+  <div class="grid grid-cols-12 w-full sm:border-b border-black pb-4">
+    <div class="col-span-1 flex items-start my-auto justify-start sm:hidden">
+      <Button class="p-0" on:click={() => (hidden1 = false)}>
+        <BarsOutline class="w-9 h-9 mx-auto text-gray-600" />
+      </Button>
+    </div>
+    <div class="col-span-4 items-center gap-10 text-xl hidden sm:flex">
+      <a href="/">Đặt Hàng/Báo giá</a>
+      <a href="/">Chính sách</a>
+    </div>
+    <div class="sm:col-span-4 col-span-10 flex justify-center currsor-pointer">
+      <a href="/">
+        <img
+          class="logo-header"
+          src="/images/logo-header.png"
+          alt="logo header"
+        />
+        <p class="info-company sm:block hidden">
+          M.0902 547 808 - E-mail.cupvietvn@gmail.com
+        </p>
+      </a>
+    </div>
+    <div
+      class="col-span-4 container__right gap-2 items-center justify-end hidden sm:flex"
+    >
+      <ul>
+        <li>
+          <UserOutline class="w-10 h-10 mx-auto text-gray-600" />
+          <a href="/">Đăng Nhập</a>
+        </li>
+        <li>
+          <StoreOutline class="w-10 h-10 mx-auto text-gray-600" />
+          <a href="/">Cửa Hàng</a>
+        </li>
+        <li>
+          <PhoneOutline class="w-10 h-10 mx-auto text-gray-600" />
+          <a href="/">Liên Hệ</a>
+        </li>
+        <!-- <li>
+          <CartOutline class="w-10 h-10 mx-auto text-gray-600" />
+          <a href="/">Giỏ Hàng</a>
+        </li> -->
+      </ul>
     </div>
   </div>
-  <div
-    class="col-span-4 container__right gap-2 items-center justify-end hidden sm:flex"
-  >
-    <ul>
-      <li>
-        <UserOutline class="w-10 h-10 mx-auto text-gray-600" />
-        <a href="/">Đăng Nhập</a>
-      </li>
-      <li>
-        <StoreOutline class="w-10 h-10 mx-auto text-gray-600" />
-        <a href="/">Cửa Hàng</a>
-      </li>
-      <li>
-        <PhoneOutline class="w-10 h-10 mx-auto text-gray-600" />
-        <a href="/">Liên Hệ</a>
-      </li>
-      <!-- <li>
-        <CartOutline class="w-10 h-10 mx-auto text-gray-600" />
-        <a href="/">Giỏ Hàng</a>
-      </li> -->
-    </ul>
+  <div class="flex justify-between px-4 pb-5 sm:hidden">
+    <div class="text-center w-16">
+      <a href="/category/italia">
+        <img src="/category_05.png" alt="logo header" class="w-16 h-16" />
+      </a>
+      <p class="text-xs uppercase">Cúp Italia</p>
+    </div>
+    <div class="text-center w-16">
+      <a href="/category/taybannha">
+        <img src="/category_02.png" alt="logo header" class="w-16 h-16" />
+      </a>
+      <p class="text-xs uppercase">Cúp Tây Ban Nha</p>
+    </div>
+    <div class="text-center w-16">
+      <a href="/category/italia">
+        <img src="/category_04.png" alt="logo header" class="w-16 h-16" />
+      </a>
+      <p class="text-xs uppercase">Cúp SU</p>
+    </div>
+    <div class="text-center w-16">
+      <a href="/category/italia">
+        <img src="/category_03.png" alt="logo header" class="w-16 h-16" />
+      </a>
+      <p class="text-xs uppercase">Cúp PEWTER</p>
+    </div>
+    <div class="text-center w-16">
+      <a href="/category/italia">
+        <img src="/category_01.png" alt="logo header" class="w-16 h-16" />
+      </a>
+      <p class="text-xs uppercase">Cúp NICKEL</p>
+    </div>
   </div>
 </div>
 
@@ -82,12 +117,19 @@
       <ul class="scroll_menu1 text-white font-medium">
         <li>
           <div class="header-re"></div>
-          <a href="/category/italia" class="uppercase">Cúp Italia</a>
+          <a
+            href="/category/italia"
+            on:click={() => (hidden1 = true)}
+            class="uppercase">Cúp Italia</a
+          >
         </li>
         <li>
           <div class="header-re"></div>
-          <a href="/category/taybannha" class="uppercase" style=""
-            >Cúp tây ban nha</a
+          <a
+            href="/category/taybannha"
+            on:click={() => (hidden1 = true)}
+            class="uppercase"
+            style="">Cúp tây ban nha</a
           >
         </li>
         <ul
@@ -100,6 +142,15 @@
 </Drawer>
 
 <style lang="scss">
+  $mobile-width: 480px;
+  $tablet-width: 768px;
+  $desktop-width: 1024px;
+
+  @mixin mobile {
+    @media (max-width: #{$mobile-width - 1px}) {
+      @content;
+    }
+  }
   .container {
     display: flex;
     justify-content: space-between;
@@ -108,32 +159,39 @@
     padding-bottom: 10px;
     border-bottom: 1px solid black;
     line-height: 150px;
-  }
-  .container__right {
-    ul {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      li {
-        text-align: center;
+    &__right {
+      ul {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+          text-align: center;
+        }
       }
     }
+    &__logo {
+      display: flex;
+      text-align: center;
+      line-height: 18px;
+    }
   }
-  .container__logo {
-    display: flex;
-    text-align: center;
-    line-height: 18px;
-  }
+
   .logo-header {
     width: 300px;
+    @include mobile {
+      width: 200px;
+    }
   }
   .info-company {
     margin-top: 0;
     text-align: center;
     font-size: 0.75rem;
     font-weight: bold;
+    @include mobile {
+      font-size: 0.5rem;
+    }
   }
   a,
   a:hover,

@@ -285,7 +285,7 @@
   ];
 </script>
 
-<div class="w-full text-center">
+<div class="w-full text-center mt-10">
   <p
     class="sm:text-5xl text-3xl sm:mt-0 mt-10 font-extrabold uppercase text-yellow-400"
   >

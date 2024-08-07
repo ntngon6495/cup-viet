@@ -43,13 +43,14 @@
         <div class="bg-gray-50 py-2 px-4 rounded-md">
           <p class="uppercase font-bold sm:text-base text-sm mb-1">follow us</p>
           <div class="h-[6 0px] w-full flex justify-between items-center">
-            <img src="/images/ic-facebook.png" class="w-10 h-10" />
-            <img src="images/ic-zalo.png" class="w-9 h-9" />
-            <img src="images/ic-youtube.png" class="w-9 h-9" />
-            <img src="images/ic-tiktok.png" class="w-9 h-9" />
+            <img alt="" src="/images/ic-facebook.png" class="w-10 h-10" />
+            <img alt="" src="images/ic-zalo.png" class="w-9 h-9" />
+            <img alt="" src="images/ic-youtube.png" class="w-9 h-9" />
+            <img alt="" src="images/ic-tiktok.png" class="w-9 h-9" />
           </div>
         </div>
         <img
+          alt=""
           class="sm:w-[200px] w-[150px] mx-auto"
           src="/logo-bo-cong-thuong.png"
         />
@@ -58,13 +59,13 @@
   </div>
   <div class="w-full border-b-2">
     <div class="bg-slate-500 w-[60%]">
-      <img src="/images/card-list.png" />
+      <img alt="" src="/images/card-list.png" />
     </div>
   </div>
   <div class="footer-bottom sm:flex sm:gap-4 w-full">
     <div class="footer-logo sm:w-1/2 sm:mb-0 mb-10">
       <img
-        class="sm:max-w-[450px] sm:max-h-[150px] max-h-[120px] max-w-[280px] mx-auto"
+        class="sm:max-w-[450px] sm:max-h-[200px] max-h-[120px] max-w-[280px] sm:mx-0 mx-auto"
         src="/images/logo-header.png"
         alt="logo footer"
       />

@@ -69,10 +69,14 @@
       <span class="hot_seller_menu"><span>CÚP KIM LOẠI PREMIUM</span></span>
     </div>
     <div class="hot_seller_title">
-      <span class="hot_seller_menu"><span>CÚP KIM LOẠI ITALIA</span></span>
+      <a href="/category/italia" class="hot_seller_menu"
+        ><span>CÚP KIM LOẠI ITALIA</span></a
+      >
     </div>
     <div class="hot_seller_title">
-      <span class="hot_seller_menu"><span>CÚP KIM LOẠI TÂY BAN NHA</span></span>
+      <a href="/category/taybannha" class="hot_seller_menu"
+        ><span>CÚP KIM LOẠI TÂY BAN NHA</span></a
+      >
     </div>
     <div class="hot_seller_title">
       <span class="hot_seller_menu"><span>CÚP ẤN ĐỘ</span></span>
@@ -124,6 +128,13 @@
 </div>
 
 <style lang="scss">
+  $mobile-width: 480px;
+
+  @mixin mobile {
+    @media (max-width: #{$mobile-width - 1px}) {
+      @content;
+    }
+  }
   .section {
     height: 100%;
     gap: 1.5rem;
@@ -139,6 +150,10 @@
     line-height: 1.3;
     color: #d6b80e;
     line-height: 40px;
+    @include mobile {
+      font-size: 24px;
+      line-height: 20px;
+    }
   }
   .hot_seller {
     text-align: center;
