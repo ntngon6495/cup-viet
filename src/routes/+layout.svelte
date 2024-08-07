@@ -19,10 +19,10 @@
 <div class:disable={unable}>
   <div class="fixed z-[100] top-0 bg-white w-full h-svh opacity-50"></div>
   <div
-    class="fixed z-[101] top-0 container mx-auto flex justify-center items-center h-full"
+    class="fixed z-[101] top-0 image_baotri w-screen h-screen"
     on:click={() => (unable = true)}
   >
-    <img src="/bao_tri.jpg" alt="loading" />
+    <img src="/bao_tri.jpg" alt="loading" class="mx-auto" />
   </div>
 </div>
 
@@ -32,5 +32,9 @@
   }
   .disable {
     display: none;
+  }
+  .image_baotri {
+    left: 50%;
+    transform: translate(-50%, 0);
   }
 </style>
