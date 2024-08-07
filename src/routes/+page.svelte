@@ -1,30 +1,10 @@
 <script>
-  let src = "./bao_tri.jpg";
-  let name = "Bao tri he thong";
+  import ProductHot from "$lib/components/home/ProductHot.svelte";
+  import Category from "$lib/components/category/Category.svelte";
 </script>
 
-<div class="container">
-  <!-- <ProductHot /> -->
-  <img {src} alt={name} />
+<div class="">
+  <ProductHot />
+  <Category />
+  <slot />
 </div>
-
-<style lang="scss">
-  .container {
-    display: flex;
-    width: 100%;
-    height: auto;
-    justify-content: center;
-  }
-  img {
-    /* width: 1024px;
-    height: 768px; */
-    max-width: 100%;
-    max-height: 100vh;
-  }
-  @media only screen and (max-width: 600px) {
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
-</style>
