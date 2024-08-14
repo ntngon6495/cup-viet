@@ -2,12 +2,12 @@
   export let productsHot = [
     {
       id: 1,
-      name: "Cúp kim loại",
+      name: "Cúp kim loại cao cấp",
       image: "/images/category/itali/CIT_415.png",
       price: 230000,
       discount: 68,
       sold: 210,
-      code: "BS0 0317",
+      code: "BS0_0317",
     },
     {
       id: 2,
@@ -16,7 +16,7 @@
       price: 390000,
       discount: 56,
       sold: 84,
-      code: "TD9 0201",
+      code: "TD9_0201",
     },
     {
       id: 3,
@@ -25,7 +25,7 @@
       price: 230000,
       discount: 54,
       sold: 48,
-      code: "TD8 0726",
+      code: "TD8_0726",
     },
     {
       id: 4,
@@ -34,25 +34,25 @@
       price: 88000,
       discount: 56,
       sold: 43,
-      code: "CD7 0711",
+      code: "CD7_0711",
     },
     {
       id: 5,
-      name: "Cúp ấn độ",
+      name: "Cúp kim loại cao cấp",
       image: "/images/category/taybannha/CSP_23-102E.png",
       price: 230000,
       discount: 54,
       sold: 35,
-      code: "BD3 0783",
+      code: "BD3_0783",
     },
     {
       id: 6,
-      name: "Cúp ấn độ",
+      name: "Cúp kim loại cao cấp",
       image: "/images/category/taybannha/CSP_23-2301-Gold.png",
       price: 240000,
       discount: 52,
       sold: 28,
-      code: "BD3 0782",
+      code: "BD3_0782",
     },
   ];
 </script>
@@ -204,6 +204,7 @@
 
   .good_seller_img {
     border-radius: 50%;
+    background-color: rgb(214, 214, 214);
   }
 
   .good_seller .best-badge {
