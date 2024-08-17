@@ -4,6 +4,7 @@
   import TopNav from "$lib/components/TopNav.svelte";
   import Footer from "$lib/components/Footer.svelte";
   import Slide from "$lib/components/slideShow/Slide.svelte";
+  import CategoryVertical from "../lib/components/CategoryVertical.svelte";
   let unable = false;
 </script>
 
@@ -15,6 +16,7 @@
   </div>
   <slot />
   <Footer />
+  <CategoryVertical />
 </div>
 <div class:disable={unable}>
   <div class="fixed z-[100] top-0 bg-white w-full h-svh opacity-50"></div>
@@ -29,6 +31,7 @@
 <style lang="css">
   .container {
     max-width: 1200px;
+    position: relative;
   }
   .disable {
     display: none;

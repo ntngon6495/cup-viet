@@ -292,7 +292,7 @@
     Cúp Italia
   </p>
   <div class="sm:grid sm:grid-cols-12 gap-4 mt-10">
-    <div class="col-span-6 relative bg-slate-50 rounded-sm">
+    <div class="col-span-6 relative bg-gray-100 rounded-sm">
       <div
         class="absolute sm:w-16 sm:h-16 h-12 w-12 sm:p-2 bg-red-500 text-white sm:font-semibold rounded-sm"
       >
@@ -307,7 +307,7 @@
     </div>
     <div class="col-span-6 sm:mt-0 mt-10">
       <div class="grid grid-cols-12 gap-4">
-        <div class="relative col-span-6 bg-slate-50 rounded-sm">
+        <div class="relative col-span-6 bg-gray-100 rounded-sm">
           <div
             class="absolute sm:w-12 sm:h-12 h-10 w-10 p-2 bg-red-500 text-white sm:font-semibold rounded-sm"
           >
@@ -319,7 +319,7 @@
             alt=""
           />
         </div>
-        <div class="relative col-span-6 bg-slate-50 rounded-sm">
+        <div class="relative col-span-6 bg-gray-100 rounded-sm">
           <div
             class="absolute sm:w-12 sm:h-12 h-10 w-10 p-2 bg-red-500 text-white sm:font-semibold rounded-sm"
           >
@@ -331,7 +331,7 @@
             alt=""
           />
         </div>
-        <div class="relative col-span-6 bg-slate-50 rounded-sm">
+        <div class="relative col-span-6 bg-gray-100 rounded-sm">
           <div
             class="absolute sm:w-12 sm:h-12 h-10 w-10 p-2 bg-red-500 text-white sm:font-semibold rounded-sm"
           >
@@ -343,7 +343,7 @@
             alt=""
           />
         </div>
-        <div class="relative col-span-6 bg-slate-50 rounded-sm">
+        <div class="relative col-span-6 bg-gray-100 rounded-sm">
           <div
             class="absolute sm:w-12 sm:h-12 h-10 w-10 p-2 bg-red-500 text-white sm:font-semibold rounded-sm"
           >
@@ -362,11 +362,22 @@
   <div class="grid grid-cols-12 sm:gap-5 mt-20">
     {#each data as item}
       <div
-        class="sm:col-span-4 col-span-6 text-center sm:max-w-[400px] max-w-[200px]"
+        class="sm:col-span-4 col-span-6 sm:max-w-[400px] max-w-[200px]"
       >
-        <img src={item.image} class="sm:max-w-[400px] max-w-[200px]" alt="" />
-        <p class="sm:text-2xl text-sm px-10 sm:px-0 min-h-[60px]">
-          {item.name}
+        <img src={item.image} class="sm:max-w-[400px] max-w-[200px] bg-gray-100" alt="" />
+        <div class="sm:text-2xl text-sm sm:px-0 flex w-full gap-2 justify-center">
+          {item.code}
+          <div class="flex text-center gap-0.5 border px-1 mt-1 rounded h-6">
+            <p class="text-[14px] leading-6">5.0/5.0</p>
+            <img
+              src="/icon-star-48.png"
+              class="w-3 h-3 mt-1"
+              alt="icon start"
+            />
+          </div>
+        </div>
+        <p class="sm:text-2xl text-sm sm:px-0">
+          Cúp kim loại cao cấp
         </p>
         <div class="sm:px-10 py-2 text-slate-600 sm:text-base text-xs">
           <p class="border-t-[1px] py-2">

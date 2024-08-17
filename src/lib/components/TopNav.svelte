@@ -34,11 +34,11 @@
   <div class="flex justify-between w-full mx-5">
     {#each listIcon as { icon, alt }}
       <a href="/">
-        <img class="logo-header" src={icon} alt={alt} />
+        <img class="logo-header category_img" src={icon} alt={alt} />
       </a>
     {/each}
   </div>
-  <form class='w-[300px] mt-2'>
+  <form class='w-[300px] mt-3'>
     <div class="col-xs-2 search-wrap" style="float:right;">
       <input
         type="text"
@@ -56,6 +56,7 @@
   .top-nav {
     padding: 10px 80px;
     background: #ffe100;
+    opacity: 0.9;
     justify-content: space-between;
     margin-bottom: 10px;
   }
@@ -81,5 +82,9 @@
   }
   .logo-header {
     width: 80px;
+  }
+  .category_img:hover {
+    transition: 0.3s;
+    transform: scale(1.2);
   }
 </style>

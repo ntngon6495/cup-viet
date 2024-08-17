@@ -20,7 +20,7 @@
   ];
 </script>
 
-<div class="w-full">
+<div class="w-full sm:mt-0 mt-[65px]">
   <Carousel {images} duration="3000" let:Controls>
      <a slot="slide" href="/" target="_blank" let:Slide let:index>
       <Slide image={images[index]} />

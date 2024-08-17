@@ -158,7 +158,7 @@
 </script>
 
 <div>
-  <div class="title" style="text-align:center; color: #d6b80e">
+  <div class="title text-lg font-bold" style="text-align:center; color: #d6b80e">
     <h2>XẾP HẠNG DANH MỤC THEO MỨC ĐỘ PHỔ BIẾN</h2>
   </div>
   {#each productList as item, idx}
@@ -251,7 +251,7 @@
                 {product?.name}
               </div>
               <p class="text-[10px] text-gray-400 font-normal">
-                Vận chuyển toàn quốc | Miễn phí <br/>Vận chuyển trong Hồ Chí Minh
+                Vận chuyển toàn quốc<br/> Miễn phí vận chuyển trong Hồ Chí Minh
               </p>
               <!-- <strike>{product?.price} VNĐ</strike>
                   <span class="price-dc"
