@@ -5,13 +5,13 @@
     {
       alt: "Cosmic timetraveler",
       src: "/images/category/itali/BANNER-1-01.jpg",
-      title: "cupviet.com",
+      title: "cupviet.com"
     },
     {
       alt: "Cosmic timetraveler",
       src: "/images/category/taybannha/BANNER-2-01.jpg",
-      title: "cupviet.com",
-    },
+      title: "cupviet.com"
+    }
   ];
   export let productList = [
     {
@@ -26,7 +26,7 @@
           price: 390000,
           price_discount: 278000,
           discount: 57,
-          image: "/images/category/itali/CIT_415.png",
+          image: "/images/category/itali/CIT_415.png"
         },
         {
           id: 2,
@@ -35,7 +35,7 @@
           price: 760000,
           price_discount: 240000,
           discount: 68,
-          image: "/images/category/itali/CIT_2312-3REV01.png",
+          image: "/images/category/itali/CIT_2312-3REV01.png"
         },
         {
           id: 3,
@@ -44,7 +44,7 @@
           price: 230000,
           price_discount: 106000,
           discount: 54,
-          image: "/images/category/itali/CIT_2312.png",
+          image: "/images/category/itali/CIT_2312.png"
         },
         {
           id: 4,
@@ -53,7 +53,7 @@
           price: 230000,
           price_discount: 106000,
           discount: 54,
-          image: "/images/category/itali/CIT_2312N.png",
+          image: "/images/category/itali/CIT_2312N.png"
         },
         {
           id: 5,
@@ -62,7 +62,7 @@
           price: 88000,
           price_discount: 39000,
           discount: 56,
-          image: "/images/category/itali/CIT_2355.png",
+          image: "/images/category/itali/CIT_2355.png"
         },
         {
           id: 6,
@@ -71,7 +71,7 @@
           price: 440000,
           price_discount: 160000,
           discount: 64,
-          image: "/images/category/itali/CIT_2363.png",
+          image: "/images/category/itali/CIT_2363.png"
         },
         {
           id: 7,
@@ -80,9 +80,9 @@
           price: 230000,
           price_discount: 150000,
           discount: 54,
-          image: "/images/category/itali/CIT_2367.png",
-        },
-      ],
+          image: "/images/category/itali/CIT_2367.png"
+        }
+      ]
     },
     {
       category: "CÚP TÂY BAN NHA",
@@ -96,7 +96,7 @@
           price: 390000,
           price_discount: 278000,
           discount: 57,
-          image: "/images/category/taybannha/CSP_23-102E.png",
+          image: "/images/category/taybannha/CSP_23-102E.png"
         },
         {
           id: 2,
@@ -105,7 +105,7 @@
           price: 240000,
           price_discount: 160000,
           discount: 68,
-          image: "/images/category/taybannha/CSP_23-102EN.png",
+          image: "/images/category/taybannha/CSP_23-102EN.png"
         },
         {
           id: 3,
@@ -114,7 +114,7 @@
           price: 230000,
           price_discount: 106000,
           discount: 54,
-          image: "/images/category/taybannha/CSP_23-126E-GOLD.png",
+          image: "/images/category/taybannha/CSP_23-126E-GOLD.png"
         },
         {
           id: 4,
@@ -123,7 +123,7 @@
           price: 230000,
           price_discount: 106000,
           discount: 54,
-          image: "/images/category/taybannha/CSP_23-126EN-GOLD.png",
+          image: "/images/category/taybannha/CSP_23-126EN-GOLD.png"
         },
         {
           id: 5,
@@ -132,7 +132,7 @@
           price: 88000,
           price_discount: 39000,
           discount: 56,
-          image: "/images/category/taybannha/CSP_23-2301-Gold.png",
+          image: "/images/category/taybannha/CSP_23-2301-Gold.png"
         },
         {
           id: 6,
@@ -141,7 +141,7 @@
           price: 440000,
           price_discount: 160000,
           discount: 64,
-          image: "/images/category/taybannha/CSP_23-2301N-Gold.png",
+          image: "/images/category/taybannha/CSP_23-2301N-Gold.png"
         },
         {
           id: 7,
@@ -150,15 +150,15 @@
           price: 230000,
           price_discount: 150000,
           discount: 54,
-          image: "/images/category/taybannha/CSP_54-2471.png",
-        },
-      ],
-    },
+          image: "/images/category/taybannha/CSP_54-2471.png"
+        }
+      ]
+    }
   ];
 </script>
 
 <div>
-  <div class="title" style="text-align:center; color: #d6b80e">
+  <div class="title text-lg font-bold" style="text-align:center; color: #d6b80e">
     <h2>XẾP HẠNG DANH MỤC THEO MỨC ĐỘ PHỔ BIẾN</h2>
   </div>
   {#each productList as item, idx}
@@ -190,17 +190,26 @@
               alt="top 1"
               data-srcset="/images/product/7.png"
               srcset={item.products[0]?.image}
-              class="w-[440px] h-[440px] ls-is-cached lazyloaded"
+              class="w-[440px] h-[440px] ls-is-cached lazyloaded bg-gray-100"
             />
           </li>
         </ul>
         <ul class="big_goods_infos">
-          <li class="goodsnm" style="cursor:pointer;">
-            <span class="goodscd">{item.products[0]?.code}</span>
-            <span>- {item.products[0]?.name}</span>
+          <li class="goodsnm !mb-0" style="cursor:pointer;">
+            <span class="goodscd flex w-full gap-2 items-center">{item.products[0]?.code} 
+              <div class="flex gap-1 border px-1 rounded items-center">
+                <p class="font-normal text-base">5.0/5.0</p>
+                <img
+                  src="/icon-star-48.png"
+                  class="w-5 h-5 mb-1"
+                  alt="icon start"
+                />
+              </div>
+            </span>
+            <span>{item.products[0]?.name}</span>
           </li>
           <li class="price">
-            <a class="hover:text-yellow-600" href="/">Xin liên hệ...</a>
+            <p class="font-normal text-sm text-gray-600" href="/"> Vận chuyển toàn quốc | Miễn phí <br/>Vận chuyển trong Hồ Chí Minh</p>
             <!-- <strike class="consumer">{item.products[0]?.price} VNĐ</strike
                     >
                     <span class="price-dc"
@@ -224,14 +233,26 @@
                   alt=""
                   title=""
                   src={product?.image}
-                  class="sm:h-[220px] sm:w-[220px] w-[180px] ls-is-cached lazyloaded"
+                  class="sm:h-[220px] sm:w-[220px] w-[180px] ls-is-cached lazyloaded bg-gray-100"
                 />
               </span>
-              <div class="goodscd">{product?.code}</div>
-              <div class="goodsnm">
+              <div class="text-lg flex w-full gap-2 mt-0.5">
+                {product?.code}
+                <div class="flex text-center gap-0.5 border px-1 rounded h-6">
+                  <p class="text-[14px] leading-6">5.0/5.0</p>
+                  <img
+                    src="/icon-star-48.png"
+                    class="w-3 h-3 mt-1"
+                    alt="icon start"
+                  />
+                </div>
+              </div>
+              <div class="text-lg font-medium !mt-0">
                 {product?.name}
               </div>
-              <a class="hover:text-yellow-600" href="/">Xin liên hệ...</a>
+              <p class="text-[10px] text-gray-400 font-normal">
+                Vận chuyển toàn quốc<br/> Miễn phí vận chuyển trong Hồ Chí Minh
+              </p>
               <!-- <strike>{product?.price} VNĐ</strike>
                   <span class="price-dc"
                     >{product?.discount}%<img
@@ -379,7 +400,7 @@
   }
 
   .big_goods_infos .goodsnm {
-    font-size: 16px;
+    font-size: 24px;
     letter-spacing: -0.48px;
     color: #1b1b1b;
     margin-bottom: 14px;
@@ -470,11 +491,6 @@
     font-size: 7px;
     font-weight: 500;
     display: inline-block;
-  }
-
-  .small_right_goods_list .small_goods_infos .goodscd {
-    font-size: 15px;
-    margin-top: 12px;
   }
 
   .small_right_goods_list .small_goods_infos .goodsnm {

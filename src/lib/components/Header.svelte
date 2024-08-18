@@ -16,7 +16,7 @@
   };
 </script>
 
-<div class="sm:relative fixed top-0 bg-white z-[49]">
+<div class="sm:relative fixed top-0 left-0 bg-white z-[49]">
   <div class="grid grid-cols-12 w-full sm:border-b border-black pb-4">
     <div class="col-span-1 flex items-start my-auto justify-start sm:hidden">
       <Button class="p-0" on:click={() => (hidden1 = false)}>
@@ -34,9 +34,6 @@
           src="/images/logo-header.png"
           alt="logo header"
         />
-        <p class="info-company sm:block hidden">
-          M.0902 547 808 - E-mail.cupvietvn@gmail.com
-        </p>
       </a>
     </div>
     <div
@@ -62,36 +59,41 @@
       </ul>
     </div>
   </div>
-  <div class="flex justify-between px-4 pb-5 sm:hidden">
+  <div class="flex flex-wrap justify-left gap-1 py-2 px-5 pb-5 sm:hidden bg-orange-50">
     <div class="text-center w-16">
       <a href="/category/italia">
-        <img src="/category_05.png" alt="logo header" class="w-16 h-16" />
+        <img src="/icon/CUPVODICH.png" alt="logo header" class="w-16 h-16" />
       </a>
-      <p class="text-xs uppercase">Cúp Italia</p>
     </div>
     <div class="text-center w-16">
       <a href="/category/taybannha">
-        <img src="/category_02.png" alt="logo header" class="w-16 h-16" />
+        <img src="/icon/CUPEAGEL.png" alt="logo header" class="w-16 h-16" />
       </a>
-      <p class="text-xs uppercase">Cúp Tây Ban Nha</p>
     </div>
     <div class="text-center w-16">
       <a href="/category/italia">
-        <img src="/category_04.png" alt="logo header" class="w-16 h-16" />
+        <img src="/icon/CUPGOLF.png" alt="logo header" class="w-16 h-16" />
       </a>
-      <p class="text-xs uppercase">Cúp SU</p>
     </div>
     <div class="text-center w-16">
       <a href="/category/italia">
-        <img src="/category_03.png" alt="logo header" class="w-16 h-16" />
+        <img src="/icon/CUPKYTHUAT.png" alt="logo header" class="w-16 h-16" />
       </a>
-      <p class="text-xs uppercase">Cúp PEWTER</p>
     </div>
     <div class="text-center w-16">
       <a href="/category/italia">
-        <img src="/category_01.png" alt="logo header" class="w-16 h-16" />
+        <img src="/icon/QUATANG.png" alt="logo header" class="w-16 h-16" />
       </a>
-      <p class="text-xs uppercase">Cúp NICKEL</p>
+    </div>
+    <div class="text-center w-16">
+      <a href="/category/italia">
+        <img src="/icon/HUYCHUONG.png" alt="logo header" class="w-16 h-16" />
+      </a>
+    </div>
+    <div class="text-center w-16">
+      <a href="/category/italia">
+        <img src="/icon/KINIEMCHUONG.png" alt="logo header" class="w-16 h-16" />
+      </a>
     </div>
   </div>
 </div>

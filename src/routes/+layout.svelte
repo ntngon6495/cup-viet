@@ -4,17 +4,28 @@
   import TopNav from "$lib/components/TopNav.svelte";
   import Footer from "$lib/components/Footer.svelte";
   import Slide from "$lib/components/slideShow/Slide.svelte";
+  import CategoryVertical from "../lib/components/CategoryVertical.svelte";
+  import { page } from '$app/stores';
   let unable = false;
+  $: console.log($page);
+
+  let disableComponent = false;
+  $: if ($page.route.id === '/category/detail/[id]') {
+    disableComponent = true;
+  } else {
+    disableComponent = false;
+  }
 </script>
 
 <div class="container mx-auto sm:p-0 px-2 sm:pt-0 pt-[225px]">
   <Header />
   <TopNav />
-  <div>
+  <div class:disable={disableComponent} >
     <Slide class="block" />
   </div>
   <slot />
   <Footer />
+  <CategoryVertical />
 </div>
 <div class:disable={unable}>
   <div class="fixed z-[100] top-0 bg-white w-full h-svh opacity-50"></div>
@@ -29,6 +40,7 @@
 <style lang="css">
   .container {
     max-width: 1200px;
+    position: relative;
   }
   .disable {
     display: none;
