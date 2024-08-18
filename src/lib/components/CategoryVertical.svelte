@@ -56,7 +56,7 @@
 <style lang="scss">
   .category {
     display: block;
-    top: 700px;
+    top: 150px;
     position: fixed;
     z-index: 99;
     margin-left: -100px;
