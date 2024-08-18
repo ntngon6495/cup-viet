@@ -3,30 +3,37 @@
     {
       icon: "/icon/CUPVODICH.png",
       alt: "CUPVODICH",
+      url: "/",
     },
     {
       icon: "/icon/CUPEAGEL.png",
       alt: "CUPEAGEL",
+      url: "/",
     },
     {
       icon: "/icon/CUPGOLF.png",
       alt: "CUPGOLF",
+      url: "/",
     },
     {
       icon: "/icon/CUPKYTHUAT.png",
       alt: "CUPKYTHUAT",
+      url: "/category/cupkythuat",
     },
     {
       icon: "/icon/QUATANG.png",
       alt: "QUATANG",
+      url: "/",
     },
     {
       icon: "/icon/HUYCHUONG.png",
       alt: "HUYCHUONG",
+      url: "/",
     },
     {
       icon: "/icon/KINIEMCHUONG.png",
       alt: "KINIEMCHUONG",
+      url: "/",
     },
   ];
 </script>
