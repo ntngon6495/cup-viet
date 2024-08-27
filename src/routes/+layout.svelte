@@ -1,30 +1,74 @@
 <script>
   import "../app.css";
+  import { onMount } from "svelte";
   import Header from "$lib/components/Header.svelte";
   import TopNav from "$lib/components/TopNav.svelte";
   import Footer from "$lib/components/Footer.svelte";
   import Slide from "$lib/components/slideShow/Slide.svelte";
-  import CategoryVertical from "../lib/components/CategoryVertical.svelte";
+  import CategoryVertical from "$lib/components/CategoryVertical.svelte";
   import { page } from '$app/stores';
   let unable = false;
-  $: console.log($page);
 
   let disableComponent = false;
-  $: if ($page.route.id === '/category/detail/[id]') {
-    disableComponent = true;
-  } else {
-    disableComponent = false;
+  let disableFooter = false;
+  
+  $: checkRouter($page.route.id) 
+
+  const checkRouter = (url) => {    if (url !== '/') {
+      disableComponent = true;
+    } else {
+      disableComponent = false;
+    }
+    if (url === '/admin/category') {
+      disableFooter = true;
+    } 
   }
+
+  // let upperContainer;
+  let y = 0;
+	// let lastY = 0;
+	// let theater = 0;
+	
+	// onMount(()=> {
+  //   upperContainer.addEventListener('scroll', function(e) {
+  //     console.log('scrolling');
+  //   })
+  // })
+
+  const scrollToTheater = (y) => {
+    console.log("scrolling", y);
+// 		let dy = lastY - y;
+// 	  lastY = y;
+		
+// // 		let bottom = upperContainer.getBoundingClientRect().bottom;
+// // 		alert(bottom);
+
+// 		if (dy < -10) {
+// 			document.body.parentNode.scrollTo({
+// 				top: theater.offsetTop,
+// 				left: 0,
+// 				behavior: 'smooth'
+// 			})
+// 		}
+	}
+
+	$: scrollToTheater(y);
 </script>
 
-<div class="container mx-auto sm:p-0 px-2 sm:pt-0 pt-[225px]">
+<svelte:window bind:scrollY={y} />
+
+<div class="sm:pt-0 pt-[225px]">
   <Header />
   <TopNav />
-  <div class:disable={disableComponent} >
+  <div>
     <Slide class="block" />
   </div>
-  <slot />
-  <Footer />
+  <div class='sm:w-[1200px] mx-auto'>
+    <slot />
+  </div>
+  <div class:disable={disableFooter}>
+    <Footer/>
+  </div>
   <CategoryVertical />
 </div>
 <div class:disable={unable}>
@@ -39,7 +83,7 @@
 
 <style lang="css">
   .container {
-    max-width: 1200px;
+    width: 1200px;
     position: relative;
   }
   .disable {
