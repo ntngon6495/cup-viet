@@ -61,8 +61,10 @@
         method: 'PUT',
         headers: {
             'Content-Type': 'application/octet-stream', // Adjust as needed
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
+            "Access-Control-Allow-Headers": "Content-Type", 
         },
-        body: formData,
     })
       .then((response) => response.json())
       .then((result) => {
