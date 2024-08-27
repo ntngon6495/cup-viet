@@ -59,27 +59,33 @@
 
 <div class="section">
   <div class="hot-seller-main-title">
-    <h3 class="title">SẢN PHẨM ĐANG HOT</h3>
+    <h3 class="title">SẢN PHẨM NỔI BẬT</h3>
   </div>
   <div class="hot_seller">
     <div class="hot_seller_title seller_active">
-      <span class="hot_seller_menu"><span>CÚP KIM LOẠI</span></span>
+      <span class="hot_seller_menu"><span>CÚP VÔ ĐỊCH</span></span>
     </div>
     <div class="hot_seller_title">
-      <span class="hot_seller_menu"><span>CÚP KIM LOẠI PREMIUM</span></span>
+      <span class="hot_seller_menu"><span>CÚP EAGLE</span></span>
     </div>
     <div class="hot_seller_title">
       <a href="/category/italia" class="hot_seller_menu"
-        ><span>CÚP KIM LOẠI ITALIA</span></a
+        ><span>CÚP GOLD</span></a
       >
     </div>
     <div class="hot_seller_title">
       <a href="/category/taybannha" class="hot_seller_menu"
-        ><span>CÚP KIM LOẠI TÂY BAN NHA</span></a
+        ><span>CÚP KĨ THUẬT</span></a
       >
     </div>
     <div class="hot_seller_title">
-      <span class="hot_seller_menu"><span>CÚP ẤN ĐỘ</span></span>
+      <span class="hot_seller_menu"><span>QUÀ TẶNG</span></span>
+    </div>
+    <div class="hot_seller_title">
+      <span class="hot_seller_menu"><span>HUY CHƯƠNG</span></span>
+    </div>
+    <div class="hot_seller_title">
+      <span class="hot_seller_menu"><span>KĨ NIỆM CHƯƠNG</span></span>
     </div>
   </div>
   <div class="good_seller flex flex-wrap">
@@ -101,11 +107,8 @@
             />
           </a>
         </div>
-        <div class=" recommend_l">
-          <p class="seller_count">
-            <span>{product?.sold}</span> mặt hàng đã được mua trong năm qua
-          </p>
-          <p class="product_code" style="overflow: hidden;">{product?.code}</p>
+        <div class=" recommend_l mt-2">
+          <p class="product_code font-bold" style="overflow: hidden;">{product?.code}</p>
           <div class="caption">
             <!-- <p class="price">
               <strike>{product?.price} VNĐ</strike>
@@ -120,10 +123,6 @@
         </div>
       </div>
     {/each}
-  </div>
-  <div class="hot_seller-read-more">
-    <p>xem thêm</p>
-    <!-- <img /> -->
   </div>
 </div>
 
@@ -170,6 +169,11 @@
     cursor: pointer;
   }
 
+  .active {
+    border-bottom: 2px solid #d6b80e;
+    padding-bottom: 6px;
+  }
+
   .hot_seller > .hot_seller_title:not(:last-child) {
     margin-right: 24.5px;
   }
@@ -191,10 +195,6 @@
     opacity: 1 !important;
     border-bottom: 2px solid #d6b80e;
     padding-bottom: 6px;
-  }
-
-  .seller_active .hot_seller_menu span {
-    font-family: "Noto Sans KR";
   }
 
   .good_seller {

@@ -162,7 +162,7 @@
     <h2>XẾP HẠNG DANH MỤC THEO MỨC ĐỘ PHỔ BIẾN</h2>
   </div>
   {#each productList as item, idx}
-    <div class="sm:grid sm:grid-cols-12 gap-4 mt-5">
+    <div class="sm:grid sm:grid-cols-12 gap-4 my-10 pb-10 border-b border-b-gray-200">
       <div class="col-span-5">
         <div class="relative sm:max-w-[440px] sm:h-32 h-20">
           <div
@@ -267,13 +267,12 @@
           {/if}
         {/each}
       </div>
-      {#if idx === 0}
+      {#if idx % 2 !== 0}
         <div
           class="col-span-12 sm:max-w-[1200px] sm:!max-h-[250px] max-h-[100px]"
         >
           <Carousel
-            class="rounded-md"
-            imgClass="sm:max-h-[250px] max-h-[100px]"
+            class="rounded-md sm:max-h-[250px] max-h-[100px]"
             {images}
             duration="3000"
           />
@@ -459,7 +458,7 @@
     font-size: 13px;
     font-weight: 600;
     color: #1b1b1b;
-    text-align: left;
+    text-align: center;
     position: relative;
   }
 
@@ -481,7 +480,7 @@
     z-index: 2;
   }
 
-  .small_right_goods_list:nth-child(n + 4) .best-badge {
+  .small_goods_infos:nth-child(n + 4) > .best-badge {
     background: #d88544;
   }
 

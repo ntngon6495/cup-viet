@@ -1,10 +1,8 @@
 <script>
   import {
-    UserOutline,
-    StoreOutline,
-    CartOutline,
-    PhoneOutline,
     BarsOutline,
+    PhoneOutline,
+    
   } from "flowbite-svelte-icons";
   import { Drawer, Button, CloseButton } from "flowbite-svelte";
   import { sineIn } from "svelte/easing";
@@ -16,84 +14,71 @@
   };
 </script>
 
-<div class="sm:relative fixed top-0 left-0 bg-white z-[49]">
-  <div class="grid grid-cols-12 w-full sm:border-b border-black pb-4">
+<div class="sm:relative fixed top-0 left-0 bg-white z-[49] w-[1200px] mx-auto">
+  <div class="flex justify-between items-center h-8 ">
+    <div class="flex border-b w-[200px] h-8 justify-between">
+      <input
+        type="text"
+        class="text-xs w-full px-1"
+        placeholder="Tìm kiếm sản phẩm..."
+        autocomplete="off"
+      />
+      <img src="/images/ic-search.svg" class="w-5" alt="key search" />
+    </div>
+    <div class="flex gap-2">
+      <p>Hỏi đáp</p>
+      <p>Tin tức</p>
+      <p>Liên hệ</p>
+      <div class='flex gap-1'><PhoneOutline class="w-6 h-6" /><span>0123456789</span></div>
+    </div>
+  </div>
+  <div>
     <div class="col-span-1 flex items-start my-auto justify-start sm:hidden">
       <Button class="p-0" on:click={() => (hidden1 = false)}>
         <BarsOutline class="w-9 h-9 mx-auto text-gray-600" />
       </Button>
     </div>
-    <div class="col-span-4 items-center gap-10 text-xl hidden sm:flex">
-      <a href="/">Đặt Hàng/Báo giá</a>
-      <a href="/">Chính sách</a>
-    </div>
-    <div class="sm:col-span-4 col-span-10 flex justify-center currsor-pointer">
-      <a href="/">
-        <img
-          class="logo-header"
-          src="/images/logo-header.png"
-          alt="logo header"
-        />
-      </a>
-    </div>
-    <div
-      class="col-span-4 container__right gap-2 items-center justify-end hidden sm:flex"
-    >
-      <ul>
-        <li>
-          <UserOutline class="w-10 h-10 mx-auto text-gray-600" />
-          <a href="/">Đăng Nhập</a>
-        </li>
-        <li>
-          <StoreOutline class="w-10 h-10 mx-auto text-gray-600" />
-          <a href="/">Cửa Hàng</a>
-        </li>
-        <li>
-          <PhoneOutline class="w-10 h-10 mx-auto text-gray-600" />
-          <a href="/">Liên Hệ</a>
-        </li>
-        <!-- <li>
-          <CartOutline class="w-10 h-10 mx-auto text-gray-600" />
-          <a href="/">Giỏ Hàng</a>
-        </li> -->
-      </ul>
-    </div>
   </div>
-  <div class="flex flex-wrap justify-left gap-1 py-2 px-5 pb-5 sm:hidden bg-orange-50">
+  <div class="flex justify-between px-4 pb-5 sm:hidden">
     <div class="text-center w-16">
       <a href="/category/italia">
-        <img src="/icon/CUPVODICH.png" alt="logo header" class="w-16 h-16" />
+        <img src="/icon/CUPVODICH-2.png" alt="logo header" class="w-16 h-16" />
       </a>
+      <p class="text-xs uppercase">Cúp Italia</p>
     </div>
     <div class="text-center w-16">
       <a href="/category/taybannha">
-        <img src="/icon/CUPEAGEL.png" alt="logo header" class="w-16 h-16" />
+        <img src="/icon/CUPEAGEL-2.png" alt="logo header" class="w-16 h-16" />
+      </a>
+      <p class="text-xs uppercase">Cúp Tây Ban Nha</p>
+    </div>
+    <div class="text-center w-16">
+      <a href="/category/italia">
+        <img src="/icon/CUPGOLF-2.png" alt="logo header" class="w-16 h-16" />
+      </a>
+      <p class="text-xs uppercase">Cúp SU</p>
+    </div>
+    <div class="text-center w-16">
+      <a href="/category/italia">
+        <img src="/icon/CUPKYTHUAT-2.png" alt="logo header" class="w-16 h-16" />
+      </a>
+      <p class="text-xs uppercase">Cúp PEWTER</p>
+    </div>
+    <div class="text-center w-16">
+      <a href="/category/italia">
+        <img src="/icon/QUATANG-2.png" alt="logo header" class="w-16 h-16" />
       </a>
     </div>
     <div class="text-center w-16">
       <a href="/category/italia">
-        <img src="/icon/CUPGOLF.png" alt="logo header" class="w-16 h-16" />
+        <img src="/icon/HUYCHUONG-2.png" alt="logo header" class="w-16 h-16" />
       </a>
     </div>
     <div class="text-center w-16">
       <a href="/category/italia">
-        <img src="/icon/CUPKYTHUAT.png" alt="logo header" class="w-16 h-16" />
+        <img src="/icon/KINIEMCHUONG-2.png" alt="logo header" class="w-16 h-16" />
       </a>
-    </div>
-    <div class="text-center w-16">
-      <a href="/category/italia">
-        <img src="/icon/QUATANG.png" alt="logo header" class="w-16 h-16" />
-      </a>
-    </div>
-    <div class="text-center w-16">
-      <a href="/category/italia">
-        <img src="/icon/HUYCHUONG.png" alt="logo header" class="w-16 h-16" />
-      </a>
-    </div>
-    <div class="text-center w-16">
-      <a href="/category/italia">
-        <img src="/icon/KINIEMCHUONG.png" alt="logo header" class="w-16 h-16" />
-      </a>
+      <p class="text-xs uppercase">Cúp NICKEL</p>
     </div>
   </div>
 </div>

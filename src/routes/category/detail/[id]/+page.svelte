@@ -29,10 +29,14 @@
                 <Carousel {images} {forward} let:Indicators let:Controls bind:index class='sm:!h-[600px] !h-[200px] flex justify-center' imgClass='sm:!w-[600px] sm:h-[600px] !w-[200px] h-[200px] mx-auto'>
                     <!-- <Indicators /> -->
                 </Carousel>
-                <Thumbnails {images} {forward} bind:index />
+                <!-- <Thumbnails {images} {forward} bind:index /> -->
             </div>
         </div>
         <div class='col-span-6 pl-5 sm:text-lg text-sm'>
+            <div class='ml-4 mb-2 text-2xl font-bold'>
+                <h1 class="uppercase">Cúp kim loại cao cấp</h1>
+                <p class='text-[#fcbd48]'>- CRM_044NEW</p>
+            </div>
             <div class='detail-item'>
                 <p class='title'>Kích cỡ</p>
                 <p class='value'>15*36*13cm</p>
@@ -77,11 +81,11 @@
                 </tr>
         </div>
     </div>
-    <div class='py-20 border-b-2'>
+    <!-- <div class='py-20 border-b-2'>
         {#each images as image}
             <img class='mx-auto bg-gray-100 mt-5 sm:w-[600px] sm:h-[600px] w-[200px] h-[200px]' src={image.src} alt={image.alt} />
         {/each}
-    </div>
+    </div> -->
 </div>
 <style lang='scss'>
     .detail-item {

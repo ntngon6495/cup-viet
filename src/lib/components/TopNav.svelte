@@ -55,7 +55,18 @@
       />
       <img src="/images/ic-search.svg" alt="key search" />
     </div>
-  </form>
+    <!-- <form class='w-[300px] mt-3'>
+      <div class="col-xs-2 search-wrap" style="float:right;">
+        <input
+          type="text"
+          class="input-search py-2 !text-gray-800"
+          placeholder="Tìm kiếm sản phẩm"
+          autocomplete="off"
+        />
+        <img src="/images/ic-search.svg" alt="key search" />
+      </div>
+    </form> -->
+  </div>
 </div>
 
 <style>

@@ -1,4 +1,21 @@
 <script>
+  import { Carousel } from "flowbite-svelte";
+
+  let hidden = true;
+
+  export let images = [
+    {
+      alt: "Cosmic timetraveler",
+      src: "/images/category/itali/BANNER-1-01.jpg",
+      title: "cupviet.com"
+    },
+    {
+      alt: "Cosmic timetraveler",
+      src: "/images/category/taybannha/BANNER-2-01.jpg",
+      title: "cupviet.com"
+    }
+  ];
+
   let data = [
     {
       id: 1,
@@ -287,12 +304,12 @@
 
 <div class="w-full text-center mt-10">
   <p
-    class="sm:text-5xl text-3xl sm:mt-0 mt-10 font-extrabold uppercase text-yellow-400"
+    class="sm:text-5xl text-2xl sm:mt-0 mt-10 font-medium uppercase text-yellow-400"
   >
     Cúp Italia
   </p>
   <div class="sm:grid sm:grid-cols-12 gap-4 mt-10">
-    <div class="col-span-6 relative bg-gray-100 rounded-sm">
+    <div class="col-span-6 relative bg-slate-50 rounded-sm">
       <div
         class="absolute sm:w-16 sm:h-16 h-12 w-12 sm:p-2 bg-red-500 text-white sm:font-semibold rounded-sm"
       >
@@ -300,14 +317,25 @@
         <p>1</p>
       </div>
       <img
+        on:mouseover={() => (hidden = false)}
         src="/images/category/itali/CIT_3275.png"
         class="sm:max-w-[600px] max-w-[400px] mx-auto"
         alt=""
       />
+      {#if !hidden} 
+        <div class="absolute top-0 left-0 h-full w-full bg-black opacity-65 z-50">
+        </div>
+        <div class='absolute top-0 left-0 font-bold w-full h-full z-[52] flex justify-center items-center' on:mouseout={() => (hidden = true)}>
+          <div class="text-white">
+            <p class="font-bold text-2xl">CIT_3275</p><br/>
+            <p>Cúp kim loại cao cấp</p>
+          </div>
+        </div>
+      {/if}
     </div>
     <div class="col-span-6 sm:mt-0 mt-10">
       <div class="grid grid-cols-12 gap-4">
-        <div class="relative col-span-6 bg-gray-100 rounded-sm">
+        <div class="relative col-span-6 bg-slate-50 rounded-sm">
           <div
             class="absolute sm:w-12 sm:h-12 h-10 w-10 p-2 bg-red-500 text-white sm:font-semibold rounded-sm"
           >
@@ -319,7 +347,7 @@
             alt=""
           />
         </div>
-        <div class="relative col-span-6 bg-gray-100 rounded-sm">
+        <div class="relative col-span-6 bg-slate-50 rounded-sm">
           <div
             class="absolute sm:w-12 sm:h-12 h-10 w-10 p-2 bg-red-500 text-white sm:font-semibold rounded-sm"
           >
@@ -331,7 +359,7 @@
             alt=""
           />
         </div>
-        <div class="relative col-span-6 bg-gray-100 rounded-sm">
+        <div class="relative col-span-6 bg-slate-50 rounded-sm">
           <div
             class="absolute sm:w-12 sm:h-12 h-10 w-10 p-2 bg-red-500 text-white sm:font-semibold rounded-sm"
           >
@@ -343,7 +371,7 @@
             alt=""
           />
         </div>
-        <div class="relative col-span-6 bg-gray-100 rounded-sm">
+        <div class="relative col-span-6 bg-slate-50 rounded-sm">
           <div
             class="absolute sm:w-12 sm:h-12 h-10 w-10 p-2 bg-red-500 text-white sm:font-semibold rounded-sm"
           >
@@ -359,32 +387,25 @@
     </div>
   </div>
 
-  <div class="grid grid-cols-12 sm:gap-5 mt-20">
+  <div class="sm:max-w-[1200px] sm:!max-h-[250px] max-h-[100px] my-10">
+      <Carousel
+        class="rounded-md sm:max-h-[250px] max-h-[100px]"
+        {images}
+        duration="3000"
+      />
+  </div>
+  <div class="grid grid-cols-12 sm:gap-5">
     {#each data as item}
       <div
-        class="sm:col-span-4 col-span-6 sm:max-w-[400px] max-w-[200px]"
+        class="sm:col-span-4 col-span-6 text-center sm:max-w-[400px] max-w-[200px]"
       >
         <img src={item.image} class="sm:max-w-[400px] max-w-[200px] bg-gray-100" alt="" />
-        <div class="sm:text-2xl text-sm sm:px-0 flex w-full gap-2 justify-center">
+        <div class="sm:text-2xl text-sm font-bold text-[#fcbd48] sm:px-0 flex w-full gap-2 justify-center">
           {item.code}
-          <div class="flex text-center gap-0.5 border px-1 mt-1 rounded h-6">
-            <p class="text-[14px] leading-6">5.0/5.0</p>
-            <img
-              src="/icon-star-48.png"
-              class="w-3 h-3 mt-1"
-              alt="icon start"
-            />
-          </div>
         </div>
         <p class="sm:text-2xl text-sm sm:px-0">
           Cúp kim loại cao cấp
         </p>
-        <div class="sm:px-10 py-2 text-slate-600 sm:text-base text-xs">
-          <p class="border-t-[1px] py-2">
-            Miễn phí vận chuyển Hồ Chí Minh <br /> 3 ngày sau khi xác nhận thiết
-            kế
-          </p>
-        </div>
         <a class="hover:text-yellow-400 sm:text-base text-sm" href="/"
           >Xin liên hệ...</a
         >
