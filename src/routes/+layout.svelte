@@ -5,6 +5,8 @@
   import TopNav from "$lib/components/TopNav.svelte";
   import Footer from "$lib/components/Footer.svelte";
   import Slide from "$lib/components/slideShow/Slide.svelte";
+  import CategoryVertical from "$lib/components/CategoryVertical.svelte";
+  import { page } from '$app/stores';
   let unable = false;
 
   let disableComponent = false;
@@ -12,8 +14,7 @@
   
   $: checkRouter($page.route.id) 
 
-  const checkRouter = (url) => {
-    if (url !== '/') {
+  const checkRouter = (url) => {    if (url !== '/') {
       disableComponent = true;
     } else {
       disableComponent = false;
