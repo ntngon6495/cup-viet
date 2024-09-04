@@ -1,26 +1,31 @@
-<script>
-    import { Button, Dropzone } from 'flowbite-svelte';
-    
-    let categoryId = '';
-    let productName = '';
-    let productCode = '';
-    let material = '';
-    let color = '';
-    let size = '';
-    let rank = '';
-    let images = '';
-    $: console.log(images);
+<script lang='js'>
+  import { Button, Dropzone } from 'flowbite-svelte';
+  import { base64 } from "@sveu/browser"
+  import '@splidejs/svelte-splide/css';
+  import { onMount } from 'svelte';
+  
+  let disableUpload = false
+  let categoryId = '';
+  let productName = '';
+  let productCode = '';
+  let material = '';
+  let color = '';
+  let size = '';
+  let rank = '';
+  let images = '';
 
-    let value = [];
+  let value = '';
+  onMount(() => {
+    getAllProducts()
+  })
   const dropHandle = (event) => {
-    value = [];
+    value = '';
     event.preventDefault();
     if (event.dataTransfer.items) {
       [...event.dataTransfer.items].forEach((item, i) => {
-        if (item.kind === 'file') {
+        if (item.kind === 'file' && i == 1) {
           const file = item.getAsFile();
-          value.push(file.name);
-          value = value;
+          value = file.name;
         }
       });
     } else {
@@ -30,76 +35,74 @@
     }
   };
 
+  const getAllProducts = async () => {
+    const response = await fetch('https://dgg300bw0j.execute-api.ap-southeast-1.amazonaws.com/dev/products', {
+      method: "GET"
+    })
+
+    const { products } = await response.json()
+    console.log("products", products)
+  }
+
   const handleChange = (event) => {
     const files = event.target.files;
     console.log(files);
-    images = files[0];
     if (files.length > 0) {
-      value.push(files[0].name);
-      value = value;
+      disableUpload = true
+      images = files[0]
+      value = files[0].name;
+    }
+    else {
+      disableUpload = false
+      images = ''
     }
   };
 
-  const showFiles = (files) => {
-    if (files.length === 1) return files[0];
-    let concat = '';
-    files.map((file) => {
-      concat += file;
-      concat += ',';
-      concat += ' ';
-    });
+ 	$: image_result = base64(images)
 
-    if (concat.length > 40) concat = concat.slice(0, 40);
-    concat += '...';
-    return concat;
-  };
-
-  const handleUploadImage = () => {
-    const formData = new FormData();
-    formData.append('file', images);
-    fetch(`https://c5mthdgwr8.execute-api.ap-southeast-1.amazonaws.com/v2/s3?key=cupviet/${images?.name}`, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/octet-stream', // Adjust as needed
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
-            "Access-Control-Allow-Headers": "Content-Type", 
-        },
-    })
-      .then((response) => response.json())
-      .then((result) => {
-        console.log('Success:', result);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+  let imageUrl = ""
+  const handleUploadImage = async () => {
+    console.log("image_result", $image_result)
+    try {
+      const response = await fetch('https://cespre3cgb.execute-api.ap-southeast-1.amazonaws.com/prod/upload-image-s3', {
+          method: 'POST',
+          body: JSON.stringify({"image": $image_result}),
+        });
+      const { s3_url } = await response.json();
+      imageUrl = s3_url;
+      createProduct()
+      return true
+    }
+    catch (error) {
+      console.log(error)
+    }
+  
   }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(categoryId, productName, productCode, material, color, size, rank, images);
-    handleUploadImage(images);
-    // try {
-    //   const response = await fetch('https://dgg300bw0j.execute-api.ap-southeast-1.amazonaws.com/dev/product', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify({"id": productCode,  "category_id": categoryId, "product_name": productName, "product_code": productCode, "material": material, "color": color,"size": size, "rank": rank, image_name: images?.name}),
-    //   });
-
-    //   if (!response.ok) {
-    //     throw new Error('Network response was not ok');
-    //   }
-
-    //   const result = await response.json();
-    //   responseMessage = result.message;
-    //   errorMessage = '';
-    // } catch (error) {
-    //   responseMessage = '';
-    //   errorMessage = error.message;
-    // }
+    handleUploadImage();
+    // setTimeout(() => {
+    //   createProduct()
+    // }, 1000);
   };
+
+  const createProduct = async () => {
+    const response = await fetch('https://dgg300bw0j.execute-api.ap-southeast-1.amazonaws.com/dev/product', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({"id": productCode,  "category_id": categoryId, "product_name": productName, "product_code": productCode, "material": material, "color": color,"size": size, "rank": rank, "image_url": imageUrl}),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const result = await response.json();
+  }
+ 
 </script>
 <div>
     <div class='w-full text-center my-5 text-2xl font-bold uppercase'>
@@ -177,21 +180,24 @@
                     <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
                     <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
                 {:else}
-                    <p>{showFiles(value)}</p>
+                    <p>{value}</p>
                 {/if}
             </Dropzone>
         </div>
         <div class="mb-6">
-            <Button class='bg-orange-400' on:click={handleUploadImage}>Submit</Button>
+            <Button class='bg-orange-400' type="submit">Submit</Button>
         </div>
     </form>
 </div>
 
 <style lang='scss'>
-    .input-styles {
-        border: 1px solid #e5e7eb;
-        padding: 0.5rem 1rem;
-        /* border-radius: 0.375rem; */
-        width: 100%;
-    }
+  .input-styles {
+      border: 1px solid #e5e7eb;
+      padding: 0.5rem 1rem;
+      /* border-radius: 0.375rem; */
+      width: 100%;
+  }
+  .is-next-opacity {
+    opacity: 0.5;
+  }
 </style>

@@ -195,31 +195,11 @@
           </li>
         </ul>
         <ul class="big_goods_infos">
-          <li class="goodsnm !mb-0" style="cursor:pointer;">
-            <span class="goodscd flex w-full gap-2 items-center">{item.products[0]?.code} 
-              <div class="flex gap-1 border px-1 rounded items-center">
-                <p class="font-normal text-base">5.0/5.0</p>
-                <img
-                  src="/icon-star-48.png"
-                  class="w-5 h-5 mb-1"
-                  alt="icon start"
-                />
-              </div>
-            </span>
-            <span>{item.products[0]?.name}</span>
-          </li>
-          <li class="price">
-            <p class="font-normal text-sm text-gray-600" href="/"> Vận chuyển toàn quốc | Miễn phí <br/>Vận chuyển trong Hồ Chí Minh</p>
-            <!-- <strike class="consumer">{item.products[0]?.price} VNĐ</strike
-                    >
-                    <span class="price-dc"
-                      >{item.products[0]?.discount}%<img
-                        src="images/renewal_price_down.png"
-                        alt="best 1"
-                      /></span
-                    >
-                    {item.products[0]?.price_discount} VNĐ<span class="won">
-                    </span> -->
+          <li class="goodsnm text-center !mb-0" style="cursor:pointer;">
+            <p class="goodscd">
+              {item.products[0]?.code} 
+            </p>
+            <p>{item.products[0]?.name}</p>
           </li>
         </ul>
       </div>
@@ -236,33 +216,12 @@
                   class="sm:h-[220px] sm:w-[220px] w-[180px] ls-is-cached lazyloaded bg-gray-100"
                 />
               </span>
-              <div class="text-lg flex w-full gap-2 mt-0.5">
+              <div class="text-lg w-full mt-2">
                 {product?.code}
-                <div class="flex text-center gap-0.5 border px-1 rounded h-6">
-                  <p class="text-[14px] leading-6">5.0/5.0</p>
-                  <img
-                    src="/icon-star-48.png"
-                    class="w-3 h-3 mt-1"
-                    alt="icon start"
-                  />
+                <div class="text-lg font-medium !mt-0">
+                  {product?.name}
                 </div>
               </div>
-              <div class="text-lg font-medium !mt-0">
-                {product?.name}
-              </div>
-              <p class="text-[10px] text-gray-400 font-normal">
-                Vận chuyển toàn quốc<br/> Miễn phí vận chuyển trong Hồ Chí Minh
-              </p>
-              <!-- <strike>{product?.price} VNĐ</strike>
-                  <span class="price-dc"
-                    >{product?.discount}%<img
-                      src="images/renewal_price_down.png"
-                      alt="best 2"
-                    /></span
-                  >
-                  <div class="price">
-                    {product?.price_discount}<span class="won">VNĐ</span>
-                  </div> -->
             </div>
           {/if}
         {/each}
