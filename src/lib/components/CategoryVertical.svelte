@@ -1,24 +1,28 @@
-<div class="top-0 category">
+<script>
+    import { fly } from "svelte/transition";
+</script>
+
+<div class="top-0 category" in:fly={{x: -64 }} out:fly={{x: -64}}>
     <div>
-        <a href="/category/italia">
+        <a class='bg-white' href="/category/italia">
             <img  src="/icon/categoryVertical/1.png" alt="logo header" class="w-16 h-16 category_img" />
         </a>
-        <a href="/category/italia">
+        <a class='bg-white' href="/category/italia">
             <img  src="/icon/categoryVertical/2.png" alt="logo header" class="w-16 h-16 category_img" />
         </a>
-        <a href="/category/italia">
+        <a  class='bg-white' href="/category/italia">
             <img  src="/icon/categoryVertical/3.png" alt="logo header" class="w-16 h-16 category_img" />
         </a>
-        <a href="/category/italia">
+        <a class='bg-white' href="/category/italia">
             <img  src="/icon/categoryVertical/4.png" alt="logo header" class="w-16 h-16 category_img" />
         </a>
-        <a href="/category/italia">
+        <a class='bg-white' href="/category/italia">
             <img src="/icon/categoryVertical/5.png" alt="logo header" class="w-16 h-16 category_img" />
         </a>
-        <a href="/category/italia">
+        <a class='bg-white' href="/category/italia">
             <img src="/icon/categoryVertical/6.png" alt="logo header" class="w-16 h-16 category_img" />
         </a>
-        <a href="/category/italia">
+        <a class='bg-white' href="/category/italia">
             <img src="/icon/categoryVertical/7.png" alt="logo header" class="w-16 h-16 category_img" />
         </a>
     </div>

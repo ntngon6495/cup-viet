@@ -21,38 +21,13 @@
     }
     if (url === '/admin/category') {
       disableFooter = true;
-    } 
+    } else {
+      disableFooter = false;
+    }
   }
 
-  // let upperContainer;
   let y = 0;
-	// let lastY = 0;
-	// let theater = 0;
-	
-	// onMount(()=> {
-  //   upperContainer.addEventListener('scroll', function(e) {
-  //     console.log('scrolling');
-  //   })
-  // })
-
-  const scrollToTheater = (y) => {
-    console.log("scrolling", y);
-// 		let dy = lastY - y;
-// 	  lastY = y;
-		
-// // 		let bottom = upperContainer.getBoundingClientRect().bottom;
-// // 		alert(bottom);
-
-// 		if (dy < -10) {
-// 			document.body.parentNode.scrollTo({
-// 				top: theater.offsetTop,
-// 				left: 0,
-// 				behavior: 'smooth'
-// 			})
-// 		}
-	}
-
-	$: scrollToTheater(y);
+  // $: console.log("scrolling", y);
 </script>
 
 <svelte:window bind:scrollY={y} />
@@ -60,23 +35,24 @@
 <div class="sm:pt-0 pt-[225px]">
   <Header />
   <TopNav />
-  <div>
+  <div class:disable={disableComponent}>
     <Slide class="block" />
   </div>
   <div class='sm:w-[1200px] mx-auto'>
+    {#if y >= 150}
+      <CategoryVertical/>
+    {/if}
     <slot />
   </div>
   <div class:disable={disableFooter}>
     <Footer/>
   </div>
-  <CategoryVertical />
 </div>
 <div class:disable={unable}>
   <div class="fixed z-[100] top-0 bg-white w-full h-svh opacity-50"></div>
-  <div
-    class="fixed z-[101] top-0 image_baotri w-screen h-screen"
-    on:click={() => (unable = true)}
-  >
+  <!-- svelte-ignore a11y-no-static-element-interactions -->
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
+  <div class="fixed z-[101] top-0 image_baotri w-screen h-screen" on:click={() => (unable = true)}>
     <img src="/bao_tri.jpg" alt="loading" class="mx-auto" />
   </div>
 </div>

@@ -39,15 +39,17 @@
 </script>
 <div class='top-nav flex justify-center mt-2 h-full'>
   <div class="sm:flex hidden w-[1200px]">
-    <div class="flex justify-between items-center w-full">
-      <a href="/">
-        <img src="/images/logo.png" class='h-[90px] w-[250px]' atl="pig-logo"/>
+    <div class="flex items-center w-full">
+      <a class='w-[300px]' href="/">
+        <img src="/images/logo.png" class='h-[80px] w-[200px]' atl="pig-logo"/>
       </a>
-      {#each listIcon as { icon, alt, url }}
-        <a href={url}>
-          <img class="logo-header category_img" src={icon} alt={alt} />
-        </a>
-      {/each}
+      <div class='flex justify-end items-center gap-14 w-full px-10'>
+        {#each listIcon as { icon, alt, url }}
+          <a href={url}>
+            <img class="logo-header category_img" src={icon} alt={alt} />
+          </a>
+        {/each}
+      </div>
     </div>
     <!-- <form class='w-[300px] mt-3'>
       <div class="col-xs-2 search-wrap" style="float:right;">
@@ -66,7 +68,7 @@
 <style>
 
   .top-nav {
-    padding: 10px 80px;
+    padding: 5px 80px;
     background: #ffcd36;
     opacity: 0.9;
     margin-bottom: 10px;
@@ -138,6 +140,6 @@
     bottom: -9px;
   }
   .category_img {
-    width: 80px;
+    width: 70px;
   }
 </style>

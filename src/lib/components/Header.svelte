@@ -26,9 +26,9 @@
       <img src="/images/ic-search.svg" class="w-5" alt="key search" />
     </div>
     <div class="flex gap-2">
-      <p>Hỏi đáp</p>
-      <p>Tin tức</p>
-      <p>Liên hệ</p>
+      <p class='border-r px-1'>Hỏi đáp</p>
+      <p class='border-r px-1'>Tin tức</p>
+      <p class='border-r px-1'>Liên hệ</p>
       <div class='flex gap-1'><PhoneOutline class="w-6 h-6" /><span>0123456789</span></div>
     </div>
   </div>
