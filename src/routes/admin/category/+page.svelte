@@ -1,8 +1,6 @@
 <script lang="js">
   import { Button, Dropzone, Toast } from "flowbite-svelte";
   import { base64 } from "@sveu/browser";
-  import "@splidejs/svelte-splide/css";
-  import { onMount } from "svelte";
   import { toasts, ToastContainer, FlatToast }  from "svelte-toasts";
 	
 
@@ -18,9 +16,6 @@
   let images = "";
 
   let value = "";
-  onMount(() => {
-    // getAllProducts()
-  });
   const dropHandle = (event) => {
     value = "";
     event.preventDefault();
@@ -37,15 +32,6 @@
       });
     }
   };
-
-  // const getAllProducts = async () => {
-  //   const response = await fetch('https://dgg300bw0j.execute-api.ap-southeast-1.amazonaws.com/dev/products?categoryId=all', {
-  //     method: "GET"
-  //   })
-
-  //   const { products } = await response.json()
-  //   console.log("products", products)
-  // }
 
   const handleChange = (event) => {
     const files = event.target.files;
