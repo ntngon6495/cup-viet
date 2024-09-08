@@ -1,7 +1,6 @@
 <script lang="js">
   import { Button, Dropzone, Toast } from "flowbite-svelte";
   import { base64 } from "@sveu/browser";
-  import "@splidejs/svelte-splide/css";
   import { onMount } from "svelte";
   import { toasts, ToastContainer, FlatToast }  from "svelte-toasts";
 	
