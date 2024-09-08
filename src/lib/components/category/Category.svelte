@@ -1,244 +1,206 @@
 <script lang="js">
   import { Carousel } from "flowbite-svelte";
+  import { onMount } from "svelte";
 
-  export let images = [
+  let imagesBanner = [
     {
       alt: "Cosmic timetraveler",
-      src: "/images/category/itali/BANNER-1-01.jpg",
+      src: "/small_slide/slider01.png",
       title: "cupviet.com"
     },
     {
       alt: "Cosmic timetraveler",
-      src: "/images/category/taybannha/BANNER-2-01.jpg",
+      src: "/small_slide/slider02.png",
+      title: "cupviet.com"
+    },
+    {
+      alt: "Cosmic timetraveler",
+      src: "/small_slide/slider03.png",
       title: "cupviet.com"
     }
   ];
+
+  let backgroundCategory = [
+    {
+      alt: "cup itali",
+      src: "/images/category/bg_category/middle_4.png",
+      url: ""
+    },
+    {
+      alt: "cup ki tay ban nha",
+      src: "/images/category/bg_category/middle_3.png",
+      url: ""
+    },
+    {
+      alt: "cup ki thuat",
+      src: "/images/category/bg_category/middle_2.png",
+      url: ""
+    }
+  ];
+
   export let productList = [
     {
-      category: "CÚP ITALY",
-      banner: "/images/category/itali/BANNER-1-01.jpg",
-      url: "category/italia",
-      products: [
-        {
-          id: 1,
-          code: "CTI 0201",
-          name: "Cúp kim loại cao cấp",
-          price: 390000,
-          price_discount: 278000,
-          discount: 57,
-          image: "/images/category/itali/CIT_415.png"
-        },
-        {
-          id: 2,
-          code: "CTI 0317",
-          name: "Cúp kim loại cao cấp",
-          price: 760000,
-          price_discount: 240000,
-          discount: 68,
-          image: "/images/category/itali/CIT_2312-3REV01.png"
-        },
-        {
-          id: 3,
-          code: "CTI 0783",
-          name: "Cúp kim loại cao cấp",
-          price: 230000,
-          price_discount: 106000,
-          discount: 54,
-          image: "/images/category/itali/CIT_2312.png"
-        },
-        {
-          id: 4,
-          code: "CTI 0793",
-          name: "Cúp kim loại cao cấp",
-          price: 230000,
-          price_discount: 106000,
-          discount: 54,
-          image: "/images/category/itali/CIT_2312N.png"
-        },
-        {
-          id: 5,
-          code: "CTI 0711",
-          name: "Cúp kim loại cao cấp",
-          price: 88000,
-          price_discount: 39000,
-          discount: 56,
-          image: "/images/category/itali/CIT_2355.png"
-        },
-        {
-          id: 6,
-          code: "CTI 0431",
-          name: "Cúp kim loại cao cấp",
-          price: 440000,
-          price_discount: 160000,
-          discount: 64,
-          image: "/images/category/itali/CIT_2363.png"
-        },
-        {
-          id: 7,
-          code: "CTI 0726",
-          name: "Cúp kim loại cao cấp",
-          price: 230000,
-          price_discount: 150000,
-          discount: 54,
-          image: "/images/category/itali/CIT_2367.png"
-        }
-      ]
+      id: '4',
+      category: "CÚP KĨ THUẬT",
+      banner: "/images/category/middle_4.png",
+      url: "category/4",
+      products: []
     },
     {
+      id: '11',
+      category: "CÚP SỨ",
+      banner: "/images/category/middle_4.png",
+      url: "category/11",
+      products: []
+    },
+    {
+      id: '12',
+      category: "CÚP NICKEL",
+      banner: "/images/category/middle_4.png",
+      url: "category/12",
+      products: []
+    },
+    {
+      id: '10',
+      category: "CÚP PEWTER",
+      banner: "/images/category/middle_4.png",
+      url: "category/10",
+      products: []
+    },
+    {
+      id: '5',
+      category: "CÚP ITALY",
+      banner: "/images/category/middle_4.png",
+      url: "category/5",
+      products: []
+    },
+    {
+      id: '6',
       category: "CÚP TÂY BAN NHA",
-      banner: "/images/category/taybannha/BANNER-2-01.jpg",
-      url: "category/taybannha",
-      products: [
-        {
-          id: 1,
-          code: "CSP 0201",
-          name: "Cúp kim loại cao cấp",
-          price: 390000,
-          price_discount: 278000,
-          discount: 57,
-          image: "/images/category/taybannha/CSP_23-102E.png"
-        },
-        {
-          id: 2,
-          code: "CSP 0317",
-          name: "Cúp kim loại cao cấp",
-          price: 240000,
-          price_discount: 160000,
-          discount: 68,
-          image: "/images/category/taybannha/CSP_23-102EN.png"
-        },
-        {
-          id: 3,
-          code: "CSP 0783",
-          name: "Cúp kim loại cao cấp",
-          price: 230000,
-          price_discount: 106000,
-          discount: 54,
-          image: "/images/category/taybannha/CSP_23-126E-GOLD.png"
-        },
-        {
-          id: 4,
-          code: "CSP 0793",
-          name: "Cúp kim loại cao cấp",
-          price: 230000,
-          price_discount: 106000,
-          discount: 54,
-          image: "/images/category/taybannha/CSP_23-126EN-GOLD.png"
-        },
-        {
-          id: 5,
-          code: "CSP 0711",
-          name: "Cúp kim loại cao cấp",
-          price: 88000,
-          price_discount: 39000,
-          discount: 56,
-          image: "/images/category/taybannha/CSP_23-2301-Gold.png"
-        },
-        {
-          id: 6,
-          code: "CSP 0431",
-          name: "Cúp kim loại cao cấp",
-          price: 440000,
-          price_discount: 160000,
-          discount: 64,
-          image: "/images/category/taybannha/CSP_23-2301N-Gold.png"
-        },
-        {
-          id: 7,
-          code: "CSP 0726",
-          name: "Cúp kim loại cao cấp",
-          price: 230000,
-          price_discount: 150000,
-          discount: 54,
-          image: "/images/category/taybannha/CSP_54-2471.png"
-        }
-      ]
+      banner: "/images/category/middle_2.png",
+      url: "category/6",
+      products: []
     }
   ];
+
+  export let products;
+  
+  const mapDataList = () => {
+    const groupedByCategory = products.reduce((acc, item) => {
+    // Use the item's category as the key
+      const key = item.category_id;
+      // If the key doesn't exist in the accumulator object, initialize it with an empty array
+      if (!acc[key]) {
+        acc[key] = [];
+      }
+      // Add the current item to the appropriate array
+      acc[key].push(item);
+
+      return acc;
+    }, {});
+    // console.log("groupedByCategory", groupedByCategory)
+    let data = productList.map((item) => ({
+      ...item, // Spread the existing properties
+      products: groupedByCategory[item.id]
+    }));
+    productList = data
+    // console.log("data", dataMapping)
+  }
+
+  onMount(()=> {
+    mapDataList()
+  })
+  
 </script>
 
 <div>
-  <div class="title text-lg font-bold" style="text-align:center; color: #d6b80e">
+  <div
+    class="title text-lg font-bold"
+    style="text-align:center; color: #d6b80e"
+  >
     <h2>XẾP HẠNG DANH MỤC THEO MỨC ĐỘ PHỔ BIẾN</h2>
   </div>
-  {#each productList as item, idx}
-    <div class="sm:grid sm:grid-cols-12 gap-4 my-10 pb-10 border-b border-b-gray-200">
-      <div class="col-span-5">
-        <div class="relative sm:max-w-[440px] sm:h-32 h-20">
-          <div
-            class="sm:h-32 h-20 w-full absolute bg-yellow-600 top-0 left-0 opacity-75"
-          ></div>
-          <img
-            class="sm:h-32 h-20 object-fill absolute top-0 left-0 opacity-40"
-            alt=""
-            src={item?.banner}
-          />
-          <div
-            class="absolute sm:h-32 h-20 px-2 flex items-center justify-between font-bold text-2xl text-white w-full"
-          >
-            <p class="tit">{item?.category}</p>
-            <div class="flex items-center sm:text-xl text-base">
-              <a href={`/${item.url}`}>XEM THÊM</a>
-              <img src="/images/arrow-right-white.png" alt="best 1" />
-            </div>
-          </div>
-        </div>
-        <ul class="big_goods_imgs">
-          <span class="best-badge">1</span>
-          <li style="cursor:pointer;">
+  <div
+    class="col-span-12 sm:max-w-[1200px] sm:!max-h-[200px] max-h-[80px]"
+  ></div>
+    {#each productList as item, idx}
+      <div
+        class="sm:grid sm:grid-cols-12 gap-4 my-10 pb-10 border-b border-b-gray-200"
+      >
+        <div class="col-span-5">
+          <div class="relative sm:max-w-[440px] sm:h-32 h-20">
+            <div
+              class="sm:h-32 h-20 w-full absolute bg-yellow-600 top-0 left-0 opacity-75"
+            ></div>
             <img
-              alt="top 1"
-              data-srcset="/images/product/7.png"
-              srcset={item.products[0]?.image}
-              class="w-[440px] h-[440px] ls-is-cached lazyloaded bg-gray-100"
+              class="sm:h-32 h-20 object-fill absolute top-0 left-0 opacity-40"
+              alt=""
+              src={backgroundCategory[idx]?.src}
             />
-          </li>
-        </ul>
-        <ul class="big_goods_infos">
-          <li class="goodsnm text-center !mb-0" style="cursor:pointer;">
-            <p class="goodscd">
-              {item.products[0]?.code} 
-            </p>
-            <p>{item.products[0]?.name}</p>
-          </li>
-        </ul>
-      </div>
-      <div class="right_p small_right_goods_list col-span-7 justify-between">
-        {#each item.products as product, index}
-          {#if index > 0}
-            <div class="small_goods_infos">
-              <span class="best-badge">{index + 1}</span>
-              <span style="display:block; cursor:pointer">
-                <img
-                  alt=""
-                  title=""
-                  src={product?.image}
-                  class="sm:h-[220px] sm:w-[220px] w-[180px] ls-is-cached lazyloaded bg-gray-100"
-                />
-              </span>
-              <div class="text-lg w-full mt-2">
-                {product?.code}
-                <div class="text-lg font-medium !mt-0">
-                  {product?.name}
-                </div>
+            <div
+              class="absolute sm:h-32 h-20 px-2 flex items-center justify-between font-bold text-2xl text-white w-full"
+            >
+              <p class="tit">{item?.category}</p>
+              <div class="flex items-center sm:text-xl text-base">
+                <a href={`/${item?.url}`}>XEM THÊM</a>
+                <img src="/images/arrow-right-white.png" alt="best 1" />
               </div>
             </div>
-          {/if}
-        {/each}
-      </div>
-      {#if idx % 2 !== 0}
-        <div
-          class="col-span-12 sm:max-w-[1200px] sm:!max-h-[250px] max-h-[100px]"
-        >
+          </div>
+          <ul class="big_goods_imgs">
+            <a href={`category/detail/${item.products[0]?.product_code}`}>
+              <span class="best-badge">1</span>
+              <li style="cursor:pointer;">
+                <img
+                  data-srcset="/images/product/7.png"
+                  srcset={item.products[0]?.image_url}
+                  class="w-[440px] h-[440px] ls-is-cached lazyloaded bg-gray-100"
+                />
+              </li>
+            </a>
+          </ul>
+          <ul class="big_goods_infos">
+            <li class="goodsnm text-center !mb-0" style="cursor:pointer;">
+              <p class="goodscd">
+                {item.products[0]?.product_code}
+              </p>
+              <p>{item.products[0]?.product_name}</p>
+            </li>
+          </ul>
+        </div>
+        <div class="right_p small_right_goods_list col-span-7 justify-between">
+          {#each item.products as product, index}
+            {#if index > 0}
+              <a class="small_goods_infos" href={`category/detail/${product.product_code}`}>
+                <span class="best-badge">{index + 1}</span>
+                <span style="display:block; cursor:pointer">
+                  <img
+                    alt=""
+                    title=""
+                    src={product?.image_url}
+                    class="sm:w-[220px] w-[180px] ls-is-cached lazyloaded bg-gray-100"
+                  />
+                </span>
+                <div class="text-lg w-full mt-2">
+                  {product?.product_code}
+                  <div class="text-lg font-medium !mt-0">
+                    {product?.product_name}
+                  </div>
+                </div>
+              </a>
+            {/if}
+          {/each}
+        </div>
+        </div>
+        <div class="col-span-12 sm:max-w-[1200px] sm:!max-h-[200px] max-h-[80px]">
           <Carousel
-            class="rounded-md sm:max-h-[250px] max-h-[100px]"
-            {images}
+            class="rounded-md sm:max-h-[200px] max-h-[80px]"
+            images={imagesBanner}
             duration="3000"
+            index={idx}
           />
         </div>
-      {/if}
-    </div>
-  {/each}
+    {/each}
 </div>
 
 <style>

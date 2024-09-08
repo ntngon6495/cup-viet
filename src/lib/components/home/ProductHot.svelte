@@ -1,60 +1,23 @@
 <script lang="js">
-  export let productsHot = [
-    {
-      id: 1,
-      name: "Cúp kim loại cao cấp",
-      image: "/images/category/itali/CIT_415.png",
-      price: 230000,
-      discount: 68,
-      sold: 210,
-      code: "BS0_0317",
-    },
-    {
-      id: 2,
-      name: "Cúp kim loại premium",
-      image: "/images/category/itali/CIT_810.png",
-      price: 390000,
-      discount: 56,
-      sold: 84,
-      code: "TD9_0201",
-    },
-    {
-      id: 3,
-      name: "Cúp kim loại italia",
-      image: "/images/category/itali/CIT_2312.png",
-      price: 230000,
-      discount: 54,
-      sold: 48,
-      code: "TD8_0726",
-    },
-    {
-      id: 4,
-      name: "Cúp kim loại tây ban nha",
-      image: "/images/category/itali/CIT_2363.png",
-      price: 88000,
-      discount: 56,
-      sold: 43,
-      code: "CD7_0711",
-    },
-    {
-      id: 5,
-      name: "Cúp kim loại cao cấp",
-      image: "/images/category/taybannha/CSP_23-102E.png",
-      price: 230000,
-      discount: 54,
-      sold: 35,
-      code: "BD3_0783",
-    },
-    {
-      id: 6,
-      name: "Cúp kim loại cao cấp",
-      image: "/images/category/taybannha/CSP_23-2301-Gold.png",
-      price: 240000,
-      discount: 52,
-      sold: 28,
-      code: "BD3_0782",
-    },
-  ];
+  import { onMount } from "svelte";
+
+  let tab = "4";
+  let listProduct = [];
+  
+  onMount(()=> {
+    getProducts(tab)
+  })
+
+  $: tab && getProducts(tab)
+
+  const getProducts = async (id) => {
+    const response = await fetch(`https://dgg300bw0j.execute-api.ap-southeast-1.amazonaws.com/dev/products?categoryId=${id}`, {
+      method: "GET"
+    })
+
+    const { products } = await response.json()
+    listProduct = products?.Items
+  }
 </script>
 
 <div class="section">
@@ -62,67 +25,96 @@
     <h3 class="title">SẢN PHẨM NỔI BẬT</h3>
   </div>
   <div class="hot_seller">
-    <div class="hot_seller_title seller_active">
+    <div
+      class="hot_seller_title"
+      class:seller_active={tab === "1"}
+      on:click={() => (tab = "1")}
+    >
       <span class="hot_seller_menu"><span>CÚP VÔ ĐỊCH</span></span>
     </div>
-    <div class="hot_seller_title">
+    <div
+      class="hot_seller_title"
+      class:seller_active={tab === "2"}
+      on:click={() => (tab = "2")}
+    >
       <span class="hot_seller_menu"><span>CÚP EAGLE</span></span>
     </div>
-    <div class="hot_seller_title">
-      <a href="/category/italia" class="hot_seller_menu"
-        ><span>CÚP GOLD</span></a
-      >
+    <div
+      class="hot_seller_title"
+      class:seller_active={tab === "3"}
+      on:click={() => (tab = "3")}
+    >
+      <span class="hot_seller_menu">CÚP GOLD</span>
     </div>
-    <div class="hot_seller_title">
-      <a href="/category/taybannha" class="hot_seller_menu"
-        ><span>CÚP KĨ THUẬT</span></a
-      >
+    <div
+      class="hot_seller_title"
+      class:seller_active={tab === "4"}
+      on:click={() => (tab = "4")}
+    >
+      <span class="hot_seller_menu">CÚP KĨ THUẬT</span>
     </div>
-    <div class="hot_seller_title">
-      <span class="hot_seller_menu"><span>QUÀ TẶNG</span></span>
+    <div
+      class="hot_seller_title"
+      class:seller_active={tab === "7"}
+      on:click={() => (tab = "7")}
+    >
+      <span class="hot_seller_menu"><span>QUÀ TẶNG</span> </span>
     </div>
-    <div class="hot_seller_title">
-      <span class="hot_seller_menu"><span>HUY CHƯƠNG</span></span>
+    <div
+      class="hot_seller_title"
+      class:seller_active={tab === "8"}
+      on:click={() => (tab = "8")}
+    >
+      <span class="hot_seller_menu">HUY CHƯƠNG</span>
     </div>
-    <div class="hot_seller_title">
-      <span class="hot_seller_menu"><span>KĨ NIỆM CHƯƠNG</span></span>
+    <div
+      class="hot_seller_title"
+      class:seller_active={tab === "9"}
+      on:click={() => (tab = "9")}
+    >
+      <span class="hot_seller_menu">KĨ NIỆM CHƯƠNG</span>
     </div>
   </div>
   <div class="good_seller flex flex-wrap">
-    {#each productsHot as product, index}
-      <div>
-        <div class="best-items relative">
-          <div class={`goods-item-rank ${index > 2 ? "orange" : ""}`}>
-            <div class="content">
-              <div class="txt">BEST</div>
-              <div class="rank">{index + 1}</div>
+    {#if listProduct.length !== 0}
+      {#each listProduct as product, index}
+        {#if index < 6}
+          <div>
+            <div class="best-items relative">
+              <div class={`goods-item-rank ${index > 2 ? "orange" : ""}`}>
+                <div class="content">
+                  <div class="txt">BEST</div>
+                  <div class="rank">{index + 1}</div>
+                </div>
+              </div>
+              <a
+                style="display:block;overflow:hidden;border-radius:50%;"
+                href={`category/detail/${product?.product_code}`}
+              >
+                <img
+                  class="w-[180px] h-[180px] img-responsive good_seller_img ls-is-cached lazyloaded"
+                  alt=""
+                  title=""
+                  src={product?.image_url}
+                />
+              </a>
+            </div>
+            <div class=" recommend_l mt-2">
+              <p class="product_code font-bold" style="overflow: hidden;">
+                {product?.product_code}
+              </p>
+              <div class="caption">
+                <a class="hover:text-yellow-600" href="/">{"Xin liên hệ..."}</a>
+              </div>
             </div>
           </div>
-          <a style="display:block;overflow:hidden;border-radius:50%;" href="/">
-            <img
-              class="w-[180px] h-[180px] img-responsive good_seller_img ls-is-cached lazyloaded"
-              alt=""
-              title=""
-              src={product?.image}
-            />
-          </a>
-        </div>
-        <div class=" recommend_l mt-2">
-          <p class="product_code font-bold" style="overflow: hidden;">{product?.code}</p>
-          <div class="caption">
-            <!-- <p class="price">
-              <strike>{product?.price} VNĐ</strike>
-              <span class="price-dc"
-                >{product?.discount}%
-                <i class="fa fa-long-arrow-down"></i></span
-              >
-            </p> -->
-            <a class="hover:text-yellow-600" href="/">{"Xin liên hệ..."}</a>
-            <!-- <b>240,000<span class="good_seller_font">원</span></b> -->
-          </div>
-        </div>
+        {/if}
+      {/each}
+    {:else}
+      <div class="w-full flex justify-center items-center font-bold text-lg h-[236px]">
+        <p>Chưa có sản phẩm nào</p>
       </div>
-    {/each}
+    {/if}
   </div>
 </div>
 
