@@ -42,13 +42,6 @@
         </div>
         <div class="col-span-3 sm:px-4 px-2 sm:mt-0 mt-10">
           <div>
-            <!-- <p class="uppercase font-bold sm:text-base text-sm mb-1">follow us</p>
-            <div class="h-[6 0px] w-full flex justify-between items-center">
-              <img alt="" src="/images/ic-facebook.png" class="w-10 h-10" />
-              <img alt="" src="images/ic-zalo.png" class="w-9 h-9" />
-              <img alt="" src="images/ic-youtube.png" class="w-9 h-9" />
-              <img alt="" src="images/ic-tiktok.png" class="w-9 h-9" />
-            </div> -->
             <img src='/images/ic-mangxahoi.png' alt='follow us'/>
           </div>
           <div class='flex justify-end w-full'>

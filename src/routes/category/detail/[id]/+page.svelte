@@ -1,5 +1,5 @@
 <script>
-  import { Carousel, Thumbnails } from "flowbite-svelte";
+  import { Carousel, Select } from "flowbite-svelte";
 
   export let images = [
     {
@@ -20,46 +20,50 @@
   ];
   let index = 0;
   let forward = true;
+
+  let tab_active = 1
+
+  let sizes = [
+    { value: '0', name: 'Choose an option' },
+    { value: '1', name: 'Cao 390mm, R 100mm' },
+  ];
+  export let data 
 </script>
 
 <div>
     <div class='grid sm:grid-cols-12 w-full sm:mt-0 mt-20'> 
-        <div class='col-span-6'>
+        <div class='col-span-4'>
             <div class='carousel-custom'>
-                <Carousel {images} {forward} let:Indicators let:Controls bind:index class='sm:!h-[600px] !h-[200px] flex justify-center' imgClass='sm:!w-[600px] sm:h-[600px] !w-[200px] h-[200px] mx-auto'>
-                    <!-- <Indicators /> -->
-                </Carousel>
+                <img src={data.image_url} class='sm:!w-[600px] !w-[200px]'/>
+                <!-- <Carousel {images} {forward} let:Indicators let:Controls bind:index class='sm:!h-[600px] !h-[200px] flex justify-center' imgClass='sm:!w-[600px] sm:h-[600px] !w-[200px] h-[200px] mx-auto'>
+                    <Indicators />
+                </Carousel> -->
                 <!-- <Thumbnails {images} {forward} bind:index /> -->
             </div>
         </div>
-        <div class='col-span-6 pl-5 sm:text-lg text-sm'>
-            <div class='ml-4 mb-2 text-2xl font-bold'>
-                <h1 class="uppercase">Cúp kim loại cao cấp</h1>
-                <p class='text-[#fcbd48]'>- CRM_044NEW</p>
+        <div class='col-span-4 pl-5 sm:text-lg text-sm'>
+            <div class='mb-2 text-2xl font-bold inline-block text-center'>
+                <h1 class='text-[#ffc828]'>{data.product_code}</h1>
+                <p class="uppercase text-xl font-normal text-gray-500">{data.product_name}</p>
             </div>
-            <div class='detail-item'>
-                <p class='title'>Kích cỡ</p>
-                <p class='value'>15*36*13cm</p>
+            <div class='flex gap-5 font-bold'>
+                <p class='cursor-pointer' class:tab-active={tab_active == 1} on:click={()=> tab_active = 1}>Thông tin</p>
+                <p class='cursor-pointer' class:tab-active={tab_active == 2} on:click={()=> tab_active = 2}>Phân loại</p>
             </div>
-            <div class='detail-item'>
-                <p class='title'>Công ty sản xuất</p>
-                <p class='value'>Chỉ có một chiếc cúp</p>
+            <div class='detail-item border-b-[2px] border-b-gray-500 pb-4'>
+                <div class="product-short-description">
+                    <p>Cúp Golf best gross<br>
+                    – Chất liệu: Pewter<br>
+                    – Màu sắc: Bạc<br>
+                    – Kích thước: Cao 390mm, R 100mm<br>
+                    – Khắc thông tin lên nhãn đế cúp<br>
+                    – Thiết kế nội dung theo yêu cầu của khách hàng</p>
+                </div>
             </div>
-            <div class='detail-item'>
-                <p class='title'>Kết cấu</p>
-                <p class='value'>{`Kim loại mạ đồng thau(chrome), pha lê(pbO 24% trở xuống) và kính quang học`}</p>
-            </div>
-            <div class='detail-item'>
-                <p class='title'>Trường hợp</p>
-                <p class='value'>Trường hợp Cheongwoodan</p>
-            </div>
-            <div class='detail-item'>
-                <p class='title'>Phương pháp làm việc dự thảo</p>
-                <p class='value'>{`Sơn sau khi khắc bề mặt(chà nhám)`}</p>
-            </div>
-            <div class='detail-item'>
-                <p class='title'>Thông tin vận chuyển</p>
-                <p class='value'>{`Miễn phí vận chuyển(giao hàng nhanh trong vòng 4 ngày làm việc)`}</p>
+            <div>
+                <p class='font-bold'>Kích Thước: <span class='text-gray-400 ml-2'>{data.size}</span></p>
+                <!-- <Select placeholder="kích thước" items={sizes}>
+                </Select> -->
             </div>
         </div>
     </div>
@@ -87,13 +91,18 @@
         {/each}
     </div> -->
 </div>
+
 <style lang='scss'>
-    .detail-item {
+.tab-active {
+    border-bottom: 2px solid #ffc828; 
+} 
+.detail-item {
+        margin-top: 10px; 
         display: flex;
         width: 100%;
         margin-bottom: 20px;
         .title {
-            padding-left: 15px;
+            padding-left: 5px;
             font-weight: 700;
             width: 150px;
             letter-spacing: 0em;

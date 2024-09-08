@@ -51,17 +51,6 @@
         {/each}
       </div>
     </div>
-    <!-- <form class='w-[300px] mt-3'>
-      <div class="col-xs-2 search-wrap" style="float:right;">
-        <input
-          type="text"
-          class="input-search py-2 !text-gray-800"
-          placeholder="Tìm kiếm sản phẩm"
-          autocomplete="off"
-        />
-        <img src="/images/ic-search.svg" alt="key search" />
-      </div>
-    </form> -->
   </div>
 </div>
 
@@ -141,5 +130,10 @@
   }
   .category_img {
     width: 70px;
+  }
+
+  .category_img:hover {
+    transition: 0.3s;
+    transform: scale(1.2);
   }
 </style>
