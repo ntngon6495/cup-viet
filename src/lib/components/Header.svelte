@@ -29,7 +29,7 @@
       <p class='border-r px-1'>Hỏi đáp</p>
       <p class='border-r px-1'>Tin tức</p>
       <p class='border-r px-1'>Liên hệ</p>
-      <div class='flex gap-1'><PhoneOutline class="w-6 h-6" /><span>0123456789</span></div>
+      <div class='flex gap-1 font-bold'><PhoneOutline class="w-6 h-6" /><span> 0902 547 808 </span></div>
     </div>
   </div>
   <div>

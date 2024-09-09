@@ -1,5 +1,5 @@
 <script>
-  import { Carousel, Select } from "flowbite-svelte";
+  import { goto } from "$app/navigation";
 
   export let images = [
     {
@@ -28,10 +28,28 @@
     { value: '1', name: 'Cao 390mm, R 100mm' },
   ];
   export let data 
+
+  let productList = []
+  $: console.log(productList)
+
+  $: data && fetchData(data.category_id)
+
+  const fetchData = async (id) => {
+    const response = await fetch(
+      `https://dgg300bw0j.execute-api.ap-southeast-1.amazonaws.com/dev/products?categoryId=${id}`,
+    {
+      method: "GET"
+    });
+    if (response) {
+      const { products } = await response.json();
+      let temp = products?.Items;
+      productList = temp.sort((a, b) => a.rank - b.rank);
+    }
+  }
 </script>
 
 <div>
-    <div class='grid sm:grid-cols-12 w-full sm:mt-0 mt-20'> 
+    <div class='grid sm:grid-cols-12 w-full mt-20'> 
         <div class='col-span-4'>
             <div class='carousel-custom'>
                 <img src={data.image_url} class='sm:!w-[600px] !w-[200px]'/>
@@ -66,8 +84,11 @@
                 </Select> -->
             </div>
         </div>
+        <div class='col-span-4 px-5'>
+            <img src='/chinh-sach.png' alt='chính sách bán hàng'>
+        </div>
     </div>
-    <div class='grid sm:grid-cols-12 mt-10 sm:p-20 py-2 bg-gray-100 sm:text-base text-sm'>
+    <!-- <div class='grid sm:grid-cols-12 mt-10 sm:p-20 py-2 bg-gray-100 sm:text-base text-sm'>
         <div class='col-span-6'>
             <p class='sm:px-0 px-4'>Đây là kích thướt thực tế. Hãy ghi nhớ điều này khi sử dụng nó</p>
             <table class="detail-product">
@@ -84,12 +105,38 @@
                     <td>13cm</td>
                 </tr>
         </div>
-    </div>
-    <!-- <div class='py-20 border-b-2'>
-        {#each images as image}
-            <img class='mx-auto bg-gray-100 mt-5 sm:w-[600px] sm:h-[600px] w-[200px] h-[200px]' src={image.src} alt={image.alt} />
-        {/each}
     </div> -->
+    <div class='grid sm:grid-cols-12 w-full mt-20'>
+        <div class='col-span-4 pt-4'>
+           <hr class='w-full border-b-2 border-[#F3B81A]'/>
+        </div>
+        <div class='col-span-4 text-center'>
+           <p class='uppercase font-bold text-2xl text-[#F3B81A]'>Sản phẩm cùng loại</p>
+        </div>
+        <div class='col-span-4 pt-4'>
+           <hr class='w-full border-b-2 border-[#F3B81A]'/>
+        </div>
+    </div>
+    <div class='grid sm:grid-cols-12 w-full mt-20'>
+        {#if productList.length > 0}
+            {#each productList as product, idx}
+                {#if idx < 4}
+                    <div class='col-span-3'>
+                        <a class="text-center" on:click={()=> goto(`${product.product_code}`, {replaceState: true})}>
+                            <img
+                                alt=""
+                                title=""
+                                src={product?.image_url}
+                                class="sm:w-[220px] w-[180px] ls-is-cached lazyloaded bg-gray-100 mx-auto"
+                            />
+                            <p class="text-[#F3B81A] text-xl font-bold mt-3">{product?.product_code}</p>
+                            <p class="uppercase text-gray-600">{product?.product_name}<p>
+                        </a>
+                    </div>
+                {/if}
+            {/each}
+        {/if}
+    </div>
 </div>
 
 <style lang='scss'>

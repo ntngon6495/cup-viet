@@ -1,52 +1,56 @@
 <script>
+  import { goto } from "$app/navigation";
   let listIcon = [
     {
       icon: "/icon/CUPVODICH-2.png",
       alt: "CUPVODICH",
-      url: "/",
+      url: "/category/1",
     },
     {
       icon: "/icon/CUPEAGEL-2.png",
       alt: "CUPEAGEL",
-      url: "/",
+      url: "/category/2",
     },
     {
       icon: "/icon/CUPGOLF-2.png",
       alt: "CUPGOLF",
-      url: "/",
+      url: "/category/3",
     },
     {
       icon: "/icon/CUPKYTHUAT-2.png",
       alt: "CUPKYTHUAT",
-      url: "/category/cupkythuat",
+      url: "/category/4",
     },
     {
       icon: "/icon/QUATANG-2.png",
       alt: "QUATANG",
-      url: "/",
+      url: "/category/7",
     },
     {
       icon: "/icon/HUYCHUONG-2.png",
       alt: "HUYCHUONG",
-      url: "/",
+      url: "/category/8",
     },
     {
       icon: "/icon/KINIEMCHUONG-2.png",
       alt: "KINIEMCHUONG",
-      url: "/",
+      url: "/category/9",
     },
   ];
+
 </script>
 <div class='top-nav flex justify-center mt-2 h-full'>
   <div class="sm:flex hidden w-[1200px]">
     <div class="flex items-center w-full">
-      <a class='w-[300px]' href="/">
+      <a class='w-[300px] ml-5' href="/">
         <img src="/images/logo.png" class='h-[80px] w-[200px]' atl="pig-logo"/>
       </a>
-      <div class='flex justify-end items-center gap-14 w-full px-10'>
+      <div class='flex justify-end items-center xl:gap-10 gap-5 w-full px-10'>
         {#each listIcon as { icon, alt, url }}
-          <a href={url}>
-            <img class="logo-header category_img" src={icon} alt={alt} />
+          <a on:click={()=> goto(url, {replaceState: true})}>
+            <div>
+              <img class="logo-header category_img" src={icon} alt={alt} />
+            </div>
           </a>
         {/each}
       </div>
