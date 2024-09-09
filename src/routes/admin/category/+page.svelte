@@ -12,7 +12,7 @@
   let material = "";
   let color = "";
   let size = "";
-  let rank = "";
+  let rank = 999;
   let images = "";
 
   let value = "";
@@ -40,6 +40,7 @@
       disableUpload = true;
       images = files[0];
       value = files[0].name;
+      productCode= value;
     } else {
       disableUpload = false;
       images = "";
@@ -59,8 +60,8 @@
           body: JSON.stringify({ image: $image_result })
         }
       );
-      const { s3_url } = await response.json();
-      imageUrl = s3_url;
+      const { file_name } = await response.json();
+      imageUrl = `https://cupviet.s3.ap-southeast-1.amazonaws.com/${file_name}`;
       createProduct();
       return true;
     } catch (error) {
@@ -114,7 +115,7 @@
     material = "";
     color = "";
     size = "";
-    rank = "";
+    rank = 999;
     images = "";
     value = "";
   };
@@ -138,7 +139,66 @@
     <p>Thêm mới sản phẩm</p>
   </div>
   <form on:submit={handleSubmit}>
+      <div class="mb-6">
+      <p for="images" class="mb-2">Hình ảnh</p>
+
+      <Dropzone
+        id="dropzone"
+        on:drop={dropHandle}
+        on:dragover={(event) => {
+          event.preventDefault();
+        }}
+        on:change={handleChange}
+      >
+        <svg
+          aria-hidden="true"
+          class="mb-3 w-10 h-10 text-gray-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          ><path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+          /></svg
+        >
+        {#if value.length === 0}
+          <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+            <span class="font-semibold">Click to upload</span> or drag and drop
+          </p>
+          <p class="text-xs text-gray-500 dark:text-gray-400">
+            PNG (MAX. 800x800px)
+          </p>
+        {:else}
+          <p>{value}</p>
+        {/if}
+      </Dropzone>
+    </div>
     <div class="grid gap-6 mb-6 md:grid-cols-2">
+      <div>
+        <p for="product_code" class="mb-2">Mã sản phẩm</p>
+        <input
+          class="input-styles"
+          type="text"
+          id="product_code"
+          bind:value={productCode}
+          placeholder="TBN_9999"
+          required
+        />
+      </div>
+      <div>
+        <p for="product_name" class="mb-2">Tên sản phẩm</p>
+        <input
+          class="input-styles"
+          type="text"
+          id="product_name"
+          bind:value={productName}
+          placeholder="Cúp kim loại Tây Ban Nha"
+          required
+        />
+      </div>
       <div>
         <p for="category" class="mb-2">Loại sản phẩm</p>
         <select
@@ -161,28 +221,6 @@
           <option value="11">Cúp Sứ</option>
           <option value="12">Cúp Nickel</option>
         </select>
-      </div>
-      <div>
-        <p for="product_name" class="mb-2">Tên sản phẩm</p>
-        <input
-          class="input-styles"
-          type="text"
-          id="product_name"
-          bind:value={productName}
-          placeholder="Cúp kim loại Tây Ban Nha"
-          required
-        />
-      </div>
-      <div>
-        <p for="product_code" class="mb-2">Mã sản phẩm</p>
-        <input
-          class="input-styles"
-          type="text"
-          id="product_code"
-          bind:value={productCode}
-          placeholder="TBN_9999"
-          required
-        />
       </div>
       <div>
         <p for="material" class="mb-2">Chất liệu</p>
@@ -243,46 +281,8 @@
           bind:value={rank}
           placeholder="1 -> 6"
           min="1"
-          max="6"
         />
       </div>
-    </div>
-    <div class="mb-6">
-      <p for="images" class="mb-2">Hình ảnh</p>
-
-      <Dropzone
-        id="dropzone"
-        on:drop={dropHandle}
-        on:dragover={(event) => {
-          event.preventDefault();
-        }}
-        on:change={handleChange}
-      >
-        <svg
-          aria-hidden="true"
-          class="mb-3 w-10 h-10 text-gray-400"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          ><path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-          /></svg
-        >
-        {#if value.length === 0}
-          <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-            <span class="font-semibold">Click to upload</span> or drag and drop
-          </p>
-          <p class="text-xs text-gray-500 dark:text-gray-400">
-            PNG (MAX. 800x800px)
-          </p>
-        {:else}
-          <p>{value}</p>
-        {/if}
-      </Dropzone>
     </div>
     <div class="mb-6">
       <Button class="bg-orange-400" type="submit">Submit</Button>

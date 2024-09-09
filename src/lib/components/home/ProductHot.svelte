@@ -136,10 +136,10 @@
     margin: 32px auto;
   }
   .title {
-    font-size: 36px;
+    font-size: 32px;
     font-weight: bold;
     line-height: 1.3;
-    color: #d6b80e;
+    color: #F3B81A;
     line-height: 40px;
     @include mobile {
       font-size: 24px;
@@ -162,7 +162,7 @@
   }
 
   .active {
-    border-bottom: 2px solid #d6b80e;
+    border-bottom: 2px solid #F3B81A;
     padding-bottom: 6px;
   }
 
@@ -185,7 +185,7 @@
     font-weight: bold !important;
     color: #4a4949;
     opacity: 1 !important;
-    border-bottom: 2px solid #d6b80e;
+    border-bottom: 2px solid #F3B81A;
     padding-bottom: 6px;
   }
 

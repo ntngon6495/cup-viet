@@ -115,8 +115,8 @@
 
 <div>
   <div
-    class="title text-lg font-bold"
-    style="text-align:center; color: #d6b80e"
+    class="title text-lg font-bold mt-5"
+    style="text-align:center; color: #F3B81A"
   >
     <h2>XẾP HẠNG DANH MỤC THEO MỨC ĐỘ PHỔ BIẾN</h2>
   </div>
@@ -147,49 +147,54 @@
               </div>
             </div>
           </div>
-          <ul class="big_goods_imgs">
-            <a href={`category/detail/${item.products[0]?.product_code}`}>
-              <span class="best-badge">1</span>
-              <li style="cursor:pointer;">
-                <img
-                  data-srcset="/images/product/7.png"
-                  srcset={item.products[0]?.image_url}
-                  class="w-[440px] h-[440px] ls-is-cached lazyloaded bg-gray-100"
-                />
+          {#if item.products?.length > 0 }
+            <ul class="big_goods_imgs">
+              <a href={`category/detail/${item.products[0]?.product_code}`}>
+                <span class="best-badge">1</span>
+                <li style="cursor:pointer;">
+                  <img
+                    data-srcset="/images/product/7.png"
+                    srcset={item.products[0]?.image_url}
+                    class="w-[440px] h-[440px] ls-is-cached lazyloaded bg-gray-100"
+                  />
+                </li>
+              </a>
+            </ul>
+            <ul class="big_goods_infos">
+              <li class="goodsnm text-center !mb-0" style="cursor:pointer;">
+                <p class="goodscd text-[#F3B81A]">
+                  {item.products[0]?.product_code}
+                </p>
+                <p>{item.products[0]?.product_name}</p>
               </li>
-            </a>
-          </ul>
-          <ul class="big_goods_infos">
-            <li class="goodsnm text-center !mb-0" style="cursor:pointer;">
-              <p class="goodscd">
-                {item.products[0]?.product_code}
-              </p>
-              <p>{item.products[0]?.product_name}</p>
-            </li>
-          </ul>
+            </ul>
+          {/if}
         </div>
         <div class="right_p small_right_goods_list col-span-7 justify-between">
-          {#each item.products as product, index}
-            {#if index > 0}
-              <a class="small_goods_infos" href={`category/detail/${product.product_code}`}>
-                <span class="best-badge">{index + 1}</span>
-                <span style="display:block; cursor:pointer">
-                  <img
-                    alt=""
-                    title=""
-                    src={product?.image_url}
-                    class="sm:w-[220px] w-[180px] ls-is-cached lazyloaded bg-gray-100"
-                  />
-                </span>
-                <div class="text-lg w-full mt-2">
-                  {product?.product_code}
-                  <div class="text-lg font-medium !mt-0">
-                    {product?.product_name}
+
+          {#if item.products?.length > 0}
+            {#each item.products as product, index}
+              {#if index > 0 && index < 7}
+                <a class="small_goods_infos" href={`category/detail/${product.product_code}`}>
+                  <span class="best-badge">{index + 1}</span>
+                  <span style="display:block; cursor:pointer">
+                    <img
+                      alt=""
+                      title=""
+                      src={product?.image_url}
+                      class="sm:w-[220px] w-[180px] ls-is-cached lazyloaded bg-gray-100"
+                    />
+                  </span>
+                  <div class="text-lg w-full mt-2">
+                    <p class="text-[#F3B81A]">{product?.product_code}</p>
+                    <div class="text-lg font-medium !mt-0">
+                      {product?.product_name}
+                    </div>
                   </div>
-                </div>
-              </a>
+                </a>
+              {/if}
+              {/each}
             {/if}
-          {/each}
         </div>
         </div>
         <div class="col-span-12 sm:max-w-[1200px] sm:!max-h-[200px] max-h-[80px]">
