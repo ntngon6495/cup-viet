@@ -25,10 +25,10 @@
       />
       <img src="/images/ic-search.svg" class="w-5" alt="key search" />
     </div>
-    <div class="flex gap-2">
-      <p class='border-r px-1'>Hỏi đáp</p>
-      <p class='border-r px-1'>Tin tức</p>
-      <p class='border-r px-1'>Liên hệ</p>
+    <div class="flex gap-3">
+      <p class='border-r pr-3'>Hỏi đáp</p>
+      <p class='border-r pr-3'>Tin tức</p>
+      <p class='border-r pr-3'>Liên hệ</p>
       <div class='flex gap-1 font-bold'><PhoneOutline class="w-6 h-6" /><span> 0902 547 808 </span></div>
     </div>
   </div>
