@@ -8,6 +8,7 @@
   let isSubmit = true;
   let categoryId = "";
   let productName = "";
+  let subName = "";
   let productCode = "";
   let material = "";
   let color = "";
@@ -40,7 +41,7 @@
       disableUpload = true;
       images = files[0];
       value = files[0].name;
-      productCode= value;
+      productCode= value.split('.')[0].replaceAll(' ', '');
     } else {
       disableUpload = false;
       images = "";
@@ -184,7 +185,7 @@
           type="text"
           id="product_code"
           bind:value={productCode}
-          placeholder="TBN_9999"
+          placeholder="CKT_CV38..."
           required
         />
       </div>
@@ -195,7 +196,7 @@
           type="text"
           id="product_name"
           bind:value={productName}
-          placeholder="Cúp kim loại Tây Ban Nha"
+          placeholder="VD: Cúp kim loại"
           required
         />
       </div>
@@ -223,6 +224,16 @@
         </select>
       </div>
       <div>
+        <p for="material" class="mb-2">Tên chi tiết</p>
+        <input
+          class="input-styles"
+          type="text"
+          id="material"
+          bind:value={subName}
+          placeholder="VD: Cúp Golf best gross"
+        />
+      </div>
+      <div>
         <p for="material" class="mb-2">Chất liệu</p>
         <input
           class="input-styles"
@@ -231,26 +242,6 @@
           bind:value={material}
           placeholder="Kim loại"
         />
-        <!-- <select
-          class="input-styles px-2"
-          id="material"
-          placeholder="John"
-          bind:value={material}
-          required
-        >
-          <option value="1">Cúp Vô Địch</option>
-          <option value="2">Cúp EAGLE</option>
-          <option value="3">Cúp GOLF</option>
-          <option value="4">Cúp Kĩ Thuật</option>
-          <option value="5">Cúp Italy</option>
-          <option value="6">Cúp Tây Ban Nha</option>
-          <option value="7">Quà Tặng</option>
-          <option value="8">Huy Chương</option>
-          <option value="9">Kĩ Niệm Chương</option>
-          <option value="10">Cúp Pewter</option>
-          <option value="11">Cúp Sứ</option>
-          <option value="12">Cúp Nickel</option>
-        </select> -->
       </div>
       <div>
         <p for="color" class="mb-2">Màu sắc</p>
@@ -269,7 +260,7 @@
           type="text"
           id="size"
           bind:value={size}
-          placeholder="Size A 420 mm"
+          placeholder="Cao 390mm, R 100mm"
         />
       </div>
       <div>

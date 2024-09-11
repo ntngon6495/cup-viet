@@ -2,39 +2,46 @@
   import { goto } from "$app/navigation";
   let listIcon = [
     {
-      icon: "/icon/CUPVODICH-2.png",
+      icon: "/icon/topNav/ic-vodich.png",
       alt: "CUPVODICH",
       url: "/category/1",
+      name: "cúp vô địch"
     },
     {
-      icon: "/icon/CUPEAGEL-2.png",
+      icon: "/icon/topNav/ic-eagle.png",
       alt: "CUPEAGEL",
       url: "/category/2",
+      name: "cúp eagle"
     },
     {
-      icon: "/icon/CUPGOLF-2.png",
+      icon: "/icon/topNav/ic-golf.png",
       alt: "CUPGOLF",
       url: "/category/3",
+      name: "cúp golf"
     },
     {
-      icon: "/icon/CUPKYTHUAT-2.png",
+      icon: "/icon/topNav/ic-kithuat.png",
       alt: "CUPKYTHUAT",
       url: "/category/4",
+      name: "cúp kĩ thuạt"
     },
     {
-      icon: "/icon/QUATANG-2.png",
+      icon: "/icon/topNav/ic-quatang.png",
       alt: "QUATANG",
       url: "/category/7",
+      name: "quà tặng"
     },
     {
-      icon: "/icon/HUYCHUONG-2.png",
+      icon: "/icon/topNav/ic-huychuong.png",
       alt: "HUYCHUONG",
       url: "/category/8",
+      name: "huy chương"
     },
     {
-      icon: "/icon/KINIEMCHUONG-2.png",
+      icon: "/icon/topNav/ic-kiniemchuong.png",
       alt: "KINIEMCHUONG",
       url: "/category/9",
+      name: "kỉ niệm chương"
     },
   ];
 
@@ -43,13 +50,18 @@
   <div class="sm:flex hidden w-[1200px]">
     <div class="flex items-center w-full">
       <a class='w-[300px] ml-5' href="/">
-        <img src="/images/logo.png" class='h-[80px] w-[200px]' atl="pig-logo"/>
+        <!-- svelte-ignore a11y-missing-attribute -->
+        <img src="/icon/topNav/logo-cup-viet-white.png" class='h-[80px] w-[200px]' atl="pig-logo"/>
       </a>
-      <div class='flex justify-end items-center xl:gap-10 gap-5 w-full px-10'>
-        {#each listIcon as { icon, alt, url }}
-          <a on:click={()=> goto(url, {replaceState: true})}>
-            <div>
-              <img class="logo-header category_img" src={icon} alt={alt} />
+      <div class='flex justify-start items-center xl:gap-10 gap-5 w-full px-10'>
+        {#each listIcon as { icon, alt, url, name }}
+          <!-- svelte-ignore a11y-click-events-have-key-events -->
+          <!-- svelte-ignore a11y-missing-attribute -->
+          <!-- svelte-ignore a11y-no-static-element-interactions -->
+          <a on:click={()=> goto(url, {replaceState: true})} alt=''>
+            <div class='hover:!text-[12px] cursor-pointer'>
+              <img class="logo-header category_img mx-auto" src={icon} alt={alt} />
+              <p class="uppercase text-[10px] mx-auto mt-1">{name}</p>
             </div>
           </a>
         {/each}
@@ -58,13 +70,13 @@
   </div>
 </div>
 
-<style>
+<style lang='scss'>
 
   .top-nav {
     padding: 5px 80px;
     background: #ffcd36;
     opacity: 0.9;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
   .search-wrap {
     width: 100%;
@@ -133,7 +145,7 @@
     bottom: -9px;
   }
   .category_img {
-    width: 70px;
+    width: 40px;
   }
 
   .category_img:hover {
