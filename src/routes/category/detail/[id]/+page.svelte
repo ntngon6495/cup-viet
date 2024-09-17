@@ -5,18 +5,18 @@
     {
       alt: "Cosmic timetraveler",
       src: "/images/category/cupsu/CRM_044NEW.png",
-      title: "cupviet.com"
+      title: "cupviet.com",
     },
     {
       alt: "Cosmic timetraveler",
       src: "/images/category/cupsu/CRM_057NEW2024D.png",
-      title: "cupviet.com"
+      title: "cupviet.com",
     },
     {
       alt: "Cosmic timetraveler",
       src: "/images/category/cupsu/CRM_FS9205-25B.png",
-      title: "cupviet.com"
-    }
+      title: "cupviet.com",
+    },
   ];
   let index = 0;
   let forward = true;
@@ -25,20 +25,21 @@
 
   let sizes = [
     { value: "0", name: "Choose an option" },
-    { value: "1", name: "Cao 390mm, R 100mm" }
+    { value: "1", name: "Cao 390mm, R 100mm" },
   ];
   export let data;
 
   let productList = [];
-  $: console.log(productList);
+  let productDetail = {};
 
   $: data && fetchData(data.category_id);
 
   const fetchData = async (id) => {
+    productDetail = data;
     const response = await fetch(
       `https://dgg300bw0j.execute-api.ap-southeast-1.amazonaws.com/dev/products?categoryId=${id}`,
       {
-        method: "GET"
+        method: "GET",
       }
     );
     if (response) {
@@ -47,13 +48,17 @@
       productList = temp.sort((a, b) => a.rank - b.rank);
     }
   };
+
+  const handelChangeProduct = (index) => {
+    productDetail = productList[index];
+  };
 </script>
 
 <div>
   <div class="grid sm:grid-cols-12 w-full mt-20">
     <div class="col-span-4">
       <div class="carousel-custom cursor-pointer">
-        <img src={data.image_url} class="sm:!w-[600px] !w-[200px]" />
+        <img src={productDetail.image_url} class="sm:!w-[600px] !w-[200px]" />
         <!-- <Carousel {images} {forward} let:Indicators let:Controls bind:index class='sm:!h-[600px] !h-[200px] flex justify-center' imgClass='sm:!w-[600px] sm:h-[600px] !w-[200px] h-[200px] mx-auto'>
                     <Indicators />
                 </Carousel> -->
@@ -62,9 +67,9 @@
     </div>
     <div class="col-span-4 pl-5 sm:text-lg text-sm">
       <div class="mb-2 text-2xl font-bold inline-block text-center">
-        <h1 class="text-[#ffc828]">{data.product_code}</h1>
+        <h1 class="text-[#ffc828]">{productDetail.product_code}</h1>
         <p class="uppercase text-xl font-normal text-gray-500">
-          {data.product_name}
+          {productDetail.product_name}
         </p>
       </div>
       <div class="flex gap-5 font-bold">
@@ -145,8 +150,7 @@
           <div class="col-span-3">
             <a
               class="text-center cursor-pointer"
-              on:click={() =>
-                goto(`${product.product_code}`, { replaceState: true })}
+              on:click={() => handelChangeProduct(idx)}
             >
               <img
                 alt=""
