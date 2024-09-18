@@ -3,26 +3,29 @@
 
   let tab = "4";
   let listProduct = [];
-  
-  onMount(()=> {
-    getProducts(tab)
-  })
 
-  $: tab && getProducts(tab)
+  onMount(() => {
+    getProducts(tab);
+  });
+
+  $: tab && getProducts(tab);
 
   const getProducts = async (id) => {
-    const response = await fetch(`https://dgg300bw0j.execute-api.ap-southeast-1.amazonaws.com/dev/products?categoryId=${id}`, {
-      method: "GET"
-    })
+    const response = await fetch(
+      `https://dgg300bw0j.execute-api.ap-southeast-1.amazonaws.com/dev/products?categoryId=${id}`,
+      {
+        method: "GET",
+      }
+    );
 
-    const { products } = await response.json()
-    listProduct = products?.Items
-  }
+    const { products } = await response.json();
+    listProduct = products?.Items;
+  };
 </script>
 
 <div class="section">
   <div class="hot-seller-main-title">
-    <h3 class="title">SẢN PHẨM NỔI BẬT</h3>
+    <h3 class="title uppercase">SẢN PHẨM NỔI BẬT</h3>
   </div>
   <div class="hot_seller">
     <div
@@ -111,7 +114,9 @@
         {/if}
       {/each}
     {:else}
-      <div class="w-full flex justify-center items-center font-bold text-lg h-[236px]">
+      <div
+        class="w-full flex justify-center items-center font-bold text-lg h-[236px]"
+      >
         <p>Chưa có sản phẩm nào</p>
       </div>
     {/if}
@@ -136,10 +141,13 @@
     margin: 32px auto;
   }
   .title {
+    font-family: "trajan-pro-3, serif";
+    font-style: "normal";
+    font-weight: 600;
     font-size: 32px;
-    font-weight: bold;
+    font-weight: 500;
     line-height: 1.3;
-    color: #F3B81A;
+    color: #f3b81a;
     line-height: 40px;
     @include mobile {
       font-size: 24px;
@@ -162,7 +170,7 @@
   }
 
   .active {
-    border-bottom: 2px solid #F3B81A;
+    border-bottom: 2px solid #f3b81a;
     padding-bottom: 6px;
   }
 
@@ -185,7 +193,7 @@
     font-weight: bold !important;
     color: #4a4949;
     opacity: 1 !important;
-    border-bottom: 2px solid #F3B81A;
+    border-bottom: 2px solid #f3b81a;
     padding-bottom: 6px;
   }
 

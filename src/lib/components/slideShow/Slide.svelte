@@ -10,20 +10,20 @@
       id: 1,
       width: 1000,
       height: 600,
-      src: "/images/slide-middle.png"
+      src: "/images/slide-middle.png",
     },
     {
       id: 2,
       width: 1000,
       height: 600,
-      src: "/images/slide-left.png"
+      src: "/images/slide-left.png",
     },
     {
       id: 3,
       width: 1000,
       height: 600,
-      src: "/images/slide-right.png"
-    }
+      src: "/images/slide-right.png",
+    },
     // {
     // 	id: 4,
     // 	// width: 800,
@@ -33,32 +33,38 @@
   ];
 
   const images = [
-	{
-		'alt': "Cosmic timetraveler",
-		'src': "/images/slide-middle.png",
-		'title': "cosmic-timetraveler-pYyOZ8q7AII-unsplash.com"
-  	},
-	{
-		'alt': "Cosmic timetraveler",
-		'src': "/images/slide-left.png",
-		'title': "cosmic-timetraveler-pYyOZ8q7AII-unsplash.com"
-  	},
-	{
-		'alt': "Cosmic timetraveler",
-		'src': "/images/slide-right.png",
-		'title': "cosmic-timetraveler-pYyOZ8q7AII-unsplash.com"
-  	}
-  ]
+    {
+      alt: "Cosmic timetraveler",
+      src: "/images/slide-middle.png",
+      title: "cosmic-timetraveler-pYyOZ8q7AII-unsplash.com",
+    },
+    {
+      alt: "Cosmic timetraveler",
+      src: "/images/slide-left.png",
+      title: "cosmic-timetraveler-pYyOZ8q7AII-unsplash.com",
+    },
+    {
+      alt: "Cosmic timetraveler",
+      src: "/images/slide-right.png",
+      title: "cosmic-timetraveler-pYyOZ8q7AII-unsplash.com",
+    },
+  ];
 
-  onMount(() => {
-    let counter = document.getElementsByClassName("slidy-counter");
-    counter[0].style.display = "none";
-  });
+  // onMount(() => {
+  //   let counter = document.getElementsByClassName("slidy-counter");
+  //   counter[0].style.display = "none";
+  // });
 </script>
 
 <div imgClass="min-w-full">
-  <Carousel {images} duration="3000" let:Indicators class='!min-h-[600px] rounded-none' imgClass='!h-[600px]'>
-	<Indicators />
+  <Carousel
+    {images}
+    duration="3000"
+    let:Indicators
+    class="!min-h-[600px] rounded-none"
+    imgClass="!h-[600px]"
+  >
+    <Indicators />
   </Carousel>
 </div>
 

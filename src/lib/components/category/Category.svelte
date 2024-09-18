@@ -6,88 +6,88 @@
     {
       alt: "Cosmic timetraveler",
       src: "/small_slide/slider01.png",
-      title: "cupviet.com"
+      title: "cupviet.com",
     },
     {
       alt: "Cosmic timetraveler",
       src: "/small_slide/slider02.png",
-      title: "cupviet.com"
+      title: "cupviet.com",
     },
     {
       alt: "Cosmic timetraveler",
       src: "/small_slide/slider03.png",
-      title: "cupviet.com"
-    }
+      title: "cupviet.com",
+    },
   ];
 
   let backgroundCategory = [
     {
       alt: "cup itali",
       src: "/images/category/bg_category/middle_4.png",
-      url: ""
+      url: "",
     },
     {
       alt: "cup ki tay ban nha",
       src: "/images/category/bg_category/middle_3.png",
-      url: ""
+      url: "",
     },
     {
       alt: "cup ki thuat",
       src: "/images/category/bg_category/middle_2.png",
-      url: ""
-    }
+      url: "",
+    },
   ];
 
   export let productList = [
     {
-      id: '4',
+      id: "4",
       category: "CÚP KĨ THUẬT",
       banner: "/images/category/middle_4.png",
       url: "category/4",
-      products: []
+      products: [],
     },
     {
-      id: '11',
+      id: "11",
       category: "CÚP SỨ",
       banner: "/images/category/middle_4.png",
       url: "category/11",
-      products: []
+      products: [],
     },
     {
-      id: '12',
+      id: "12",
       category: "CÚP NICKEL",
       banner: "/images/category/middle_4.png",
       url: "category/12",
-      products: []
+      products: [],
     },
     {
-      id: '10',
+      id: "10",
       category: "CÚP PEWTER",
       banner: "/images/category/middle_4.png",
       url: "category/10",
-      products: []
+      products: [],
     },
     {
-      id: '5',
+      id: "5",
       category: "CÚP ITALY",
       banner: "/images/category/middle_4.png",
       url: "category/5",
-      products: []
+      products: [],
     },
     {
-      id: '6',
+      id: "6",
       category: "CÚP TÂY BAN NHA",
       banner: "/images/category/middle_2.png",
       url: "category/6",
-      products: []
-    }
+      products: [],
+    },
   ];
 
   export let products;
-  
+
   const mapDataList = () => {
     const groupedByCategory = products.reduce((acc, item) => {
-    // Use the item's category as the key
+      // Use the item's category as the key
       const key = item.category_id;
       // If the key doesn't exist in the accumulator object, initialize it with an empty array
       if (!acc[key]) {
@@ -101,16 +101,15 @@
     // console.log("groupedByCategory", groupedByCategory)
     let data = productList.map((item) => ({
       ...item, // Spread the existing properties
-      products: groupedByCategory[item.id]
+      products: groupedByCategory[item.id],
     }));
-    productList = data
+    productList = data;
     // console.log("data", dataMapping)
-  }
+  };
 
-  onMount(()=> {
-    mapDataList()
-  })
-  
+  onMount(() => {
+    mapDataList();
+  });
 </script>
 
 <div>
@@ -123,89 +122,94 @@
   <div
     class="col-span-12 sm:max-w-[1200px] sm:!max-h-[200px] max-h-[80px]"
   ></div>
-    {#each productList as item, idx}
-      <div
-        class="sm:grid sm:grid-cols-12 gap-4 my-10 pb-10 border-b border-b-gray-200"
-      >
-        <div class="col-span-5">
-          <div class="relative sm:max-w-[440px] sm:h-32 h-20">
-            <div
-              class="sm:h-32 h-20 w-full absolute bg-yellow-600 top-0 left-0 opacity-75"
-            ></div>
-            <img
-              class="sm:h-32 h-20 object-fill absolute top-0 left-0 opacity-40"
-              alt=""
-              src={backgroundCategory[idx]?.src}
-            />
-            <div
-              class="absolute sm:h-32 h-20 px-2 flex items-center justify-between font-bold text-2xl text-white w-full"
-            >
-              <p class="tit">{item?.category}</p>
-              <div class="flex items-center sm:text-xl text-base">
-                <a href={`/${item?.url}`}>XEM THÊM</a>
-                <img src="/images/arrow-right-white.png" alt="best 1" />
-              </div>
+  {#each productList as item, idx}
+    <div
+      class="sm:grid sm:grid-cols-12 gap-4 my-10 pb-10 border-b border-b-gray-200"
+    >
+      <div class="col-span-5">
+        <div class="relative sm:max-w-[440px] sm:h-32 h-20">
+          <div
+            class="sm:h-32 h-20 w-full absolute bg-yellow-600 top-0 left-0 opacity-75"
+          ></div>
+          <img
+            class="sm:h-32 h-20 object-fill absolute top-0 left-0 opacity-40"
+            alt=""
+            src={backgroundCategory[idx]?.src}
+          />
+          <div
+            class="absolute sm:h-32 h-20 px-2 flex items-center justify-between font-bold text-2xl text-white w-full"
+          >
+            <p class="tit">{item?.category}</p>
+            <div class="flex items-center sm:text-xl text-base">
+              <a href={`/${item?.url}`}>XEM THÊM</a>
+              <img src="/images/arrow-right-white.png" alt="best 1" />
             </div>
           </div>
-          {#if item.products?.length > 0 }
-            <ul class="big_goods_imgs">
-              <a href={`category/detail/${item.products[0]?.product_code}`}>
-                <span class="best-badge">1</span>
-                <li style="cursor:pointer;">
-                  <img
-                    data-srcset="/images/product/7.png"
-                    srcset={item.products[0]?.image_url}
-                    class="w-[440px] h-[440px] ls-is-cached lazyloaded bg-gray-100"
-                  />
-                </li>
-              </a>
-            </ul>
-            <ul class="big_goods_infos">
-              <li class="goodsnm text-center !mb-0" style="cursor:pointer;">
-                <p class="goodscd text-[#F3B81A]">
-                  {item.products[0]?.product_code}
-                </p>
-                <p>{item.products[0]?.product_name}</p>
+        </div>
+        {#if item.products?.length > 0}
+          <ul class="big_goods_imgs">
+            <a href={`category/detail/${item.products[0]?.product_code}`}>
+              <span class="best-badge">1</span>
+              <li style="cursor:pointer;">
+                <img
+                  data-srcset="/images/product/7.png"
+                  srcset={item.products[0]?.image_url}
+                  class="w-[440px] h-[440px] ls-is-cached lazyloaded bg-gray-100"
+                />
               </li>
-            </ul>
-          {/if}
-        </div>
-        <div class="right_p small_right_goods_list col-span-7 justify-between">
-
-          {#if item.products?.length > 0}
-            {#each item.products as product, index}
-              {#if index > 0 && index < 7}
-                <a class="small_goods_infos" href={`category/detail/${product.product_code}`}>
-                  <span class="best-badge">{index + 1}</span>
-                  <span style="display:block; cursor:pointer">
-                    <img
-                      alt=""
-                      title=""
-                      src={product?.image_url}
-                      class="sm:w-[220px] w-[180px] ls-is-cached lazyloaded bg-gray-100"
-                    />
-                  </span>
-                  <div class="text-lg w-full mt-2">
-                    <p class="text-[#F3B81A]">{product?.product_code}</p>
-                    <div class="text-lg font-medium !mt-0">
-                      {product?.product_name}
-                    </div>
+            </a>
+          </ul>
+          <ul class="big_goods_infos">
+            <li
+              class="goodsnm flex justify-center !mb-0 pr-[50px]"
+              style="cursor:pointer;"
+            >
+              <p class="goodscd text-[#F3B81A] pr-2 border-r-2">
+                {item.products[0]?.product_code}
+              </p>
+              <p>{item.products[0]?.product_name}</p>
+            </li>
+          </ul>
+        {/if}
+      </div>
+      <div class="right_p small_right_goods_list col-span-7 justify-between">
+        {#if item.products?.length > 0}
+          {#each item.products as product, index}
+            {#if index > 0 && index < 7}
+              <a
+                class="small_goods_infos"
+                href={`category/detail/${product.product_code}`}
+              >
+                <span class="best-badge">{index + 1}</span>
+                <span style="display:block; cursor:pointer">
+                  <img
+                    alt=""
+                    title=""
+                    src={product?.image_url}
+                    class="sm:w-[220px] w-[180px] ls-is-cached lazyloaded bg-gray-100"
+                  />
+                </span>
+                <div class="text-lg w-full mt-2">
+                  <p class="text-[#F3B81A]">{product?.product_code}</p>
+                  <div class="text-lg font-medium !mt-0">
+                    {product?.product_name}
                   </div>
-                </a>
-              {/if}
-              {/each}
+                </div>
+              </a>
             {/if}
-        </div>
-        </div>
-        <div class="col-span-12 sm:max-w-[1200px] sm:!max-h-[200px] max-h-[80px]">
-          <Carousel
-            class="rounded-md sm:max-h-[200px] max-h-[80px]"
-            images={imagesBanner}
-            duration="3000"
-            index={idx}
-          />
-        </div>
-    {/each}
+          {/each}
+        {/if}
+      </div>
+    </div>
+    <div class="col-span-12 sm:max-w-[1200px] sm:!max-h-[200px] max-h-[80px]">
+      <Carousel
+        class="rounded-md sm:max-h-[200px] max-h-[80px]"
+        images={imagesBanner}
+        duration="3000"
+        index={idx}
+      />
+    </div>
+  {/each}
 </div>
 
 <style>
