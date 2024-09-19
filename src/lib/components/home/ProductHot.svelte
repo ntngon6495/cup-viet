@@ -141,7 +141,7 @@
     margin: 32px auto;
   }
   .title {
-    font-family: "trajan-pro-3, serif";
+    font-family: "Trajan Pro";
     font-style: "normal";
     font-weight: 600;
     font-size: 32px;
