@@ -39,7 +39,7 @@
       </Button>
     </div>
   </div>
-  <div class="flex justify-between px-4 pb-5 sm:hidden">
+  <!-- <div class="flex justify-between px-4 pb-5 sm:hidden">
     <div class="text-center w-16">
       <a href="/category/italia">
         <img src="/icon/CUPVODICH-2.png" alt="logo header" class="w-16 h-16" />
@@ -80,7 +80,7 @@
       </a>
       <p class="text-xs uppercase">Cúp NICKEL</p>
     </div>
-  </div>
+  </div> -->
 </div>
 
 <Drawer
