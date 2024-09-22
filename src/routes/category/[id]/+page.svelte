@@ -7,18 +7,18 @@
     {
       alt: "Cosmic timetraveler",
       src: "/small_slide/slider01.png",
-      title: "cupviet.com",
+      title: "cupviet.com"
     },
     {
       alt: "Cosmic timetraveler",
       src: "/small_slide/slider02.png",
-      title: "cupviet.com",
+      title: "cupviet.com"
     },
     {
       alt: "Cosmic timetraveler",
       src: "/small_slide/slider03.png",
-      title: "cupviet.com",
-    },
+      title: "cupviet.com"
+    }
   ];
 
   export const renderTitle = (id) => {
@@ -65,7 +65,7 @@
     const response = await fetch(
       `https://dgg300bw0j.execute-api.ap-southeast-1.amazonaws.com/dev/products?categoryId=${id}`,
       {
-        method: "GET",
+        method: "GET"
       }
     );
     if (response) {
@@ -78,7 +78,7 @@
 
 <div class="w-full text-center mt-10">
   <p
-    class="sm:text-4xl text-2xl sm:mt-0 mt-10 font-semibold uppercase text-yellow-400"
+    class="sm:text-4xl text-2xl sm:mt-0 mt-10 font-semibold uppercase text-yellow-400 title-category"
   >
     {renderTitle(data?.category)}
   </p>
@@ -136,3 +136,12 @@
     {/each}
   </div>
 </div>
+
+<style lang="scss">
+  .title-category {
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+</style>

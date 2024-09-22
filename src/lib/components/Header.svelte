@@ -39,48 +39,6 @@
       </Button>
     </div>
   </div>
-  <!-- <div class="flex justify-between px-4 pb-5 sm:hidden">
-    <div class="text-center w-16">
-      <a href="/category/italia">
-        <img src="/icon/CUPVODICH-2.png" alt="logo header" class="w-16 h-16" />
-      </a>
-      <p class="text-xs uppercase">Cúp Italia</p>
-    </div>
-    <div class="text-center w-16">
-      <a href="/category/taybannha">
-        <img src="/icon/CUPEAGEL-2.png" alt="logo header" class="w-16 h-16" />
-      </a>
-      <p class="text-xs uppercase">Cúp Tây Ban Nha</p>
-    </div>
-    <div class="text-center w-16">
-      <a href="/category/italia">
-        <img src="/icon/CUPGOLF-2.png" alt="logo header" class="w-16 h-16" />
-      </a>
-      <p class="text-xs uppercase">Cúp SU</p>
-    </div>
-    <div class="text-center w-16">
-      <a href="/category/italia">
-        <img src="/icon/CUPKYTHUAT-2.png" alt="logo header" class="w-16 h-16" />
-      </a>
-      <p class="text-xs uppercase">Cúp PEWTER</p>
-    </div>
-    <div class="text-center w-16">
-      <a href="/category/italia">
-        <img src="/icon/QUATANG-2.png" alt="logo header" class="w-16 h-16" />
-      </a>
-    </div>
-    <div class="text-center w-16">
-      <a href="/category/italia">
-        <img src="/icon/HUYCHUONG-2.png" alt="logo header" class="w-16 h-16" />
-      </a>
-    </div>
-    <div class="text-center w-16">
-      <a href="/category/italia">
-        <img src="/icon/KINIEMCHUONG-2.png" alt="logo header" class="w-16 h-16" />
-      </a>
-      <p class="text-xs uppercase">Cúp NICKEL</p>
-    </div>
-  </div> -->
 </div>
 
 <Drawer

@@ -1,8 +1,7 @@
 <script lang="js">
   import { Button, Dropzone, Toast } from "flowbite-svelte";
   import { base64 } from "@sveu/browser";
-  import { toasts, ToastContainer, FlatToast }  from "svelte-toasts";
-	
+  import { toasts, ToastContainer, FlatToast } from "svelte-toasts";
 
   let disableUpload = false;
   let isSubmit = true;
@@ -41,7 +40,7 @@
       disableUpload = true;
       images = files[0];
       value = files[0].name;
-      productCode= value.split('.')[0].replaceAll(' ', '');
+      productCode = value.split(".")[0].replaceAll(" ", "");
     } else {
       disableUpload = false;
       images = "";
@@ -52,7 +51,7 @@
 
   let imageUrl = "";
   const handleUploadImage = async () => {
-    isSubmit = false
+    isSubmit = false;
     try {
       const response = await fetch(
         "https://cespre3cgb.execute-api.ap-southeast-1.amazonaws.com/prod/upload-image-s3",
@@ -72,9 +71,9 @@
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if(isSubmit) {
+    if (isSubmit) {
       handleUploadImage();
-    } 
+    }
   };
 
   const createProduct = async () => {
@@ -102,11 +101,10 @@
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
-    resetValues()
-    showToast()
-    isSubmit = true 
+    resetValues();
+    showToast();
+    isSubmit = true;
     const result = await response.json();
-    
   };
 
   const resetValues = () => {
@@ -123,15 +121,14 @@
 
   const showToast = () => {
     const toast = toasts.add({
-      title: 'Success',
-      description: 'Thêm sản phẩm thành công',
+      title: "Success",
+      description: "Thêm sản phẩm thành công",
       duration: 3000, // 0 or negative to avoid auto-remove
-      placement: 'top-right',
-      theme: 'light',
-			showProgress: true,
-      type: 'success',
+      placement: "top-right",
+      theme: "light",
+      showProgress: true,
+      type: "success"
     });
-
   };
 </script>
 
@@ -140,7 +137,7 @@
     <p>Thêm mới sản phẩm</p>
   </div>
   <form on:submit={handleSubmit}>
-      <div class="mb-6">
+    <div class="mb-6">
       <p for="images" class="mb-2">Hình ảnh</p>
 
       <Dropzone
@@ -209,18 +206,18 @@
           required
           bind:value={categoryId}
         >
-          <option value="1">Cúp Vô Địch</option>
-          <option value="2">Cúp EAGLE</option>
-          <option value="3">Cúp GOLF</option>
-          <option value="4">Cúp Kĩ Thuật</option>
-          <option value="5">Cúp Italy</option>
-          <option value="6">Cúp Tây Ban Nha</option>
-          <option value="7">Quà Tặng</option>
-          <option value="8">Huy Chương</option>
-          <option value="9">Kĩ Niệm Chương</option>
-          <option value="10">Cúp Pewter</option>
-          <option value="11">Cúp Sứ</option>
-          <option value="12">Cúp Nickel</option>
+          <option value="1">Cúp Best Gross</option>
+          <option value="2">Cúp Gốm Sứ</option>
+          <option value="3">Cúp Kĩ Thuật</option>
+          <option value="4">Cúp Luxury</option>
+          <option value="5">Cúp Premium</option>
+          <option value="6">Cúp Pha Lê</option>
+          <option value="7">Cúp Pewter</option>
+          <option value="8">Quà Tặng Vip</option>
+          <option value="9">Huy Chương & Kỉ Niệm Chươngg</option>
+          <option value="10">Cúp Hio & Eagle</option>
+          <option value="11">Cúp Nickel</option>
+          <option value="12">Theo yêu cầu</option>
         </select>
       </div>
       <div>
@@ -279,9 +276,9 @@
       <Button class="bg-orange-400" type="submit">Submit</Button>
     </div>
   </form>
-  <ToastContainer let:data={data}>
-		<FlatToast {data}  />
-	</ToastContainer>
+  <ToastContainer let:data>
+    <FlatToast {data} />
+  </ToastContainer>
 </div>
 
 <style lang="scss">

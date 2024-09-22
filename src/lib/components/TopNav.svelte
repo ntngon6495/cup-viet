@@ -2,81 +2,225 @@
   import { goto } from "$app/navigation";
   let listIcon = [
     {
-      icon: "/icon/topNav/ic-vodich.png",
+      id: 1,
+      icon: "/icon/menu/1.1.png",
+      icon_active: "/icon/menu/1.png",
       alt: "CUPVODICH",
       url: "/category/1",
       name: "cúp vô địch"
     },
     {
-      icon: "/icon/topNav/ic-eagle.png",
-      alt: "CUPEAGEL",
-      url: "/category/2",
-      name: "cúp eagle"
-    },
-    {
-      icon: "/icon/topNav/ic-golf.png",
+      id: 2,
+      icon: "/icon/menu/2.1.png",
+      icon_active: "/icon/menu/2.png",
       alt: "CUPGOLF",
-      url: "/category/3",
+      url: "/category/2",
       name: "cúp golf"
     },
     {
-      icon: "/icon/topNav/ic-kithuat.png",
+      id: 3,
+      icon: "/icon/menu/3.1.png",
+      icon_active: "/icon/menu/3.png",
+      alt: "CUPKYTHUAT",
+      url: "/category/3",
+      name: "cúp kĩ thuật"
+    },
+    {
+      id: 12,
+      icon: "/icon/menu/4.1.png",
+      icon_active: "/icon/menu/4.png",
       alt: "CUPKYTHUAT",
       url: "/category/4",
-      name: "cúp kĩ thuạt"
+      name: "theo yêu cầu"
     },
     {
-      icon: "/icon/topNav/ic-quatang.png",
+      id: 8,
+      icon: "/icon/menu/5.1.png",
+      icon_active: "/icon/menu/5.png",
       alt: "QUATANG",
       url: "/category/7",
-      name: "quà tặng"
+      name: "quà tặng vip"
     },
     {
-      icon: "/icon/topNav/ic-huychuong.png",
-      alt: "HUYCHUONG",
-      url: "/category/8",
-      name: "huy chương"
-    },
-    {
-      icon: "/icon/topNav/ic-kiniemchuong.png",
+      id: 9,
+      icon: "/icon/menu/6.1.png",
+      icon_active: "/icon/menu/6.png",
       alt: "KINIEMCHUONG",
-      url: "/category/9",
+      url: "/category/8",
       name: "kỉ niệm chương"
-    },
+    }
   ];
 
+  let subCategory = [
+    {
+      categoryId: 2,
+      categorys: [
+        {
+          id: "2",
+          name: "Cúp gốm sứ"
+        },
+        {
+          id: "4",
+          name: "Cúp luxury"
+        },
+        {
+          id: "5",
+          name: "Cúp premium"
+        },
+        {
+          id: "6",
+          name: "Cúp phale"
+        },
+        {
+          id: "7",
+          name: "Cúp pewter"
+        },
+        {
+          id: "11",
+          name: "Cúp nickel"
+        }
+      ]
+    }
+  ];
+
+  $: listCategory = subCategory.find(
+    (item) => item.categoryId == isTab
+  )?.categorys;
+
+  let isTab = 0;
+  let isSubTab = 0;
 </script>
-<div class='top-nav flex justify-center mt-2 h-full'>
+
+<div
+  class="top-nav flex justify-center mt-2 h-[100px] border-b-4 border-b-[#ffcd36] absolute z-[68] absolute-center"
+>
   <div class="sm:flex hidden w-[1200px]">
     <div class="flex items-center w-full">
-      <a class='w-[300px] ml-5' href="/">
+      <a class="w-[300px] ml-5" href="/">
         <!-- svelte-ignore a11y-missing-attribute -->
-        <img src="/icon/topNav/logo-cup-viet-white.png" class='h-[80px] w-[200px]' atl="pig-logo"/>
+        <img src="/images/logo.png" class="h-[80px] w-[200px]" atl="pig-logo" />
       </a>
-      <div class='flex justify-start items-center xl:gap-10 gap-5 w-full px-10'>
-        {#each listIcon as { icon, alt, url, name }}
+      <div class="flex justify-start items-center w-full h-full px-10">
+        {#each listIcon as { id, icon, icon_active, alt, url, name }}
           <!-- svelte-ignore a11y-click-events-have-key-events -->
           <!-- svelte-ignore a11y-missing-attribute -->
           <!-- svelte-ignore a11y-no-static-element-interactions -->
-          <a on:click={()=> goto(url, {replaceState: true})} alt=''>
-            <div class='hover:!text-[12px] cursor-pointer'>
-              <img class="logo-header category_img mx-auto" src={icon} alt={alt} />
-              <p class="uppercase text-[10px] mx-auto mt-1">{name}</p>
+          <a on:click={() => (isTab = id)} alt="" class="h-full">
+            <div
+              class="w-[130px] cursor-pointer background text-center h-full"
+              class:!hidden={isTab == id}
+            >
+              <img class="logo-header category_img mx-auto" src={icon} {alt} />
+              <p
+                class="uppercase text-[10px] font-semibold mx-auto mt-1 text-white"
+              >
+                {name}
+              </p>
+            </div>
+            <div class="cursor-pointer hidden h-full" class:!flex={isTab == id}>
+              <div class="background_left w-4"></div>
+              <div class="bg-[#ffcd36] w-[90px]">
+                <div class="text-center">
+                  <img
+                    class="logo-header category_img mx-auto"
+                    src={icon_active}
+                    {alt}
+                  />
+                  <p
+                    class="uppercase text-[10px] font-semibold mx-auto mt-1 text-white"
+                    class:text-green={isTab == id}
+                  >
+                    {name}
+                  </p>
+                </div>
+              </div>
+              <div class="background_right w-4"></div>
             </div>
           </a>
         {/each}
       </div>
     </div>
+    {#if listCategory}
+      <div class="bg-[white] absolute top-[100px] opacity-100">
+        <div class="flex justify-center items-center h-[60px]">
+          {#each listCategory as { id, name }}
+            <a
+              class="text-[#197D3F] text-[16px] font-semibold h-full uppercase category-style"
+              on:mouseover={() => (isSubTab = id)}
+            >
+              <div
+                class="cursor-pointer h-full flex"
+                class:!hidden={isSubTab == id}
+              >
+                <div class="w-3"></div>
+                <div class="bg-white">
+                  <div class="text-center h-full flex items-center">
+                    <p class="uppercase">{name}</p>
+                  </div>
+                </div>
+                <div class="w-3"></div>
+              </div>
+            </a>
+            <a
+              class="text-[#197D3F] text-[16px] font-semibold h-full uppercase hidden category-style"
+              class:!flex={isSubTab == id}
+              on:click={() => goto(`/category/${id}`, { replaceState: true })}
+              on:mouseout={() => (isSubTab = 0)}
+            >
+              <div class="cursor-pointer h-full flex">
+                <div class="background_left_sb w-3"></div>
+                <div class="bg-[#ffcd36]">
+                  <div class="text-center h-full flex items-center">
+                    <p class="uppercase">{name}</p>
+                  </div>
+                </div>
+                <div class="background_right_sb w-3"></div>
+              </div>
+            </a>
+          {/each}
+        </div>
+      </div>
+    {/if}
   </div>
 </div>
 
-<style lang='scss'>
+<style lang="scss">
+  .absolute-center {
+    top: 45px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .text-green {
+    color: #197d3f !important;
+  }
+  .background_left {
+    background: linear-gradient(100deg, #197d3f 50%, #ffcd36 50%);
+  }
+  .background_right {
+    background: linear-gradient(100deg, #ffcd36 50%, #197d3f 50%);
+  }
+  .background_left_sb {
+    background: linear-gradient(100deg, white 50%, #ffcd36 50%);
+  }
+  // .background_left_sb:first-child {
+  //   background: linear-gradient(100deg, #ffcd36 50% , #ffcd36 50%);
+  // }
+  .background_right_sb {
+    background: linear-gradient(100deg, #ffcd36 50%, white 50%);
+  }
+
+  .category-style:first-child {
+    .background_left_sb {
+      background: linear-gradient(100deg, #ffcd36 50%, #ffcd36 50%);
+    }
+  }
 
   .top-nav {
-    padding: 5px 80px;
-    background: #ffcd36;
+    // padding: 5px 80px;
+    // background: #ffcd36;
+    width: 100%;
+    background: #197d3f;
     opacity: 0.9;
-    margin-bottom: 5px;
   }
   .search-wrap {
     width: 100%;
@@ -145,11 +289,15 @@
     bottom: -9px;
   }
   .category_img {
-    width: 40px;
+    width: 60px;
   }
 
-  .category_img:hover {
-    transition: 0.3s;
-    transform: scale(1.2);
+  .category_img:last-child {
+    width: 90px;
   }
+
+  // .category_img:hover {
+  //   transition: 0.3s;
+  //   transform: scale(1.2);
+  // }
 </style>

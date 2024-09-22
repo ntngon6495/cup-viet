@@ -1,86 +1,139 @@
 <script lang="js">
   import { Carousel } from "flowbite-svelte";
-  import { onMount } from "svelte";
+  import { onMount, afterUpdate } from "svelte";
 
   let imagesBanner = [
     {
       alt: "Cosmic timetraveler",
       src: "/small_slide/slider01.png",
-      title: "cupviet.com",
+      title: "cupviet.com"
     },
     {
       alt: "Cosmic timetraveler",
       src: "/small_slide/slider02.png",
-      title: "cupviet.com",
+      title: "cupviet.com"
     },
     {
       alt: "Cosmic timetraveler",
       src: "/small_slide/slider03.png",
-      title: "cupviet.com",
-    },
+      title: "cupviet.com"
+    }
   ];
 
   let backgroundCategory = [
     {
       alt: "cup itali",
+      src: "/images/category/bg_category/middle_1.png",
+      url: ""
+    },
+    {
+      alt: "cup itali",
       src: "/images/category/bg_category/middle_4.png",
-      url: "",
+      url: ""
     },
     {
       alt: "cup ki tay ban nha",
       src: "/images/category/bg_category/middle_3.png",
-      url: "",
+      url: ""
     },
     {
       alt: "cup ki thuat",
       src: "/images/category/bg_category/middle_2.png",
-      url: "",
-    },
+      url: ""
+    }
   ];
 
   export let productList = [
     {
-      id: "4",
+      id: "1",
+      category: "Cúp best gross",
+      banner: "/images/category/middle_4.png",
+      url: "category/1",
+      offsetTop: 0,
+      color: "#225a42",
+      products: []
+    },
+    {
+      id: "2",
+      category: "Cúp gốm sứ",
+      banner: "/images/category/middle_4.png",
+      url: "category/1",
+      offsetTop: 0,
+      color: "#225a42",
+      products: []
+    },
+    {
+      id: "3",
       category: "CÚP KĨ THUẬT",
       banner: "/images/category/middle_4.png",
       url: "category/4",
-      products: [],
+      color: "#225a42",
+      offsetTop: 0,
+      products: []
     },
     {
-      id: "11",
-      category: "CÚP SỨ",
+      id: "4",
+      category: "Cúp luxury",
       banner: "/images/category/middle_4.png",
       url: "category/11",
-      products: [],
-    },
-    {
-      id: "12",
-      category: "CÚP NICKEL",
-      banner: "/images/category/middle_4.png",
-      url: "category/12",
-      products: [],
-    },
-    {
-      id: "10",
-      category: "CÚP PEWTER",
-      banner: "/images/category/middle_4.png",
-      url: "category/10",
-      products: [],
+      offsetTop: 0,
+      color: "#2199d4",
+      products: []
     },
     {
       id: "5",
-      category: "CÚP ITALY",
+      category: "Cúp premium",
       banner: "/images/category/middle_4.png",
-      url: "category/5",
-      products: [],
+      url: "category/12",
+      offsetTop: 0,
+      color: "#2199d4",
+      products: []
     },
     {
       id: "6",
-      category: "CÚP TÂY BAN NHA",
+      category: "Cúp pha lê",
+      banner: "/images/category/middle_4.png",
+      url: "category/10",
+      offsetTop: 0,
+      color: "#dbab83",
+      products: []
+    },
+    {
+      id: "7",
+      category: "Cúp pewter",
+      banner: "/images/category/middle_4.png",
+      url: "category/5",
+      offsetTop: 0,
+      color: "#dbab83",
+      products: []
+    },
+    {
+      id: "8",
+      category: "Qua tặng vip",
       banner: "/images/category/middle_2.png",
       url: "category/6",
-      products: [],
+      offsetTop: 0,
+      color: "#ea222d",
+      products: []
     },
+    {
+      id: "9",
+      category: "Huy Chương &</br> kỉ niệm chương",
+      banner: "/images/category/middle_2.png",
+      url: "category/6",
+      offsetTop: 0,
+      color: "#ea222d",
+      products: []
+    },
+    {
+      id: "10",
+      category: "Cúp Hio & Eagle",
+      banner: "/images/category/middle_2.png",
+      url: "category/6",
+      color: "#ea222d",
+      offsetTop: 0,
+      products: []
+    }
   ];
 
   export let products;
@@ -98,18 +151,33 @@
 
       return acc;
     }, {});
-    // console.log("groupedByCategory", groupedByCategory)
     let data = productList.map((item) => ({
       ...item, // Spread the existing properties
-      products: groupedByCategory[item.id],
+      products: groupedByCategory[item.id]
     }));
     productList = data;
-    // console.log("data", dataMapping)
   };
 
+  export let listIdScroll = [];
+
   onMount(() => {
+    console.log("onMount");
     mapDataList();
   });
+
+  afterUpdate(() => {
+    console.log("the component just updated");
+    setTimeout(() => {
+      productList.forEach((item, idx) => {
+        const div = document.getElementById("category_" + item.id);
+        if (!div) return;
+        const offsetTop = div.offsetTop;
+        const itemId = div.getAttribute("data-item-id");
+        listIdScroll.push({ id: itemId, offsetTop: offsetTop });
+      });
+    }, 1000);
+  });
+  $: console.log("listIdScroll", listIdScroll);
 </script>
 
 <div>
@@ -123,30 +191,32 @@
     class="col-span-12 sm:max-w-[1200px] sm:!max-h-[200px] max-h-[80px]"
   ></div>
   {#each productList as item, idx}
-    <div
-      class="sm:grid sm:grid-cols-12 gap-4 my-10 pb-10 border-b border-b-gray-200"
-    >
-      <div class="col-span-5">
-        <div class="relative sm:max-w-[440px] sm:h-32 h-20">
-          <div
-            class="sm:h-32 h-20 w-full absolute bg-yellow-600 top-0 left-0 opacity-75"
-          ></div>
-          <img
-            class="sm:h-32 h-20 object-fill absolute top-0 left-0 opacity-40"
-            alt=""
-            src={backgroundCategory[idx]?.src}
-          />
-          <div
-            class="absolute sm:h-32 h-20 px-2 flex items-center justify-between font-bold text-2xl text-white w-full"
-          >
-            <p class="tit">{item?.category}</p>
-            <div class="flex items-center sm:text-xl text-base">
-              <a href={`/${item?.url}`}>XEM THÊM</a>
-              <img src="/images/arrow-right-white.png" alt="best 1" />
+    {#if item.products?.length > 0}
+      <div
+        data-item-id={`${item.id}`}
+        id={`category_${item.id}`}
+        class="sm:grid sm:grid-cols-12 gap-4 my-10 pb-10 border-b border-b-gray-200 category-group"
+      >
+        <div class="col-span-5">
+          <div class="relative sm:max-w-[440px] sm:h-32 h-20">
+            <div
+              class={`sm:h-32 h-20 w-full absolute top-0 left-0 opacity-75 bg-[${item.color}]`}
+            ></div>
+            <img
+              class="sm:h-32 h-20 object-fill absolute top-0 left-0 opacity-40"
+              alt=""
+              src={backgroundCategory[idx]?.src}
+            />
+            <div
+              class="absolute sm:h-32 h-20 px-2 flex items-center justify-between font-bold text-2xl text-white w-full"
+            >
+              <p class="tit uppercase">{@html item?.category}</p>
+              <div class="flex items-center sm:text-xl text-base">
+                <a href={`/${item?.url}`}>XEM THÊM</a>
+                <img src="/images/arrow-right-white.png" alt="best 1" />
+              </div>
             </div>
           </div>
-        </div>
-        {#if item.products?.length > 0}
           <ul class="big_goods_imgs">
             <a href={`category/detail/${item.products[0]?.product_code}`}>
               <span class="best-badge">1</span>
@@ -170,45 +240,45 @@
               <p>{item.products[0]?.product_name}</p>
             </li>
           </ul>
-        {/if}
-      </div>
-      <div class="right_p small_right_goods_list col-span-7 justify-between">
-        {#if item.products?.length > 0}
-          {#each item.products as product, index}
-            {#if index > 0 && index < 7}
-              <a
-                class="small_goods_infos"
-                href={`category/detail/${product.product_code}`}
-              >
-                <span class="best-badge">{index + 1}</span>
-                <span style="display:block; cursor:pointer">
-                  <img
-                    alt=""
-                    title=""
-                    src={product?.image_url}
-                    class="sm:w-[220px] w-[180px] ls-is-cached lazyloaded bg-gray-100"
-                  />
-                </span>
-                <div class="text-lg w-full mt-2">
-                  <p class="text-[#F3B81A]">{product?.product_code}</p>
-                  <div class="text-lg font-medium !mt-0">
-                    {product?.product_name}
+        </div>
+        <div class="right_p small_right_goods_list col-span-7 justify-between">
+          {#if item.products?.length > 0}
+            {#each item.products as product, index}
+              {#if index > 0 && index < 7}
+                <a
+                  class="small_goods_infos"
+                  href={`category/detail/${product.product_code}`}
+                >
+                  <span class="best-badge">{index + 1}</span>
+                  <span style="display:block; cursor:pointer">
+                    <img
+                      alt=""
+                      title=""
+                      src={product?.image_url}
+                      class="sm:w-[220px] w-[180px] ls-is-cached lazyloaded bg-gray-100"
+                    />
+                  </span>
+                  <div class="text-lg w-full mt-2">
+                    <p class="text-[#F3B81A]">{product?.product_code}</p>
+                    <div class="text-lg font-medium !mt-0">
+                      {product?.product_name}
+                    </div>
                   </div>
-                </div>
-              </a>
-            {/if}
-          {/each}
-        {/if}
+                </a>
+              {/if}
+            {/each}
+          {/if}
+        </div>
       </div>
-    </div>
-    <div class="col-span-12 sm:max-w-[1200px] sm:!max-h-[200px] max-h-[80px]">
-      <Carousel
-        class="rounded-md sm:max-h-[200px] max-h-[80px]"
-        images={imagesBanner}
-        duration="3000"
-        index={idx}
-      />
-    </div>
+      <div class="col-span-12 sm:max-w-[1200px] sm:!max-h-[200px] max-h-[80px]">
+        <Carousel
+          class="rounded-md sm:max-h-[200px] max-h-[80px]"
+          images={imagesBanner}
+          duration="3000"
+          index={idx}
+        />
+      </div>
+    {/if}
   {/each}
 </div>
 

@@ -14,7 +14,7 @@
     const response = await fetch(
       `https://dgg300bw0j.execute-api.ap-southeast-1.amazonaws.com/dev/products?categoryId=${id}`,
       {
-        method: "GET",
+        method: "GET"
       }
     );
 
@@ -141,9 +141,10 @@
     margin: 32px auto;
   }
   .title {
-    font-family: "Trajan Pro";
-    font-style: "normal";
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
     font-weight: 600;
+    font-style: normal;
     font-size: 32px;
     font-weight: 500;
     line-height: 1.3;
