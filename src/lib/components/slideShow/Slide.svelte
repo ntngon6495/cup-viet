@@ -10,20 +10,20 @@
       id: 1,
       width: 1000,
       height: 600,
-      src: "/images/slide-middle.png",
+      src: "/images/slide-middle.png"
     },
     {
       id: 2,
       width: 1000,
       height: 600,
-      src: "/images/slide-left.png",
+      src: "/images/slide-left.png"
     },
     {
       id: 3,
       width: 1000,
       height: 600,
-      src: "/images/slide-right.png",
-    },
+      src: "/images/slide-right.png"
+    }
     // {
     // 	id: 4,
     // 	// width: 800,
@@ -36,18 +36,18 @@
     {
       alt: "Cosmic timetraveler",
       src: "/images/slide-middle.png",
-      title: "cosmic-timetraveler-pYyOZ8q7AII-unsplash.com",
+      title: "cosmic-timetraveler-pYyOZ8q7AII-unsplash.com"
     },
     {
       alt: "Cosmic timetraveler",
       src: "/images/slide-left.png",
-      title: "cosmic-timetraveler-pYyOZ8q7AII-unsplash.com",
+      title: "cosmic-timetraveler-pYyOZ8q7AII-unsplash.com"
     },
     {
       alt: "Cosmic timetraveler",
       src: "/images/slide-right.png",
-      title: "cosmic-timetraveler-pYyOZ8q7AII-unsplash.com",
-    },
+      title: "cosmic-timetraveler-pYyOZ8q7AII-unsplash.com"
+    }
   ];
 
   // onMount(() => {
@@ -56,13 +56,12 @@
   // });
 </script>
 
-<div imgClass="min-w-full">
+<div imgClass="max-w-[1400px]">
   <Carousel
     {images}
     duration="3000"
     let:Indicators
-    class="!min-h-[600px] rounded-none"
-    imgClass="!h-[600px]"
+    class="!min-w-[600px] max-w-[1400px] h-[500px] rounded-none"
   >
     <Indicators />
   </Carousel>
