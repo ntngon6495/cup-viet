@@ -27,7 +27,7 @@
   };
 </script>
 
-<div class="sm:pt-0 pt-[225px]">
+<div class="pt-4">
   <Header />
   <div class="relative">
     <TopNav />
@@ -38,10 +38,7 @@
       <Slide class="block" />
     </div>
   </div>
-  <div
-    class="sm:w-[1200px] mx-auto mt-[200px]"
-    class:margin-top={!disableComponent}
-  >
+  <div class="sm:w-[1200px] mx-auto" class:margin-top={!disableComponent}>
     <slot />
   </div>
   <div class:disable={disableFooter}>
@@ -73,11 +70,11 @@
     transform: translate(-50%, 0);
   }
   .absolute-center {
-    top: 295px;
+    top: 350px;
     left: 50%;
     transform: translate(-50%, -50%);
   }
   .margin-top {
-    margin-top: 510px;
+    margin-top: 600px;
   }
 </style>

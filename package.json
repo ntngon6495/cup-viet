@@ -36,6 +36,7 @@
 		"@slidy/core": "^3.7.6",
 		"@slidy/svelte": "^3.4.4",
 		"@sveu/browser": "^1.0.1",
+		"clsx": "^2.1.1",
 		"flowbite-svelte-icons": "^1.6.1",
 		"svelte-toasts": "^1.1.2"
 	}

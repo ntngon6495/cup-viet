@@ -218,6 +218,7 @@
           <option value="10">Cúp Hio & Eagle</option>
           <option value="11">Cúp Nickel</option>
           <option value="12">Theo yêu cầu</option>
+          <option value="13">Cúp Vô Đich</option>
         </select>
       </div>
       <div>

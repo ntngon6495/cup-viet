@@ -5,18 +5,18 @@
     {
       alt: "Cosmic timetraveler",
       src: "/images/category/cupsu/CRM_044NEW.png",
-      title: "cupviet.com",
+      title: "cupviet.com"
     },
     {
       alt: "Cosmic timetraveler",
       src: "/images/category/cupsu/CRM_057NEW2024D.png",
-      title: "cupviet.com",
+      title: "cupviet.com"
     },
     {
       alt: "Cosmic timetraveler",
       src: "/images/category/cupsu/CRM_FS9205-25B.png",
-      title: "cupviet.com",
-    },
+      title: "cupviet.com"
+    }
   ];
   let index = 0;
   let forward = true;
@@ -25,7 +25,7 @@
 
   let sizes = [
     { value: "0", name: "Choose an option" },
-    { value: "1", name: "Cao 390mm, R 100mm" },
+    { value: "1", name: "Cao 390mm, R 100mm" }
   ];
   export let data;
 
@@ -39,7 +39,7 @@
     const response = await fetch(
       `https://dgg300bw0j.execute-api.ap-southeast-1.amazonaws.com/dev/products?categoryId=${id}`,
       {
-        method: "GET",
+        method: "GET"
       }
     );
     if (response) {
@@ -52,10 +52,43 @@
   const handelChangeProduct = (index) => {
     productDetail = productList[index];
   };
+
+  export const renderTitle = (id) => {
+    switch (id) {
+      case "1":
+        return "Cúp Best Gross";
+      case "2":
+        return "Cúp Gốm Sứ";
+      case "3":
+        return "Cúp Kĩ Thuật";
+      case "4":
+        return "Cúp Luxury";
+      case "5":
+        return "Cúp Premium";
+      case "6":
+        return "Cúp Pha Lê";
+      case "7":
+        return "Cúp Pewter";
+      case "8":
+        return "Quà Tặng Vip";
+      case "9":
+        return "Huy Chương & Kỉ Niệm Chươngg";
+      case "10":
+        return "Cúp Hio & Eagle";
+      case "11":
+        return "Cúp Nickel";
+      case "12":
+        return "Theo Yêu Cầu";
+      case "13":
+        return "Cúp Vô Địch";
+      default:
+        break;
+    }
+  };
 </script>
 
 <div>
-  <div class="grid sm:grid-cols-12 w-full mt-20">
+  <div class="grid sm:grid-cols-12 w-full mt-40">
     <div class="col-span-4">
       <div class="carousel-custom cursor-pointer">
         <img src={productDetail.image_url} class="sm:!w-[600px] !w-[200px]" />
@@ -91,9 +124,9 @@
       <div class="detail-item border-b-[2px] border-b-gray-500 pb-4">
         <div class="product-short-description">
           <p>
-            Cúp Golf best gross<br />
-            – Chất liệu: Pewter<br />
-            – Màu sắc: Bạc<br />
+            {renderTitle(productDetail?.category_id)}<br />
+            – Chất liệu: {productDetail?.material}<br />
+            – Màu sắc: {productDetail?.color}<br />
             – Kích thước: Sản phẩm có 3 kích thước<br />
             – Khắc thông tin lên nhãn đế cúp<br />
             – Thiết kế nội dung theo yêu cầu của khách hàng
@@ -102,7 +135,7 @@
       </div>
       <div>
         <p class="font-bold">
-          Kích Thước: <span class="text-gray-400 ml-2">{data.size}</span>
+          Kích Thước: <span class="text-gray-400 ml-2">{productDetail?.size}</span>
         </p>
         <!-- <Select placeholder="kích thước" items={sizes}>
                 </Select> -->

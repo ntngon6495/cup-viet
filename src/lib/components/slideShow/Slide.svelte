@@ -35,17 +35,17 @@
   const images = [
     {
       alt: "Cosmic timetraveler",
-      src: "/images/slide-middle.png",
+      src: "/images/sideshow.jpg",
       title: "cosmic-timetraveler-pYyOZ8q7AII-unsplash.com"
     },
     {
       alt: "Cosmic timetraveler",
-      src: "/images/slide-left.png",
+      src: "/images/sideshow.jpg",
       title: "cosmic-timetraveler-pYyOZ8q7AII-unsplash.com"
     },
     {
       alt: "Cosmic timetraveler",
-      src: "/images/slide-right.png",
+      src: "/images/sideshow.jpg",
       title: "cosmic-timetraveler-pYyOZ8q7AII-unsplash.com"
     }
   ];
@@ -56,12 +56,12 @@
   // });
 </script>
 
-<div imgClass="max-w-[1400px]">
+<div imgClass="max-w-[1600px]">
   <Carousel
     {images}
     duration="3000"
     let:Indicators
-    class="!min-w-[600px] max-w-[1400px] h-[500px] rounded-none"
+    class="!min-w-[600px] max-w-[1600px] !h-[460px] rounded-none"
   >
     <Indicators />
   </Carousel>
