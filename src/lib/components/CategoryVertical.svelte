@@ -5,77 +5,103 @@
 
   let listCategory = [
     {
-    id: 1,
-    name: "Cúp best gross",
-    img: "/icon/categoryVertical/1.png",
-    color: "#225a42",
-    }, {
+      id: 1,
+      name: "Cúp best gross",
+      img: "/icon/categoryVertical/1.png",
+      border_color: "border-category-100",
+      bg_color: "bg-category-100"
+    },
+    {
       id: 2,
       name: "Cúp gốm sứ",
       img: "/icon/categoryVertical/2.png",
-      color: "#225a42",
-    }, {
+      border_color: "border-category-100",
+      bg_color: "bg-category-100"
+    },
+    {
       id: 3,
       name: "Cúp kĩ thuật",
       img: "/icon/categoryVertical/3.png",
-      color: "#225a42",
-    }, {
+      border_color: "border-category-100",
+      bg_color: "bg-category-100"
+    },
+    {
       id: 4,
       name: "Cúp luxury",
       img: "/icon/categoryVertical/4.png",
-      color: "#2199d4",
-    }, {
+      border_color: "border-category-200",
+      bg_color: "bg-category-200"
+    },
+    {
       id: 5,
       name: "Cúp premium",
       img: "/icon/categoryVertical/5.png",
-      color: "#2199d4",
-    }, {
+      border_color: "border-category-200",
+      bg_color: "bg-category-200"
+    },
+    {
       id: 6,
       name: "Cúp pha lê",
       img: "/icon/categoryVertical/6.png",
-      color: "#dbab83"
-    }, {
+      border_color: "border-category-300",
+      bg_color: "bg-category-300"
+    },
+    {
       id: 7,
       name: "Cúp pewter",
       img: "/icon/categoryVertical/7.png",
-      color: "#dbab83"
-    }, {
+      border_color: "border-category-300",
+      bg_color: "bg-category-300"
+    },
+    {
       id: 8,
       name: "Qua tặng vip",
       img: "/icon/categoryVertical/8.png",
-      color: "#ea222d"
-    }, {
+      border_color: "border-category-400",
+      bg_color: "bg-category-400"
+    },
+    {
       id: 9,
       name: "Huy Chương &</br> kỉ niệm chương",
       img: "/icon/categoryVertical/9.png",
-      color: "#ea222d"
-    }, {
+      border_color: "border-category-400",
+      bg_color: "bg-category-400"
+    },
+    {
       id: 10,
       name: "Cúp Hio & Eagle",
       img: "/icon/categoryVertical/10.png",
-      color: "#ea222d"
+      border_color: "border-category-400",
+      bg_color: "bg-category-400"
     }
-  ]
+  ];
   // let y = 0
-  
+
   // export let listIdScroll = []
 </script>
 
 <div class="top-0 category" in:fly={{ x: -64 }} out:fly={{ x: -64 }}>
-  <div class='inline-grid gap-1'>
+  <div class="inline-grid gap-1">
     {#each listCategory as item}
-      <a class="bg-white cursor-pointer" on:click={()=> goto(`/category/${item.id}`, {replaceState: true})}>
-        <div class={`relative bg-white border w-16 h-16 border-[${item.color}] ${type == item.id && "border-2"}`}>
+      <a
+        class="bg-white cursor-pointer"
+        on:click={() => goto(`/category/${item.id}`, { replaceState: true })}
+      >
+        <div
+          class={`relative bg-white border w-16 h-16 ${item.border_color} ${
+            type == item.id && "border-2"
+          }`}
+        >
           {#if type == item.id}
             <div
-              class={`absolute flex justify-center items-center text-center text-white h-16 px-2 py-1 rounded-s w-[180px] -top-[2px] -left-[180px] bg-[${item.color}]`}
+              class={`absolute flex justify-center items-center text-center text-white h-16 px-2 py-1 rounded-s w-[180px] -top-[2px] -left-[180px] ${item.bg_color}`}
               in:fly={{ x: -64 }}
               out:fly={{ x: -64 }}
             >
-              <p class='uppercase'>{@html item.name}</p>
+              <p class="uppercase">{@html item.name}</p>
             </div>
           {/if}
-          <div class='w-full h-full flex justify-center items-center'>
+          <div class="w-full h-full flex justify-center items-center">
             <img
               src={item.img}
               alt="logo header"

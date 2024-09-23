@@ -24,29 +24,31 @@
   export const renderTitle = (id) => {
     switch (id) {
       case "1":
-        return "Cúp Vô Địch";
+        return "Cúp Best Gross";
       case "2":
-        return "Cúp EAGLE";
+        return "Cúp Gốm Sứ";
       case "3":
-        return "Cúp GOLF";
-      case "4":
         return "Cúp Kĩ Thuật";
+      case "4":
+        return "Cúp Luxury";
       case "5":
-        return "Cúp Italy";
+        return "Cúp Premium";
       case "6":
-        return "Cúp Tây Ban Nha";
+        return "Cúp Pha Lê";
       case "7":
-        return "Quà Tặng";
-      case "8":
-        return "Huy Chương";
-      case "9":
-        return "Kĩ Niệm Chương";
-      case "10":
         return "Cúp Pewter";
+      case "8":
+        return "Quà Tặng Vip";
+      case "9":
+        return "Huy Chương & Kỉ Niệm Chươngg";
+      case "10":
+        return "Cúp Hio & Eagle";
       case "11":
-        return "Cúp Sứ";
-      case "12":
         return "Cúp Nickel";
+      case "12":
+        return "Theo yêu cầu";
+      case "13":
+        return "Cúp Vô Địch";
       default:
         break;
     }
@@ -76,7 +78,7 @@
   };
 </script>
 
-<div class="w-full text-center mt-10">
+<div class="w-full text-center mt-40">
   <p
     class="sm:text-4xl text-2xl sm:mt-0 mt-10 font-semibold uppercase text-yellow-400 title-category"
   >

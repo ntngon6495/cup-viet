@@ -1,21 +1,17 @@
 <script>
-  import {
-    BarsOutline,
-    PhoneOutline,
-    
-  } from "flowbite-svelte-icons";
+  import { BarsOutline, PhoneOutline } from "flowbite-svelte-icons";
   import { Drawer, Button, CloseButton } from "flowbite-svelte";
   import { sineIn } from "svelte/easing";
   let hidden1 = true;
   let transitionParams = {
     x: -320,
     duration: 200,
-    easing: sineIn,
+    easing: sineIn
   };
 </script>
 
 <div class="sm:relative fixed top-0 left-0 bg-white z-[49] w-[1200px] mx-auto">
-  <div class="flex justify-between items-center h-8 ">
+  <div class="flex justify-between items-center h-8">
     <div class="flex border-b w-[200px] h-8 justify-between">
       <input
         type="text"
@@ -25,11 +21,17 @@
       />
       <img src="/images/ic-search.svg" class="w-5" alt="key search" />
     </div>
-    <div class="flex gap-3">
-      <p class='border-r pr-3'>Hỏi đáp</p>
-      <p class='border-r pr-3'>Tin tức</p>
-      <p class='border-r pr-3'>Liên hệ</p>
-      <div class='flex gap-1 font-bold'><PhoneOutline class="w-6 h-6" /><span> 0902 547 808 </span></div>
+    <div class="flex gap-3 font-semibold">
+      <div class="flex gap-2">
+        <img alt="" class="w-4 h-5" src="/images/ic-catolouge.png" />
+        <p class="border-r pr-3 cursor-pointer">Catalogue</p>
+      </div>
+      <p class="border-r pr-3 cursor-pointer">Hỏi đáp</p>
+      <p class="border-r pr-3 cursor-pointer">Tin tức</p>
+      <p class="border-r pr-3 cursor-pointer">Liên hệ</p>
+      <div class="flex gap-1 font-semibold text-[16px]">
+        <PhoneOutline class="w-7 h-7" /><span> 0902 547 808 </span>
+      </div>
     </div>
   </div>
   <div>
@@ -96,6 +98,19 @@
       @content;
     }
   }
+  // .catalogue::before {
+  //   content: "";
+  //   display: block;
+  //   width: 6px;
+  //   height: 6px;
+  //   border-left: 5px solid transparent;
+  //   border-right: 5px solid transparent;
+  //   border-top: 5px solid black;
+  //   position: absolute;
+  //   background-image: url("/images/ic-catalogue.svg");
+  //   top: 0;
+  //   right: 0;
+  // }
   .container {
     display: flex;
     justify-content: space-between;

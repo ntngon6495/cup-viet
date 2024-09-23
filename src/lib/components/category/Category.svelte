@@ -1,6 +1,7 @@
 <script lang="js">
   import { Carousel } from "flowbite-svelte";
   import { onMount, afterUpdate } from "svelte";
+  import { mergeClass } from "$lib/helpers";
 
   let imagesBanner = [
     {
@@ -50,24 +51,24 @@
       banner: "/images/category/middle_4.png",
       url: "category/1",
       offsetTop: 0,
-      color: "#225a42",
+      color: "bg-category-100",
       products: []
     },
     {
       id: "2",
       category: "Cúp gốm sứ",
       banner: "/images/category/middle_4.png",
-      url: "category/1",
+      url: "category/2",
       offsetTop: 0,
-      color: "#225a42",
+      color: "bg-category-100",
       products: []
     },
     {
       id: "3",
       category: "CÚP KĨ THUẬT",
       banner: "/images/category/middle_4.png",
-      url: "category/4",
-      color: "#225a42",
+      url: "category/3",
+      color: "bg-category-100",
       offsetTop: 0,
       products: []
     },
@@ -75,62 +76,62 @@
       id: "4",
       category: "Cúp luxury",
       banner: "/images/category/middle_4.png",
-      url: "category/11",
+      url: "category/4",
       offsetTop: 0,
-      color: "#2199d4",
+      color: "bg-category-200",
       products: []
     },
     {
       id: "5",
       category: "Cúp premium",
       banner: "/images/category/middle_4.png",
-      url: "category/12",
+      url: "category/5",
       offsetTop: 0,
-      color: "#2199d4",
+      color: "bg-category-200",
       products: []
     },
     {
       id: "6",
       category: "Cúp pha lê",
       banner: "/images/category/middle_4.png",
-      url: "category/10",
+      url: "category/6",
       offsetTop: 0,
-      color: "#dbab83",
+      color: "bg-category-300",
       products: []
     },
     {
       id: "7",
       category: "Cúp pewter",
       banner: "/images/category/middle_4.png",
-      url: "category/5",
+      url: "category/7",
       offsetTop: 0,
-      color: "#dbab83",
+      color: "bg-category-300",
       products: []
     },
     {
       id: "8",
       category: "Qua tặng vip",
       banner: "/images/category/middle_2.png",
-      url: "category/6",
+      url: "category/8",
       offsetTop: 0,
-      color: "#ea222d",
+      color: "bg-category-400",
       products: []
     },
     {
       id: "9",
       category: "Huy Chương &</br> kỉ niệm chương",
       banner: "/images/category/middle_2.png",
-      url: "category/6",
+      url: "category/9",
       offsetTop: 0,
-      color: "#ea222d",
+      color: "bg-category-400",
       products: []
     },
     {
       id: "10",
       category: "Cúp Hio & Eagle",
       banner: "/images/category/middle_2.png",
-      url: "category/6",
-      color: "#ea222d",
+      url: "category/10",
+      color: "bg-category-400",
       offsetTop: 0,
       products: []
     }
@@ -177,7 +178,6 @@
       });
     }, 1000);
   });
-  $: console.log("listIdScroll", listIdScroll);
 </script>
 
 <div>
@@ -200,7 +200,10 @@
         <div class="col-span-5">
           <div class="relative sm:max-w-[440px] sm:h-32 h-20">
             <div
-              class={`sm:h-32 h-20 w-full absolute top-0 left-0 opacity-75 bg-[${item.color}]`}
+              class={mergeClass(
+                `sm:h-32 h-20 w-full absolute top-0 left-0 opacity-7`,
+                item.color
+              )}
             ></div>
             <img
               class="sm:h-32 h-20 object-fill absolute top-0 left-0 opacity-40"

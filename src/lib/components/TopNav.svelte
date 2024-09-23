@@ -2,7 +2,7 @@
   import { goto } from "$app/navigation";
   let listIcon = [
     {
-      id: 1,
+      id: 13,
       icon: "/icon/menu/1.1.png",
       icon_active: "/icon/menu/1.png",
       alt: "CUPVODICH",
@@ -10,7 +10,7 @@
       name: "cúp vô địch"
     },
     {
-      id: 2,
+      id: 14,
       icon: "/icon/menu/2.1.png",
       icon_active: "/icon/menu/2.png",
       alt: "CUPGOLF",
@@ -53,7 +53,7 @@
 
   let subCategory = [
     {
-      categoryId: 2,
+      categoryId: 14,
       categorys: [
         {
           id: "2",
@@ -87,14 +87,22 @@
     (item) => item.categoryId == isTab
   )?.categorys;
 
-  let isTab = 0;
+  let isTab = 13;
   let isSubTab = 0;
+
+  const handleTabClick = (id) => {
+    if (id === 14) isTab = id;
+    else {
+      isTab = id;
+      goto(`/category/${id}`, { replaceState: true });
+    }
+  };
 </script>
 
 <div
-  class="top-nav flex justify-center mt-2 h-[100px] border-b-4 border-b-[#ffcd36] absolute z-[68] absolute-center"
+  class="top-nav flex justify-center mt-2 h-[110px] border-b-4 border-b-[#ffcd36] absolute z-[68] absolute-center"
 >
-  <div class="sm:flex hidden w-[1200px]">
+  <div class="sm:flex hidden h-full w-[1200px]">
     <div class="flex items-center w-full">
       <a class="w-[300px] ml-5" href="/">
         <!-- svelte-ignore a11y-missing-attribute -->
@@ -105,21 +113,29 @@
           <!-- svelte-ignore a11y-click-events-have-key-events -->
           <!-- svelte-ignore a11y-missing-attribute -->
           <!-- svelte-ignore a11y-no-static-element-interactions -->
-          <a on:click={() => (isTab = id)} alt="" class="h-full">
+          <a on:click={() => handleTabClick(id)} alt="" class="h-full">
             <div
-              class="w-[130px] cursor-pointer background text-center h-full"
+              class="w-[130px] cursor-pointer background text-center h-full flex items-center justify-center"
               class:!hidden={isTab == id}
             >
-              <img class="logo-header category_img mx-auto" src={icon} {alt} />
-              <p
-                class="uppercase text-[10px] font-semibold mx-auto mt-1 text-white"
-              >
-                {name}
-              </p>
+              <div>
+                <img
+                  class="logo-header category_img mx-auto"
+                  src={icon}
+                  {alt}
+                />
+                <p
+                  class="uppercase text-[10px] font-semibold mx-auto mt-1 text-white"
+                >
+                  {name}
+                </p>
+              </div>
             </div>
             <div class="cursor-pointer hidden h-full" class:!flex={isTab == id}>
-              <div class="background_left w-4"></div>
-              <div class="bg-[#ffcd36] w-[90px]">
+              <div class="background_left w-6"></div>
+              <div
+                class="bg-[#ffcd36] w-[80px] flex items-center justify-center"
+              >
                 <div class="text-center">
                   <img
                     class="logo-header category_img mx-auto"
@@ -127,22 +143,24 @@
                     {alt}
                   />
                   <p
-                    class="uppercase text-[10px] font-semibold mx-auto mt-1 text-white"
+                    class="uppercase text-[10px] font-semibold mt-1 text-white mx-auto"
                     class:text-green={isTab == id}
                   >
                     {name}
                   </p>
                 </div>
               </div>
-              <div class="background_right w-4"></div>
+              <div class="background_right w-6"></div>
             </div>
           </a>
         {/each}
       </div>
     </div>
     {#if listCategory}
-      <div class="bg-[white] absolute top-[100px] opacity-100">
-        <div class="flex justify-center items-center h-[60px]">
+      <div
+        class="bg-[white] absolute top-[110px] opacity-100 border border-[#197D3F] shadow-lg"
+      >
+        <div class="flex justify-center items-center h-[65px]">
           {#each listCategory as { id, name }}
             <a
               class="text-[#197D3F] text-[16px] font-semibold h-full uppercase category-style"
@@ -186,7 +204,7 @@
 
 <style lang="scss">
   .absolute-center {
-    top: 45px;
+    top: 60px;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -194,26 +212,23 @@
     color: #197d3f !important;
   }
   .background_left {
-    background: linear-gradient(100deg, #197d3f 50%, #ffcd36 50%);
+    background: linear-gradient(102deg, #197d3f 50%, #ffcd36 50%);
   }
   .background_right {
-    background: linear-gradient(100deg, #ffcd36 50%, #197d3f 50%);
+    background: linear-gradient(102deg, #ffcd36 50%, #197d3f 50%);
   }
   .background_left_sb {
-    background: linear-gradient(100deg, white 50%, #ffcd36 50%);
+    background: linear-gradient(101deg, white 50%, #ffcd36 50%);
   }
-  // .background_left_sb:first-child {
-  //   background: linear-gradient(100deg, #ffcd36 50% , #ffcd36 50%);
-  // }
   .background_right_sb {
-    background: linear-gradient(100deg, #ffcd36 50%, white 50%);
+    background: linear-gradient(101deg, #ffcd36 50%, white 50%);
   }
 
-  .category-style:first-child {
-    .background_left_sb {
-      background: linear-gradient(100deg, #ffcd36 50%, #ffcd36 50%);
-    }
-  }
+  // .category-style:first-child {
+  //   .background_left_sb {
+  //     background: linear-gradient(104deg, #ffcd36 50%, #ffcd36 50%);
+  //   }
+  // }
 
   .top-nav {
     // padding: 5px 80px;
