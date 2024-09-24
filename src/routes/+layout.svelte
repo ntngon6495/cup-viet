@@ -27,7 +27,7 @@
   };
 </script>
 
-<div class="pt-4">
+<div class="pt-4 sm:mx-0 mx-2 block">
   <Header />
   <div class="relative">
     <TopNav />

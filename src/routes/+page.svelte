@@ -7,14 +7,11 @@
   let y = 0;
   let type = 0;
   let listIdScroll = [];
-  $: console.log("listIdScroll", listIdScroll);
   $: checkType(y);
 
   const checkType = (y) => {
-    console.log("y", y);
     listIdScroll.forEach((item) => {
       if (y > item.offsetTop - 100 && y < item.offsetTop + 400) {
-        console.log("item", item);
         type = item.id;
       }
     });
