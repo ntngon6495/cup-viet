@@ -6,7 +6,7 @@
     <div class="w-full footer-wrap">
       <div class="sm:grid sm:grid-cols-12">
         <div class="col-span-9">
-          <div class="w-full mb-4 pb-4 border-b border-b-white">
+          <div class="w-full sm:px-0 p-2 mb-4 pb-4 border-b border-b-white">
             <img alt="chinh sach" src="/images/chinh-sach-2.png" />
           </div>
           <div class="info-support sm:flex sm:justify-between gap-10 px-2">
@@ -44,7 +44,7 @@
           <div>
             <img src="/images/ic-mangxahoi.png" alt="follow us" />
           </div>
-          <div class="flex justify-end w-full">
+          <div class="flex sm:justify-end justify-center w-full">
             <img
               alt=""
               class="sm:w-[200px] w-[150px] mt-5"
@@ -54,12 +54,12 @@
         </div>
       </div>
     </div>
-    <div class="w-full mt-5 flex justify-between sm:px-24">
+    <div class="w-full mt-5 sm:flex px-2 justify-between sm:px-24">
       <img class="sm:w-[600px]" alt="" src="/images/card-list-2.png" />
       <div
         class="text-white font-semibold px-4 border-l-2 border-r-2 flex items-center text-[18px]"
       >
-        <p class="cursor-pointer">Sơ đồ trang web</p>
+        <p class="cursor-pointer sm:mt-0 mt-2">Sơ đồ trang web</p>
       </div>
     </div>
     <div class="footer-bottom sm:flex w-full">

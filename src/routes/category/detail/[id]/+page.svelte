@@ -87,7 +87,7 @@
   };
 </script>
 
-<div>
+<div class='table sm:block '>
   <div class="grid sm:grid-cols-12 w-full mt-40">
     <div class="col-span-4">
       <div class="carousel-custom cursor-pointer">

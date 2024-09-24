@@ -1,5 +1,6 @@
 <script>
   import { goto } from "$app/navigation";
+  import { debounce } from "$lib/helpers";
   let listIcon = [
     {
       id: 13,
@@ -97,14 +98,27 @@
       goto(`/category/${id}`, { replaceState: true });
     }
   };
+
+  const handleMouseout = (id) => {
+    debounce(() => {
+      if (isTab == id && isSubTab == 0) isTab = 0;
+    }, 100);
+  };
+
+  const handleMouseover = (id) => {
+    console.log("id", id);
+    debounce(() => {
+      if (isTab != id) isTab = id;
+    }, 50);
+  };
 </script>
 
 <div
-  class="top-nav flex justify-center mt-2 h-[110px] border-b-4 border-b-[#ffcd36] absolute z-[68] absolute-center"
+  class="top-nav sm:top-[60px] flex justify-center mt-2 h-[110px] border-b-4 border-b-[#ffcd36] absolute z-[68] absolute-center"
 >
   <div class="sm:flex hidden h-full w-[1200px]">
     <div class="flex items-center w-full">
-      <a class="w-[300px] ml-5" href="/">
+      <a class="w-[300px] ml-5 cursor-pointer" on:click={() => {isTab = 13; goto(`/`, { replaceState: true });}}>
         <!-- svelte-ignore a11y-missing-attribute -->
         <img src="/images/logo.png" class="h-[80px] w-[200px]" atl="pig-logo" />
       </a>
@@ -113,7 +127,13 @@
           <!-- svelte-ignore a11y-click-events-have-key-events -->
           <!-- svelte-ignore a11y-missing-attribute -->
           <!-- svelte-ignore a11y-no-static-element-interactions -->
-          <a on:click={() => handleTabClick(id)} alt="" class="h-full">
+          <a
+            on:click={() => handleTabClick(id)}
+            alt=""
+            class="h-full"
+            on:mouseover={() => handleMouseover(id)}
+            on:mouseout={() => handleMouseout(id)}
+          >
             <div
               class="w-[130px] cursor-pointer background text-center h-full flex items-center justify-center"
               class:!hidden={isTab == id}
@@ -165,6 +185,14 @@
             <a
               class="text-[#167237] text-[16px] font-semibold h-full uppercase category-style"
               on:mouseover={() => (isSubTab = id)}
+              on:click={() => goto(`/category/${id}`, { replaceState: true })}
+              on:mouseout={() =>
+                debounce(() => {
+                  if (isSubTab == id) {
+                    isSubTab = 0;
+                    isTab = 0;
+                  }
+                }, 1000)}
             >
               <div
                 class="cursor-pointer h-full flex"
@@ -178,14 +206,7 @@
                 </div>
                 <div class="w-3"></div>
               </div>
-            </a>
-            <a
-              class="text-[#167237] text-[16px] font-semibold h-full uppercase hidden category-style"
-              class:!flex={isSubTab == id}
-              on:click={() => goto(`/category/${id}`, { replaceState: true })}
-              on:mouseout={() => (isSubTab = 0)}
-            >
-              <div class="cursor-pointer h-full flex">
+              <div class="cursor-pointer h-full hidden" class:!flex={isSubTab == id}>
                 <div class="background_left_sb w-3"></div>
                 <div class="bg-[#ffcd36]">
                   <div class="text-center h-full flex items-center">
@@ -204,7 +225,6 @@
 
 <style lang="scss">
   .absolute-center {
-    top: 60px;
     left: 50%;
     transform: translate(-50%, -50%);
   }

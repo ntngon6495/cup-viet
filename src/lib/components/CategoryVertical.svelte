@@ -80,7 +80,7 @@
   // export let listIdScroll = []
 </script>
 
-<div class="top-0 category" in:fly={{ x: -64 }} out:fly={{ x: -64 }}>
+<div class="top-0 category sm:block hidden" in:fly={{ x: -64 }} out:fly={{ x: -64 }}>
   <div class="inline-grid gap-1">
     {#each listCategory as item}
       <a
