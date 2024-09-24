@@ -10,7 +10,7 @@ module.exports = {
       colors: {
         // flowbite-svelte
         category: {
-          100: "#176237",
+          100: "#167237",
           200: "#2199D4",
           300: "#dbab83",
           400: "#ea222d",
