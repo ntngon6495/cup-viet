@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<div class="bg-[#225A42] mt-10">
+<div class="bg-[#176237] mt-10">
   <div class="footer sm:w-[1200px] mx-auto">
     <div class="w-full footer-wrap">
       <div class="sm:grid sm:grid-cols-12">
