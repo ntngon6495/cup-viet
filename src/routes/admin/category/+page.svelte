@@ -132,7 +132,7 @@
   };
 </script>
 
-<div>
+<div class='mt-[200px]'>
   <div class="w-full text-center my-5 text-2xl font-bold uppercase">
     <p>Thêm mới sản phẩm</p>
   </div>

@@ -92,10 +92,6 @@
     <div class="col-span-4">
       <div class="carousel-custom cursor-pointer">
         <img src={productDetail.image_url} class="sm:!w-[600px] !w-[200px]" />
-        <!-- <Carousel {images} {forward} let:Indicators let:Controls bind:index class='sm:!h-[600px] !h-[200px] flex justify-center' imgClass='sm:!w-[600px] sm:h-[600px] !w-[200px] h-[200px] mx-auto'>
-                    <Indicators />
-                </Carousel> -->
-        <!-- <Thumbnails {images} {forward} bind:index /> -->
       </div>
     </div>
     <div class="col-span-4 pl-5 sm:text-lg text-sm">
@@ -142,27 +138,9 @@
       </div>
     </div>
     <div class="col-span-4 px-5">
-      <img src="/chinh-sach.png" alt="chính sách bán hàng" />
+      <img class='shadow-xl rounded-2xl' src="/chinh-sach-ban-hang.png" alt="chính sách bán hàng" />
     </div>
   </div>
-  <!-- <div class='grid sm:grid-cols-12 mt-10 sm:p-20 py-2 bg-gray-100 sm:text-base text-sm'>
-        <div class='col-span-6'>
-            <p class='sm:px-0 px-4'>Đây là kích thướt thực tế. Hãy ghi nhớ điều này khi sử dụng nó</p>
-            <table class="detail-product">
-                <tr class='font-bold'>
-                    <td>Phân công</td>
-                    <td>{`Ngang(W)`}</td>
-                    <td>{`Dọc(H)`}</td>
-                    <td>{`Chiều rộng(D)`}</td>
-                </tr>
-                <tr>
-                    <td class='font-bold'>Kích thước đơn</td>
-                    <td>15cm</td>
-                    <td>36cm</td>
-                    <td>13cm</td>
-                </tr>
-        </div>
-    </div> -->
   <div class="grid sm:grid-cols-12 w-full mt-20">
     <div class="col-span-4 pt-4">
       <hr class="w-full border-b-2 border-[#F3B81A]" />

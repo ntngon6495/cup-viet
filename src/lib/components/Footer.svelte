@@ -55,7 +55,7 @@
       </div>
     </div>
     <div class="w-full mt-5 sm:flex px-2 justify-between sm:px-24">
-      <img class="sm:w-[600px]" alt="" src="/images/card-list-2.png" />
+      <img class="sm:w-[600px]" alt="" src="/images/card-list.png" />
       <div
         class="text-white font-semibold px-4 border-l-2 border-r-2 flex items-center text-[18px]"
       >
