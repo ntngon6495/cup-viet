@@ -33,14 +33,14 @@
       class:seller_active={tab === "1"}
       on:click={() => (tab = "1")}
     >
-      <span class="hot_seller_menu"><span>CÚP VÔ ĐỊCH</span></span>
+      <span class="hot_seller_menu">CÚP VÔ ĐỊCH</span>
     </div>
     <div
       class="hot_seller_title"
       class:seller_active={tab === "2"}
       on:click={() => (tab = "2")}
     >
-      <span class="hot_seller_menu"><span>CÚP EAGLE</span></span>
+      <span class="hot_seller_menu">CÚP EAGLE</span>
     </div>
     <div
       class="hot_seller_title"
@@ -61,7 +61,7 @@
       class:seller_active={tab === "7"}
       on:click={() => (tab = "7")}
     >
-      <span class="hot_seller_menu"><span>QUÀ TẶNG</span> </span>
+      <span class="hot_seller_menu">QUÀ TẶNG</span>
     </div>
     <div
       class="hot_seller_title"

@@ -2,6 +2,8 @@
   import { Carousel } from "flowbite-svelte";
   import { onMount, afterUpdate } from "svelte";
   import { mergeClass } from "$lib/helpers";
+  import CategoryVertical from "./CategoryVertical.svelte";
+  export let y = 0;
 
   let imagesBanner = [
     {
@@ -138,6 +140,7 @@
   ];
 
   export let products;
+  export let listIdScroll = [];
 
   const mapDataList = () => {
     const groupedByCategory = products.reduce((acc, item) => {
@@ -159,7 +162,7 @@
     productList = data;
   };
 
-  export let listIdScroll = [];
+  export let type = 0
 
   onMount(() => {
     console.log("onMount");
@@ -169,7 +172,7 @@
   afterUpdate(() => {
     console.log("the component just updated");
     setTimeout(() => {
-      productList.forEach((item, idx) => {
+      productList.forEach((item) => {
         const div = document.getElementById("category_" + item.id);
         if (!div) return;
         const offsetTop = div.offsetTop;
@@ -178,6 +181,8 @@
       });
     }, 1000);
   });
+
+  $: console.log("listIdScroll", listIdScroll.at(-1)?.offsetTop, y);
 </script>
 
 <div>
@@ -185,7 +190,7 @@
     class="title text-lg font-bold mt-5"
     style="text-align:center; color: #F3B81A"
   >
-    <h2>XẾP HẠNG DANH MỤC THEO MỨC ĐỘ PHỔ BIẾN</h2>
+    <!-- <h2>XẾP HẠNG DANH MỤC THEO MỨC ĐỘ PHỔ BIẾN</h2> -->
   </div>
   <div
     class="col-span-12 sm:max-w-[1200px] sm:!max-h-[200px] max-h-[80px]"
@@ -198,25 +203,25 @@
         class="sm:grid sm:grid-cols-12 gap-4 my-10 pb-10 border-b border-b-gray-200 category-group"
       >
         <div class="col-span-5">
-          <div class="relative sm:max-w-[440px] sm:h-32 h-20">
+          <div class="relative sm:max-w-[440px] sm:h-24 h-20">
             <div
               class={mergeClass(
-                `sm:h-32 h-20 w-full absolute top-0 left-0 opacity-7`,
+                `sm:h-24 h-20 w-full absolute top-0 left-0 opacity-7`,
                 item.color
               )}
             ></div>
             <img
-              class="sm:h-32 h-20 object-fill absolute top-0 left-0 opacity-40"
+              class="sm:h-24 h-20 object-fill absolute top-0 left-0 opacity-40"
               alt=""
               src={backgroundCategory[idx]?.src}
             />
             <div
-              class="absolute sm:h-32 h-20 px-2 flex items-center justify-between font-bold text-2xl text-white w-full"
+              class="absolute sm:h-24 h-20 px-2 flex items-center justify-between font-bold text-2xl text-white w-full"
             >
-              <p class="tit uppercase">{@html item?.category}</p>
-              <div class="flex items-center sm:text-xl text-base">
+              <p class="tit text-xl uppercase">{@html item?.category}</p>
+              <div class="flex items-center sm:text-lg text-base">
                 <a href={`/${item?.url}`}>XEM THÊM</a>
-                <img src="/images/arrow-right-white.png" alt="best 1" />
+                <img class='h-6' src="/images/arrow-right-white.png" alt="best 1" />
               </div>
             </div>
           </div>
@@ -227,7 +232,7 @@
                 <img
                   data-srcset="/images/product/7.png"
                   srcset={item.products[0]?.image_url}
-                  class="w-[440px] h-[440px] ls-is-cached lazyloaded bg-gray-100"
+                  class="w-[440px] h-[440px] ls-is-cached lazyloaded bg-gray-100 hover:border-[#F3B81A] border-[1px]  border-transparent"
                 />
               </li>
             </a>
@@ -258,7 +263,7 @@
                       alt=""
                       title=""
                       src={product?.image_url}
-                      class="sm:w-[220px] w-[180px] ls-is-cached lazyloaded bg-gray-100"
+                      class="sm:w-[220px] w-[180px] ls-is-cached lazyloaded bg-gray-100 hover:border-[#F3B81A] border-[1px]  border-transparent"
                     />
                   </span>
                   <div class="text-lg w-full mt-2">
@@ -283,6 +288,9 @@
       </div>
     {/if}
   {/each}
+  {#if listIdScroll.at(-1)?.offsetTop < y + 80}
+    <CategoryVertical {type} {listIdScroll}/>
+  {/if}
 </div>
 
 <style>
@@ -373,7 +381,7 @@
 
   .big_goods_imgs {
     padding-left: 0;
-    margin-top: 20px;
+    margin-top: 10px;
     position: relative;
   }
 
@@ -453,7 +461,8 @@
   .small_right_goods_list {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 15px;
+    gap: 40px 0px;
+    /* margin-bottom: 15px; */
   }
 
   .small_right_goods_list .small_goods_infos {

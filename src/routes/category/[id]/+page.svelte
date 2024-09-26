@@ -119,7 +119,7 @@
       >
         <img
           src={item.image_url}
-          class="sm:max-w-[400px] max-w-[200px] bg-gray-100"
+          class="sm:max-w-[386px] max-w-[200px] bg-gray-100 hover:border-[#F3B81A] border-[1px]  border-transparent"
           alt=""
         />
         <div

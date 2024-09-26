@@ -75,14 +75,11 @@
       bg_color: "bg-category-400"
     }
   ];
-  // let y = 0
-
-  // export let listIdScroll = []
 </script>
 
-<div class="top-0 category sm:block hidden">
+<div class="top-0 category sm:block w-[65px] ml-[-80px] mt-[-675px]">
   <div class="inline-grid gap-1">
-    {#each listCategory as item}
+    {#each listCategory as item, idx}
       <a
         class="bg-white cursor-pointer"
         on:click={() => goto(`/category/${item.id}`, { replaceState: true })}
@@ -119,10 +116,10 @@
 <style lang="scss">
   .category {
     display: block;
-    top: 150px;
-    position: fixed;
-    z-index: 99;
-    margin-left: -80px;
+    // top: 150px;
+    // position: fixed;
+    // z-index: 99;
+    // margin-left: -80px;
   }
   .category_img:hover {
     transition: 0.3s;

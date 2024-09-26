@@ -7,24 +7,30 @@
   let y = 0;
   let type = 0;
   let listIdScroll = [];
+  let enable = true;
   $: checkType(y);
 
   const checkType = (y) => {
     listIdScroll.forEach((item) => {
       if (y > item.offsetTop - 100 && y < item.offsetTop + 400) {
         type = item.id;
+        enable = true;
       }
     });
+    console.log(y);
+    y > listIdScroll.at(-1)?.offsetTop - 73 ? (enable = false) : true;
   };
 </script>
 
 <svelte:window bind:scrollY={y} />
 
 {#if y >= 900}
-  <CategoryVertical bind:type />
+  {#if enable}
+      <CategoryVertical bind:type />
+  {/if}
 {/if}
 <div class="">
   <ProductHot />
-  <Category products={data.products?.Items} bind:listIdScroll />
+  <Category {y} bind:type products={data.products?.Items} bind:listIdScroll />
   <slot />
 </div>
