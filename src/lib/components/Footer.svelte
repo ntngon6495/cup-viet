@@ -1,13 +1,13 @@
 <script>
 </script>
 
-<div class="bg-[#167237] mt-10">
+<div class="bg-[#F0B31C] mt-10">
   <div class="footer sm:w-[1200px] mx-auto">
     <div class="w-full footer-wrap">
       <div class="sm:grid sm:grid-cols-12">
         <div class="col-span-9">
-          <div class="w-full sm:px-0 p-2 mb-4 pb-4 border-b border-b-white">
-            <img alt="chinh sach" src="/images/chinh-sach-2.png" />
+          <div class="w-full sm:px-0 p-2 mb-4 pb-4 border-b border-b-[#444444]">
+            <img alt="chinh sach" src="/images/chinh-sach.png" />
           </div>
           <div class="info-support sm:flex sm:justify-between gap-10 px-2">
             <div>
@@ -66,14 +66,14 @@
       <div class="footer-logo sm:w-1/2 sm:mb-0 mb-10 flex justify-end mr-4">
         <img
           class="sm:max-w-[450px] sm:max-h-[200px] max-h-[120px] max-w-[280px] sm:mx-0 mx-auto"
-          src="/images/logo.png"
+          src="/images/logo-header.png"
           alt="logo footer"
         />
       </div>
       <div
         class="footer-info sm:w-1/2 sm:h-auto flex items-center sm:text-left text-center"
       >
-        <div class="border-l-white border-l pl-5">
+        <div class="border-l-white border-l pl-5 text-[#444444]">
           <h4 class="company-name">
             CÔNG TY TNHH SẢN XUẤT THƯƠNG MẠI DỊCH VỤ VIỆT NAM TROPHY
           </h4>
@@ -103,7 +103,7 @@
       @include mobile {
         font-size: 12px;
       }
-      color: white;
+      color: #444444;
       font-size: 14px;
       font-weight: 500;
       text-transform: capitalize;
@@ -129,7 +129,7 @@
     width: 100%;
     gap: 1rem;
     padding: 20px 0;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #444444;
   }
   .footer-logo img {
     padding-bottom: 10px;
@@ -142,11 +142,11 @@
     margin: 0;
     font-size: 1rem;
     line-height: 1.5rem;
-    color: white;
+    // color: white;
   }
   .company-name {
     font-size: 1rem;
     font-weight: 600;
-    color: white;
+    // color: white;
   }
 </style>

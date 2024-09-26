@@ -114,13 +114,13 @@
 </script>
 
 <div
-  class="top-nav sm:top-[60px] flex justify-center mt-2 h-[110px] border-b-4 border-b-[#ffcd36] absolute z-[68] absolute-center"
+  class="top-nav sm:top-[65px] flex justify-center mt-2 h-[125px] border-t-2 border-b-4 border-b-[#444444] absolute z-[68] absolute-center"
 >
   <div class="sm:flex hidden h-full w-[1200px]">
     <div class="flex items-center w-full">
       <a class="w-[300px] ml-5 cursor-pointer" on:click={() => {isTab = 13; goto(`/`, { replaceState: true });}}>
         <!-- svelte-ignore a11y-missing-attribute -->
-        <img src="/images/logo.png" class="h-[80px] w-[200px]" atl="pig-logo" />
+        <img src="/images/logo-header.png" class="h-[100px]" atl="pig-logo" />
       </a>
       <div class="flex justify-start items-center w-full h-full px-10">
         {#each listIcon as { id, icon, icon_active, alt, url, name }}
@@ -135,7 +135,7 @@
             on:mouseout={() => handleMouseout(id)}
           >
             <div
-              class="w-[130px] cursor-pointer background text-center h-full flex items-center justify-center"
+              class="w-[135px] cursor-pointer background text-center h-full flex items-center justify-center"
               class:!hidden={isTab == id}
             >
               <div>
@@ -152,9 +152,9 @@
               </div>
             </div>
             <div class="cursor-pointer hidden h-full" class:!flex={isTab == id}>
-              <div class="background_left w-6"></div>
+              <div class="background_left w-8"></div>
               <div
-                class="bg-[#ffcd36] w-[80px] flex items-center justify-center"
+                class="bg-[#FFFFFF] w-[80px] flex items-center justify-center"
               >
                 <div class="text-center">
                   <img
@@ -163,14 +163,13 @@
                     {alt}
                   />
                   <p
-                    class="uppercase text-[10px] font-semibold mt-1 text-white mx-auto"
-                    class:text-green={isTab == id}
+                    class="uppercase text-[10px] font-semibold mt-1 text-[#444444] mx-auto"
                   >
                     {name}
                   </p>
                 </div>
               </div>
-              <div class="background_right w-6"></div>
+              <div class="background_right w-8"></div>
             </div>
           </a>
         {/each}
@@ -178,12 +177,12 @@
     </div>
     {#if listCategory}
       <div
-        class="bg-[white] absolute top-[110px] opacity-100 border border-[#167237] shadow-lg"
+        class="bg-[white] absolute top-[123px] opacity-100 border border-[#F0B31C] shadow-lg"
       >
         <div class="flex justify-center items-center h-[65px]">
           {#each listCategory as { id, name }}
             <a
-              class="text-[#167237] text-[16px] font-semibold h-full uppercase category-style"
+              class="text-[#F0B31C] text-[16px] font-semibold h-full uppercase category-style"
               on:mouseover={() => (isSubTab = id)}
               on:click={() => goto(`/category/${id}`, { replaceState: true })}
               on:mouseout={() =>
@@ -201,19 +200,19 @@
                 <div class="w-3"></div>
                 <div class="bg-white">
                   <div class="text-center h-full flex items-center">
-                    <p class="uppercase">{name}</p>
+                    <p class="uppercase text-[#444444]">{name}</p>
                   </div>
                 </div>
                 <div class="w-3"></div>
               </div>
               <div class="cursor-pointer h-full hidden" class:!flex={isSubTab == id}>
-                <div class="background_left_sb w-3"></div>
+                <div class="background_left_sb w-4"></div>
                 <div class="bg-[#ffcd36]">
                   <div class="text-center h-full flex items-center">
-                    <p class="uppercase">{name}</p>
+                    <p class="uppercase text-white">{name}</p>
                   </div>
                 </div>
-                <div class="background_right_sb w-3"></div>
+                <div class="background_right_sb w-4"></div>
               </div>
             </a>
           {/each}
@@ -229,19 +228,19 @@
     transform: translate(-50%, -50%);
   }
   .text-green {
-    color: #167237 !important;
+    color: #F0B31C !important;
   }
   .background_left {
-    background: linear-gradient(102deg, #167237 50%, #ffcd36 50%);
+    background: linear-gradient(105deg, #F0B31C 50%, #ffffff 50%);
   }
   .background_right {
-    background: linear-gradient(102deg, #ffcd36 50%, #167237 50%);
+    background: linear-gradient(105deg, #ffffff 50%, #F0B31C 50%);
   }
   .background_left_sb {
-    background: linear-gradient(101deg, white 50%, #ffcd36 50%);
+    background: linear-gradient(103deg, white 50%, #ffcd36 50%);
   }
   .background_right_sb {
-    background: linear-gradient(101deg, #ffcd36 50%, white 50%);
+    background: linear-gradient(103deg, #ffcd36 50%, white 50%);
   }
 
   // .category-style:first-child {
@@ -254,7 +253,7 @@
     // padding: 5px 80px;
     // background: #ffcd36;
     width: 100%;
-    background: #167237;
+    background: #F0B31C;
     opacity: 0.9;
   }
   .search-wrap {

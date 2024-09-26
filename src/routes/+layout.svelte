@@ -70,7 +70,7 @@
     transform: translate(-50%, 0);
   }
   .absolute-center {
-    top: 350px;
+    top: 390px;
     left: 50%;
     transform: translate(-50%, -50%);
   }

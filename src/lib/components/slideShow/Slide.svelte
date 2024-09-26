@@ -56,12 +56,12 @@
   // });
 </script>
 
-<div imgClass="max-w-[1600px]">
+<div>
   <Carousel
     {images}
     duration="3000"
     let:Indicators
-    class="!min-w-[600px] max-w-[1600px] !h-[460px] rounded-none"
+    class="!min-w-[600px] !min-h-[500px] rounded-none"
   >
     <Indicators />
   </Carousel>
