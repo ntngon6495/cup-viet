@@ -15,6 +15,8 @@
 
   const checkRouter = (url) => {
     if (url !== "/") {
+      unable = true;
+    } else if (url !== "/" && url !== "/home") {
       disableComponent = true;
     } else {
       disableComponent = false;
@@ -52,8 +54,8 @@
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <div
     class="fixed z-[101] top-0 image_baotri w-screen h-screen"
-    on:click={() => (unable = true)}
-  >
+    >
+    <!-- on:click={() => (unable = true)} -->
     <img src="/bao_tri.jpg" alt="loading" class="mx-auto" />
   </div>
 </div>
