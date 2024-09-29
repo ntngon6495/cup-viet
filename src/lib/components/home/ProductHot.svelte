@@ -146,7 +146,6 @@
     font-weight: 600;
     font-style: normal;
     font-size: 32px;
-    font-weight: 500;
     line-height: 1.3;
     color: #f3b81a;
     line-height: 40px;

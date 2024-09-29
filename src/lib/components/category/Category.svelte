@@ -211,7 +211,7 @@
               )}
             ></div>
             <img
-              class="sm:h-24 h-20 object-fill absolute top-0 left-0 opacity-40"
+              class="sm:h-24 h-20 w-full object-fill absolute top-0 left-0 opacity-40"
               alt=""
               src={backgroundCategory[idx]?.src}
             />

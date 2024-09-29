@@ -114,7 +114,7 @@
 </script>
 
 <div
-  class="top-nav sm:top-[65px] flex justify-center mt-2 h-[125px] border-t-2 border-b-4 border-b-[#444444] absolute z-[68] absolute-center"
+  class="top-nav sm:top-[65px] sm:flex justify-center mt-2 h-[125px] border-t-2 border-b-4 border-b-[#444444] absolute z-[68] absolute-center hidden"
 >
   <div class="sm:flex hidden h-full w-[1200px]">
     <div class="flex items-center w-full">
@@ -177,12 +177,12 @@
     </div>
     {#if listCategory}
       <div
-        class="bg-[white] absolute top-[123px] opacity-100 border border-[#F0B31C] shadow-lg"
+        class="bg-[white] absolute top-[123px] opacity-100 border border-[#EAA918] shadow-lg"
       >
         <div class="flex justify-center items-center h-[65px]">
           {#each listCategory as { id, name }}
             <a
-              class="text-[#F0B31C] text-[16px] font-semibold h-full uppercase category-style"
+              class="text-[#EAA918] text-[16px] font-semibold h-full uppercase category-style"
               on:mouseover={() => (isSubTab = id)}
               on:click={() => goto(`/category/${id}`, { replaceState: true })}
               on:mouseout={() =>
@@ -228,13 +228,13 @@
     transform: translate(-50%, -50%);
   }
   .text-green {
-    color: #F0B31C !important;
+    color: #EAA918 !important;
   }
   .background_left {
-    background: linear-gradient(105deg, #F0B31C 50%, #ffffff 50%);
+    background: linear-gradient(105deg, #EAA918 50%, #ffffff 50%);
   }
   .background_right {
-    background: linear-gradient(105deg, #ffffff 50%, #F0B31C 50%);
+    background: linear-gradient(105deg, #ffffff 50%, #EAA918 50%);
   }
   .background_left_sb {
     background: linear-gradient(103deg, white 50%, #ffcd36 50%);
@@ -253,7 +253,7 @@
     // padding: 5px 80px;
     // background: #ffcd36;
     width: 100%;
-    background: #F0B31C;
+    background: #EAA918;
     opacity: 0.9;
   }
   .search-wrap {

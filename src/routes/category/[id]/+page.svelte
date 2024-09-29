@@ -78,19 +78,19 @@
   };
 </script>
 
-<div class="w-full text-center mt-40">
+<div class="w-full text-center mt-20 sm:mt-40">
   <p
     class="sm:text-4xl text-2xl sm:mt-0 mt-10 font-semibold uppercase text-yellow-400 title-category"
   >
     {renderTitle(data?.category)}
   </p>
   {#if productList.length > 0}
-    <div class="sm:grid sm:grid-cols-12 gap-4 mt-10">
-      <ProductTop type="top" product={productList[0]} />
+    <div class="sm:grid sm:grid-cols-12 gap-4 sm:mt-10 mt-5">
+      <ProductTop type="top" product={productList[1]} />
       <div class="col-span-6 sm:mt-0 mt-10">
         <div class="grid grid-cols-12 gap-4">
           {#each productList as product, idx}
-            {#if idx > 0 && idx < 5}
+            {#if idx > 1 && idx < 6}
               <ProductTop {product} />
             {/if}
           {/each}

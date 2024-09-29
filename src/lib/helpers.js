@@ -1,4 +1,3 @@
-// import  { ClassValue } from 'clsx';
 import clsx from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -16,4 +15,27 @@ export const debounce = (cb, timeout) => {
 		},
 		timeout || timeout === 0 ? timeout : 500
 	);
+};
+
+export const convertDate = (
+	strDate,
+	format = 'DD/MM/YYYY',
+	opts
+) => {
+	if (!strDate) return '';
+	let date = opts?.inputFormat
+    ? Date(strDate, opts?.inputFormat)
+    : Date(strDate);
+	if (!date.isValid()) return false;
+
+	//return date
+	if (opts?.returnDate) return date;
+	//return unix
+	if (opts?.unix) return date.unix();
+	//set utc
+	if (opts?.utc) {
+		date = date.utc();
+	}
+
+	return format ? date.format(format) : date.format();
 };

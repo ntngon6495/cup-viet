@@ -19,7 +19,7 @@
     } else {
       disableComponent = false;
     }
-    if (url === "/admin/category") {
+    if (url === "/admin/category/list") {
       disableFooter = true;
     } else {
       disableFooter = false;
@@ -27,18 +27,19 @@
   };
 </script>
 
-<div class="pt-4 sm:mx-0 mx-2 block">
+<div class="sm:pt-4 sm:mx-0 block">
   <Header />
   <div class="relative">
     <TopNav />
-    <div
-      class:disable={disableComponent}
-      class="sm:w-[1400px] absolute z-[65] absolute-center"
-    >
-      <Slide class="block" />
-    </div>
   </div>
-  <div class="sm:w-[1200px] mx-auto" class:margin-top={!disableComponent}>
+  <div
+    class:disable={disableComponent}
+    class="w-full sm:mt-[135px] mt-[70px]"
+    >
+    <!-- class="w-full sm:absolute sm:z-[65]  absolute-center" -->
+    <Slide class="sm:block" />
+  </div>
+  <div class="sm:w-[1200px] sm:mx-auto mx-2">
     <slot />
   </div>
   <div class:disable={disableFooter}>
@@ -57,7 +58,16 @@
   </div>
 </div>
 
-<style lang="css">
+<style lang="scss">
+  $mobile-width: 480px;
+  $tablet-width: 768px;
+  $desktop-width: 1024px;
+
+  @mixin mobile {
+    @media (max-width: #{$mobile-width - 1px}) {
+      @content;
+    }
+  }
   .container {
     width: 1200px;
     position: relative;
@@ -73,8 +83,11 @@
     top: 390px;
     left: 50%;
     transform: translate(-50%, -50%);
+    @include mobile {
+      transform: none;
+    } 
   }
   .margin-top {
-    margin-top: 600px;
+    margin-top: 660px;
   }
 </style>
