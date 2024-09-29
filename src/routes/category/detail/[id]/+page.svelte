@@ -89,17 +89,19 @@
 
 <div class='table sm:block '>
   <div class="grid sm:grid-cols-12 w-full mt-40">
-    <div class="col-span-4">
+    <div class="col-span-4 flex justify-center sm:block">
       <div class="carousel-custom cursor-pointer">
         <img src={productDetail.image_url} class="sm:!w-[600px] !w-[200px]" />
       </div>
     </div>
     <div class="col-span-4 pl-5 sm:text-lg text-sm">
-      <div class="mb-2 text-2xl font-bold inline-block text-center">
-        <h1 class="text-[#ffc828]">{productDetail.product_code}</h1>
-        <p class="uppercase text-xl font-normal text-gray-500">
-          {productDetail.product_name}
-        </p>
+      <div class="mb-2 text-2xl font-bold sm:inline-block text-center flex justify-center">
+        <div> 
+          <h1 class="text-[#EAA918]">{productDetail.product_code}</h1>
+          <p class="uppercase text-xl font-normal text-gray-500">
+            {productDetail.product_name}
+          </p>
+        </div>
       </div>
       <div class="flex gap-5 font-bold">
         <p
@@ -137,21 +139,21 @@
                 </Select> -->
       </div>
     </div>
-    <div class="col-span-4 px-5">
-      <img class='shadow-xl rounded-2xl' src="/chinh-sach-ban-hang.png" alt="chính sách bán hàng" />
+    <div class="col-span-4 px-5 sm:mt-0 mt-5">
+      <img class='rounded-2xl' src="/chinh-sach-ban-hang.png" alt="chính sách bán hàng" />
     </div>
   </div>
-  <div class="grid sm:grid-cols-12 w-full mt-20">
+  <div class="grid sm:grid-cols-12 w-full sm:mt-20">
     <div class="col-span-4 pt-4">
-      <hr class="w-full border-b-2 border-[#F3B81A]" />
+      <hr class="w-full border-b-2 border-[#EAA918]" />
     </div>
-    <div class="col-span-4 text-center">
-      <p class="uppercase font-bold text-2xl text-[#F3B81A]">
+    <div class="col-span-4 text-center sm:mt-0 mt-5">
+      <p class="uppercase font-bold text-2xl text-[#EAA918] title-font">
         Sản phẩm cùng loại
       </p>
     </div>
     <div class="col-span-4 pt-4">
-      <hr class="w-full border-b-2 border-[#F3B81A]" />
+      <hr class="w-full border-b-2 border-[#EAA918]" />
     </div>
   </div>
   <div class="grid sm:grid-cols-12 w-full mt-20">
@@ -169,7 +171,7 @@
                 src={product?.image_url}
                 class="sm:w-[220px] w-[180px] ls-is-cached lazyloaded bg-gray-100 mx-auto scale-image"
               />
-              <p class="text-[#F3B81A] text-xl font-bold mt-3">
+              <p class="text-[#EAA918] text-xl font-bold mt-3">
                 {product?.product_code}
               </p>
               <p class="uppercase text-gray-600">{product?.product_name}</p>
@@ -184,7 +186,7 @@
 
 <style lang="scss">
   .tab-active {
-    border-bottom: 2px solid #ffc828;
+    border-bottom: 2px solid #EAA918;
   }
   .detail-item {
     margin-top: 10px;
@@ -233,5 +235,11 @@
   .scale-image:hover {
     transition: 0.3s;
     transform: scale(1.1);
+  }
+  .title-font {
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
   }
 </style>

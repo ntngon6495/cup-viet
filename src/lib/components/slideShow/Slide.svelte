@@ -35,19 +35,19 @@
   const images = [
     {
       alt: "Cosmic timetraveler",
-      src: "/images/sideshow.jpg",
+      src: "/banner-cupviet_1.jpg",
       title: "cosmic-timetraveler-pYyOZ8q7AII-unsplash.com"
     },
     {
       alt: "Cosmic timetraveler",
-      src: "/images/sideshow.jpg",
+      src: "/banner-cupviet_2.jpg",
       title: "cosmic-timetraveler-pYyOZ8q7AII-unsplash.com"
     },
-    {
-      alt: "Cosmic timetraveler",
-      src: "/images/sideshow.jpg",
-      title: "cosmic-timetraveler-pYyOZ8q7AII-unsplash.com"
-    }
+    // {
+    //   alt: "Cosmic timetraveler",
+    //   src: "/images/sideshow.jpg",
+    //   title: "cosmic-timetraveler-pYyOZ8q7AII-unsplash.com"
+    // }
   ];
 
   // onMount(() => {
@@ -61,8 +61,9 @@
     {images}
     duration="3000"
     let:Indicators
-    class="!min-w-[600px] !min-h-[500px] rounded-none"
-  >
+    class="min-h-[150px] sm:min-h-[400px] md:min-h-[450px] 2xl:min-h-[700px] w-full rounded-none"
+    >
+    <!-- class="!sm:min-w-[600px] !sm:min-h-[500px] w-full rounded-none" -->
     <Indicators />
   </Carousel>
 </div>

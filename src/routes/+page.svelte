@@ -1,6 +1,7 @@
 <script>
   import ProductHot from "$lib/components/home/ProductHot.svelte";
   import Category from "$lib/components/category/Category.svelte";
+  import IconContact from "$lib/components/Icon/IconContact.svelte";
   import CategoryVertical from "$lib/components/CategoryVertical.svelte";
 
   export let data;
@@ -30,6 +31,7 @@
   {/if}
 {/if}
 <div class="">
+  <IconContact />
   <ProductHot />
   <Category {y} bind:type products={data.products?.Items} bind:listIdScroll />
   <slot />

@@ -10,8 +10,8 @@
   };
 </script>
 
-<div class="sm:relative fixed top-0 left-0 bg-white z-[49] w-[1200px] mx-auto">
-  <div class="flex justify-between items-center h-8">
+<div class="sm:relative fixed top-0 left-0 bg-white z-[49] sm:w-[1200px] w-full mx-auto">
+  <div class="sm:flex justify-between items-center h-8 hidden">
     <div class="flex border-b w-[200px] h-8 justify-between">
       <input
         type="text"
@@ -30,16 +30,23 @@
       <p class="border-r pr-3 cursor-pointer">Tin tức</p>
       <p class="border-r pr-3 cursor-pointer">Liên hệ</p>
       <div class="flex gap-1 font-semibold text-[16px]">
-        <PhoneOutline class="w-7 h-7" /><span> 0902 547 808 </span>
+        <img src='/ic-phone.png' atl='icon-phone' class="w-6 h-6 -mt-1" /><span> 0902 547 808 </span>
       </div>
     </div>
   </div>
-  <div>
-    <div class="col-span-1 flex items-start my-auto justify-start sm:hidden">
-      <Button class="p-0" on:click={() => (hidden1 = false)}>
-        <BarsOutline class="w-9 h-9 mx-auto text-gray-600" />
+  <div class='h-[70px] bg-[#EAA918] sm:hidden w-full border-b-2 border-b-[#444444]'>
+    <div class="flex items-center justify-between h-full">
+      <Button class="p-0 w-9 h-9" on:click={() => (hidden1 = false)}>
+        <BarsOutline class="w-9 h-9 text-gray-600" />
       </Button>
+      <a href='/'>
+        <img src="/images/logo-header.png" class="w-[120px] h-[60px]" alt="logo header" />
+      </a>
+      <div></div>
     </div>
+    <!-- <div>
+      <img src="/images/logo-header.png" class="logo-header" alt="logo header" />
+    </div> -->
   </div>
 </div>
 
@@ -142,6 +149,7 @@
     width: 300px;
     @include mobile {
       width: 200px;
+      height: 100px;
     }
   }
   .info-company {
