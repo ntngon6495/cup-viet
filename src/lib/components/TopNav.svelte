@@ -118,7 +118,7 @@
 >
   <div class="sm:flex hidden h-full w-[1200px]">
     <div class="flex items-center w-full">
-      <a class="w-[300px] ml-5 cursor-pointer" on:click={() => {isTab = 13; goto(`/`, { replaceState: true });}}>
+      <a class="w-[300px] ml-5 cursor-pointer" on:click={() => {isTab = 13; goto(`/home`, { replaceState: true });}}>
         <!-- svelte-ignore a11y-missing-attribute -->
         <img src="/images/logo-header.png" class="h-[100px]" atl="pig-logo" />
       </a>

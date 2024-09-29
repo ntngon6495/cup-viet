@@ -78,7 +78,7 @@
   };
 </script>
 
-<div class="w-full text-center mt-20 sm:mt-40">
+<div class="w-full text-center mt-20 md:mt-40">
   <p
     class="sm:text-4xl text-2xl sm:mt-0 mt-10 font-semibold uppercase text-yellow-400 title-category"
   >

@@ -14,11 +14,11 @@
   $: checkRouter($page.route.id);
 
   const checkRouter = (url) => {
-    if (url !== "/") {
-      unable = true;
-    } else if (url !== "/" && url !== "/home") {
+    if (url !== "/" && url !== "/home") {
       disableComponent = true;
-    } else {
+    } else if (url === '/home') {
+      disableComponent = false;
+    } else { 
       disableComponent = false;
     }
     if (url === "/admin/category/list") {
@@ -48,8 +48,8 @@
     <Footer />
   </div>
 </div>
-<div class:disable={unable}>
-  <div class="fixed z-[100] top-0 bg-white w-full h-svh opacity-50"></div>
+<div class:disable={$page.route.id !== '/'}>
+  <div class="fixed z-[100] top-0 bg-white w-full h-svh"></div>
   <!-- svelte-ignore a11y-no-static-element-interactions -->
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <div
