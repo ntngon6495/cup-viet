@@ -163,6 +163,7 @@
   };
 
   export let type = 0
+  export let typeActive = 0
 
   onMount(() => {
     console.log("onMount");
@@ -170,7 +171,6 @@
   });
 
   afterUpdate(() => {
-    console.log("the component just updated");
     setTimeout(() => {
       productList.forEach((item) => {
         const div = document.getElementById("category_" + item.id);
@@ -182,7 +182,6 @@
     }, 1000);
   });
 
-  $: console.log("listIdScroll", listIdScroll.at(-1)?.offsetTop, y);
 </script>
 
 <div>
@@ -289,7 +288,7 @@
     {/if}
   {/each}
   {#if listIdScroll.at(-1)?.offsetTop < y + 80}
-    <CategoryVertical {type} {listIdScroll}/>
+    <CategoryVertical {typeActive} {type} {listIdScroll}/>
   {/if}
 </div>
 

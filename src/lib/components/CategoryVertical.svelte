@@ -2,6 +2,7 @@
   import { fly } from "svelte/transition";
   import { goto } from "$app/navigation";
   export let type = 0;
+  export let typeActive = 0;
 
   let listCategory = [
     {
@@ -89,10 +90,10 @@
       >
         <div
           class={`relative bg-white border w-16 h-16 ${item.border_color} ${
-            type == item.id && "border-2"
+            (type == item.id || typeActive == item.id) && "border-2"
           }`}
         >
-          {#if type == item.id}
+          {#if typeActive == item.id || type == item.id}
             <div
               class={`absolute flex justify-center items-center text-center text-white h-16 px-2 py-1 rounded-s w-[180px] -top-[2px] -left-[180px] ${item.bg_color}`}
               in:fly={{ x: -64 }}
@@ -108,7 +109,7 @@
               class="h-12 category_img"
               on:mouseover={() => (type = item.id)}
               on:mouseout={() => (type = 0)}
-            />
+              />
           </div>
         </div>
       </a>

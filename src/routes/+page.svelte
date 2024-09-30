@@ -7,6 +7,7 @@
   export let data;
   let y = 0;
   let type = 0;
+  let typeActive = 0;
   let listIdScroll = [];
   let enable = true;
   $: checkType(y);
@@ -14,11 +15,10 @@
   const checkType = (y) => {
     listIdScroll.forEach((item) => {
       if (y > item.offsetTop - 100 && y < item.offsetTop + 400) {
-        type = item.id;
+        typeActive = item.id;
         enable = true;
       }
     });
-    console.log(y);
     y > listIdScroll.at(-1)?.offsetTop - 73 ? (enable = false) : true;
   };
 </script>
@@ -27,12 +27,12 @@
 
 {#if y >= 900}
   {#if enable}
-      <CategoryVertical bind:type />
+      <CategoryVertical bind:type bind:typeActive/>
   {/if}
 {/if}
 <div class="">
   <IconContact />
   <ProductHot />
-  <Category {y} bind:type products={data.products?.Items} bind:listIdScroll />
+  <Category {y} bind:type bind:typeActive products={data.products?.Items} bind:listIdScroll />
   <slot />
 </div>
