@@ -106,7 +106,6 @@
   };
 
   const handleMouseover = (id) => {
-    console.log("id", id);
     debounce(() => {
       if (isTab != id) isTab = id;
     }, 5);

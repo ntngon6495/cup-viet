@@ -166,7 +166,6 @@
   export let typeActive = 0
 
   onMount(() => {
-    console.log("onMount");
     mapDataList();
   });
 
