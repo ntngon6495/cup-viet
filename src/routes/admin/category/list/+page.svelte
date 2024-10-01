@@ -22,7 +22,9 @@
 
   let productList = [];
   let productListBackup = [];
-  $: console.log(productList);
+
+  let popupModal = false;
+  let productDeleteId = "";
 
   let nameCategory = [
     "Cúp Best Gross",
@@ -81,7 +83,6 @@
 
   const handleChange = (event) => {
     const files = event.target.files;
-    console.log(files);
     if (files.length > 0) {
       disableUpload = true;
       images = files[0];
@@ -113,7 +114,7 @@
       createProduct();
       return true;
     } catch (error) {
-      console.log(error);
+      alter("Lỗi", error);
     }
   };
 
@@ -159,6 +160,32 @@
     const result = await response.json();
   };
 
+  const deleteProduct = async () => {
+    try {
+      const response = await fetch(
+        "https://dgg300bw0j.execute-api.ap-southeast-1.amazonaws.com/dev/product",
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            productId: productDeleteId,
+          })
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      popupModal = false;
+      productList = productListBackup.filter((product) => product.product_code !== productDeleteId);
+      productDeleteId = ""; 
+    } catch (error) {
+      alter("Lỗi:", error);
+    }
+  };
+
   const resetValues = () => {
     categoryId = "";
     productName = "";
@@ -193,7 +220,6 @@
   $: productCodeSort === "" && (productList = productListBackup);
 
   const handelEditProduct = (product) => {
-    console.log(product);
     categoryId = product.category_id;
     productName = product.product_name;
     productCode = product.product_code;
@@ -205,6 +231,11 @@
     value = product.image_url;
     isEdit = true;
     defaultModal = true;
+  };
+
+  const handelDeleteProduct = (id) => {
+    popupModal = true;
+    productDeleteId = id;
   };
 </script>
 
@@ -277,6 +308,7 @@
             <TableBodyCell>{product.create_at}</TableBodyCell>
             <TableBodyCell>
               <button class="px-5 py-2 bg-[#EAA918] rounded-lg uppercase" on:click={()=> handelEditProduct(product)}>Sửa</button>
+              <button class="px-5 py-2 bg-[#EAA918] rounded-lg uppercase" on:click={()=> handelDeleteProduct(product.product_code)}>Xoá</button>
             </TableBodyCell>
           </TableBodyRow>
         {/each}
@@ -429,6 +461,14 @@
     <!-- <svelte:fragment slot="footer">
       <Button color="alternative" on:click={() => alert('Handle "success"')} type="submit">I accept</Button>
     </svelte:fragment> -->
+  </Modal>
+  <Modal bind:open={popupModal} size="xs" autoclose>
+    <div class="text-center">
+      <!-- <ExclamationCircleOutline class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" /> -->
+      <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this product?</h3>
+      <Button color="red" class="me-2" on:click={() => deleteProduct()} >Yes, I'm sure</Button>
+      <Button color="alternative">No, cancel</Button>
+    </div>
   </Modal>
   <ToastContainer let:data>
     <FlatToast {data} />
