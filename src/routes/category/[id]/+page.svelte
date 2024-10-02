@@ -2,6 +2,7 @@
   import { Carousel } from "flowbite-svelte";
   import ProductTop from "$lib/components/product/productTop.svelte";
   import { onMount } from "svelte";
+  import CategoryVertical from "$lib/components/category/CategoryVertical.svelte";
 
   export let images = [
     {
@@ -78,7 +79,7 @@
   };
 </script>
 
-<div class="w-full text-center mt-20 md:mt-40">
+<div class="w-full text-center mt-20 md:mt-40 relative">
   <p
     class="sm:text-4xl text-2xl sm:mt-0 mt-10 font-semibold uppercase text-yellow-400 title-category"
   >
@@ -136,6 +137,9 @@
         >
       </a>
     {/each}
+  </div>
+  <div class='fixed top-[60%]'>
+    <CategoryVertical />
   </div>
 </div>
 

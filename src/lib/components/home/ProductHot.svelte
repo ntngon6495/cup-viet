@@ -1,7 +1,7 @@
 <script lang="js">
   import { onMount } from "svelte";
 
-  let tab = "4";
+  let tab = "3";
   let listProduct = [];
 
   onMount(() => {
@@ -30,45 +30,45 @@
   <div class="hot_seller">
     <div
       class="hot_seller_title"
-      class:seller_active={tab === "1"}
-      on:click={() => (tab = "1")}
+      class:seller_active={tab === "13"}
+      on:click={() => (tab = "13")}
     >
       <span class="hot_seller_menu">CÚP VÔ ĐỊCH</span>
     </div>
     <div
       class="hot_seller_title"
-      class:seller_active={tab === "2"}
-      on:click={() => (tab = "2")}
+      class:seller_active={tab === "10"}
+      on:click={() => (tab = "10")}
     >
       <span class="hot_seller_menu">CÚP EAGLE</span>
+    </div>
+    <div
+      class="hot_seller_title"
+      class:seller_active={tab === "99"}
+      on:click={() => (tab = "99")}
+    >
+      <span class="hot_seller_menu">CÚP GOLF</span>
     </div>
     <div
       class="hot_seller_title"
       class:seller_active={tab === "3"}
       on:click={() => (tab = "3")}
     >
-      <span class="hot_seller_menu">CÚP GOLD</span>
-    </div>
-    <div
-      class="hot_seller_title"
-      class:seller_active={tab === "4"}
-      on:click={() => (tab = "4")}
-    >
       <span class="hot_seller_menu">CÚP KĨ THUẬT</span>
     </div>
     <div
       class="hot_seller_title"
-      class:seller_active={tab === "7"}
-      on:click={() => (tab = "7")}
+      class:seller_active={tab === "12"}
+      on:click={() => (tab = "12")}
     >
-      <span class="hot_seller_menu">QUÀ TẶNG</span>
+      <span class="hot_seller_menu">THEO YÊU CẦU</span>
     </div>
     <div
       class="hot_seller_title"
       class:seller_active={tab === "8"}
       on:click={() => (tab = "8")}
     >
-      <span class="hot_seller_menu">HUY CHƯƠNG</span>
+      <span class="hot_seller_menu">QUÀ TẶNG VIP</span>
     </div>
     <div
       class="hot_seller_title"
@@ -238,7 +238,7 @@
   }
 
   .good_seller .recommend_l .caption {
-    font-family: Roboto;
+    // font-family: Roboto;
     margin: 0;
   }
 
@@ -289,12 +289,12 @@
   .good_seller .goods-item-rank .content .txt {
     font-size: 8px;
     line-height: 8px;
-    font-family: Roboto;
+    // font-family: Roboto;
     font-weight: 500;
     margin-top: 4px;
   }
   .good_seller .goods-item-rank .content .rank {
-    font-family: Roboto;
+    // font-family: Roboto;
     font-style: italic;
     font-size: 16px;
     line-height: 16px;
