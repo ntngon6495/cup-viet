@@ -23,8 +23,8 @@
       id: 3,
       name: "Cúp kĩ thuật",
       img: "/icon/categoryVertical/3.png",
-      border_color: "border-category-100",
-      bg_color: "bg-category-100"
+      border_color: "border-category-200",
+      bg_color: "bg-category-200"
     },
     {
       id: 4,
@@ -37,8 +37,8 @@
       id: 5,
       name: "Cúp premium",
       img: "/icon/categoryVertical/5.png",
-      border_color: "border-category-200",
-      bg_color: "bg-category-200"
+      border_color: "border-category-300",
+      bg_color: "bg-category-300"
     },
     {
       id: 6,
@@ -51,8 +51,8 @@
       id: 7,
       name: "Cúp pewter",
       img: "/icon/categoryVertical/7.png",
-      border_color: "border-category-300",
-      bg_color: "bg-category-300"
+      border_color: "border-category-400",
+      bg_color: "bg-category-400"
     },
     {
       id: 8,
@@ -65,15 +65,15 @@
       id: 9,
       name: "Huy Chương &</br> kỉ niệm chương",
       img: "/icon/categoryVertical/9.png",
-      border_color: "border-category-400",
-      bg_color: "bg-category-400"
+      border_color: "border-category-500",
+      bg_color: "bg-category-500"
     },
     {
       id: 10,
       name: "Cúp Hio & Eagle",
       img: "/icon/categoryVertical/10.png",
-      border_color: "border-category-400",
-      bg_color: "bg-category-400"
+      border_color: "border-category-500",
+      bg_color: "bg-category-500"
     }
   ];
   // let y = 0

@@ -385,7 +385,7 @@
 
   .big_goods_imgs .best-badge {
     position: absolute;
-    font-family: Roboto;
+    /* font-family: Roboto; */
     top: 0;
     left: 0;
     background: #db3a1d;
@@ -416,13 +416,13 @@
   }
 
   .big_goods_infos .goodscd {
-    font-family: Roboto;
+    /* font-family: Roboto; */
     font-weight: 600;
     margin-right: 8px;
   }
 
   .big_goods_infos .price {
-    font-family: Roboto;
+    /* font-family: Roboto; */
     font-size: 24px;
     font-weight: 600;
     color: #1b1b1b;
@@ -464,7 +464,7 @@
   }
 
   .small_right_goods_list .small_goods_infos {
-    font-family: Roboto;
+    /* font-family: Roboto; */
     font-size: 13px;
     font-weight: 600;
     color: #1b1b1b;
@@ -474,7 +474,7 @@
 
   .best-badge {
     position: absolute;
-    font-family: Roboto;
+    /* font-family: Roboto; */
     top: 0;
     left: 0;
     background: #db3a1d;
@@ -496,7 +496,7 @@
 
   .best-badge:before {
     content: "BEST";
-    font-family: Roboto;
+    /* font-family: Roboto; */
     font-size: 7px;
     font-weight: 500;
     display: inline-block;
