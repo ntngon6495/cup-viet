@@ -39,7 +39,7 @@
       title: "cosmic-timetraveler-pYyOZ8q7AII-unsplash.com"
     },
     {
-      alt: "Cosmic timetraveler",
+      alt: "Cosmic timetraveler 2",
       src: "/banner-cupviet_2.jpg",
       title: "cosmic-timetraveler-pYyOZ8q7AII-unsplash.com"
     },
@@ -54,17 +54,27 @@
   //   let counter = document.getElementsByClassName("slidy-counter");
   //   counter[0].style.display = "none";
   // });
+  let image = images[0];
 </script>
 
 <div>
-  <Carousel
+  <!-- <Carousel
     {images}
     duration="3000"
     let:Indicators
     class="min-h-[150px] sm:min-h-[400px] md:min-h-[450px] 2xl:min-h-[700px] w-full rounded-none"
+    on:change={({ detail }) => (image = detail)}
     >
-    <!-- class="!sm:min-w-[600px] !sm:min-h-[500px] w-full rounded-none" -->
+    <a slot="slide" href="http://google.com/search?q={images[index]?.title}" target="_blank" let:Slide let:index>
+      <div class="w-[1200px]">
+        <Slide image={images[index]} />
+      </div>
+    </a>
     <Indicators />
+  </Carousel> -->
+  <Carousel {images} imgClass="object-contain h-full w-fit rounded-sm" let:Indicators let:Controls class="ring-4 min-h-[320px] bg-gray-200">
+    <Indicators class="rounded-md p-2" />
+    <Controls class="items-center pt-4" />
   </Carousel>
 </div>
 

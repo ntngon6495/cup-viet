@@ -23,34 +23,34 @@
     }
   ];
 
-  let backgroundCategory = [
-    {
-      alt: "cup itali",
-      src: "/images/category/bg_category/middle_1.png",
-      url: ""
-    },
-    {
-      alt: "cup itali",
-      src: "/images/category/bg_category/middle_4.png",
-      url: ""
-    },
-    {
-      alt: "cup ki tay ban nha",
-      src: "/images/category/bg_category/middle_3.png",
-      url: ""
-    },
-    {
-      alt: "cup ki thuat",
-      src: "/images/category/bg_category/middle_2.png",
-      url: ""
-    }
-  ];
+  // let backgroundCategory = [
+  //   {
+  //     alt: "cup itali",
+  //     src: "/images/category/bg_category/middle_1.png",
+  //     url: ""
+  //   },
+  //   {
+  //     alt: "cup itali",
+  //     src: "/images/category/bg_category/middle_4.png",
+  //     url: ""
+  //   },
+  //   {
+  //     alt: "cup ki tay ban nha",
+  //     src: "/images/category/bg_category/middle_3.png",
+  //     url: ""
+  //   },
+  //   {
+  //     alt: "cup ki thuat",
+  //     src: "/images/category/bg_category/middle_2.png",
+  //     url: ""
+  //   }
+  // ];
 
   export let productList = [
     {
       id: "1",
       category: "Cúp best gross",
-      banner: "/images/category/middle_4.png",
+      banner: "/images/category/banners/CUP-BEST-GROSS.png",
       url: "category/1",
       offsetTop: 0,
       color: "bg-category-100",
@@ -59,7 +59,7 @@
     {
       id: "2",
       category: "Cúp gốm sứ",
-      banner: "/images/category/middle_4.png",
+      banner: "/images/category/banners/CUP-GOM-SU.png",
       url: "category/2",
       offsetTop: 0,
       color: "bg-category-100",
@@ -68,16 +68,16 @@
     {
       id: "3",
       category: "CÚP KĨ THUẬT",
-      banner: "/images/category/middle_4.png",
+      banner: "/images/category/banners/CUP-KI-THUAT.png",
       url: "category/3",
-      color: "bg-category-100",
+      color: "bg-category-200",
       offsetTop: 0,
       products: []
     },
     {
       id: "4",
       category: "Cúp luxury",
-      banner: "/images/category/middle_4.png",
+      banner: "/images/category/banners/CUP-LUXURY.png",
       url: "category/4",
       offsetTop: 0,
       color: "bg-category-200",
@@ -86,16 +86,16 @@
     {
       id: "5",
       category: "Cúp premium",
-      banner: "/images/category/middle_4.png",
+      banner: "/images/category/banners/CUP-PREMIUM.png",
       url: "category/5",
       offsetTop: 0,
-      color: "bg-category-200",
+      color: "bg-category-300",
       products: []
     },
     {
       id: "6",
       category: "Cúp pha lê",
-      banner: "/images/category/middle_4.png",
+      banner: "/images/category/banners/CUP-PHALE.png",
       url: "category/6",
       offsetTop: 0,
       color: "bg-category-300",
@@ -104,16 +104,16 @@
     {
       id: "7",
       category: "Cúp pewter",
-      banner: "/images/category/middle_4.png",
+      banner: "/images/category/banners/CUP-PEWTER.png",
       url: "category/7",
       offsetTop: 0,
-      color: "bg-category-300",
+      color: "bg-category-400",
       products: []
     },
     {
       id: "8",
       category: "Qua tặng vip",
-      banner: "/images/category/middle_2.png",
+      banner: "/images/category/banners/QUA-TANG-VIP.png",
       url: "category/8",
       offsetTop: 0,
       color: "bg-category-400",
@@ -122,18 +122,18 @@
     {
       id: "9",
       category: "Huy Chương &</br> kỉ niệm chương",
-      banner: "/images/category/middle_2.png",
+      banner: "/images/category/banners/KNC-VA-HUYCHUONG.png",
       url: "category/9",
       offsetTop: 0,
-      color: "bg-category-400",
+      color: "bg-category-500",
       products: []
     },
     {
       id: "10",
       category: "Cúp Hio & Eagle",
-      banner: "/images/category/middle_2.png",
+      banner: "/images/category/banners/CUP-HIO-EAGLE.png",
       url: "category/10",
-      color: "bg-category-400",
+      color: "bg-category-500",
       offsetTop: 0,
       products: []
     }
@@ -202,16 +202,16 @@
       >
         <div class="col-span-5">
           <div class="relative sm:max-w-[440px] sm:h-24 h-20">
-            <div
+            <!-- <div
               class={mergeClass(
                 `sm:h-24 h-20 w-full absolute top-0 left-0 opacity-7`,
                 item.color
               )}
-            ></div>
+            ></div> -->
             <img
-              class="sm:h-24 h-20 w-full object-fill absolute top-0 left-0 opacity-40"
+              class="sm:h-24 h-20 w-full object-fill absolute top-0 left-0"
               alt=""
-              src={backgroundCategory[idx]?.src}
+              src={item.banner}
             />
             <div
               class="absolute sm:h-24 h-20 px-2 flex items-center justify-between font-bold text-2xl text-white w-full"
