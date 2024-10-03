@@ -6,6 +6,7 @@
   import Footer from "$lib/components/Footer.svelte";
   import Slide from "$lib/components/slideShow/Slide.svelte";
   import { page } from "$app/stores";
+  import SlideShowv2 from "$lib/components/slideShow/SlideShowv2.svelte";
   let unable = false;
 
   let disableComponent = false;
@@ -39,7 +40,8 @@
     class="w-full sm:mt-[135px] mt-[70px]"
     >
     <!-- class="w-full sm:absolute sm:z-[65]  absolute-center" -->
-    <Slide class="sm:block" />
+    <!-- <Slide class="sm:block" /> -->
+    <SlideShowv2 />
   </div>
   <div class="sm:w-[1200px] sm:mx-auto mx-2">
     <slot />
