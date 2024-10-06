@@ -31,7 +31,6 @@
         enable = true;
       }
     });
-    console.log("offsetTop",listIdScroll.at(-1)?.offsetTop);
     y > listIdScroll.at(-1)?.offsetTop - 140 ? (enable = false) : true;
   };
 </script>
