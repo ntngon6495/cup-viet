@@ -1,6 +1,20 @@
 <script>
+	import { mergeClass } from '$lib/helpers';
   import { fly } from "svelte/transition";
   import { goto } from "$app/navigation";
+  import { page } from "$app/stores";
+  let isHome = true;
+
+  $: checkRouter($page.route.id);
+
+  const checkRouter = (url) => {
+    if (url !== "/" && url !== "/home") {
+      isHome = true;
+    } else {
+      isHome = false;
+    }
+  };
+
   export let type = 0;
   export let typeActive = 0;
 
@@ -78,7 +92,7 @@
   ];
 </script>
 
-<div class="top-0 category sm:block w-[65px] ml-[-80px] mt-[-675px]">
+<div class="top-0 category sm:block w-[65px] ml-[-80px] sm:-mt-[330px] 2xl:-mt-[675px]">
   <div class="inline-grid gap-1">
     {#each listCategory as item, idx}
       <a

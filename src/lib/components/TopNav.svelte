@@ -206,7 +206,7 @@
               </div>
               <div class="cursor-pointer h-full hidden" class:!flex={isSubTab == id}>
                 <div class="background_left_sb w-4"></div>
-                <div class="bg-[#ffcd36]">
+                <div class="bg-[#F2B71A]">
                   <div class="text-center h-full flex items-center">
                     <p class="uppercase text-white">{name}</p>
                   </div>
@@ -236,21 +236,21 @@
     background: linear-gradient(105deg, #ffffff 50%, #EAA918 50%);
   }
   .background_left_sb {
-    background: linear-gradient(103deg, white 50%, #ffcd36 50%);
+    background: linear-gradient(103deg, white 50%, #F2B71A 50%);
   }
   .background_right_sb {
-    background: linear-gradient(103deg, #ffcd36 50%, white 50%);
+    background: linear-gradient(103deg, #F2B71A 50%, white 50%);
   }
 
   // .category-style:first-child {
   //   .background_left_sb {
-  //     background: linear-gradient(104deg, #ffcd36 50%, #ffcd36 50%);
+  //     background: linear-gradient(104deg, #F2B71A 50%, #F2B71A 50%);
   //   }
   // }
 
   .top-nav {
     // padding: 5px 80px;
-    // background: #ffcd36;
+    // background: #F2B71A;
     width: 100%;
     background: #EAA918;
     opacity: 0.9;
