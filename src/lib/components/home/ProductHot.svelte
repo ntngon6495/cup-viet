@@ -103,7 +103,7 @@
               </a>
             </div>
             <div class=" recommend_l mt-2">
-              <p class="product_code font-bold" style="overflow: hidden;">
+              <p class="product_code font-bold text-category-100" style="overflow: hidden;">
                 {product?.product_code}
               </p>
               <div class="caption">

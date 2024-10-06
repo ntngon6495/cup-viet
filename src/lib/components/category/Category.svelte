@@ -8,6 +8,11 @@
   let imagesBanner = [
     {
       alt: "Cosmic timetraveler",
+      src: "/small_slide/slider.png",
+      title: "cupviet.com"
+    },
+    {
+      alt: "Cosmic timetraveler",
       src: "/small_slide/slider01.png",
       title: "cupviet.com"
     },
@@ -198,10 +203,10 @@
       <div
         data-item-id={`${item.id}`}
         id={`category_${item.id}`}
-        class="sm:grid sm:grid-cols-12 gap-4 my-10 pb-10 border-b border-b-gray-200 category-group"
+        class="sm:grid sm:grid-cols-12 my-5 pb-5 border-b border-b-gray-200 category-group"
       >
         <div class="col-span-5">
-          <div class="relative sm:max-w-[440px] sm:h-24 h-20">
+          <div class="relative sm:max-w-[470px] sm:h-24 h-20">
             <!-- <div
               class={mergeClass(
                 `sm:h-24 h-20 w-full absolute top-0 left-0 opacity-7`,
@@ -225,12 +230,12 @@
           </div>
           <ul class="big_goods_imgs">
             <a href={`category/detail/${item.products[0]?.product_code}`}>
-              <span class="best-badge">1</span>
+              <span class="best-badge !w-[80px]"><img src='/ic-best-seller.png' alt='icon best'></span>
               <li style="cursor:pointer;">
                 <img
                   data-srcset="/images/product/7.png"
                   srcset={item.products[0]?.image_url}
-                  class="w-[440px] h-[440px] ls-is-cached lazyloaded bg-gray-100 hover:border-[#F3B81A] border-[1px]  border-transparent"
+                  class="w-[470px] h-[470px] ls-is-cached lazyloaded bg-gray-100 hover:border-[#F3B81A] border-[1px]  border-transparent"
                 />
               </li>
             </a>
@@ -255,13 +260,14 @@
                   class="small_goods_infos"
                   href={`category/detail/${product.product_code}`}
                 >
-                  <span class="best-badge">{index + 1}</span>
+                  <!-- <span class="best-badge">{index + 1}</span> -->
+                  <span class="best-badge !w-[50px]"><img src="/ic-new.png" alt='icon new'/></span>
                   <span style="display:block; cursor:pointer">
                     <img
                       alt=""
                       title=""
                       src={product?.image_url}
-                      class="sm:w-[220px] w-[180px] ls-is-cached lazyloaded bg-gray-100 hover:border-[#F3B81A] border-[1px]  border-transparent"
+                      class="sm:w-[230px] w-[190px] ls-is-cached lazyloaded bg-gray-100 hover:border-[#F3B81A] border-[1px]  border-transparent"
                     />
                   </span>
                   <div class="text-lg w-full mt-2">
@@ -276,9 +282,9 @@
           {/if}
         </div>
       </div>
-      <div class="col-span-12 sm:max-w-[1200px] sm:!max-h-[200px] max-h-[80px]">
+      <div class="col-span-12 max-w-[1200px]">
         <Carousel
-          class="rounded-md sm:max-h-[200px] max-h-[80px]"
+          class="rounded-md sm:max-h-[150px] max-h-[80px]"
           images={imagesBanner}
           duration="3000"
           index={idx}
@@ -286,7 +292,7 @@
       </div>
     {/if}
   {/each}
-  {#if listIdScroll.at(-1)?.offsetTop < y + 80}
+  {#if listIdScroll.at(-1)?.offsetTop < y + 150}
     <CategoryVertical {typeActive} {type} {listIdScroll}/>
   {/if}
 </div>
@@ -388,7 +394,7 @@
     /* font-family: Roboto; */
     top: 0;
     left: 0;
-    background: #db3a1d;
+    /* background: #db3a1d; */
     width: 40px;
     height: 40px;
     font-size: 10px;
@@ -459,7 +465,7 @@
   .small_right_goods_list {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px 0px;
+    gap: 50px 0px;
     /* margin-bottom: 15px; */
   }
 
@@ -477,7 +483,7 @@
     /* font-family: Roboto; */
     top: 0;
     left: 0;
-    background: #db3a1d;
+    /* background: #db3a1d; */
     width: 40px;
     height: 40px;
     font-size: 10px;
@@ -491,16 +497,16 @@
   }
 
   .small_goods_infos:nth-child(n + 4) > .best-badge {
-    background: #d88544;
+    /* background: #d88544; */
   }
 
-  .best-badge:before {
+  /* .best-badge:before {
     content: "BEST";
-    /* font-family: Roboto; */
+    font-family: Roboto;
     font-size: 7px;
     font-weight: 500;
     display: inline-block;
-  }
+  } */
 
   .small_right_goods_list .small_goods_infos .goodsnm {
     font-size: 14px;
