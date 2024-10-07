@@ -23,7 +23,6 @@
     // };
   });
 
-  $: console.log(y);
   const checkType = (y) => {
     listIdScroll.forEach((item) => {
       if (y > item.offsetTop - 250 && y < item.offsetTop + 350) {

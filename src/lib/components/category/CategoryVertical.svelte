@@ -9,9 +9,9 @@
 
   const checkRouter = (url) => {
     if (url !== "/" && url !== "/home") {
-      isHome = true;
-    } else {
       isHome = false;
+    } else {
+      isHome = true;
     }
   };
 
@@ -92,7 +92,7 @@
   ];
 </script>
 
-<div class="top-0 category sm:block w-[65px] ml-[-80px] sm:-mt-[330px] 2xl:-mt-[675px]">
+<div class={mergeClass("top-0 category sm:block w-[65px] ml-[-80px] sm:-mt-[330px] min-[2300px]:-mt-[675px]", isHome ? '2xl:-mt-[675px]' : '2xl:-mt-[620px]' )} >
   <div class="inline-grid gap-1">
     {#each listCategory as item, idx}
       <a
