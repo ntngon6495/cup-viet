@@ -20,12 +20,12 @@
       <div class="relative z-[1]">
         <div class="flex w-full justify-center">
             <div class='w-[1250px flex items-center'>
-                <div class="w-3/5">
+                <div class="w-3/5 mt-10">
                   <img
                     loading="lazy"
                     decoding="async"
                     src="/images/banner/BANNER-1.png"
-                    class="attachment-original size-original 2xl:w-[800px] 2xl:h-[500px] md:w-[600px] md:[300px]"
+                    class="attachment-original size-original 2xl:w-[800px] 2xl:h-[550px] md:w-[600px] md:[300px]"
                     alt=""
                     srcset="/images/banner/BANNER-1.png 900w, /images/banner/BANNER-1.png 700w, /images/banner/BANNER-1.png 768w, /images/banner/BANNER-1.png 800w"
                     sizes="(max-width: 900px) 100vw, 900px"
@@ -38,11 +38,11 @@
                   </div>
       
                   <a
-                    href="/"
+                    href="/category/4"
                     target="_self"
-                    class="underline lowercase text-category-100"
+                    class="lowercase text-category-100"
                   >
-                    <span>Xem thêm...</span>
+                    <span class='pb-1 border-b border-b-category-100'>{`Xem thêm  >`}</span>
                     <i class="icon-angle-right"></i></a
                   >
                 </div>
@@ -55,15 +55,15 @@
     <div
       class="bg section-bg fill bg-fill bg-[url('/images/banner/BANNER-01.png')] opacity-100"
     >
-     <div class="relative z-[1]">
+    <div class="relative z-[1]">
         <div class="flex w-full justify-center">
             <div class='w-[1250px flex items-center'>
-                <div class="w-3/5">
+                <div class="w-3/5 mt-10">
                   <img
                     loading="lazy"
                     decoding="async"
                     src="/images/banner/BANNER-2.png"
-                    class="attachment-original size-original 2xl:w-[800px] 2xl:h-[500px] md:w-[600px] md:[300px]"
+                    class="attachment-original size-original 2xl:w-[800px] 2xl:h-[550px] md:w-[600px] md:[300px]"
                     alt=""
                     srcset="/images/banner/BANNER-2.png 900w, /images/banner/BANNER-1.png 700w, /images/banner/BANNER-2.png 768w, /images/banner/BANNER-2.png 800w"
                     sizes="(max-width: 900px) 100vw, 900px"
@@ -76,11 +76,11 @@
                   </div>
       
                   <a
-                    href="/"
+                    href="/category/1"
                     target="_self"
-                    class="underline lowercase text-category-100"
+                    class="lowercase text-category-100"
                   >
-                    <span>Xem thêm...</span>
+                    <span class='pb-1 border-b border-b-category-100'>{`Xem thêm  >`}</span>
                     <i class="icon-angle-right"></i></a
                   >
                 </div>
@@ -97,7 +97,7 @@
     padding: 30px 0;
     padding-top: 20px;
     padding-bottom: 20px;
-    min-height: 500px;
+    min-height: 550px;
     background-color: rgb(193, 193, 193);
     width: 100%;
     display: -webkit-box;
@@ -145,7 +145,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 500px;
+    height: 550px;
   }
   
 </style>

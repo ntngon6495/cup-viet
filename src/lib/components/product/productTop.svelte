@@ -16,16 +16,18 @@
 <div class="col-span-6 relative bg-slate-50 rounded-sm">
   {#if type === "top"}
     <div
-      class="absolute sm:w-14 sm:h-14 h-12 w-12 sm:p-0 bg-red-500 text-white sm:font-semibold rounded-sm"
+      class="absolute sm:w-14 sm:h-14 h-12 w-12 sm:p-0 text-white sm:font-semibold rounded-sm"
     >
-      <p>Top</p>
-      <p>{product.rank}</p>
+      <!-- <p>Top</p>
+      <p>{product.rank}</p> -->
+      <img src="/ic-new.png" class='mt-4 ml-4' alt=''>
     </div>
   {:else}
     <div
-      class="absolute sm:w-10 sm:h-10 h-9 w-9 flex items-center justify-center bg-red-500 text-white sm:font-semibold rounded-sm"
+      class="absolute sm:w-10 sm:h-10 h-9 w-9 flex items-center justify-center  text-white sm:font-semibold rounded-sm"
     >
-      <p>{product.rank}</p>
+      <!-- <p>{product.rank}</p> -->
+      <img src="/ic-new.png" class='mt-3 ml-3' alt=''>
     </div>
   {/if}
   <!-- svelte-ignore a11y-mouse-events-have-key-events -->

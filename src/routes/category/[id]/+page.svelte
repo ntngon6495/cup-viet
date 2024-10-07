@@ -79,7 +79,7 @@
   };
 </script>
 
-<div class="w-full text-center mt-20 md:mt-40 relative">
+<div class="w-full sm:min-h-[900px] text-center mt-20 md:mt-40 relative">
   <p
     class="sm:text-4xl text-2xl sm:mt-0 mt-10 font-semibold uppercase text-yellow-400 title-category"
   >
@@ -120,7 +120,7 @@
       >
         <img
           src={item.image_url}
-          class="sm:max-w-[386px] max-w-[200px] bg-gray-100 hover:border-[#F3B81A] border-[1px]  border-transparent"
+          class="sm:max-w-[386px] max-w-[200px] bg-gray-100 hover:border-[#F3B81A] border-[2px] border-transparent"
           alt=""
         />
         <div
@@ -138,7 +138,7 @@
       </a>
     {/each}
   </div>
-  <div class='fixed top-[60%]'>
+  <div class='fixed sm:top-[60%]'>
     <CategoryVertical />
   </div>
 </div>

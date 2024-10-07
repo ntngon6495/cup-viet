@@ -235,7 +235,7 @@
                 <img
                   data-srcset="/images/product/7.png"
                   srcset={item.products[0]?.image_url}
-                  class="w-[470px] h-[470px] ls-is-cached lazyloaded bg-gray-100 hover:border-[#F3B81A] border-[1px]  border-transparent"
+                  class="w-[470px] h-[470px] ls-is-cached lazyloaded bg-gray-100 hover:border-[#F3B81A] border-[2px]  border-transparent"
                 />
               </li>
             </a>
@@ -261,13 +261,13 @@
                   href={`category/detail/${product.product_code}`}
                 >
                   <!-- <span class="best-badge">{index + 1}</span> -->
-                  <span class="best-badge !w-[50px]"><img src="/ic-new.png" alt='icon new'/></span>
+                  <span class="best-badge !w-[50px]"><img src="/ic-best-seller.png" alt='icon new'/></span>
                   <span style="display:block; cursor:pointer">
                     <img
                       alt=""
                       title=""
                       src={product?.image_url}
-                      class="sm:w-[230px] w-[190px] ls-is-cached lazyloaded bg-gray-100 hover:border-[#F3B81A] border-[1px]  border-transparent"
+                      class="sm:w-[230px] w-[190px] ls-is-cached lazyloaded bg-gray-100 hover:border-[#F3B81A] border-[2px]  border-transparent"
                     />
                   </span>
                   <div class="text-lg w-full mt-2">
