@@ -72,7 +72,7 @@
       case "8":
         return "Quà Tặng Vip";
       case "9":
-        return "Huy Chương & Kỉ Niệm Chươngg";
+        return "Huy Chương & Kỉ Niệm Chương";
       case "10":
         return "Cúp Hio & Eagle";
       case "11":
@@ -89,9 +89,16 @@
 
 <div class='table sm:block '>
   <div class="grid sm:grid-cols-12 w-full mt-40">
+    <div class='col-span-12 flex text-gray-500 mb-2'>
+        <a href="/home">Home</a>
+        &nbsp; / &nbsp;
+        <a href={`/category/${productDetail?.category_id}`}>{renderTitle(productDetail?.category_id)}</a>
+        &nbsp; / &nbsp;
+        <p>{productDetail?.product_code}</p>
+      </div>
     <div class="col-span-4 flex justify-center sm:block">
       <div class="carousel-custom cursor-pointer">
-        <img src={productDetail.image_url} class="sm:!w-[600px] !w-[200px]" />
+        <img src={productDetail.image_url} class="sm:!w-[600px] !w-[200px]"/>
       </div>
     </div>
     <div class="col-span-4 pl-5 sm:text-lg text-sm">

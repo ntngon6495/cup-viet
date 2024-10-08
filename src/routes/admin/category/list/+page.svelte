@@ -35,7 +35,7 @@
     "Cúp Pha Lê",
     "Cúp Pewter",
     "Quà Tặng Vip",
-    "Huy Chương & Kỉ Niệm Chươngg",
+    "Huy Chương & Kỉ Niệm Chương",
     "Cúp Hio & Eagle",
     "Cúp Nickel",
     "Theo Yêu Cầu",
@@ -271,7 +271,7 @@
           <option value="6">Cúp Pha Lê</option>
           <option value="7">Cúp Pewter</option>
           <option value="8">Quà Tặng Vip</option>
-          <option value="9">Huy Chương & Kỉ Niệm Chươngg</option>
+          <option value="9">Huy Chương & Kỉ Niệm Chương</option>
           <option value="10">Cúp Hio & Eagle</option>
           <option value="11">Cúp Nickel</option>
           <option value="12">Theo Yêu Cầu</option>
@@ -395,7 +395,7 @@
             <option value="6">Cúp Pha Lê</option>
             <option value="7">Cúp Pewter</option>
             <option value="8">Quà Tặng Vip</option>
-            <option value="9">Huy Chương & Kỉ Niệm Chươngg</option>
+            <option value="9">Huy Chương & Kỉ Niệm Chương</option>
             <option value="10">Cúp Hio & Eagle</option>
             <option value="11">Cúp Nickel</option>
             <option value="12">Theo Yêu Cầu</option>

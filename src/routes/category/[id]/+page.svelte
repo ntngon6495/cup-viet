@@ -41,7 +41,7 @@
       case "8":
         return "Quà Tặng Vip";
       case "9":
-        return "Huy Chương & Kỉ Niệm Chươngg";
+        return "Huy Chương & Kỉ Niệm Chương";
       case "10":
         return "Cúp Hio & Eagle";
       case "11":
@@ -80,6 +80,11 @@
 </script>
 
 <div class="w-full sm:min-h-[900px] text-center mt-20 md:mt-40 relative">
+  <div class='flex text-gray-500 mb-2'>
+    <a href="/home">Home</a>
+    &nbsp; / &nbsp;
+    <p>{renderTitle(data?.category)}</p>
+  </div>
   <p
     class="sm:text-4xl text-2xl sm:mt-0 mt-10 font-semibold uppercase text-yellow-400 title-category"
   >
