@@ -9,23 +9,23 @@
     {
       alt: "Cosmic timetraveler",
       src: "/small_slide/slider.png",
-      title: "cupviet.com"
+      title: "cupviet.com",
     },
     {
       alt: "Cosmic timetraveler",
       src: "/small_slide/slider01.png",
-      title: "cupviet.com"
+      title: "cupviet.com",
     },
     {
       alt: "Cosmic timetraveler",
       src: "/small_slide/slider02.png",
-      title: "cupviet.com"
+      title: "cupviet.com",
     },
     {
       alt: "Cosmic timetraveler",
       src: "/small_slide/slider03.png",
-      title: "cupviet.com"
-    }
+      title: "cupviet.com",
+    },
   ];
 
   // let backgroundCategory = [
@@ -59,7 +59,7 @@
       url: "category/1",
       offsetTop: 0,
       color: "bg-category-100",
-      products: []
+      products: [],
     },
     {
       id: "2",
@@ -68,7 +68,7 @@
       url: "category/2",
       offsetTop: 0,
       color: "bg-category-100",
-      products: []
+      products: [],
     },
     {
       id: "3",
@@ -77,7 +77,7 @@
       url: "category/3",
       color: "bg-category-200",
       offsetTop: 0,
-      products: []
+      products: [],
     },
     {
       id: "4",
@@ -86,7 +86,7 @@
       url: "category/4",
       offsetTop: 0,
       color: "bg-category-200",
-      products: []
+      products: [],
     },
     {
       id: "5",
@@ -95,7 +95,7 @@
       url: "category/5",
       offsetTop: 0,
       color: "bg-category-300",
-      products: []
+      products: [],
     },
     {
       id: "6",
@@ -104,7 +104,7 @@
       url: "category/6",
       offsetTop: 0,
       color: "bg-category-300",
-      products: []
+      products: [],
     },
     {
       id: "7",
@@ -113,7 +113,7 @@
       url: "category/7",
       offsetTop: 0,
       color: "bg-category-400",
-      products: []
+      products: [],
     },
     {
       id: "8",
@@ -122,7 +122,7 @@
       url: "category/8",
       offsetTop: 0,
       color: "bg-category-400",
-      products: []
+      products: [],
     },
     {
       id: "9",
@@ -131,7 +131,7 @@
       url: "category/9",
       offsetTop: 0,
       color: "bg-category-500",
-      products: []
+      products: [],
     },
     {
       id: "10",
@@ -140,8 +140,8 @@
       url: "category/10",
       color: "bg-category-500",
       offsetTop: 0,
-      products: []
-    }
+      products: [],
+    },
   ];
 
   export let products;
@@ -162,13 +162,13 @@
     }, {});
     let data = productList.map((item) => ({
       ...item, // Spread the existing properties
-      products: groupedByCategory[item.id]
+      products: groupedByCategory[item.id],
     }));
     productList = data;
   };
 
-  export let type = 0
-  export let typeActive = 0
+  export let type = 0;
+  export let typeActive = 0;
 
   onMount(() => {
     mapDataList();
@@ -185,7 +185,6 @@
       });
     }, 1000);
   });
-
 </script>
 
 <div>
@@ -224,18 +223,24 @@
               <p class="tit text-xl uppercase">{@html item?.category}</p>
               <div class="flex items-center sm:text-lg text-base">
                 <a href={`/${item?.url}`}>XEM THÊM</a>
-                <img class='h-6' src="/images/arrow-right-white.png" alt="best 1" />
+                <img
+                  class="h-6"
+                  src="/images/arrow-right-white.png"
+                  alt="best 1"
+                />
               </div>
             </div>
           </div>
           <ul class="big_goods_imgs">
             <a href={`category/detail/${item.products[0]?.product_code}`}>
-              <span class="best-badge !w-[80px]"><img src='/ic-best-seller.png' alt='icon best'></span>
+              <span class="best-badge !w-[80px]"
+                ><img src="/ic-best-seller.png" alt="icon best" /></span
+              >
               <li style="cursor:pointer;">
                 <img
                   data-srcset="/images/product/7.png"
                   srcset={item.products[0]?.image_url}
-                  class="w-[470px] h-[470px] ls-is-cached lazyloaded bg-gray-100 hover:border-[#F3B81A] border-[2px]  border-transparent"
+                  class="w-[470px] h-[470px] ls-is-cached lazyloaded bg-gray-100 hover:border-[#F3B81A] border-[3px] border-transparent"
                 />
               </li>
             </a>
@@ -261,13 +266,15 @@
                   href={`category/detail/${product.product_code}`}
                 >
                   <!-- <span class="best-badge">{index + 1}</span> -->
-                  <span class="best-badge !w-[50px]"><img src="/ic-best-seller.png" alt='icon new'/></span>
+                  <span class="best-badge !w-[50px]"
+                    ><img src="/ic-best-seller.png" alt="icon new" /></span
+                  >
                   <span style="display:block; cursor:pointer">
                     <img
                       alt=""
                       title=""
                       src={product?.image_url}
-                      class="sm:w-[230px] w-[190px] ls-is-cached lazyloaded bg-gray-100 hover:border-[#F3B81A] border-[2px]  border-transparent"
+                      class="sm:w-[230px] w-[190px] ls-is-cached lazyloaded bg-gray-100 hover:border-[#F3B81A] border-[3px] border-transparent"
                     />
                   </span>
                   <div class="text-lg w-full mt-2">
@@ -293,7 +300,7 @@
     {/if}
   {/each}
   {#if listIdScroll.at(-1)?.offsetTop < y + 150}
-    <CategoryVertical {typeActive} {type} {listIdScroll}/>
+    <CategoryVertical {typeActive} {type} {listIdScroll} />
   {/if}
 </div>
 
