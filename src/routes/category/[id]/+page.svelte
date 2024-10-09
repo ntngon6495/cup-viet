@@ -8,18 +8,18 @@
     {
       alt: "Cosmic timetraveler",
       src: "/small_slide/slider01.png",
-      title: "cupviet.com"
+      title: "cupviet.com",
     },
     {
       alt: "Cosmic timetraveler",
       src: "/small_slide/slider02.png",
-      title: "cupviet.com"
+      title: "cupviet.com",
     },
     {
       alt: "Cosmic timetraveler",
       src: "/small_slide/slider03.png",
-      title: "cupviet.com"
-    }
+      title: "cupviet.com",
+    },
   ];
 
   export const renderTitle = (id) => {
@@ -68,7 +68,7 @@
     const response = await fetch(
       `https://dgg300bw0j.execute-api.ap-southeast-1.amazonaws.com/dev/products?categoryId=${id}`,
       {
-        method: "GET"
+        method: "GET",
       }
     );
     if (response) {
@@ -80,7 +80,7 @@
 </script>
 
 <div class="w-full sm:min-h-[900px] text-center mt-20 md:mt-40 relative">
-  <div class='flex text-gray-500 mb-2'>
+  <div class="flex text-gray-500 mb-2">
     <a href="/home">Home</a>
     &nbsp; / &nbsp;
     <p>{renderTitle(data?.category)}</p>
@@ -125,7 +125,7 @@
       >
         <img
           src={item.image_url}
-          class="sm:max-w-[386px] max-w-[200px] bg-gray-100 hover:border-[#F3B81A] border-[2px] border-transparent"
+          class="sm:max-w-[386px] max-w-[200px] bg-gray-100 hover:border-[#F3B81A] border-[3px] border-transparent"
           alt=""
         />
         <div
@@ -143,7 +143,7 @@
       </a>
     {/each}
   </div>
-  <div class='fixed sm:top-[60%]'>
+  <div class="fixed sm:top-[60%]">
     <CategoryVertical />
   </div>
 </div>
