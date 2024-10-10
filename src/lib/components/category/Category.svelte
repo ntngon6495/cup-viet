@@ -13,19 +13,19 @@
     },
     {
       alt: "Cosmic timetraveler",
-      src: "/small_slide/slider01.png",
+      src: "/small_slide/slider1-1.png",
       title: "cupviet.com",
     },
-    {
-      alt: "Cosmic timetraveler",
-      src: "/small_slide/slider02.png",
-      title: "cupviet.com",
-    },
-    {
-      alt: "Cosmic timetraveler",
-      src: "/small_slide/slider03.png",
-      title: "cupviet.com",
-    },
+    // {
+    //   alt: "Cosmic timetraveler",
+    //   src: "/small_slide/slider02.png",
+    //   title: "cupviet.com",
+    // },
+    // {
+    //   alt: "Cosmic timetraveler",
+    //   src: "/small_slide/slider03.png",
+    //   title: "cupviet.com",
+    // },
   ];
 
   // let backgroundCategory = [
@@ -293,7 +293,7 @@
         <Carousel
           class="rounded-md sm:max-h-[150px] max-h-[80px]"
           images={imagesBanner}
-          duration="3000"
+          duration="4000"
           index={idx}
         />
       </div>
