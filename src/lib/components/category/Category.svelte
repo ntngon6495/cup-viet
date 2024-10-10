@@ -13,7 +13,7 @@
     },
     {
       alt: "Cosmic timetraveler",
-      src: "/small_slide/slider.png",
+      src: "/small_slide/slider1-1.png",
       title: "cupviet.com",
     },
     // {
