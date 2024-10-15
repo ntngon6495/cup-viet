@@ -53,8 +53,8 @@
 
   export let productList = [
     {
-      id: "1",
-      category: "Cúp best gross",
+      id: "14",
+      category: "Cúp Luân Lưu & Vô Địch",
       banner: "/images/category/banners/CUP-BEST-GROSS.png",
       url: "category/1",
       offsetTop: 0,

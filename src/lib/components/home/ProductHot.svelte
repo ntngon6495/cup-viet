@@ -1,7 +1,7 @@
 <script lang="js">
   import { onMount } from "svelte";
 
-  let tab = "3";
+  let tab = "14";
   let listProduct = [];
 
   onMount(() => {
@@ -14,7 +14,7 @@
     const response = await fetch(
       `https://dgg300bw0j.execute-api.ap-southeast-1.amazonaws.com/dev/products?categoryId=${id}`,
       {
-        method: "GET"
+        method: "GET",
       }
     );
 
@@ -30,12 +30,19 @@
   <div class="hot_seller">
     <div
       class="hot_seller_title"
+      class:seller_active={tab === "15"}
+      on:click={() => (tab = "15")}
+    >
+      <span class="hot_seller_menu">SẢN PHẨM MỚI</span>
+    </div>
+    <div
+      class="hot_seller_title"
       class:seller_active={tab === "13"}
       on:click={() => (tab = "13")}
     >
-      <span class="hot_seller_menu">CÚP VÔ ĐỊCH</span>
+      <span class="hot_seller_menu">CÚP LUÂN LƯU & CÚP VÔ ĐỊCH</span>
     </div>
-    <div
+    <!-- <div
       class="hot_seller_title"
       class:seller_active={tab === "10"}
       on:click={() => (tab = "10")}
@@ -48,7 +55,7 @@
       on:click={() => (tab = "99")}
     >
       <span class="hot_seller_menu">CÚP GOLF</span>
-    </div>
+    </div> -->
     <div
       class="hot_seller_title"
       class:seller_active={tab === "3"}
@@ -56,13 +63,13 @@
     >
       <span class="hot_seller_menu">CÚP KĨ THUẬT</span>
     </div>
-    <div
+    <!-- <div
       class="hot_seller_title"
       class:seller_active={tab === "12"}
       on:click={() => (tab = "12")}
     >
       <span class="hot_seller_menu">THEO YÊU CẦU</span>
-    </div>
+    </div> -->
     <div
       class="hot_seller_title"
       class:seller_active={tab === "8"}
@@ -72,10 +79,17 @@
     </div>
     <div
       class="hot_seller_title"
-      class:seller_active={tab === "9"}
-      on:click={() => (tab = "9")}
+      class:seller_active={tab === "7"}
+      on:click={() => (tab = "7")}
     >
-      <span class="hot_seller_menu">KĨ NIỆM CHƯƠNG</span>
+      <span class="hot_seller_menu">CÚP PEWTER</span>
+    </div>
+    <div
+      class="hot_seller_title"
+      class:seller_active={tab === "11"}
+      on:click={() => (tab = "11")}
+    >
+      <span class="hot_seller_menu">CÚP NIKEN</span>
     </div>
   </div>
   <div class="good_seller flex flex-wrap">
@@ -103,7 +117,10 @@
               </a>
             </div>
             <div class=" recommend_l mt-2">
-              <p class="product_code font-bold text-category-100" style="overflow: hidden;">
+              <p
+                class="product_code font-bold text-category-100"
+                style="overflow: hidden;"
+              >
                 {product?.product_code}
               </p>
               <div class="caption">
@@ -117,7 +134,11 @@
       <div
         class="w-full flex justify-center items-center font-bold text-lg h-[236px]"
       >
-        <p>Chưa có sản phẩm nào</p>
+        {#if tab === "14"}
+          <p>Sản phẩm chưa được cập nhật</p>
+        {:else}
+          <p>Chưa có sản phẩm nào</p>
+        {/if}
       </div>
     {/if}
   </div>

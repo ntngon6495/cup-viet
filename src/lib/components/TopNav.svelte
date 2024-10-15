@@ -8,7 +8,7 @@
       icon_active: "/icon/menu/1.png",
       alt: "CUPVODICH",
       url: "/category/1",
-      name: "cúp vô địch"
+      name: "cúp vô địch",
     },
     {
       id: 14,
@@ -16,7 +16,7 @@
       icon_active: "/icon/menu/2.png",
       alt: "CUPGOLF",
       url: "/category/2",
-      name: "cúp golf"
+      name: "cúp golf",
     },
     {
       id: 3,
@@ -24,7 +24,7 @@
       icon_active: "/icon/menu/3.png",
       alt: "CUPKYTHUAT",
       url: "/category/3",
-      name: "cúp kĩ thuật"
+      name: "cúp kĩ thuật",
     },
     {
       id: 12,
@@ -32,7 +32,7 @@
       icon_active: "/icon/menu/4.png",
       alt: "CUPKYTHUAT",
       url: "/category/4",
-      name: "theo yêu cầu"
+      name: "theo yêu cầu",
     },
     {
       id: 8,
@@ -40,7 +40,7 @@
       icon_active: "/icon/menu/5.png",
       alt: "QUATANG",
       url: "/category/7",
-      name: "quà tặng vip"
+      name: "quà tặng vip",
     },
     {
       id: 9,
@@ -48,8 +48,8 @@
       icon_active: "/icon/menu/6.png",
       alt: "KINIEMCHUONG",
       url: "/category/8",
-      name: "kỉ niệm chương"
-    }
+      name: "kỉ niệm chương",
+    },
   ];
 
   let subCategory = [
@@ -58,30 +58,30 @@
       categorys: [
         {
           id: "2",
-          name: "Cúp gốm sứ"
+          name: "Cúp gốm sứ",
         },
         {
           id: "4",
-          name: "Cúp luxury"
+          name: "Cúp luxury",
         },
         {
           id: "5",
-          name: "Cúp premium"
+          name: "Cúp premium",
         },
         {
           id: "6",
-          name: "Cúp phale"
+          name: "Cúp phale",
         },
         {
           id: "7",
-          name: "Cúp pewter"
+          name: "Cúp pewter",
         },
         {
           id: "11",
-          name: "Cúp nickel"
-        }
-      ]
-    }
+          name: "Cúp Niken",
+        },
+      ],
+    },
   ];
 
   $: listCategory = subCategory.find(
@@ -117,7 +117,13 @@
 >
   <div class="sm:flex hidden h-full w-[1200px]">
     <div class="flex items-center w-full">
-      <a class="w-[300px] ml-5 cursor-pointer" on:click={() => {isTab = 13; goto(`/home`, { replaceState: true });}}>
+      <a
+        class="w-[300px] ml-5 cursor-pointer"
+        on:click={() => {
+          isTab = 13;
+          goto(`/home`, { replaceState: true });
+        }}
+      >
         <!-- svelte-ignore a11y-missing-attribute -->
         <img src="/images/logo-header.png" class="h-[100px]" atl="pig-logo" />
       </a>
@@ -204,7 +210,10 @@
                 </div>
                 <div class="w-3"></div>
               </div>
-              <div class="cursor-pointer h-full hidden" class:!flex={isSubTab == id}>
+              <div
+                class="cursor-pointer h-full hidden"
+                class:!flex={isSubTab == id}
+              >
                 <div class="background_left_sb w-4"></div>
                 <div class="bg-[#F2B71A]">
                   <div class="text-center h-full flex items-center">
@@ -227,19 +236,19 @@
     transform: translate(-50%, -50%);
   }
   .text-green {
-    color: #EAA918 !important;
+    color: #eaa918 !important;
   }
   .background_left {
-    background: linear-gradient(105deg, #EAA918 50%, #ffffff 50%);
+    background: linear-gradient(105deg, #eaa918 50%, #ffffff 50%);
   }
   .background_right {
-    background: linear-gradient(105deg, #ffffff 50%, #EAA918 50%);
+    background: linear-gradient(105deg, #ffffff 50%, #eaa918 50%);
   }
   .background_left_sb {
-    background: linear-gradient(103deg, white 50%, #F2B71A 50%);
+    background: linear-gradient(103deg, white 50%, #f2b71a 50%);
   }
   .background_right_sb {
-    background: linear-gradient(103deg, #F2B71A 50%, white 50%);
+    background: linear-gradient(103deg, #f2b71a 50%, white 50%);
   }
 
   // .category-style:first-child {
@@ -252,7 +261,7 @@
     // padding: 5px 80px;
     // background: #F2B71A;
     width: 100%;
-    background: #EAA918;
+    background: #eaa918;
     opacity: 0.9;
   }
   .search-wrap {
