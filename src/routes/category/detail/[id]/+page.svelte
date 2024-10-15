@@ -5,18 +5,18 @@
     {
       alt: "Cosmic timetraveler",
       src: "/images/category/cupsu/CRM_044NEW.png",
-      title: "cupviet.com"
+      title: "cupviet.com",
     },
     {
       alt: "Cosmic timetraveler",
       src: "/images/category/cupsu/CRM_057NEW2024D.png",
-      title: "cupviet.com"
+      title: "cupviet.com",
     },
     {
       alt: "Cosmic timetraveler",
       src: "/images/category/cupsu/CRM_FS9205-25B.png",
-      title: "cupviet.com"
-    }
+      title: "cupviet.com",
+    },
   ];
   let index = 0;
   let forward = true;
@@ -25,7 +25,7 @@
 
   let sizes = [
     { value: "0", name: "Choose an option" },
-    { value: "1", name: "Cao 390mm, R 100mm" }
+    { value: "1", name: "Cao 390mm, R 100mm" },
   ];
   export let data;
 
@@ -39,7 +39,7 @@
     const response = await fetch(
       `https://dgg300bw0j.execute-api.ap-southeast-1.amazonaws.com/dev/products?categoryId=${id}`,
       {
-        method: "GET"
+        method: "GET",
       }
     );
     if (response) {
@@ -55,8 +55,8 @@
 
   export const renderTitle = (id) => {
     switch (id) {
-      case "1":
-        return "Cúp Best Gross";
+      case "14":
+        return "Cúp Luân Lưu";
       case "2":
         return "Cúp Gốm Sứ";
       case "3":
@@ -76,7 +76,7 @@
       case "10":
         return "Cúp Hio & Eagle";
       case "11":
-        return "Cúp Nickel";
+        return "Cúp Nikel";
       case "12":
         return "Theo Yêu Cầu";
       case "13":
@@ -87,23 +87,27 @@
   };
 </script>
 
-<div class='table sm:block '>
+<div class="table sm:block">
   <div class="grid sm:grid-cols-12 w-full mt-40">
-    <div class='col-span-12 flex text-gray-500 mb-2'>
-        <a href="/home">Home</a>
-        &nbsp; / &nbsp;
-        <a href={`/category/${productDetail?.category_id}`}>{renderTitle(productDetail?.category_id)}</a>
-        &nbsp; / &nbsp;
-        <p>{productDetail?.product_code}</p>
-      </div>
+    <div class="col-span-12 flex text-gray-500 mb-2">
+      <a href="/home">Home</a>
+      &nbsp; / &nbsp;
+      <a href={`/category/${productDetail?.category_id}`}
+        >{renderTitle(productDetail?.category_id)}</a
+      >
+      &nbsp; / &nbsp;
+      <p>{productDetail?.product_code}</p>
+    </div>
     <div class="col-span-4 flex justify-center sm:block">
       <div class="carousel-custom cursor-pointer">
-        <img src={productDetail.image_url} class="sm:!w-[600px] !w-[200px]"/>
+        <img src={productDetail.image_url} class="sm:!w-[600px] !w-[200px]" />
       </div>
     </div>
     <div class="col-span-4 pl-5 sm:text-lg text-sm">
-      <div class="mb-2 text-2xl font-bold sm:inline-block text-center flex justify-center">
-        <div> 
+      <div
+        class="mb-2 text-2xl font-bold sm:inline-block text-center flex justify-center"
+      >
+        <div>
           <h1 class="text-[#EAA918]">{productDetail.product_code}</h1>
           <p class="uppercase text-xl font-normal text-gray-500">
             {productDetail.product_name}
@@ -140,14 +144,20 @@
       </div>
       <div>
         <p class="font-bold">
-          Kích Thước: <span class="text-gray-400 ml-2">{productDetail?.size}</span>
+          Kích Thước: <span class="text-gray-400 ml-2"
+            >{productDetail?.size}</span
+          >
         </p>
         <!-- <Select placeholder="kích thước" items={sizes}>
                 </Select> -->
       </div>
     </div>
     <div class="col-span-4 px-5 sm:mt-0 mt-5">
-      <img class='rounded-2xl' src="/chinh-sach-ban-hang.png" alt="chính sách bán hàng" />
+      <img
+        class="rounded-2xl"
+        src="/chinh-sach-ban-hang.png"
+        alt="chính sách bán hàng"
+      />
     </div>
   </div>
   <div class="grid sm:grid-cols-12 w-full sm:mt-20">
@@ -193,7 +203,7 @@
 
 <style lang="scss">
   .tab-active {
-    border-bottom: 2px solid #EAA918;
+    border-bottom: 2px solid #eaa918;
   }
   .detail-item {
     margin-top: 10px;

@@ -1,9 +1,19 @@
 <script>
   import { onMount } from "svelte";
-  import { Table, TableBody, TableBodyCell, TableBodyRow, TableHead, TableHeadCell, Modal, Button, Dropzone } from 'flowbite-svelte';
+  import {
+    Table,
+    TableBody,
+    TableBodyCell,
+    TableBodyRow,
+    TableHead,
+    TableHeadCell,
+    Modal,
+    Button,
+    Dropzone,
+  } from "flowbite-svelte";
   import { base64 } from "@sveu/browser";
   import { toasts, ToastContainer, FlatToast } from "svelte-toasts";
-  
+
   let categoryIdSort = "1";
   let productCodeSort = "";
   let defaultModal = false;
@@ -37,10 +47,10 @@
     "Quà Tặng Vip",
     "Huy Chương & Kỉ Niệm Chương",
     "Cúp Hio & Eagle",
-    "Cúp Nickel",
+    "Cúp Niken",
     "Theo Yêu Cầu",
-    "Cúp Vô Địch"
-  ]
+    "Cúp Vô Địch",
+  ];
 
   onMount(() => {
     fetchData;
@@ -52,7 +62,7 @@
     const response = await fetch(
       `https://dgg300bw0j.execute-api.ap-southeast-1.amazonaws.com/dev/products?categoryId=${id}`,
       {
-        method: "GET"
+        method: "GET",
       }
     );
     if (response) {
@@ -105,7 +115,7 @@
           "https://cespre3cgb.execute-api.ap-southeast-1.amazonaws.com/prod/upload-image-s3",
           {
             method: "POST",
-            body: JSON.stringify({ image: $image_result })
+            body: JSON.stringify({ image: $image_result }),
           }
         );
         const { file_name } = await response.json();
@@ -131,7 +141,7 @@
       {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           id: productCode,
@@ -143,8 +153,8 @@
           size: size,
           rank: rank,
           image_url: imageUrl,
-          create_at: new Date().toISOString()
-        })
+          create_at: new Date().toISOString(),
+        }),
       }
     );
 
@@ -167,11 +177,11 @@
         {
           method: "DELETE",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({
             productId: productDeleteId,
-          })
+          }),
         }
       );
 
@@ -179,8 +189,10 @@
         throw new Error("Network response was not ok");
       }
       popupModal = false;
-      productList = productListBackup.filter((product) => product.product_code !== productDeleteId);
-      productDeleteId = ""; 
+      productList = productListBackup.filter(
+        (product) => product.product_code !== productDeleteId
+      );
+      productDeleteId = "";
     } catch (error) {
       alter("Lỗi:", error);
     }
@@ -206,13 +218,15 @@
       placement: "top-right",
       theme: "dark",
       showProgress: true,
-      type: "success"
+      type: "success",
     });
   };
 
   $: productList = productList.filter((product) => {
     return (
-      product.product_code.toLowerCase().includes(productCodeSort.toLowerCase()) &&
+      product.product_code
+        .toLowerCase()
+        .includes(productCodeSort.toLowerCase()) &&
       product.category_id == categoryIdSort
     );
   });
@@ -239,21 +253,27 @@
   };
 </script>
 
-
-<div class='mt-[200px]'>
+<div class="mt-[200px]">
   <div class="my-5 flex justify-between">
-    <button class="px-5 py-2 bg-[#EAA918] rounded-lg uppercase" on:click={() => {resetValues(); defaultModal = true; isEdit = false}}>Thêm sản phẩm</button>
-    <div class='flex gap-5'>
+    <button
+      class="px-5 py-2 bg-[#EAA918] rounded-lg uppercase"
+      on:click={() => {
+        resetValues();
+        defaultModal = true;
+        isEdit = false;
+      }}>Thêm sản phẩm</button
+    >
+    <div class="flex gap-5">
       <div>
-          <p for="product_code" class="w-52">Mã sản phẩm</p>
-          <input
-            class="input-styles px-1"
-            type="text"
-            id="product_code"
-            bind:value={productCodeSort}
-            placeholder="Mã sản phẩm"
-          />
-        </div>
+        <p for="product_code" class="w-52">Mã sản phẩm</p>
+        <input
+          class="input-styles px-1"
+          type="text"
+          id="product_code"
+          bind:value={productCodeSort}
+          placeholder="Mã sản phẩm"
+        />
+      </div>
       <div>
         <p for="category" class="w-52">Loại sản phẩm</p>
         <select
@@ -273,9 +293,10 @@
           <option value="8">Quà Tặng Vip</option>
           <option value="9">Huy Chương & Kỉ Niệm Chương</option>
           <option value="10">Cúp Hio & Eagle</option>
-          <option value="11">Cúp Nickel</option>
+          <option value="11">Cúp Niken</option>
           <option value="12">Theo Yêu Cầu</option>
           <option value="13">Cúp Vô Địch</option>
+          <option value="14">Cúp Luân Lưu</option>
         </select>
       </div>
     </div>
@@ -292,7 +313,9 @@
     <TableBody tableBodyClass="divide-y">
       {#if productList.length === 0}
         <TableBodyRow>
-          <TableBodyCell colspan="6" class="text-center">chưa có sản phẩm nào</TableBodyCell>
+          <TableBodyCell colspan="6" class="text-center"
+            >chưa có sản phẩm nào</TableBodyCell
+          >
         </TableBodyRow>
       {:else}
         {#each productList as product}
@@ -303,19 +326,36 @@
               {nameCategory[product.category_id - 1]}
             </TableBodyCell>
             <TableBodyCell>
-              <img src={product.image_url} alt={product.product_name} class="w-10 h-10" />
+              <img
+                src={product.image_url}
+                alt={product.product_name}
+                class="w-10 h-10"
+              />
             </TableBodyCell>
             <TableBodyCell>{product.create_at}</TableBodyCell>
             <TableBodyCell>
-              <button class="px-5 py-2 bg-[#EAA918] rounded-lg uppercase" on:click={()=> handelEditProduct(product)}>Sửa</button>
-              <button class="px-5 py-2 bg-[#EAA918] rounded-lg uppercase" on:click={()=> handelDeleteProduct(product.product_code)}>Xoá</button>
+              <button
+                class="px-5 py-2 bg-[#EAA918] rounded-lg uppercase"
+                on:click={() => handelEditProduct(product)}>Sửa</button
+              >
+              <button
+                class="px-5 py-2 bg-[#EAA918] rounded-lg uppercase"
+                on:click={() => handelDeleteProduct(product.product_code)}
+                >Xoá</button
+              >
             </TableBodyCell>
           </TableBodyRow>
         {/each}
       {/if}
     </TableBody>
   </Table>
-  <Modal classDialog='!z-[99]' classBackdrop='!z-[98]' title="Thêm mới sản phẩm" bind:open={defaultModal} size="lg">
+  <Modal
+    classDialog="!z-[99]"
+    classBackdrop="!z-[98]"
+    title="Thêm mới sản phẩm"
+    bind:open={defaultModal}
+    size="lg"
+  >
     <form on:submit={handleSubmit}>
       <div class="mb-6">
         <p for="images" class="mb-2">Hình ảnh</p>
@@ -397,9 +437,10 @@
             <option value="8">Quà Tặng Vip</option>
             <option value="9">Huy Chương & Kỉ Niệm Chương</option>
             <option value="10">Cúp Hio & Eagle</option>
-            <option value="11">Cúp Nickel</option>
+            <option value="11">Cúp Niken</option>
             <option value="12">Theo Yêu Cầu</option>
             <option value="13">Cúp Vô Địch</option>
+            <option value="13">Cúp Luân Lưu</option>
           </select>
         </div>
         <div>
@@ -465,8 +506,12 @@
   <Modal bind:open={popupModal} size="xs" autoclose>
     <div class="text-center">
       <!-- <ExclamationCircleOutline class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" /> -->
-      <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this product?</h3>
-      <Button color="red" class="me-2" on:click={() => deleteProduct()} >Yes, I'm sure</Button>
+      <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
+        Are you sure you want to delete this product?
+      </h3>
+      <Button color="red" class="me-2" on:click={() => deleteProduct()}
+        >Yes, I'm sure</Button
+      >
       <Button color="alternative">No, cancel</Button>
     </div>
   </Modal>
