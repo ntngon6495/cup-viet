@@ -295,8 +295,8 @@
           <option value="10">Cúp Hio & Eagle</option>
           <option value="11">Cúp Niken</option>
           <option value="12">Theo Yêu Cầu</option>
-          <option value="13">Cúp Vô Địch</option>
-          <option value="14">Cúp Luân Lưu</option>
+          <option value="13">Cúp Vô Địch & Cúp Luân Lưu</option>
+          <!-- <option value="14">Cúp Luân Lưu</option> -->
         </select>
       </div>
     </div>

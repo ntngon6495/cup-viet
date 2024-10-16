@@ -1,7 +1,7 @@
 <script lang="js">
   import { onMount } from "svelte";
 
-  let tab = "14";
+  let tab = "15";
   let listProduct = [];
 
   onMount(() => {
@@ -134,7 +134,7 @@
       <div
         class="w-full flex justify-center items-center font-bold text-lg h-[236px]"
       >
-        {#if tab === "14"}
+        {#if tab === "15"}
           <p>Sản phẩm chưa được cập nhật</p>
         {:else}
           <p>Chưa có sản phẩm nào</p>
