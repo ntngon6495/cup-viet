@@ -24,8 +24,8 @@
 
   export const renderTitle = (id) => {
     switch (id) {
-      case "14":
-        return "Cúp Luân Lưu";
+      case "13":
+        return "Cúp Vô Địch & Luân Lưu";
       case "2":
         return "Cúp Gốm Sứ";
       case "3":
