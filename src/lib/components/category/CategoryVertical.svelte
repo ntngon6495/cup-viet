@@ -20,8 +20,8 @@
 
   let listCategory = [
     {
-      id: 13,
-      name: "Cúp Vô Địch",
+      id: 1,
+      name: "Cúp Vô Địch &</br> Luân Lưu",
       img: "/icon/categoryVertical/1.png",
       border_color: "border-category-100",
       bg_color: "bg-category-100",

@@ -55,7 +55,7 @@
 
   export const renderTitle = (id) => {
     switch (id) {
-      case "13":
+      case "1":
         return "Cúp Vô Địch & Luân Lưu";
       case "2":
         return "Cúp Gốm Sứ";
@@ -79,8 +79,8 @@
         return "Cúp Nikel";
       case "12":
         return "Theo Yêu Cầu";
-      case "13":
-        return "Cúp Vô Địch";
+      // case "13":
+      //   return "Cúp Vô Địch";
       default:
         break;
     }
