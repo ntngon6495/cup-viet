@@ -53,7 +53,7 @@
 
   export let productList = [
     {
-      id: "13",
+      id: "1",
       category: "Cúp Vô Địch & Luân Lưu",
       banner: "/images/category/banners/CUP-BEST-GROSS.png",
       url: "category/1",

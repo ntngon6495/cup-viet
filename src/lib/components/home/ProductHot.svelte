@@ -37,10 +37,10 @@
     </div>
     <div
       class="hot_seller_title"
-      class:seller_active={tab === "13"}
-      on:click={() => (tab = "13")}
+      class:seller_active={tab === "1"}
+      on:click={() => (tab = "1")}
     >
-      <span class="hot_seller_menu">CÚP LUÂN LƯU & CÚP VÔ ĐỊCH</span>
+      <span class="hot_seller_menu">CÚP VÔ ĐỊCH & CÚP LUÂN LƯU</span>
     </div>
     <!-- <div
       class="hot_seller_title"
