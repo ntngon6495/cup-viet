@@ -7,19 +7,19 @@
   export let images = [
     {
       alt: "Cosmic timetraveler",
-      src: "/small_slide/slider01.png",
+      src: "/small_slide/slider.png",
       title: "cupviet.com",
     },
     {
       alt: "Cosmic timetraveler",
-      src: "/small_slide/slider02.png",
+      src: "/small_slide/slider1-1.png",
       title: "cupviet.com",
     },
-    {
-      alt: "Cosmic timetraveler",
-      src: "/small_slide/slider03.png",
-      title: "cupviet.com",
-    },
+    // {
+    //   alt: "Cosmic timetraveler",
+    //   src: "/small_slide/slider03.png",
+    //   title: "cupviet.com",
+    // },
   ];
 
   export const renderTitle = (id) => {
@@ -110,12 +110,11 @@
     <p class="mt-10 font-bold text-xl">Chưa có sản phẩm</p>
   {/if}
 
-  <div class="sm:max-w-[1200px] sm:!max-h-[250px] max-h-[100px] my-10">
-    <Carousel
-      class="rounded-md sm:max-h-[200px] max-h-[80px]"
-      {images}
-      duration="3000"
-    />
+  <div class="sm:max-w-[1200px] max-h-[150px] my-5">
+    <Carousel class="rounded-md max-h-[150px]" {images} duration="3000" />
+  </div>
+  <div class="sticky top-0">
+    <CategoryVertical />
   </div>
   <div class="grid grid-cols-12 sm:gap-5">
     {#each productList as item}
@@ -142,9 +141,6 @@
         >
       </a>
     {/each}
-  </div>
-  <div class="fixed sm:top-[60%]">
-    <CategoryVertical />
   </div>
 </div>
 
