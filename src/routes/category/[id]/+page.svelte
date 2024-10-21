@@ -113,7 +113,7 @@
   <div class="sm:max-w-[1200px] max-h-[150px] my-5">
     <Carousel class="rounded-md max-h-[150px]" {images} duration="3000" />
   </div>
-  <div class="sticky top-0">
+  <div class="sticky top-0 w-[65px] ml-[-20px]">
     <CategoryVertical />
   </div>
   <div class="grid grid-cols-12 sm:gap-5">
