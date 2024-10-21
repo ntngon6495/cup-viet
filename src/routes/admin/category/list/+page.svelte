@@ -283,7 +283,7 @@
           required
           bind:value={categoryIdSort}
         >
-          <option value="1">Cúp Best Gross</option>
+          <option value="1">Cúp Vô Địch & Cúp Luân Lưu</option>
           <option value="2">Cúp Gốm Sứ</option>
           <option value="3">Cúp Kĩ Thuật</option>
           <option value="4">Cúp Luxury</option>
@@ -295,8 +295,7 @@
           <option value="10">Cúp Hio & Eagle</option>
           <option value="11">Cúp Niken</option>
           <option value="12">Theo Yêu Cầu</option>
-          <option value="13">Cúp Vô Địch & Cúp Luân Lưu</option>
-          <!-- <option value="14">Cúp Luân Lưu</option> -->
+          <option value="13">Sản Phẩm Mới</option>
         </select>
       </div>
     </div>
@@ -427,7 +426,7 @@
             required
             bind:value={categoryId}
           >
-            <option value="1">Cúp Best Gross</option>
+            <option value="1">Cúp Vô Địch & Cúp Luân Lưu</option>
             <option value="2">Cúp Gốm Sứ</option>
             <option value="3">Cúp Kĩ Thuật</option>
             <option value="4">Cúp Luxury</option>
@@ -439,8 +438,7 @@
             <option value="10">Cúp Hio & Eagle</option>
             <option value="11">Cúp Niken</option>
             <option value="12">Theo Yêu Cầu</option>
-            <option value="13">Cúp Vô Địch</option>
-            <option value="13">Cúp Luân Lưu</option>
+            <option value="13">Sản Phẩm Mới</option>
           </select>
         </div>
         <div>

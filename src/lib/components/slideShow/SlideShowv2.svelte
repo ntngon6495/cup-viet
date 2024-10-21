@@ -8,7 +8,7 @@
     wrapAround: true,
     autoPlay: 2000,
     pauseAutoPlayOnHover: true,
-    pageDots: false
+    pageDots: false,
   };
 </script>
 
@@ -74,7 +74,9 @@
             <div class="col-inner text-right w-2/5">
               <div id="text-1138206211" class="text">
                 <h2 class="text-[35px] text-category-100">CÚP THỂ THAO</h2>
-                <h3 class="text-[25px] text-[#444444]">CUP BEST GROSS</h3>
+                <h3 class="text-[25px] text-[#444444]">
+                  CUP VÔ ĐỊCH & CÚP LUÂN LƯU
+                </h3>
               </div>
 
               <a
@@ -112,8 +114,7 @@
               /> -->
               <div
                 class="attachment-original size-original 2xl:w-[800px] h-[550px] md:w-[600px] md:[300px]"
-              >
-              </div>
+              ></div>
             </div>
             <div class="col-inner text-right w-2/5">
               <div id="text-1138206211" class="text">
@@ -156,8 +157,7 @@
               /> -->
               <div
                 class="attachment-original size-original 2xl:w-[800px] h-[550px] md:w-[600px] md:[300px]"
-              >
-              </div>
+              ></div>
             </div>
             <div class="col-inner text-right w-2/5">
               <div id="text-1138206211" class="text">
@@ -217,8 +217,7 @@
               /> -->
               <div
                 class="attachment-original size-original 2xl:w-[800px] h-[550px] md:w-[600px] md:[300px]"
-              >
-              </div>
+              ></div>
             </div>
           </div>
         </div>
