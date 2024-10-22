@@ -1,7 +1,7 @@
 <script lang="js">
   import { onMount } from "svelte";
 
-  let tab = "15";
+  let tab = "13";
   let listProduct = [];
 
   onMount(() => {
@@ -30,8 +30,8 @@
   <div class="hot_seller">
     <div
       class="hot_seller_title"
-      class:seller_active={tab === "15"}
-      on:click={() => (tab = "15")}
+      class:seller_active={tab === "13"}
+      on:click={() => (tab = "13")}
     >
       <span class="hot_seller_menu">SẢN PHẨM MỚI</span>
     </div>
