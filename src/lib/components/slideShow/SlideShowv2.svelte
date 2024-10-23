@@ -19,7 +19,7 @@
     >
       <div class="relative z-[1]">
         <div class="flex w-full justify-center">
-          <div class="w-[1250px flex items-center">
+          <div class="w-[1250px] flex items-center">
             <div class="w-3/5 mt-10">
               <img
                 loading="lazy"
@@ -55,28 +55,26 @@
   </section>
   <section class="section">
     <div
-      class="bg section-bg fill bg-fill bg-[url('/images/banner/BANNER-01.png')] opacity-100"
+      class="bg section-bg fill bg-fill bg-[url('/images/banner/BANNER-05.png')] opacity-100"
     >
       <div class="relative z-[1]">
         <div class="flex w-full justify-center">
-          <div class="w-[1250px flex items-center">
+          <div class="w-[1250px] flex items-center">
             <div class="w-3/5 mt-10">
               <img
                 loading="lazy"
                 decoding="async"
-                src="/images/banner/BANNER-2.png"
-                class="attachment-original size-original 2xl:w-[800px] 2xl:h-[550px] md:w-[600px] md:[300px]"
+                src="/images/banner/BANNER-5.png"
+                class="attachment-original size-original 2xl:w-[900px] md:w-[600px] md:[300px]"
                 alt=""
-                srcset="/images/banner/BANNER-2.png 900w, /images/banner/BANNER-1.png 700w, /images/banner/BANNER-2.png 768w, /images/banner/BANNER-2.png 800w"
+                srcset="/images/banner/BANNER-5.png 900w, /images/banner/BANNER-5.png 700w, /images/banner/BANNER-5.png 768w, /images/banner/BANNER-5.png 800w"
                 sizes="(max-width: 900px) 100vw, 900px"
               />
             </div>
             <div class="col-inner text-right w-2/5">
               <div id="text-1138206211" class="text">
-                <h2 class="text-[35px] text-category-100">CÚP THỂ THAO</h2>
-                <h3 class="text-[25px] text-[#444444]">
-                  CUP VÔ ĐỊCH & CÚP LUÂN LƯU
-                </h3>
+                <h2 class="text-[35px] text-category-100">CÚP LUÂN LƯU</h2>
+                <h3 class="text-[25px] text-[#444444]">CUP BEST GROSS</h3>
               </div>
 
               <a
@@ -101,7 +99,7 @@
     >
       <div class="relative z-[1]">
         <div class="flex w-full h-full justify-center">
-          <div class="w-[1250px flex items-center">
+          <div class="w-[1250px] flex items-center">
             <div class="w-3/5 mt-10">
               <!-- <img
                 loading="lazy"
@@ -144,7 +142,7 @@
     >
       <div class="relative z-[1]">
         <div class="flex w-full h-full justify-center">
-          <div class="w-[1250px flex items-center">
+          <div class="w-[1250px] flex items-center">
             <div class="col-inner text-right w-2/5">
               <div id="text-1138206211" class="text">
                 <h2 class="text-[35px] text-category-100">CUP PHALE</h2>
