@@ -199,6 +199,7 @@
   ></div>
   {#each productList as item, idx}
     {#if item.products?.length > 0}
+      {@const productSort = item.products.sort((a, b) => a.rank - b.rank)}
       <div
         data-item-id={`${item.id}`}
         id={`category_${item.id}`}
@@ -232,14 +233,14 @@
             </div>
           </div>
           <ul class="big_goods_imgs">
-            <a href={`category/detail/${item.products[0]?.product_code}`}>
+            <a href={`category/detail/${productSort[0]?.product_code}`}>
               <span class="best-badge !w-[80px]"
                 ><img src="/ic-best-seller.png" alt="icon best" /></span
               >
               <li style="cursor:pointer;">
                 <img
                   data-srcset="/images/product/7.png"
-                  srcset={item.products[0]?.image_url}
+                  srcset={productSort[0]?.image_url}
                   class="w-[470px] h-[470px] ls-is-cached lazyloaded bg-gray-100 hover:border-[#F3B81A] border-[3px] border-transparent"
                 />
               </li>
@@ -251,15 +252,15 @@
               style="cursor:pointer;"
             >
               <p class="goodscd text-[#F3B81A] pr-2 border-r-2">
-                {item.products[0]?.product_code}
+                {productSort?.product_code}
               </p>
-              <p>{item.products[0]?.product_name}</p>
+              <p>{productSort?.product_name}</p>
             </li>
           </ul>
         </div>
         <div class="right_p small_right_goods_list col-span-7 justify-between">
-          {#if item.products?.length > 0}
-            {#each item.products as product, index}
+          {#if productSort?.length > 0}
+            {#each productSort as product, index}
               {#if index > 0 && index < 7}
                 <a
                   class="small_goods_infos"
