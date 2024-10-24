@@ -15,7 +15,7 @@
 <Carousel {options}>
   <section class="section">
     <div
-      class="bg section-bg fill bg-fill bg-[url('/images/banner/BANNER-02.png')] opacity-100"
+      class="bg-gradient-to-r from-gray-100 to-gray-50 section-bg fill opacity-100"
     >
       <div class="relative z-[1]">
         <div class="flex w-full justify-center">
@@ -138,7 +138,7 @@
   </section>
   <section class="section">
     <div
-      class="section-bg bg-white"
+      class="section-bg bg-gradient-to-r from-gray-100 to-gray-50 section-bg fill opacity-100"
     >
       <div class="relative z-[1]">
         <div class="flex w-full h-full justify-center">
@@ -148,7 +148,7 @@
                 loading="lazy"
                 decoding="async"
                 src="/images/banner/BANNER-6.png"
-                class="attachment-original size-original 2xl:w-[800px] 2xl:h-[550px] md:w-[600px] md:[300px]"
+                class="attachment-original size-original 2xl:w-[800px] md:w-[600px] md:[300px]"
                 alt=""
                 srcset="/images/banner/BANNER-6.png 900w, /images/banner/BANNER-6.png 700w, /images/banner/BANNER-6.png 768w, /images/banner/BANNER-6.png 800w"
                 sizes="(max-width: 900px) 100vw, 900px"
