@@ -252,9 +252,9 @@
               style="cursor:pointer;"
             >
               <p class="goodscd text-[#F3B81A] pr-2 border-r-2">
-                {productSort?.product_code}
+                {productSort[0]?.product_code}
               </p>
-              <p>{productSort?.product_name}</p>
+              <p>{productSort[0]?.product_name}</p>
             </li>
           </ul>
         </div>
