@@ -51,6 +51,7 @@
 
   const handelChangeProduct = (index) => {
     productDetail = productList[index];
+    window.scrollTo(0, 0);
   };
 
   export const renderTitle = (id) => {
@@ -88,7 +89,7 @@
 </script>
 
 <div class="table sm:block">
-  <div class="grid sm:grid-cols-12 w-full mt-40">
+  <div class="sm:grid sm:grid-cols-12 w-full mt-20 sm:mt-40">
     <div class="col-span-12 flex text-gray-500 mb-2">
       <a href="/home">Home</a>
       &nbsp; / &nbsp;
@@ -100,7 +101,7 @@
     </div>
     <div class="col-span-4 flex justify-center sm:block">
       <div class="carousel-custom cursor-pointer">
-        <img src={productDetail.image_url} class="sm:!w-[600px] !w-[200px]" />
+        <img src={productDetail.image_url} class="sm:!w-[600px] !w-[400px]" />
       </div>
     </div>
     <div class="col-span-4 pl-5 sm:text-lg text-sm">
@@ -173,11 +174,11 @@
       <hr class="w-full border-b-2 border-[#EAA918]" />
     </div>
   </div>
-  <div class="grid sm:grid-cols-12 w-full mt-20">
+  <div class="sm:grid sm:grid-cols-12 w-full mt-20">
     {#if productList.length > 0}
       {#each productList as product, idx}
         {#if idx < 4}
-          <div class="col-span-3">
+          <div class="col-span-3 mt-5 sm:mt-0">
             <a
               class="text-center cursor-pointer"
               on:click={() => handelChangeProduct(idx)}
@@ -186,7 +187,7 @@
                 alt=""
                 title=""
                 src={product?.image_url}
-                class="sm:w-[220px] w-[180px] ls-is-cached lazyloaded bg-gray-100 mx-auto scale-image"
+                class="sm:w-[220px] w-[200px] ls-is-cached lazyloaded bg-gray-100 mx-auto scale-image"
               />
               <p class="text-[#EAA918] text-xl font-bold mt-3">
                 {product?.product_code}
