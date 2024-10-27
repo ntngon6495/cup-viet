@@ -15,66 +15,26 @@
 <Carousel {options}>
   <section class="section">
     <div
-      class="bg-gradient-to-r from-gray-100 to-gray-50 section-bg fill opacity-100"
+      class="bg section-bg fill bg-fill bg-[url('/images/banner/BANNER-05-cup-best-gross.png')] opacity-100"
     >
       <div class="relative z-[1]">
-        <div class="flex w-full justify-center">
-          <div class="w-[1250px] flex items-center">
-            <div class="w-3/5 mt-10">
-              <img
-                loading="lazy"
-                decoding="async"
-                src="/images/banner/BANNER-1.png"
-                class="attachment-original size-original 2xl:w-[800px] 2xl:h-[550px] md:w-[600px] md:[300px]"
-                alt=""
-                srcset="/images/banner/BANNER-1.png 900w, /images/banner/BANNER-1.png 700w, /images/banner/BANNER-1.png 768w, /images/banner/BANNER-1.png 800w"
-                sizes="(max-width: 900px) 100vw, 900px"
-              />
-            </div>
-            <div class="col-inner text-right w-2/5">
-              <div id="text-1138206211" class="text">
-                <h2 class="text-[35px] text-category-100">CÚP THỂ THAO GOLF</h2>
-                <h3 class="text-[25px] text-[#444444]">CUP LUXURY</h3>
-              </div>
-
-              <a
-                href="/category/4"
-                target="_self"
-                class="lowercase text-category-100"
-              >
-                <span class="pb-1 border-b border-b-category-100"
-                  >{`Xem thêm  >`}</span
-                >
-                <i class="icon-angle-right"></i></a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section">
-    <div
-      class="bg section-bg fill bg-fill bg-[url('/images/banner/BANNER-05.png')] opacity-100"
-    >
-      <div class="relative z-[1]">
-        <div class="flex w-full justify-center">
-          <div class="w-[1250px] flex items-center">
-            <div class="w-3/5 mt-10">
+        <div class="flex w-full justify-center h-[200px] sm:h-full">
+          <div class="sm:w-[1250px] flex items-center">
+            <div class="w-3/5 sm:mt-10">
               <img
                 loading="lazy"
                 decoding="async"
                 src="/images/banner/BANNER-5.png"
-                class="attachment-original size-original 2xl:w-[900px] md:w-[600px] md:[300px]"
+                class="attachment-original size-original 2xl:w-[900px] xl:w-[800px] md:w-[600px] w-[200px]"
                 alt=""
                 srcset="/images/banner/BANNER-5.png 900w, /images/banner/BANNER-5.png 700w, /images/banner/BANNER-5.png 768w, /images/banner/BANNER-5.png 800w"
                 sizes="(max-width: 900px) 100vw, 900px"
               />
             </div>
-            <div class="col-inner text-right w-2/5">
+            <div class="col-inner sm:text-right w-2/5 sm:pl-0 pl-2">
               <div id="text-1138206211" class="text">
-                <h2 class="text-[35px] text-category-100">CÚP LUÂN LƯU</h2>
-                <h3 class="text-[25px] text-[#444444]">CUP BEST GROSS</h3>
+                <h2 class="sm:text-[35px] text-category-100">CÚP LUÂN LƯU</h2>
+                <h3 class="sm:text-[25px] text-[#444444]">CUP BEST GROSS</h3>
               </div>
 
               <a
@@ -99,7 +59,7 @@
     >
       <div class="relative z-[1]">
         <div class="flex w-full h-full justify-center">
-          <div class="w-[1250px] flex items-center">
+          <div class="sm:w-[1250px] flex items-center">
             <div class="w-3/5 mt-10">
               <!-- <img
                 loading="lazy"
@@ -114,10 +74,10 @@
                 class="attachment-original size-original 2xl:w-[800px] h-[550px] md:w-[600px] md:[300px]"
               ></div>
             </div>
-            <div class="col-inner text-right w-2/5">
+            <div class="col-inner sm:text-right w-2/5">
               <div id="text-1138206211" class="text">
-                <h2 class="text-[35px] text-category-100">PREMIUM TROPHY</h2>
-                <h3 class="text-[25px] text-[#444444]">MADE IN ITALIA</h3>
+                <h2 class="sm:text-[35px] text-category-100">PREMIUM TROPHY</h2>
+                <h3 class="sm:text-[25px] text-[#444444]">MADE IN ITALIA</h3>
               </div>
 
               <a
@@ -138,29 +98,29 @@
   </section>
   <section class="section">
     <div
-      class="section-bg bg-gradient-to-r from-gray-100 to-gray-50 section-bg fill opacity-100"
+      class="bg section-bg fill bg-fill bg-[url('/images/banner/BANNER-04.png')] opacity-100"
     >
       <div class="relative z-[1]">
         <div class="flex w-full h-full justify-center">
-          <div class="w-[1250px] flex items-center">
+          <div class="sm:w-[1250px] flex items-center">
             <div class="w-3/5 mt-10">
               <img
                 loading="lazy"
                 decoding="async"
-                src="/images/banner/BANNER-6.png"
-                class="attachment-original size-original 2xl:w-[800px] md:w-[600px] md:[300px]"
+                src="/images/banner/BANNER-4.png"
+                class="attachment-original size-original 2xl:w-[800px] xl:w-[800px] md:w-[600px]"
                 alt=""
-                srcset="/images/banner/BANNER-6.png 900w, /images/banner/BANNER-6.png 700w, /images/banner/BANNER-6.png 768w, /images/banner/BANNER-6.png 800w"
+                srcset="/images/banner/BANNER-4.png 900w, /images/banner/BANNER-4.png 700w, /images/banner/BANNER-4.png 768w, /images/banner/BANNER-4.png 800w"
                 sizes="(max-width: 900px) 100vw, 900px"
               />
               <!-- <div
                 class="attachment-original size-original 2xl:w-[800px] h-[550px] md:w-[600px] md:[300px]"
               ></div> -->
             </div>
-            <div class="col-inner text-right w-2/5">
+            <div class="col-inner sm:text-right w-2/5">
               <div id="text-1138206211" class="text">
-                <h2 class="text-[35px] text-category-100">LUXURY CUP</h2>
-                <h3 class="text-[25px] text-[#444444]">MADE FOR GOLF</h3>
+                <h2 class="sm:text-[35px] text-category-100">LUXURY CUP</h2>
+                <h3 class="sm:text-[25px] text-[#444444]">MADE FOR GOLF</h3>
               </div>
 
               <a
@@ -173,49 +133,6 @@
                 >
                 <i class="icon-angle-right"></i></a
               >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section">
-    <div
-      class="bg section-bg fill bg-fill bg-[url('/images/banner/BANNER-PHALE.png')] opacity-100"
-    >
-      <div class="relative z-[1]">
-        <div class="flex w-full h-full justify-center">
-          <div class="w-[1250px] flex items-center">
-            <div class="col-inner text-right w-2/5">
-              <div id="text-1138206211" class="text">
-                <h2 class="text-[35px] text-category-100">CUP PHALE</h2>
-                <h3 class="text-[25px] text-[#444444]">MADE FOR GOLF</h3>
-              </div>
-
-              <a
-                href="/category/5"
-                target="_self"
-                class="lowercase text-category-100"
-              >
-                <span class="pb-1 border-b border-b-category-100"
-                  >{`Xem thêm  >`}</span
-                >
-                <i class="icon-angle-right"></i></a
-              >
-            </div>
-            <div class="w-3/5 mt-10">
-              <!-- <img
-                loading="lazy"
-                decoding="async"
-                src="/images/banner/BANNER-2.png"
-                class="attachment-original size-original 2xl:w-[800px] 2xl:h-[550px] md:w-[600px] md:[300px]"
-                alt=""
-                srcset="/images/banner/BANNER-2.png 900w, /images/banner/BANNER-1.png 700w, /images/banner/BANNER-2.png 768w, /images/banner/BANNER-2.png 800w"
-                sizes="(max-width: 900px) 100vw, 900px"
-              /> -->
-              <div
-                class="attachment-original size-original 2xl:w-[800px] h-[550px] md:w-[600px] md:[300px]"
-              ></div>
             </div>
           </div>
         </div>
@@ -223,8 +140,17 @@
     </div>
   </section>
 </Carousel>
+<style lang="scss">
+  $mobile-width: 480px;
+  $tablet-width: 768px;
+  $desktop-width: 1024px;
 
-<style>
+  @mixin mobile {
+    @media (max-width: #{$mobile-width - 1px}) {
+      @content;
+    }
+  }
+
   .section {
     position: absolute;
     padding: 30px 0;
@@ -243,6 +169,9 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    @include mobile {
+      min-height: 200px;
+    }
   }
   .bg-fill {
     background-size: cover !important;

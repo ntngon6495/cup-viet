@@ -1,4 +1,5 @@
 <script>
+	import { mergeClass } from '$lib/helpers.js';
   import { Carousel } from "flowbite-svelte";
   import ProductTop from "$lib/components/product/productTop.svelte";
   import { onMount } from "svelte";
@@ -111,15 +112,15 @@
   {/if}
 
   <div class="sm:max-w-[1200px] max-h-[150px] my-5">
-    <Carousel class="rounded-md max-h-[150px]" {images} duration="3000" />
+    <Carousel class="rounded-md max-h-[150px] sm:!h-64 xl:!h-80 2xl:!h-96 !h-[55px]" {images} duration="3000" />
   </div>
-  <div class="sticky top-0 w-[65px] ml-[-20px]">
+  <div class="sticky top-0 w-[65px] ml-[-20px] hidden sm:block">
     <CategoryVertical />
   </div>
   <div class="grid grid-cols-12 sm:gap-5">
-    {#each productList as item}
+    {#each productList as item, idx}
       <a
-        class="sm:col-span-4 col-span-6 text-center sm:max-w-[400px] max-w-[200px]"
+        class={mergeClass("sm:col-span-4 col-span-6 text-center sm:max-w-[400px] max-w-[200px] mt-5 sm:mt-0", (idx === 0 || idx == 1) && "!mt-0")}
         href={`detail/${item.product_code}`}
       >
         <img
@@ -128,7 +129,7 @@
           alt=""
         />
         <div
-          class="sm:text-2xl text-sm font-bold text-[#F3B81A] sm:px-0 flex w-full gap-2 justify-center mt-5"
+          class="sm:text-2xl text-sm font-bold text-[#F3B81A] sm:px-0 flex w-full gap-2 justify-center sm:mt-5 mt-2"
         >
           {item.product_code}
         </div>

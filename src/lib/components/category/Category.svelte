@@ -258,7 +258,7 @@
             </li>
           </ul>
         </div>
-        <div class="right_p small_right_goods_list col-span-7 justify-between">
+        <div class="right_p small_right_goods_list col-span-7 justify-between sm:mt-0 mt-5">
           {#if productSort?.length > 0}
             {#each productSort as product, index}
               {#if index > 0 && index < 7}
@@ -305,7 +305,16 @@
   {/if}
 </div>
 
-<style>
+<style lang="scss">
+  $mobile-width: 480px;
+  $tablet-width: 768px;
+  $desktop-width: 1024px;
+
+  @mixin mobile {
+    @media (max-width: #{$mobile-width - 1px}) {
+      @content;
+    }
+  }
   ul li {
     list-style: none;
   }
@@ -474,6 +483,9 @@
     display: flex;
     flex-wrap: wrap;
     gap: 50px 0px;
+    @include mobile {
+      gap: 20px 0px;
+    }
     /* margin-bottom: 15px; */
   }
 
