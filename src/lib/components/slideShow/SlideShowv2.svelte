@@ -108,7 +108,7 @@
                 loading="lazy"
                 decoding="async"
                 src="/images/banner/BANNER-4.png"
-                class="attachment-original size-original 2xl:w-[800px] xl:w-[800px] md:w-[600px]"
+                class="attachment-original size-original 2xl:w-[800px] xl:w-[800px] md:w-[600px] h-[500px]"
                 alt=""
                 srcset="/images/banner/BANNER-4.png 900w, /images/banner/BANNER-4.png 700w, /images/banner/BANNER-4.png 768w, /images/banner/BANNER-4.png 800w"
                 sizes="(max-width: 900px) 100vw, 900px"
