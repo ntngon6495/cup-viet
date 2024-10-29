@@ -71,7 +71,7 @@
                 sizes="(max-width: 900px) 100vw, 900px"
               /> -->
               <div
-                class="attachment-original size-original 2xl:w-[800px] h-[550px] md:w-[600px] md:[300px]"
+                class="attachment-original size-original 2xl:w-[800px] h-[500px] md:w-[600px] md:[300px]"
               ></div>
             </div>
             <div class="col-inner sm:text-right w-2/5">
@@ -108,7 +108,7 @@
                 loading="lazy"
                 decoding="async"
                 src="/images/banner/BANNER-4.png"
-                class="attachment-original size-original 2xl:w-[800px] xl:w-[800px] md:w-[600px] h-[500px]"
+                class="attachment-original size-original xl:w-[600px] md:w-[600px] w-[300px]"
                 alt=""
                 srcset="/images/banner/BANNER-4.png 900w, /images/banner/BANNER-4.png 700w, /images/banner/BANNER-4.png 768w, /images/banner/BANNER-4.png 800w"
                 sizes="(max-width: 900px) 100vw, 900px"
