@@ -4,7 +4,8 @@
   import Header from "$lib/components/Header.svelte";
   import TopNav from "$lib/components/TopNav.svelte";
   import Footer from "$lib/components/Footer.svelte";
-  import Slide from "$lib/components/slideShow/Slide.svelte";
+  // import Slide from "$lib/components/slideShow/Slide.svelte";
+  import IconContact from "$lib/components/Icon/IconContact.svelte";
   import { page } from "$app/stores";
   import SlideShowv2 from "$lib/components/slideShow/SlideShowv2.svelte";
   let unable = false;
@@ -46,6 +47,7 @@
   <div class="sm:w-[1200px] sm:mx-auto mx-2">
     <slot />
   </div>
+  <IconContact />
   <div class:disable={disableFooter}>
     <Footer />
   </div>
