@@ -294,8 +294,8 @@
         <Carousel
           class="rounded-md sm:max-h-[150px] max-h-[80px]"
           images={imagesBanner}
-          duration="4000"
-          index={idx}
+          duration="8000"
+          index={0}
         />
       </div>
     {/if}
