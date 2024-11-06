@@ -94,7 +94,8 @@
   </div>
   <div class="good_seller flex flex-wrap">
     {#if listProduct.length !== 0}
-      {#each listProduct as product, index}
+    {@const productSort = listProduct.sort((a, b) => a.rank - b.rank)}
+      {#each productSort as product, index}
         {#if index < 6}
           <div>
             <div class="best-items relative">

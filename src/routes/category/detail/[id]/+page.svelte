@@ -192,7 +192,7 @@
               <p class="text-[#EAA918] text-xl font-bold mt-3">
                 {product?.product_code}
               </p>
-              <p class="uppercase text-gray-600">{product?.product_name}</p>
+              <p class="uppercase text-gray-600 capitalize">{product?.product_name}</p>
               <p></p></a
             >
           </div>

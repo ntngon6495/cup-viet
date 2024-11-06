@@ -305,6 +305,7 @@
       <TableHeadCell>Mã SP</TableHeadCell>
       <TableHeadCell>Tên sản phẩm</TableHeadCell>
       <TableHeadCell>Loại sản phẩm</TableHeadCell>
+      <TableHeadCell>Rank</TableHeadCell>
       <TableHeadCell>Hình ảnh</TableHeadCell>
       <TableHeadCell>Ngày Tạo</TableHeadCell>
       <TableHeadCell></TableHeadCell>
@@ -312,7 +313,7 @@
     <TableBody tableBodyClass="divide-y">
       {#if productList.length === 0}
         <TableBodyRow>
-          <TableBodyCell colspan="6" class="text-center"
+          <TableBodyCell colspan="6" class="text-center !bg-white !text-black"
             >chưa có sản phẩm nào</TableBodyCell
           >
         </TableBodyRow>
@@ -323,6 +324,9 @@
             <TableBodyCell>{product.product_name}</TableBodyCell>
             <TableBodyCell>
               {nameCategory[product.category_id - 1]}
+            </TableBodyCell>
+            <TableBodyCell class='text-center'>
+              {product.rank}
             </TableBodyCell>
             <TableBodyCell>
               <img
