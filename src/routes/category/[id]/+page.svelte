@@ -93,11 +93,11 @@
   </p>
   {#if productList.length > 0}
     <div class="sm:grid sm:grid-cols-12 gap-4 sm:mt-10 mt-5">
-      <ProductTop type="top" product={productList[1]} />
+      <ProductTop type="top" product={productList[0]} />
       <div class="col-span-6 sm:mt-0 mt-10">
         <div class="grid grid-cols-12 gap-4">
           {#each productList as product, idx}
-            {#if idx > 1 && idx < 6}
+            {#if idx > 0 && idx < 5}
               <ProductTop {product} />
             {/if}
           {/each}
@@ -133,7 +133,7 @@
         >
           {item.product_code}
         </div>
-        <p class="sm:text-2xl text-sm sm:px-0">
+        <p class="sm:text-2xl text-sm sm:px-0 capitalize">
           <!-- Cúp kim loại cao cấp -->
           {item.product_name}
         </p>

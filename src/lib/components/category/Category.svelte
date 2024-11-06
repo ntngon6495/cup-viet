@@ -254,7 +254,7 @@
               <p class="goodscd text-[#F3B81A] pr-2 border-r-2">
                 {productSort[0]?.product_code}
               </p>
-              <p>{productSort[0]?.product_name}</p>
+              <p class='capitalize'>{productSort[0]?.product_name}</p>
             </li>
           </ul>
         </div>
@@ -280,7 +280,7 @@
                   </span>
                   <div class="text-lg w-full mt-2">
                     <p class="text-[#F3B81A]">{product?.product_code}</p>
-                    <div class="text-lg font-medium !mt-0">
+                    <div class="text-lg font-medium !mt-0 capitalize">
                       {product?.product_name}
                     </div>
                   </div>
@@ -290,14 +290,24 @@
           {/if}
         </div>
       </div>
-      <div class="col-span-12 max-w-[1200px]">
+      {#if (idx + 1) % 2 === 0}
+        <div class="col-span-12 max-w-[1200px]">
+          <Carousel
+            class="rounded-md sm:max-h-[150px] max-h-[80px]"
+            images={imagesBanner}
+            duration="8000"
+            index={0}
+          />
+        </div>
+      {/if}
+      <!-- <div class="col-span-12 max-w-[1200px]">
         <Carousel
           class="rounded-md sm:max-h-[150px] max-h-[80px]"
           images={imagesBanner}
           duration="8000"
           index={0}
         />
-      </div>
+      </div> -->
     {/if}
   {/each}
   {#if listIdScroll.at(-1)?.offsetTop < y + 150}
