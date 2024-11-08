@@ -148,6 +148,7 @@
                   class="logo-header category_img mx-auto"
                   src={icon}
                   {alt}
+                  loading="lazy"
                 />
                 <p
                   class="uppercase text-[10px] font-semibold mx-auto mt-1 text-white"
@@ -166,6 +167,7 @@
                     class="logo-header category_img mx-auto"
                     src={icon_active}
                     {alt}
+                    loading="lazy"
                   />
                   <p
                     class="uppercase text-[10px] font-semibold mt-1 text-[#444444] mx-auto"

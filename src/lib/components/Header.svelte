@@ -2,11 +2,92 @@
   import { BarsOutline, PhoneOutline } from "flowbite-svelte-icons";
   import { Drawer, Button, CloseButton } from "flowbite-svelte";
   import { sineIn } from "svelte/easing";
+  import { mergeClass } from "$lib/helpers";
+  import { goto } from "$app/navigation";
   let hidden1 = true;
   let transitionParams = {
     x: -320,
     duration: 200,
     easing: sineIn
+  };
+
+
+  let listCategory = [
+    {
+      id: 1,
+      name: "Cúp Vô Địch &</br> Luân Lưu",
+      img: "/icon/categoryVertical/1.png",
+      border_color: "border-category-100",
+      bg_color: "bg-category-100",
+    },
+    {
+      id: 2,
+      name: "Cúp gốm sứ",
+      img: "/icon/categoryVertical/2.png",
+      border_color: "border-category-100",
+      bg_color: "bg-category-100",
+    },
+    {
+      id: 3,
+      name: "Cúp kĩ thuật",
+      img: "/icon/categoryVertical/3.png",
+      border_color: "border-category-200",
+      bg_color: "bg-category-200",
+    },
+    {
+      id: 4,
+      name: "Cúp luxury",
+      img: "/icon/categoryVertical/4.png",
+      border_color: "border-category-200",
+      bg_color: "bg-category-200",
+    },
+    {
+      id: 5,
+      name: "Cúp premium",
+      img: "/icon/categoryVertical/5.png",
+      border_color: "border-category-300",
+      bg_color: "bg-category-300",
+    },
+    {
+      id: 6,
+      name: "Cúp pha lê",
+      img: "/icon/categoryVertical/6.png",
+      border_color: "border-category-300",
+      bg_color: "bg-category-300",
+    },
+    {
+      id: 7,
+      name: "Cúp pewter",
+      img: "/icon/categoryVertical/7.png",
+      border_color: "border-category-400",
+      bg_color: "bg-category-400",
+    },
+    {
+      id: 8,
+      name: "Qua tặng vip",
+      img: "/icon/categoryVertical/8.png",
+      border_color: "border-category-400",
+      bg_color: "bg-category-400",
+    },
+    {
+      id: 9,
+      name: "Huy Chương &</br> kỉ niệm chương",
+      img: "/icon/categoryVertical/9.png",
+      border_color: "border-category-500",
+      bg_color: "bg-category-500",
+    },
+    {
+      id: 10,
+      name: "Cúp Hio & Eagle",
+      img: "/icon/categoryVertical/10.png",
+      border_color: "border-category-500",
+      bg_color: "bg-category-500",
+    },
+  ];
+
+  const handleChooseCategory = (id) => {
+    goto(`/category/${id}`);
+    hidden1 = true;
   };
 </script>
 
@@ -23,14 +104,14 @@
     </div>
     <div class="flex gap-3 font-semibold">
       <div class="flex gap-2">
-        <img alt="" class="w-4 h-5" src="/images/ic-catolouge.png" />
+        <img alt="" class="w-4 h-5" src="/images/ic-catolouge.png" loading="lazy"/>
         <p class="border-r pr-3 cursor-pointer">Catalogue</p>
       </div>
       <p class="border-r pr-3 cursor-pointer">Hỏi đáp</p>
       <p class="border-r pr-3 cursor-pointer">Tin tức</p>
       <p class="border-r pr-3 cursor-pointer">Liên hệ</p>
       <div class="flex gap-1 font-semibold text-[16px]">
-        <img src='/ic-phone.png' atl='icon-phone' class="w-6 h-6 -mt-1" /><span> 0902 547 808 </span>
+        <img src='/ic-phone.png' atl='icon-phone' class="w-6 h-6 -mt-1" loading="lazy"/><span> 0902 547 808 </span>
       </div>
     </div>
   </div>
@@ -39,7 +120,7 @@
       <Button class="p-0 w-9 h-9" on:click={() => (hidden1 = false)}>
         <BarsOutline class="w-9 h-9 text-gray-600" />
       </Button>
-      <a href='/'>
+      <a href='/home'>
         <img src="/images/logo-header.png" class="w-[120px] h-[60px]" alt="logo header" />
       </a>
       <div></div>
@@ -55,19 +136,32 @@
   {transitionParams}
   bind:hidden={hidden1}
   id="sidebar1"
-  class="!bg-yellow-400"
+  class="!bg-white"
 >
   <div class="flex items-center">
     <p
       id="drawer-label"
-      class="inline-flex items-center text-xl mb-4 text-white font-medium uppercase"
+      class="inline-flex items-center text-xl mb-4 text-category-100 font-medium uppercase"
     >
       Danh Mục Sản Phẩm
     </p>
-    <CloseButton on:click={() => (hidden1 = true)} class="mb-4 text-white" />
+    <CloseButton on:click={() => (hidden1 = true)} class="mb-4" />
   </div>
   <div class="grid grid-cols-1 flex-row gap-4">
-    <div class="col-xs-8 gnb-menu pull-left">
+
+    {#each listCategory as item, idx}
+      <div class={mergeClass('flex gap-2 items-center')}>
+        <img
+          src={item.img}
+          alt="logo header"
+          class={mergeClass("w-[90px] category_img")}
+          on:click={() => handleChooseCategory(item.id)}
+          loading="lazy"
+        />
+        <p>{@html item.name}</p>
+      </div>
+    {/each}
+    <!-- <div class="col-xs-8 gnb-menu pull-left">
       <ul class="scroll_menu1 text-white font-medium">
         <li>
           <div class="header-re"></div>
@@ -91,7 +185,7 @@
           style="position: absolute; left: 50%; transform: translateX(-50%); display: none;"
         ></ul>
       </ul>
-    </div>
+    </div> -->
   </div>
 </Drawer>
 

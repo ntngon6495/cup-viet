@@ -239,6 +239,7 @@
               >
               <li style="cursor:pointer;">
                 <img
+                loading="lazy"
                   data-srcset="/images/product/7.png"
                   srcset={productSort[0]?.image_url}
                   class="w-[470px] h-[470px] ls-is-cached lazyloaded bg-gray-100 hover:border-[#F3B81A] border-[3px] border-transparent"
@@ -272,6 +273,7 @@
                   >
                   <span style="display:block; cursor:pointer">
                     <img
+                      loading="lazy"
                       alt=""
                       title=""
                       src={product?.image_url}
