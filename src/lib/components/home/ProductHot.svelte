@@ -110,10 +110,11 @@
                 href={`category/detail/${product?.product_code}`}
               >
                 <img
-                  class="w-[180px] h-[180px] img-responsive good_seller_img ls-is-cached lazyloaded"
+                  class="w-[180px] h-[180px] img-responsive good_seller_img ls-is-cached"
                   alt=""
                   title=""
                   src={product?.image_url}
+                  loading="lazy"
                 />
               </a>
             </div>

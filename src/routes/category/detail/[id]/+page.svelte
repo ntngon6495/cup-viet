@@ -174,7 +174,7 @@
       <hr class="w-full border-b-2 border-[#EAA918]" />
     </div>
   </div>
-  <div class="sm:grid sm:grid-cols-12 w-full mt-20">
+  <div class="sm:grid sm:grid-cols-12 flex flex-wrap justify-between w-full sm:mt-20">
     {#if productList.length > 0}
       {#each productList as product, idx}
         {#if idx < 4}

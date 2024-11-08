@@ -41,23 +41,24 @@
           </div>
         </div>
         <div class="col-span-3 sm:px-4 px-2 sm:mt-0 mt-10">
-          <div>
-            <img src="/images/ic-mangxahoi.png" alt="follow us" />
+          <div class='w-full'>
+            <img src="/images/ic-mangxahoi.png" alt="follow us" loading="lazy"/>
           </div>
           <div class="flex sm:justify-end justify-center w-full">
             <img
               alt=""
               class="sm:w-[200px] w-[150px] mt-5"
               src="/logo-bo-cong-thuong.png"
+              loading="lazy"
             />
           </div>
         </div>
       </div>
     </div>
     <div class="w-full mt-5 sm:flex px-2 justify-between sm:px-24">
-      <img class="sm:w-[600px]" alt="" src="/images/card-list.png" />
+      <img class="sm:w-[600px]" alt="" src="/images/card-list.png" loading="lazy"/>
       <div
-        class="text-white font-semibold px-4 border-l-2 border-r-2 flex items-center text-[18px]"
+        class="text-white hidden font-semibold px-4 border-l-2 border-r-2 sm:flex items-center text-[18px]"
       >
         <p class="cursor-pointer sm:mt-0 mt-2">Sơ đồ trang web</p>
       </div>
@@ -68,6 +69,7 @@
           class="sm:max-w-[450px] sm:max-h-[200px] max-h-[120px] max-w-[280px] sm:mx-0 mx-auto"
           src="/images/logo-header.png"
           alt="logo footer"
+          loading="lazy"
         />
       </div>
       <div
