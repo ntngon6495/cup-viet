@@ -136,6 +136,12 @@
   };
 
   const createProduct = async () => {
+    let idProduct = '';
+    if (categoryId === "13"){
+      idProduct = `${productCode}_${categoryId}`;
+    } else {
+      idProduct = productCode
+    }
     const response = await fetch(
       "https://dgg300bw0j.execute-api.ap-southeast-1.amazonaws.com/dev/product",
       {
@@ -144,7 +150,7 @@
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          id: productCode,
+          id: idProduct,
           category_id: categoryId,
           product_name: productName,
           product_code: productCode,
@@ -190,7 +196,7 @@
       }
       popupModal = false;
       productList = productListBackup.filter(
-        (product) => product.product_code !== productDeleteId
+        (product) => product.id !== productDeleteId
       );
       productDeleteId = "";
     } catch (error) {
@@ -343,7 +349,7 @@
               >
               <button
                 class="px-5 py-2 bg-[#EAA918] rounded-lg uppercase"
-                on:click={() => handelDeleteProduct(product.product_code)}
+                on:click={() => handelDeleteProduct(product.id)}
                 >Xoá</button
               >
             </TableBodyCell>

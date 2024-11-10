@@ -281,7 +281,7 @@
                     />
                   </span>
                   <div class="text-lg w-full mt-2">
-                    <p class="text-[#F3B81A]">{product?.product_code}</p>
+                    <p class="text-[#F3B81A] sm:w-[230px] w-[190px] text-ellipsis overflow-hidden whitespace-nowrap">{product?.product_code}</p>
                     <div class="text-lg font-medium !mt-0 capitalize">
                       {product?.product_name}
                     </div>
