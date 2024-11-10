@@ -137,16 +137,17 @@
             {renderTitle(productDetail?.category_id)}<br />
             – Chất liệu: {productDetail?.material}<br />
             – Màu sắc: {productDetail?.color}<br />
-            – Kích thước: Sản phẩm có 3 kích thước<br />
+            – Kích thước: {`Sản phẩm có ${productDetail?.size ? productDetail?.size.split(';').length : "1"} kích thước`}<br />
             – Khắc thông tin lên nhãn đế cúp<br />
             – Thiết kế nội dung theo yêu cầu của khách hàng
           </p>
         </div>
       </div>
-      <div>
-        <p class="font-bold">
-          Kích Thước: <span class="text-gray-400 ml-2"
-            >{productDetail?.size}</span
+      <div class="flex">
+        <p class="font-bold">Kích Thước: </p>
+        <p class="text-gray-400 ml-2">
+          <span 
+            >{@html productDetail?.size.replaceAll(';', '</br>')}</span
           >
         </p>
         <!-- <Select placeholder="kích thước" items={sizes}>
