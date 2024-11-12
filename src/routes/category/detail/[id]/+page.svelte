@@ -51,7 +51,11 @@
 
   const handelChangeProduct = (index) => {
     productDetail = productList[index];
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    
   };
 
   export const renderTitle = (id) => {
@@ -86,6 +90,10 @@
         break;
     }
   };
+  let limit = 4;
+  const handleShowMore = () => {
+    limit += 16;
+  };
 </script>
 
 <div class="table sm:block">
@@ -99,18 +107,18 @@
       &nbsp; / &nbsp;
       <p>{productDetail?.product_code}</p>
     </div>
-    <div class="col-span-4 flex justify-center sm:block">
+    <div class="col-span-6 flex justify-center sm:block">
       <div class="carousel-custom cursor-pointer">
         <img src={productDetail.image_url} class="sm:!w-[600px] !w-[400px]" />
       </div>
     </div>
-    <div class="col-span-4 pl-5 sm:text-lg text-sm">
+    <div class="col-span-6 pl-0 text-sm sm:pl-20 sm:text-xl sm:pt-20">
       <div
         class="mb-2 text-2xl font-bold sm:inline-block text-center flex justify-center"
       >
-        <div>
+        <div class='text-xl sm:text-3xl'>
           <h1 class="text-[#EAA918]">{productDetail.product_code}</h1>
-          <p class="uppercase text-xl font-normal text-gray-500">
+          <p class="uppercase font-normal text-gray-500">
             {productDetail.product_name}
           </p>
         </div>
@@ -131,9 +139,9 @@
           Phân loại
         </p>
       </div>
-      <div class="detail-item border-b-[2px] border-b-gray-500 pb-4">
+      <div class="detail-item border-b-[2px] border-b-gray-500 sm:pb-8 pb-4">
         <div class="product-short-description">
-          <p>
+          <p class='sm:leading-9'>
             {renderTitle(productDetail?.category_id)}<br />
             – Chất liệu: {productDetail?.material}<br />
             – Màu sắc: {productDetail?.color}<br />
@@ -154,15 +162,38 @@
                 </Select> -->
       </div>
     </div>
-    <div class="col-span-4 px-5 sm:mt-0 mt-5">
+    <div class="col-span-4 border-r-[#EAA918] sm:border-r-2 flex items-center justify-center mt-5">
+      <p class='uppercase text-2xl font-bold'>Chính sách bán hàng</p>
+    </div>
+    <div class="col-span-4 pl-8 mt-5">
+      <div class='flex gap-8 items-center'>
+        <img class='w-10' src='/icon/detail/like.png' alt='like'/>
+        <p class='text-xl'>Sản phẩm chất lượng cao</p>
+      </div>
+      <div class='flex gap-6 items-center mt-4'>
+        <img class='w-12' src='/icon/detail/car.png' alt='like'/>
+        <p class='text-xl'>Giao hàng đúng hẹn</p>
+      </div>
+    </div>
+    <div class="col-span-4 pl-8 mt-5">
+       <div class='flex gap-8 items-center'>
+        <img class='w-10' src='/icon/detail/book.png' alt='like'/>
+        <p class='text-xl'>Miễn phí thiết kế hình ảnh</p>
+      </div>
+      <div class='flex gap-8 items-center mt-4'>
+        <img class='h-10' src='/icon/detail/note.png' alt='like'/>
+        <p class='text-xl'>Thiết kế riêng theo yêu cầu</p>
+      </div>
+    </div>
+    <!-- <div class="col-span-4 px-5 sm:mt-0 mt-5">
       <img
         class="rounded-2xl"
         src="/chinh-sach-ban-hang.png"
         alt="chính sách bán hàng"
       />
-    </div>
+    </div> -->
   </div>
-  <div class="grid sm:grid-cols-12 w-full sm:mt-20">
+  <div class="grid sm:grid-cols-12 w-full sm:mt-10">
     <div class="col-span-4 pt-4">
       <hr class="w-full border-b-2 border-[#EAA918]" />
     </div>
@@ -175,11 +206,11 @@
       <hr class="w-full border-b-2 border-[#EAA918]" />
     </div>
   </div>
-  <div class="sm:grid sm:grid-cols-12 flex flex-wrap justify-between w-full sm:mt-20">
+  <div class="sm:grid sm:grid-cols-12 flex flex-wrap justify-between w-full sm:mt-10">
     {#if productList.length > 0}
       {#each productList as product, idx}
-        {#if idx < 4}
-          <div class="col-span-3 mt-5 sm:mt-0">
+        <!-- {#if idx < limit} -->
+          <div class="col-span-3 mt-5">
             <a
               class="text-center cursor-pointer"
               on:click={() => handelChangeProduct(idx)}
@@ -197,10 +228,11 @@
               <p></p></a
             >
           </div>
-        {/if}
+        <!-- {/if} -->
       {/each}
     {/if}
   </div>
+  <!-- <p class='w-full text-center mt-10 cursor-pointer uppercase text-[#EAA918] text-xl' on:click={() => handleShowMore()}>Xêm thêm</p> -->
 </div>
 
 <style lang="scss">
