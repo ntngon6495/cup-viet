@@ -120,7 +120,7 @@
 <style lang="scss">
   .category {
     display: block;
-    top: 150px;
+    top: 265px;
     position: fixed;
     z-index: 99;
     margin-left: -80px;
