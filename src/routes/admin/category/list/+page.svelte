@@ -13,6 +13,7 @@
   } from "flowbite-svelte";
   import { base64 } from "@sveu/browser";
   import { toasts, ToastContainer, FlatToast } from "svelte-toasts";
+  import { goto } from "$app/navigation";
 
   let categoryIdSort = "1";
   let productCodeSort = "";
@@ -260,6 +261,14 @@
 </script>
 
 <div class="mt-[200px]">
+  <div class="w-full flex justify-center gap-4">
+    <div class='flex items-center justify-center w-40 h-10 bg-[#EAA918] rounded-lg text-white'>
+      <p class='uppercase'>Sản Phẩm</p>
+    </div>
+      <button class='hover:text-white hover:bg-[#EAA918]  flex items-center justify-center w-40 h-10 border border-[#EAA918] rounded-lg uppercase' on:click={() => goto(`/admin/banner/list`)}>
+        Banner
+      </button>
+  </div>
   <div class="my-5 flex justify-between">
     <button
       class="px-5 py-2 bg-[#EAA918] rounded-lg uppercase"

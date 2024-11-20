@@ -102,7 +102,7 @@
     {#each listCategory as item, idx}
       <a
         class="bg-white cursor-pointer"
-        on:click={() => goto(`/category/${item.id}`, { replaceState: true })}
+        href={`/category/${item.id}`}
       >
         <div
           class={`relative bg-white border w-16 h-16 ${item.border_color} ${
@@ -118,6 +118,7 @@
               <p class="uppercase">{@html item.name}</p>
             </div>
           {/if}
+          <!-- svelte-ignore a11y-mouse-events-have-key-events -->
           <div class="w-full h-full flex justify-center items-center">
             <img
               src={item.img}
