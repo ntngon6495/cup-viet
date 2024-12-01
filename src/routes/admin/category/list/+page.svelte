@@ -137,12 +137,7 @@
   };
 
   const createProduct = async () => {
-    let idProduct = '';
-    if (categoryId === "13"){
-      idProduct = `${productCode}_${categoryId}`;
-    } else {
-      idProduct = productCode
-    }
+    let idProduct = `${productCode}_${categoryId}`;
     const response = await fetch(
       "https://dgg300bw0j.execute-api.ap-southeast-1.amazonaws.com/dev/product",
       {
