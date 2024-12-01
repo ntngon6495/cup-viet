@@ -20,7 +20,7 @@
   let defaultModal = false;
   let disableUpload = false;
   let isSubmit = true;
-  let banner_type = "1";
+  let banner_type = "";
   let title = "";
   let subTitle = "";
   let banner_code = "";
@@ -40,21 +40,21 @@
   let popupModal = false;
   let bannerDeleteId = "";
 
-  // let nameCategory = [
-  //   "Cúp Best Gross",
-  //   "Cúp Gốm Sứ",
-  //   "Cúp Kĩ Thuật",
-  //   "Cúp Luxury",
-  //   "Cúp Premium",
-  //   "Cúp Pha Lê",
-  //   "Cúp Pewter",
-  //   "Quà Tặng Vip",
-  //   "Huy Chương & Kỉ Niệm Chương",
-  //   "Cúp Hio & Eagle",
-  //   "Cúp Niken",
-  //   "Theo Yêu Cầu",
-  //   "Cúp Vô Địch",
-  // ];
+  let nameCategory = [
+    "Cúp Best Gross",
+    "Cúp Gốm Sứ",
+    "Cúp Kĩ Thuật",
+    "Cúp Luxury",
+    "Cúp Premium",
+    "Cúp Pha Lê",
+    "Cúp Pewter",
+    "Quà Tặng Vip",
+    "Huy Chương & Kỉ Niệm Chương",
+    "Cúp Hio & Eagle",
+    "Cúp Niken",
+    "Theo Yêu Cầu",
+    "Cúp Vô Địch",
+  ];
 
   onMount(() => {
     fetchData;
@@ -214,6 +214,7 @@
           banner_id: bannerId,
           banner_type: banner_type,
           banner_code: banner_code,
+          category_id: category_id,
           background_url: backgroundUrl,
           image_url: imageUrl ? imageUrl : "",
           title: title ? title : "",
@@ -259,7 +260,7 @@
       }
       popupModal = false;
       bannerList = bannerListBackup.filter(
-        (banner) => banner.id !== bannerDeleteId
+        (banner) => banner.banner_id !== bannerDeleteId
       );
       bannerDeleteId = "";
     } catch (error) {
@@ -270,6 +271,7 @@
   const resetValues = () => {
     banner_type = "";
     banner_code = "";
+    category_id = "";
     images = "";
     background = "";
     startDate = "";
@@ -293,15 +295,16 @@
   $: bannerList = bannerList.filter((banner) => {
     return (
       banner.banner_code.toLowerCase().includes(bannerCodeSort.toLowerCase()) &&
-      banner.category_id == bannerTypeSort
+      banner.banner_type == bannerTypeSort
     );
   });
 
   $: bannerCodeSort === "" && (bannerList = bannerListBackup);
 
   const handelEdit = (banner) => {
-    banner_type = banner.category_id;
+    banner_type = banner.banner_type;
     banner_code = banner.banner_code;
+    category_id = banner.category_id;
     backgroundUrl = banner.background_url;
     valueBackground = banner.background_url;
     imageUrl = banner.image_url;
@@ -363,18 +366,26 @@
     <TableHead>
       <TableHeadCell>Mã Banner</TableHeadCell>
       <TableHeadCell>Loại Banner</TableHeadCell>
+      {#if bannerTypeSort === "3"}
+      <TableHeadCell>Loại Sản Phẩm</TableHeadCell>
+      {/if}
       <TableHeadCell>Background</TableHeadCell>
+      {#if bannerTypeSort === "1"}
       <TableHeadCell>Hình ảnh sản phẩm</TableHeadCell>
       <TableHeadCell>Nội Dung</TableHeadCell>
+      {/if}
+      {#if bannerTypeSort === "4"}
       <TableHeadCell>Ngày Bắt Đầu</TableHeadCell>
       <TableHeadCell>Ngày Kết Thúc</TableHeadCell>
+      {/if}
+      <TableHeadCell>Ngày Tạo</TableHeadCell>
       <TableHeadCell></TableHeadCell>
     </TableHead>
     <TableBody tableBodyClass="divide-y">
       {#if bannerList.length === 0}
         <TableBodyRow>
           <TableBodyCell colspan="6" class="text-center !bg-white !text-black"
-            >chưa có sản phẩm nào</TableBodyCell
+            >chưa có banner nào</TableBodyCell
           >
         </TableBodyRow>
       {:else}
@@ -382,23 +393,31 @@
           <TableBodyRow>
             <TableBodyCell>{banner.banner_code}</TableBodyCell>
             <TableBodyCell>{banner.banner_type}</TableBodyCell>
+            {#if bannerTypeSort === "3"}
+            <TableBodyCell>{nameCategory[banner.category_id]}</TableBodyCell>
+            {/if}
             <TableBodyCell>
               <img
                 src={banner.background_url}
                 alt={banner.banner_code}
-                class="w-10 h-10"
+                class="h-10"
               />
             </TableBodyCell>
+            {#if bannerTypeSort === "1"}
             <TableBodyCell>
               <img
                 src={banner.image_url}
                 alt={banner.banner_code}
-                class="w-10 h-10"
+                class="h-10"
               />
             </TableBodyCell>
             <TableBodyCell>{banner.title}</TableBodyCell>
+            {/if}
+            {#if bannerTypeSort === "4"}
             <TableBodyCell>{banner.date_start}</TableBodyCell>
             <TableBodyCell>{banner.date_end}</TableBodyCell>
+            {/if}
+            <TableBodyCell>{banner.create_at}</TableBodyCell>
             <TableBodyCell>
               <button
                 class="px-5 py-2 bg-[#EAA918] rounded-lg uppercase"
@@ -428,6 +447,7 @@
           <select
             class="input-styles px-2"
             id="category"
+            name="category"
             placeholder="John"
             required
             bind:value={banner_type}
