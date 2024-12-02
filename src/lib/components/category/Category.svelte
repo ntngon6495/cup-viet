@@ -185,19 +185,16 @@
       });
     }, 1000);
   });
+
 </script>
 
-<div>
-  <div
-    class="title text-lg font-bold mt-5"
-    style="text-align:center; color: #F3B81A"
-  >
-    <!-- <h2>XẾP HẠNG DANH MỤC THEO MỨC ĐỘ PHỔ BIẾN</h2> -->
-  </div>
-  <div
-    class="col-span-12 sm:max-w-[1200px] sm:!max-h-[200px] max-h-[80px]"
-  ></div>
+<div class="relative">
   {#each productList as item, idx}
+    {#if idx === 1 && y >= 900}
+      <div class="sticky top-0 w-[65px] ml-[-20px] hidden sm:block">
+        <CategoryVertical {typeActive}/>
+      </div>
+    {/if}
     {#if item.products?.length > 0}
       {@const productSort = item.products.sort((a, b) => a.rank - b.rank)}
       <div
@@ -312,9 +309,9 @@
       </div> -->
     {/if}
   {/each}
-  {#if listIdScroll.at(-1)?.offsetTop < y + 150}
+  <!-- {#if listIdScroll.at(-1)?.offsetTop < y + 150}
     <CategoryVertical {typeActive} {type} {listIdScroll} />
-  {/if}
+  {/if} -->
 </div>
 
 <style lang="scss">

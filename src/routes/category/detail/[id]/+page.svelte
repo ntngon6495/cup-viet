@@ -1,5 +1,6 @@
 <script>
   import { goto } from "$app/navigation";
+  import CategoryVertical from "./CategoryVertical.svelte";
 
   export let images = [
     {
@@ -112,7 +113,7 @@
         <img src={productDetail.image_url} class="sm:!w-[600px] !w-[400px]" />
       </div>
     </div>
-    <div class="col-span-6 pl-0 text-sm sm:pl-20 sm:text-xl sm:pt-20">
+    <div class="col-span-6 pl-0 text-sm sm:ml-12 sm:px-10 sm:py-5 sm:text-xl sm:border-2 sm:border-[#EAA918]">
       <div
         class="mb-2 text-2xl font-bold sm:inline-block text-center flex justify-center"
       >
@@ -162,27 +163,29 @@
                 </Select> -->
       </div>
     </div>
-    <div class="col-span-4 border-r-[#EAA918] sm:border-r-2 flex items-center justify-center mt-5">
-      <p class='uppercase text-2xl font-bold'>Chính sách bán hàng</p>
-    </div>
-    <div class="col-span-4 pl-8 mt-5">
-      <div class='flex gap-8 items-center'>
-        <img class='w-10' src='/icon/detail/like.png' alt='like'/>
-        <p class='text-xl'>Sản phẩm chất lượng cao</p>
+    <div class="col-span-12 sm:grid sm:grid-cols-12 p-3 sm:border-2 sm:border-[#EAA918] mt-10">
+      <div class="col-span-4 border-r-[#EAA918] sm:border-r-2 flex items-center justify-center">
+        <p class='uppercase text-2xl font-bold'>Chính sách bán hàng</p>
       </div>
-      <div class='flex gap-6 items-center mt-4'>
-        <img class='w-12' src='/icon/detail/car.png' alt='like'/>
-        <p class='text-xl'>Giao hàng đúng hẹn</p>
+      <div class="col-span-4 pl-8 sm:mt-0 mt-5">
+        <div class='flex gap-8 items-center'>
+          <img class='w-10' src='/icon/detail/like.png' alt='like'/>
+          <p class='text-xl'>Sản phẩm chất lượng cao</p>
+        </div>
+        <div class='flex gap-6 items-center mt-4'>
+          <img class='w-12' src='/icon/detail/car.png' alt='like'/>
+          <p class='text-xl'>Giao hàng đúng hẹn</p>
+        </div>
       </div>
-    </div>
-    <div class="col-span-4 pl-8 mt-5">
-       <div class='flex gap-8 items-center'>
-        <img class='w-10' src='/icon/detail/book.png' alt='like'/>
-        <p class='text-xl'>Miễn phí thiết kế hình ảnh</p>
-      </div>
-      <div class='flex gap-8 items-center mt-4'>
-        <img class='h-10' src='/icon/detail/note.png' alt='like'/>
-        <p class='text-xl'>Thiết kế riêng theo yêu cầu</p>
+      <div class="col-span-4 pl-8 sm:mt-0 mt-5">
+         <div class='flex gap-8 items-center'>
+          <img class='w-10' src='/icon/detail/book.png' alt='like'/>
+          <p class='text-xl'>Miễn phí thiết kế hình ảnh</p>
+        </div>
+        <div class='flex gap-8 items-center mt-4'>
+          <img class='h-10' src='/icon/detail/note.png' alt='like'/>
+          <p class='text-xl'>Thiết kế riêng theo yêu cầu</p>
+        </div>
       </div>
     </div>
     <!-- <div class="col-span-4 px-5 sm:mt-0 mt-5">
@@ -206,7 +209,10 @@
       <hr class="w-full border-b-2 border-[#EAA918]" />
     </div>
   </div>
-  <div class="sm:grid sm:grid-cols-12 flex flex-wrap justify-between w-full sm:mt-10">
+  <div class="sticky top-0 w-[65px] ml-[-20px] hidden sm:block">
+    <CategoryVertical typeActive={productDetail?.category_id}/>
+  </div>
+  <div class="sm:grid sm:grid-cols-12 flex flex-wrap justify-between w-full sm:mt-40">
     {#if productList.length > 0}
       {#each productList as product, idx}
         <!-- {#if idx < limit} -->
