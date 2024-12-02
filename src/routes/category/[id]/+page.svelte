@@ -3,7 +3,7 @@
   import { Carousel } from "flowbite-svelte";
   import ProductTop from "$lib/components/product/productTop.svelte";
   import { onMount } from "svelte";
-  import CategoryVertical from "$lib/components/category/CategoryVertical.svelte";
+  import CategoryVertical from "./CategoryVertical.svelte";
 
   export let images = [
     {
