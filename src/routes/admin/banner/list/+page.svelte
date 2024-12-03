@@ -202,7 +202,7 @@
     createBanner();
   }
   const createBanner = async () => {
-    let bannerId = `${banner_code}_${banner_type}`;
+    let bannerId = `${banner_code.split(" ").join("-")}_${banner_type}`;
     const response = await fetch(
       "https://08iid05zfe.execute-api.ap-southeast-1.amazonaws.com/dev/banner",
       {
@@ -372,7 +372,8 @@
       <TableHeadCell>Background</TableHeadCell>
       {#if bannerTypeSort === "1"}
       <TableHeadCell>Hình ảnh sản phẩm</TableHeadCell>
-      <TableHeadCell>Nội Dung</TableHeadCell>
+      <TableHeadCell>Title Top</TableHeadCell>
+      <TableHeadCell>Title Bottom</TableHeadCell>
       {/if}
       {#if bannerTypeSort === "4"}
       <TableHeadCell>Ngày Bắt Đầu</TableHeadCell>
@@ -412,6 +413,7 @@
               />
             </TableBodyCell>
             <TableBodyCell>{banner.title}</TableBodyCell>
+            <TableBodyCell>{banner.sub_title}</TableBodyCell>
             {/if}
             {#if bannerTypeSort === "4"}
             <TableBodyCell>{banner.date_start}</TableBodyCell>

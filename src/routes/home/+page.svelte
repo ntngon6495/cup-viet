@@ -4,7 +4,8 @@
   // import CategoryVertical from "$lib/components/CategoryVertical.svelte";
   import { onMount } from "svelte";
 
-  export let data;
+
+	export let data;
   let y = 0;
   let type = 0;
   let typeActive = 0;
