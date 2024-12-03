@@ -117,7 +117,7 @@
   <div class="sticky top-0 w-[65px] ml-[-20px] hidden sm:block">
     <CategoryVertical typeActive={data?.category}/>
   </div>
-  <div class="grid grid-cols-12 sm:gap-5">
+  <div class="grid grid-cols-12 sm:gap-5 mt-24">
     {#each productList as item, idx}
       <a
         class={mergeClass("sm:col-span-4 col-span-6 text-center sm:max-w-[400px] max-w-[200px] mt-5 sm:mt-0", (idx === 0 || idx == 1) && "!mt-0")}

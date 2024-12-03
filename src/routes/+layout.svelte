@@ -10,6 +10,9 @@
   import SlideShowv2 from "$lib/components/slideShow/SlideShowv2.svelte";
   let unable = false;
 
+  export let data;
+  $: slides = data?.banners?.Items.filter((item) => item.banner_type === "1");
+
   let disableComponent = false;
   let disableFooter = false;
 
@@ -29,6 +32,22 @@
       disableFooter = false;
     }
   };
+
+  // const getSlides = async () => {
+  //   const res = await fetch(
+  //     `https://08iid05zfe.execute-api.ap-southeast-1.amazonaws.com/dev/banners?banner_type=1`,
+  //     {
+  //       method: "GET"
+  //     }
+  //   );
+  //   const { banners } = await res.json();
+  //   slides = banners?.Items;
+  // };
+
+  onMount(async () => {
+    await getSlides();
+  });
+
 </script>
 
 <div class="sm:pt-4 sm:mx-0 block">
@@ -42,7 +61,7 @@
     >
     <!-- class="w-full sm:absolute sm:z-[65]  absolute-center" -->
     <!-- <Slide class="sm:block" /> -->
-    <SlideShowv2 />
+    <SlideShowv2 {slides}/>
   </div>
   <div class="sm:w-[1200px] sm:mx-auto mx-2">
     <slot />
