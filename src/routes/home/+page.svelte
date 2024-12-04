@@ -13,16 +13,6 @@
   let enable = true;
   $: checkType(y);
 
-  onMount(() => {
-    // window.onscroll = function(ev) {
-    //     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-    //         enable = false
-    //     } else {
-    //         enable = true
-    //     }
-    // };
-  });
-
   const checkType = (y) => {
     listIdScroll.forEach((item) => {
       if (y > item.offsetTop + 800 && y < item.offsetTop + 1350) {

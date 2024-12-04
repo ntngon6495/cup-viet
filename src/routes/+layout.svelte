@@ -8,11 +8,13 @@
   import IconContact from "$lib/components/Icon/IconContact.svelte";
   import { page } from "$app/stores";
   import SlideShowv2 from "$lib/components/slideShow/SlideShowv2.svelte";
-  let unable = false;
+  let unable = true;
 
   export let data;
   $: slides = data?.banners?.Items.filter((item) => item.banner_type === "1");
-
+  $: discount = data?.banners?.Items.filter((item) => item.banner_type === "4");
+  $: console.log("data", discount);
+  
   let disableComponent = false;
   let disableFooter = false;
 
@@ -71,17 +73,19 @@
     <Footer />
   </div>
 </div>
-<div class:disable={$page.route.id !== '/'}>
-  <div class="fixed z-[100] top-0 bg-white w-full h-svh"></div>
-  <!-- svelte-ignore a11y-no-static-element-interactions -->
-  <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <div
-    class="fixed z-[101] top-0 image_baotri w-screen h-screen"
-    >
-    <!-- on:click={() => (unable = true)} -->
-    <img src="/bao_tri.jpg" alt="loading" class="mx-auto" />
+{#if discount.length > 0}
+  <div class:disable={!unable}>
+    <div class="fixed z-[100] top-0 bg-white w-full h-svh"></div>
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <div
+      class="fixed z-[101] top-0 image_baotri w-screen h-screen cursor-pointer"
+      on:click={() => (unable = false)}
+      >
+      <img src={discount[0]?.background_url} alt="loading" class="mx-auto" />
+    </div>
   </div>
-</div>
+{/if}
 
 <style lang="scss">
   $mobile-width: 480px;

@@ -139,7 +139,7 @@
         {#if tab === "15"}
           <p>Sản phẩm chưa được cập nhật</p>
         {:else}
-          <p>Chưa có sản phẩm nào</p>
+          <p>Sản phẩm chưa được cập nhật</p>
         {/if}
       </div>
     {/if}
@@ -162,6 +162,9 @@
   .hot-seller-main-title {
     text-align: center;
     margin: 32px auto;
+    @include mobile {
+      margin: 15px auto;
+    }
   }
   .title {
     font-family: "EB Garamond", serif;
@@ -173,13 +176,17 @@
     color: #f3b81a;
     line-height: 40px;
     @include mobile {
-      font-size: 24px;
+      font-size: 20px;
       line-height: 20px;
     }
   }
   .hot_seller {
     text-align: center;
     margin-bottom: 32px;
+    @include mobile {
+      padding: 0 20px;
+      text-align: left;
+    } 
   }
 
   .hot_seller > .hot_seller_title {
@@ -190,6 +197,9 @@
     opacity: 0.5;
     display: inline-block;
     cursor: pointer;
+    @include mobile {
+      font-size: 14px;
+    }
   }
 
   .active {

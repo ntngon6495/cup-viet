@@ -94,7 +94,7 @@
 
 <div
   class={mergeClass(
-    "top-0 category sm:block w-[65px] ml-[-80px] -mt-[820px]"
+    "category sm:block w-[65px] ml-[-80px] -mt-[820px]"
     // isHome ? "xl:-mt-[675px]" : "2xl:-mt-[340px]"
   )}
 >
