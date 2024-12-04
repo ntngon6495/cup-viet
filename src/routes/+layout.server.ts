@@ -1,7 +1,7 @@
 
 export const load = async () => {
   const res = await fetch(
-    `https://08iid05zfe.execute-api.ap-southeast-1.amazonaws.com/dev/banners?banner_type=1`,
+    `https://08iid05zfe.execute-api.ap-southeast-1.amazonaws.com/dev/banners?banner_type=all`,
     {
       method: "GET"
     }
@@ -18,6 +18,6 @@ export const load = async () => {
 
   return {
     banners,
-	products
+	  products
   };
 };

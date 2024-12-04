@@ -209,7 +209,7 @@
       <hr class="w-full border-b-2 border-[#EAA918]" />
     </div>
   </div>
-  <div class="sticky top-0 w-[65px] ml-[-20px] hidden sm:block">
+  <div class="sticky top-20 w-[65px] ml-[-20px] hidden sm:block">
     <CategoryVertical typeActive={productDetail?.category_id}/>
   </div>
   <div class="sm:grid sm:grid-cols-12 flex flex-wrap justify-between w-full sm:mt-40">

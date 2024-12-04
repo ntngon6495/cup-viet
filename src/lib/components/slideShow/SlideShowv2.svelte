@@ -1,4 +1,5 @@
 <script>
+	import { mergeClass } from '$lib/helpers';
   import Carousel from "$lib/components/Carousel.svelte";
 
   const options = {
@@ -22,24 +23,21 @@
         <div
           class="bg section-bg fill bg-fill opacity-100 bg-center" style="background-image: url('{bg_url}');"
         >
-          <div class="relative z-[1]">
-            <div class="flex w-full justify-center h-[200px] sm:h-full">
-              <div class="sm:w-[1250px] flex items-center">
-                <div class="w-3/5 sm:mt-10">
+          <div class="z-[1]">
+            <div class="flex w-full justify-center h-[180px] sm:h-[550px]">
+              <div class={mergeClass("sm:w-[1250px] w-full px-5 items-center justify-center flex relative")}>
+                <div class="sm:py-10 py-5 sm:h-[500px] h-[180px]">
                   <img
-                    loading="lazy"
                     decoding="async"
                     src={slide.image_url}
-                    class="attachment-original size-original 2xl:w-[900px] xl:w-[800px] md:w-[600px] w-[200px]"
+                    class="sm:h-[500px] h-[180px]"
                     alt=""
-                    srcset={slide.image_url}
-                    sizes="(max-width: 900px) 100vw, 900px"
                   />
                 </div>
-                <div class="col-inner sm:text-right w-2/5 sm:pl-0 pl-2">
+                <div class="col-inner sm:text-right sm:pl-0 absolute left-10 sm:right-0 sm:bottom-auto bottom-0 ">
                   <div id="text-1138206211" class="text">
-                    <h2 class="sm:text-[35px] text-category-100">{slide.title}</h2>
-                    <h3 class="sm:text-[25px] text-[#444444]">{slide.sub_title}</h3>
+                    <h2 class="sm:text-[35px] text-[12px] text-category-100">{slide.title}</h2>
+                    <h3 class="sm:text-[25px] text-[10px] text-[#444444]">{slide.sub_title}</h3>
                   </div>
 
                   <a
@@ -47,7 +45,7 @@
                     target="_self"
                     class="lowercase text-category-100"
                   >
-                    <span class="pb-1 border-b border-b-category-100"
+                    <span class="pb-1 border-b border-b-category-100 sm:text-[16px] text-[12px]"
                       >{`Xem thêm  >`}</span
                     >
                     <i class="icon-angle-right"></i></a
@@ -99,80 +97,6 @@
           </div>
         </div>
       </div>
-    </section>
-    <section class="section">
-      <div
-        class="bg section-bg fill bg-fill bg-[url('/images/banner/BANNER-3.png')] opacity-100"
-      >
-        <div class="relative z-[1]">
-          <div class="flex w-full h-full justify-center">
-            <div class="sm:w-[1250px] flex items-center">
-              <div class="w-3/5 mt-10">
-                <div
-                  class="attachment-original size-original 2xl:w-[800px] h-[500px] md:w-[600px] md:[300px]"
-                ></div>
-              </div>
-              <div class="col-inner sm:text-right w-2/5">
-                <div id="text-1138206211" class="text">
-                  <h2 class="sm:text-[35px] text-category-100">PREMIUM TROPHY</h2>
-                  <h3 class="sm:text-[25px] text-[#444444]">MADE IN ITALIA</h3>
-                </div>
-
-                <a
-                  href="/category/5"
-                  target="_self"
-                  class="lowercase text-category-100"
-                >
-                  <span class="pb-1 border-b border-b-category-100"
-                    >{`Xem thêm  >`}</span
-                  >
-                  <i class="icon-angle-right"></i></a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section">
-      <div
-        class="bg section-bg fill bg-fill bg-[url('/images/banner/BANNER-04.png')] opacity-100"
-      >
-        <div class="relative z-[1]">
-          <div class="flex w-full h-full justify-center">
-            <div class="sm:w-[1250px] flex items-center">
-              <div class="w-3/5 mt-10">
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  src="/images/banner/BANNER-4.png"
-                  class="attachment-original size-original xl:w-[600px] md:w-[600px] w-[300px]"
-                  alt=""
-                  srcset="/images/banner/BANNER-4.png 900w, /images/banner/BANNER-4.png 700w, /images/banner/BANNER-4.png 768w, /images/banner/BANNER-4.png 800w"
-                  sizes="(max-width: 900px) 100vw, 900px"
-                />
-              </div>
-              <div class="col-inner sm:text-right w-2/5">
-                <div id="text-1138206211" class="text">
-                  <h2 class="sm:text-[35px] text-category-100">LUXURY CUP</h2>
-                  <h3 class="sm:text-[25px] text-[#444444]">MADE FOR GOLF</h3>
-                </div>
-
-                <a
-                  href="/category/5"
-                  target="_self"
-                  class="lowercase text-category-100"
-                >
-                  <span class="pb-1 border-b border-b-category-100"
-                    >{`Xem thêm  >`}</span
-                  >
-                  <i class="icon-angle-right"></i></a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section> -->
   </Carousel>
 {/if}
@@ -189,9 +113,9 @@
 
   .section {
     position: absolute;
-    padding: 30px 0;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    // padding: 30px 0;
+    // padding-top: 20px;
+    // padding-bottom: 20px;
     min-height: 550px;
     /*background-color: rgb(193, 193, 193);*/
     width: 100%;

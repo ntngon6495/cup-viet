@@ -114,7 +114,7 @@
   <div class="sm:max-w-[1200px] max-h-[150px] my-5">
     <Carousel class="rounded-md max-h-[150px] sm:!h-64 xl:!h-80 2xl:!h-96 !h-[55px]" {images} duration="3000" />
   </div>
-  <div class="sticky top-0 w-[65px] ml-[-20px] hidden sm:block">
+  <div class="sticky top-20 w-[65px] ml-[-20px] hidden sm:block">
     <CategoryVertical typeActive={data?.category}/>
   </div>
   <div class="grid grid-cols-12 sm:gap-5 mt-24">

@@ -572,7 +572,7 @@
                 <span class="font-semibold">Click to upload</span> or drag and drop
               </p>
               <p class="text-xs text-gray-500 dark:text-gray-400">
-                PNG (MAX 3MB) | JPG (MAX 3MB)
+                HEIGHT (MAX 550 PIXEL) | PNG (MAX 3MB) | JPG (MAX 3MB)
               </p>
             {:else}
               <p>{valueBackground}</p>
@@ -610,13 +610,30 @@
                 <span class="font-semibold">Click to upload</span> or drag and drop
               </p>
               <p class="text-xs text-gray-500 dark:text-gray-400">
-                PNG (MAX 3MB) | JPG (MAX 3MB)
+                HEIGHT (MAX 550 PIXEL) | PNG (MAX 3MB) | JPG (MAX 3MB)
               </p>
             {:else}
               <p>{valueImage}</p>
             {/if}
           </Dropzone>
       </div>
+      <!-- <div class='mb-5'>
+        <p>Vị Trí Hiển Thị</p>
+        <div class="flex gap-10">
+          <div class="flex gap-2">    
+            <input type="radio" id="html" name="fav_language" value="left">
+            <label for="html">LEFT</label><br>
+          </div>
+          <div class="flex gap-2">    
+            <input type="radio" id="css" name="fav_language" value="center">
+            <label for="css">CENTER</label><br>
+          </div>
+          <div class="flex gap-2">    
+            <input type="radio" id="javascript" name="fav_language" value="right">
+            <label for="javascript">RIGHT</label>
+          </div>
+        </div>
+      </div> -->
       {/if}
       <div class="mb-6">
         <Button class="bg-orange-400" type="submit">Submit</Button>
