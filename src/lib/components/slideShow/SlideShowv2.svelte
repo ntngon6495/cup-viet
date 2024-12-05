@@ -25,7 +25,8 @@
         >
           <div class="z-[1]">
             <div class="flex w-full justify-center h-[180px] sm:h-[550px]">
-              <div class={mergeClass("sm:w-[1250px] w-full px-5 items-center justify-center flex relative")}>
+              <div class={mergeClass("sm:w-[1250px] w-full px-5 items-center justify-center flex relative",
+                                      slide.image_align === "CENTER" ? "sm:justify-center" : slide.image_align === "RIGHT" ? "justify-end" : "sm:justify-start")}>
                 <div class="sm:py-10 py-5 sm:h-[500px] h-[180px]">
                   <img
                     decoding="async"
