@@ -13,8 +13,6 @@
   export let data;
   $: slides = data?.banners?.Items.filter((item) => item.banner_type === "1");
   $: discount = data?.banners?.Items.filter((item) => item.banner_type === "4");
-  $: console.log("data", discount);
-  
   let disableComponent = false;
   let disableFooter = false;
 
@@ -75,11 +73,11 @@
 </div>
 {#if discount.length > 0}
   <div class:disable={!unable}>
-    <div class="fixed z-[100] top-0 bg-white w-full h-svh"></div>
+    <div class="fixed z-[100] top-0 bg-white w-full h-svh opacity-90"></div>
     <!-- svelte-ignore a11y-no-static-element-interactions -->
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div
-      class="fixed z-[101] top-0 image_baotri w-screen h-screen cursor-pointer"
+      class="fixed z-[101] top-[165px] image_baotri w-screen h-screen cursor-pointer"
       on:click={() => (unable = false)}
       >
       <img src={discount[0]?.background_url} alt="loading" class="mx-auto" />

@@ -29,6 +29,7 @@
   let startDate = "";
   let endDate = "";
   let category_id = "";
+  let image_align = "";
   let isEdit = false;
 
   let isUpload = false;
@@ -216,6 +217,7 @@
           banner_code: banner_code,
           category_id: category_id,
           background_url: backgroundUrl,
+          image_align: image_align, 
           image_url: imageUrl ? imageUrl : "",
           title: title ? title : "",
           sub_title: subTitle ? subTitle : "",
@@ -311,6 +313,7 @@
     valueImage = banner.image_url;
     title = banner.title;
     subTitle = banner.sub_title;
+    image_align = banner.image_align;
     isEdit = true;
     defaultModal = true;
   };
@@ -617,6 +620,21 @@
             {/if}
           </Dropzone>
       </div>
+      <div class="w-1/3 mb-5">
+          <p for="category" class="mb-2">Vị trí hình ảnh</p>
+          <select
+            class="input-styles px-2"
+            id="category"
+            name="category"
+            placeholder="John"
+            required
+            bind:value={image_align}
+          >
+            <option value="LEFT">LEFT</option>
+            <option value="CENTER">CENTER</option>
+            <option value="RIGHT">RIGHT</option>
+          </select>
+        </div>
       <!-- <div class='mb-5'>
         <p>Vị Trí Hiển Thị</p>
         <div class="flex gap-10">
