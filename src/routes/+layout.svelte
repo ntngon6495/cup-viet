@@ -21,9 +21,9 @@
   const checkRouter = (url) => {
     if (url !== "/" && url !== "/home") {
       disableComponent = true;
-    } else if (url === '/home') {
+    } else if (url === "/home") {
       disableComponent = false;
-    } else { 
+    } else {
       disableComponent = false;
     }
     if (url === "/admin/category/list") {
@@ -47,7 +47,6 @@
   onMount(async () => {
     await getSlides();
   });
-
 </script>
 
 <div class="sm:pt-4 sm:mx-0 block">
@@ -55,13 +54,10 @@
   <div class="relative">
     <TopNav />
   </div>
-  <div
-    class:disable={disableComponent}
-    class="w-full sm:mt-[135px] mt-[70px]"
-    >
+  <div class:disable={disableComponent} class="w-full sm:mt-[135px] mt-[70px]">
     <!-- class="w-full sm:absolute sm:z-[65]  absolute-center" -->
     <!-- <Slide class="sm:block" /> -->
-    <SlideShowv2 {slides}/>
+    <SlideShowv2 {slides} />
   </div>
   <div class="sm:w-[1200px] sm:mx-auto mx-2">
     <slot />
@@ -73,13 +69,13 @@
 </div>
 {#if discount.length > 0}
   <div class:disable={!unable}>
-    <div class="fixed z-[100] top-0 bg-white w-full h-svh opacity-90"></div>
+    <div class="fixed z-[100] top-0 bg-white w-full h-svh opacity-50"></div>
     <!-- svelte-ignore a11y-no-static-element-interactions -->
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div
-      class="fixed z-[101] top-[165px] image_baotri w-screen h-screen cursor-pointer"
+      class="fixed z-[101] top-0 image_baotri w-screen h-screen cursor-pointer"
       on:click={() => (unable = false)}
-      >
+    >
       <img src={discount[0]?.background_url} alt="loading" class="mx-auto" />
     </div>
   </div>
@@ -112,7 +108,7 @@
     transform: translate(-50%, -50%);
     @include mobile {
       transform: none;
-    } 
+    }
   }
   .margin-top {
     margin-top: 660px;
