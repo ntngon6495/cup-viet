@@ -9,7 +9,7 @@
     TableHeadCell,
     Modal,
     Button,
-    Dropzone
+    Dropzone,
   } from "flowbite-svelte";
   import { base64 } from "@sveu/browser";
   import { toasts, ToastContainer, FlatToast } from "svelte-toasts";
@@ -67,8 +67,8 @@
     const response = await fetch(
       `https://08iid05zfe.execute-api.ap-southeast-1.amazonaws.com/dev/banners?banner_type=${id}`,
       {
-        method: "GET"
-      }
+        method: "GET",
+      },
     );
     if (response) {
       const { banners } = await response.json();
@@ -111,7 +111,6 @@
 
   $: background_result = base64(background);
 
-
   // Handle upload and drop image
   let valueImage = "";
   const subDropHandle = (event) => {
@@ -130,7 +129,6 @@
     }
   };
 
-
   const handleSubChange = (event) => {
     const files = event.target.files;
     if (files.length > 0) {
@@ -146,8 +144,6 @@
 
   $: image_result = base64(images);
 
-
-
   let backgroundUrl = "";
   const handleUploadBackground = async () => {
     isSubmit = false;
@@ -157,8 +153,8 @@
           "https://cespre3cgb.execute-api.ap-southeast-1.amazonaws.com/prod/upload-image-s3",
           {
             method: "POST",
-            body: JSON.stringify({ image: $background_result })
-          }
+            body: JSON.stringify({ image: $background_result }),
+          },
         );
         const { file_name } = await response.json();
         backgroundUrl = `https://cupviet.s3.ap-southeast-1.amazonaws.com/${file_name}`;
@@ -178,8 +174,8 @@
           "https://cespre3cgb.execute-api.ap-southeast-1.amazonaws.com/prod/upload-image-s3",
           {
             method: "POST",
-            body: JSON.stringify({ image: $image_result })
-          }
+            body: JSON.stringify({ image: $image_result }),
+          },
         );
         const { file_name } = await response.json();
         imageUrl = `https://cupviet.s3.ap-southeast-1.amazonaws.com/${file_name}`;
@@ -209,7 +205,7 @@
       {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           banner_id: bannerId,
@@ -217,15 +213,15 @@
           banner_code: banner_code,
           category_id: category_id,
           background_url: backgroundUrl,
-          image_align: image_align, 
+          image_align: image_align,
           image_url: imageUrl ? imageUrl : "",
           title: title ? title : "",
           sub_title: subTitle ? subTitle : "",
           date_start: startDate ? startDate : "",
           date_end: endDate ? endDate : "",
-          create_at: new Date().toISOString()
-        })
-      }
+          create_at: new Date().toISOString(),
+        }),
+      },
     );
 
     if (!response.ok) {
@@ -249,12 +245,12 @@
         {
           method: "DELETE",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            banner_id: bannerDeleteId
-          })
-        }
+            banner_id: bannerDeleteId,
+          }),
+        },
       );
 
       if (!response.ok) {
@@ -262,7 +258,7 @@
       }
       popupModal = false;
       bannerList = bannerListBackup.filter(
-        (banner) => banner.banner_id !== bannerDeleteId
+        (banner) => banner.banner_id !== bannerDeleteId,
       );
       bannerDeleteId = "";
     } catch (error) {
@@ -290,7 +286,7 @@
       placement: "top-right",
       theme: "dark",
       showProgress: true,
-      type: "success"
+      type: "success",
     });
   };
 
@@ -370,17 +366,17 @@
       <TableHeadCell>Mã Banner</TableHeadCell>
       <TableHeadCell>Loại Banner</TableHeadCell>
       {#if bannerTypeSort === "3"}
-      <TableHeadCell>Loại Sản Phẩm</TableHeadCell>
+        <TableHeadCell>Loại Sản Phẩm</TableHeadCell>
       {/if}
       <TableHeadCell>Background</TableHeadCell>
       {#if bannerTypeSort === "1"}
-      <TableHeadCell>Hình ảnh sản phẩm</TableHeadCell>
-      <TableHeadCell>Title Top</TableHeadCell>
-      <TableHeadCell>Title Bottom</TableHeadCell>
+        <TableHeadCell>Hình ảnh sản phẩm</TableHeadCell>
+        <TableHeadCell>Title Top</TableHeadCell>
+        <TableHeadCell>Title Bottom</TableHeadCell>
       {/if}
       {#if bannerTypeSort === "4"}
-      <TableHeadCell>Ngày Bắt Đầu</TableHeadCell>
-      <TableHeadCell>Ngày Kết Thúc</TableHeadCell>
+        <TableHeadCell>Ngày Bắt Đầu</TableHeadCell>
+        <TableHeadCell>Ngày Kết Thúc</TableHeadCell>
       {/if}
       <TableHeadCell>Ngày Tạo</TableHeadCell>
       <TableHeadCell></TableHeadCell>
@@ -398,7 +394,7 @@
             <TableBodyCell>{banner.banner_code}</TableBodyCell>
             <TableBodyCell>{banner.banner_type}</TableBodyCell>
             {#if bannerTypeSort === "3"}
-            <TableBodyCell>{nameCategory[banner.category_id]}</TableBodyCell>
+              <TableBodyCell>{nameCategory[banner.category_id]}</TableBodyCell>
             {/if}
             <TableBodyCell>
               <img
@@ -408,19 +404,19 @@
               />
             </TableBodyCell>
             {#if bannerTypeSort === "1"}
-            <TableBodyCell>
-              <img
-                src={banner.image_url}
-                alt={banner.banner_code}
-                class="h-10"
-              />
-            </TableBodyCell>
-            <TableBodyCell>{banner.title}</TableBodyCell>
-            <TableBodyCell>{banner.sub_title}</TableBodyCell>
+              <TableBodyCell>
+                <img
+                  src={banner.image_url}
+                  alt={banner.banner_code}
+                  class="h-10"
+                />
+              </TableBodyCell>
+              <TableBodyCell>{banner.title}</TableBodyCell>
+              <TableBodyCell>{banner.sub_title}</TableBodyCell>
             {/if}
             {#if bannerTypeSort === "4"}
-            <TableBodyCell>{banner.date_start}</TableBodyCell>
-            <TableBodyCell>{banner.date_end}</TableBodyCell>
+              <TableBodyCell>{banner.date_start}</TableBodyCell>
+              <TableBodyCell>{banner.date_end}</TableBodyCell>
             {/if}
             <TableBodyCell>{banner.create_at}</TableBodyCell>
             <TableBodyCell>
@@ -476,53 +472,53 @@
             disabled={isEdit}
           />
         </div>
-        {#if banner_type === "3"}
-        <div>
-          <p for="category" class="mb-2">Loại sản phẩm</p>
-          <select
-            class="input-styles px-2"
-            id="category"
-            placeholder="John"
-            required
-            bind:value={category_id}
-          >
-            <option value="1">Cúp Vô Địch & Cúp Luân Lưu</option>
-            <option value="2">Cúp Gốm Sứ</option>
-            <option value="3">Cúp Kĩ Thuật</option>
-            <option value="4">Cúp Luxury</option>
-            <option value="5">Cúp Premium</option>
-            <option value="6">Cúp Pha Lê</option>
-            <option value="7">Cúp Pewter</option>
-            <option value="8">Quà Tặng Vip</option>
-            <option value="9">Huy Chương & Kỉ Niệm Chương</option>
-            <option value="10">Cúp Hio & Eagle</option>
-            <option value="11">Cúp Niken</option>
-            <option value="12">Theo Yêu Cầu</option>
-            <option value="13">Sản Phẩm Mới</option>
-          </select>
-        </div>
+        {#if banner_type === "3" || banner_type === "1"}
+          <div>
+            <p for="category" class="mb-2">Loại sản phẩm</p>
+            <select
+              class="input-styles px-2"
+              id="category"
+              placeholder="John"
+              required
+              bind:value={category_id}
+            >
+              <option value="1">Cúp Vô Địch & Cúp Luân Lưu</option>
+              <option value="2">Cúp Gốm Sứ</option>
+              <option value="3">Cúp Kĩ Thuật</option>
+              <option value="4">Cúp Luxury</option>
+              <option value="5">Cúp Premium</option>
+              <option value="6">Cúp Pha Lê</option>
+              <option value="7">Cúp Pewter</option>
+              <option value="8">Quà Tặng Vip</option>
+              <option value="9">Huy Chương & Kỉ Niệm Chương</option>
+              <option value="10">Cúp Hio & Eagle</option>
+              <option value="11">Cúp Niken</option>
+              <option value="12">Theo Yêu Cầu</option>
+              <option value="13">Sản Phẩm Mới</option>
+            </select>
+          </div>
         {/if}
         {#if banner_type === "1"}
-        <div>
-          <p for="material" class="mb-2">Tiêu đề chính</p>
-          <input
-            class="input-styles"
-            type="text"
-            id="material"
-            bind:value={title}
-            placeholder="VD: Cúp Golf best gross"
-          />
-        </div>
-        <div>
-          <p for="material" class="mb-2">Tiêu đề phụ</p>
-          <input
-            class="input-styles"
-            type="text"
-            id="material"
-            bind:value={subTitle}
-            placeholder="Make for ..."
-          />
-        </div>
+          <div>
+            <p for="material" class="mb-2">Tiêu đề chính</p>
+            <input
+              class="input-styles"
+              type="text"
+              id="material"
+              bind:value={title}
+              placeholder="VD: Cúp Golf best gross"
+            />
+          </div>
+          <div>
+            <p for="material" class="mb-2">Tiêu đề phụ</p>
+            <input
+              class="input-styles"
+              type="text"
+              id="material"
+              bind:value={subTitle}
+              placeholder="Make for ..."
+            />
+          </div>
         {/if}
         {#if banner_type === "4"}
           <div>
@@ -546,44 +542,44 @@
         {/if}
       </div>
       <div class="mb-6">
-          <p for="images" class="mb-2">Hình Ảnh / Background</p>
+        <p for="images" class="mb-2">Hình Ảnh / Background</p>
 
-          <Dropzone
-            id="dropzone"
-            on:drop={dropHandle}
-            on:dragover={(event) => {
-              event.preventDefault();
-            }}
-            on:change={handleChange}
+        <Dropzone
+          id="dropzone"
+          on:drop={dropHandle}
+          on:dragover={(event) => {
+            event.preventDefault();
+          }}
+          on:change={handleChange}
+        >
+          <svg
+            aria-hidden="true"
+            class="mb-3 w-10 h-10 text-gray-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+            /></svg
           >
-            <svg
-              aria-hidden="true"
-              class="mb-3 w-10 h-10 text-gray-400"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-              /></svg
-            >
-            {#if valueBackground.length === 0}
-              <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                <span class="font-semibold">Click to upload</span> or drag and drop
-              </p>
-              <p class="text-xs text-gray-500 dark:text-gray-400">
-                HEIGHT (MAX 550 PIXEL) | PNG (MAX 3MB) | JPG (MAX 3MB)
-              </p>
-            {:else}
-              <p>{valueBackground}</p>
-            {/if}
-          </Dropzone>
+          {#if valueBackground.length === 0}
+            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
+              <span class="font-semibold">Click to upload</span> or drag and drop
+            </p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">
+              HEIGHT (MAX 550 PIXEL) | PNG (MAX 3MB) | JPG (MAX 3MB)
+            </p>
+          {:else}
+            <p>{valueBackground}</p>
+          {/if}
+        </Dropzone>
       </div>
       {#if banner_type === "1"}
-      <div class="mb-6">
+        <div class="mb-6">
           <p for="images" class="mb-2">Hình Ảnh nhóm sản phẩm</p>
 
           <Dropzone
@@ -619,8 +615,8 @@
               <p>{valueImage}</p>
             {/if}
           </Dropzone>
-      </div>
-      <div class="w-1/3 mb-5">
+        </div>
+        <div class="w-1/3 mb-5">
           <p for="category" class="mb-2">Vị trí hình ảnh</p>
           <select
             class="input-styles px-2"
@@ -635,7 +631,7 @@
             <option value="RIGHT">RIGHT</option>
           </select>
         </div>
-      <!-- <div class='mb-5'>
+        <!-- <div class='mb-5'>
         <p>Vị Trí Hiển Thị</p>
         <div class="flex gap-10">
           <div class="flex gap-2">    

@@ -1,5 +1,5 @@
 <script>
-	import { mergeClass } from '$lib/helpers';
+  import { mergeClass } from "$lib/helpers";
   import Carousel from "$lib/components/Carousel.svelte";
 
   const options = {
@@ -19,14 +19,24 @@
   <Carousel {options}>
     {#each slides as slide}
       {@const bg_url = slide.background_url}
+      {@const direct = `category/${slide.category_id}`}
       <section class="section">
         <div
-          class="bg section-bg fill bg-fill opacity-100 bg-center" style="background-image: url('{bg_url}');"
+          class="bg section-bg fill bg-fill opacity-100 bg-center"
+          style="background-image: url('{bg_url}');"
         >
           <div class="z-[1]">
             <div class="flex w-full justify-center h-[180px] sm:h-[550px]">
-              <div class={mergeClass("sm:w-[1250px] w-full px-5 items-center justify-center flex relative",
-                                      slide.image_align === "CENTER" ? "sm:justify-center" : slide.image_align === "RIGHT" ? "justify-end" : "sm:justify-start")}>
+              <div
+                class={mergeClass(
+                  "sm:w-[1250px] w-full px-5 items-center justify-center flex relative",
+                  slide.image_align === "CENTER"
+                    ? "sm:justify-center"
+                    : slide.image_align === "RIGHT"
+                      ? "justify-end"
+                      : "sm:justify-start",
+                )}
+              >
                 <div class="sm:py-10 py-5 sm:h-[500px] h-[180px]">
                   <img
                     decoding="async"
@@ -35,18 +45,25 @@
                     alt=""
                   />
                 </div>
-                <div class="col-inner sm:text-right sm:pl-0 absolute left-10 sm:right-0 sm:bottom-auto bottom-0 ">
+                <div
+                  class="col-inner sm:text-right sm:pl-0 absolute left-10 sm:right-0 sm:bottom-auto bottom-0"
+                >
                   <div id="text-1138206211" class="text">
-                    <h2 class="sm:text-[35px] text-[12px] text-category-100">{slide.title}</h2>
-                    <h3 class="sm:text-[25px] text-[10px] text-[#444444]">{slide.sub_title}</h3>
+                    <h2 class="sm:text-[35px] text-[12px] text-category-100">
+                      {slide.title}
+                    </h2>
+                    <h3 class="sm:text-[25px] text-[10px] text-[#444444]">
+                      {slide.sub_title}
+                    </h3>
                   </div>
 
                   <a
-                    href="/category/1"
+                    href={direct}
                     target="_self"
                     class="lowercase text-category-100"
                   >
-                    <span class="pb-1 border-b border-b-category-100 sm:text-[16px] text-[12px]"
+                    <span
+                      class="pb-1 border-b border-b-category-100 sm:text-[16px] text-[12px]"
                       >{`Xem thêm  >`}</span
                     >
                     <i class="icon-angle-right"></i></a
@@ -101,6 +118,7 @@
     </section> -->
   </Carousel>
 {/if}
+
 <style lang="scss">
   $mobile-width: 480px;
   $tablet-width: 768px;
