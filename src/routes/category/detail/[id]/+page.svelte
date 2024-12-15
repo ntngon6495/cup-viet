@@ -223,7 +223,10 @@
     {#if productList.length > 0}
       {#each productList as product, idx}
         <!-- {#if idx < limit} -->
-        <div class="col-span-3 mt-5">
+        <div class="col-span-3 mt-5 sm:w-[220px] w-[185px]">
+          <!-- svelte-ignore a11y-click-events-have-key-events -->
+          <!-- svelte-ignore a11y-no-static-element-interactions -->
+          <!-- svelte-ignore a11y-missing-attribute -->
           <a
             class="text-center cursor-pointer"
             on:click={() => handelChangeProduct(idx)}
@@ -232,12 +235,14 @@
               alt=""
               title=""
               src={product?.image_url}
-              class="sm:w-[220px] w-[190px] ls-is-cached lazyloaded bg-gray-100 mx-auto scale-image"
+              class="sm:w-[220px] w-[185px] ls-is-cached lazyloaded bg-gray-100 mx-auto scale-image"
             />
-            <p class="text-[#EAA918] text-xl font-bold mt-3">
+            <p
+              class="text-[#EAA918] sm:text-2xl text-sm font-bold mt-3 text-nowrap text-ellipsis overflow-hidden"
+            >
               {product?.product_code}
             </p>
-            <p class="uppercase text-gray-600 capitalize">
+            <p class=" text-gray-600 sm:text-2xl text-sm font-bold capitalize">
               {product?.product_name}
             </p>
             <p></p></a
