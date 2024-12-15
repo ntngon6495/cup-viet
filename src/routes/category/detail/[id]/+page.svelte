@@ -41,7 +41,7 @@
       `https://dgg300bw0j.execute-api.ap-southeast-1.amazonaws.com/dev/products?categoryId=${id}`,
       {
         method: "GET",
-      }
+      },
     );
     if (response) {
       const { products } = await response.json();
@@ -54,9 +54,8 @@
     productDetail = productList[index];
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
-    
   };
 
   export const renderTitle = (id) => {
@@ -113,11 +112,13 @@
         <img src={productDetail.image_url} class="sm:!w-[600px] !w-[400px]" />
       </div>
     </div>
-    <div class="col-span-6 pl-0 text-sm sm:ml-12 sm:px-10 sm:py-5 sm:text-xl sm:border-2 sm:border-[#EAA918]">
+    <div
+      class="col-span-6 pl-0 text-sm sm:ml-12 sm:px-10 sm:py-5 sm:text-xl sm:border-2 sm:border-[#EAA918]"
+    >
       <div
         class="mb-2 text-2xl font-bold sm:inline-block text-center flex justify-center"
       >
-        <div class='text-xl sm:text-3xl'>
+        <div class="text-xl sm:text-3xl">
           <h1 class="text-[#EAA918]">{productDetail.product_code}</h1>
           <p class="uppercase font-normal text-gray-500">
             {productDetail.product_name}
@@ -142,49 +143,53 @@
       </div>
       <div class="detail-item border-b-[2px] border-b-gray-500 sm:pb-8 pb-4">
         <div class="product-short-description">
-          <p class='sm:leading-9'>
+          <p class="sm:leading-9">
             {renderTitle(productDetail?.category_id)}<br />
             – Chất liệu: {productDetail?.material}<br />
             – Màu sắc: {productDetail?.color}<br />
-            – Kích thước: {`Sản phẩm có ${productDetail?.size ? productDetail?.size.split(';').length : "1"} kích thước`}<br />
+            – Kích thước: {`Sản phẩm có ${
+              productDetail?.size ? productDetail?.size.split(";").length : "1"
+            } kích thước`}<br />
             – Khắc thông tin lên nhãn đế cúp<br />
             – Thiết kế nội dung theo yêu cầu của khách hàng
           </p>
         </div>
       </div>
       <div class="flex">
-        <p class="font-bold">Kích Thước: </p>
+        <p class="font-bold">Kích Thước:</p>
         <p class="text-gray-400 ml-2">
-          <span 
-            >{@html productDetail?.size.replaceAll(';', '</br>')}</span
-          >
+          <span>{@html productDetail?.size.replaceAll(";", "</br>")}</span>
         </p>
         <!-- <Select placeholder="kích thước" items={sizes}>
                 </Select> -->
       </div>
     </div>
-    <div class="col-span-12 sm:grid sm:grid-cols-12 p-3 sm:border-2 sm:border-[#EAA918] mt-10">
-      <div class="col-span-4 border-r-[#EAA918] sm:border-r-2 flex items-center justify-center">
-        <p class='uppercase text-2xl font-bold'>Chính sách bán hàng</p>
+    <div
+      class="col-span-12 sm:grid sm:grid-cols-12 p-3 sm:border-2 sm:border-[#EAA918] mt-10"
+    >
+      <div
+        class="col-span-4 border-r-[#EAA918] sm:border-r-2 flex items-center justify-center"
+      >
+        <p class="uppercase text-2xl font-bold">Chính sách bán hàng</p>
       </div>
       <div class="col-span-4 pl-8 sm:mt-0 mt-5">
-        <div class='flex gap-8 items-center'>
-          <img class='w-10' src='/icon/detail/like.png' alt='like'/>
-          <p class='text-xl'>Sản phẩm chất lượng cao</p>
+        <div class="flex gap-8 items-center">
+          <img class="w-10" src="/icon/detail/like.png" alt="like" />
+          <p class="text-xl">Sản phẩm chất lượng cao</p>
         </div>
-        <div class='flex gap-6 items-center mt-4'>
-          <img class='w-12' src='/icon/detail/car.png' alt='like'/>
-          <p class='text-xl'>Giao hàng đúng hẹn</p>
+        <div class="flex gap-6 items-center mt-4">
+          <img class="w-12" src="/icon/detail/car.png" alt="like" />
+          <p class="text-xl">Giao hàng đúng hẹn</p>
         </div>
       </div>
       <div class="col-span-4 pl-8 sm:mt-0 mt-5">
-         <div class='flex gap-8 items-center'>
-          <img class='w-10' src='/icon/detail/book.png' alt='like'/>
-          <p class='text-xl'>Miễn phí thiết kế hình ảnh</p>
+        <div class="flex gap-8 items-center">
+          <img class="w-10" src="/icon/detail/book.png" alt="like" />
+          <p class="text-xl">Miễn phí thiết kế hình ảnh</p>
         </div>
-        <div class='flex gap-8 items-center mt-4'>
-          <img class='h-10' src='/icon/detail/note.png' alt='like'/>
-          <p class='text-xl'>Thiết kế riêng theo yêu cầu</p>
+        <div class="flex gap-8 items-center mt-4">
+          <img class="h-10" src="/icon/detail/note.png" alt="like" />
+          <p class="text-xl">Thiết kế riêng theo yêu cầu</p>
         </div>
       </div>
     </div>
@@ -210,30 +215,34 @@
     </div>
   </div>
   <div class="sticky top-20 w-[65px] ml-[-20px] hidden sm:block">
-    <CategoryVertical typeActive={productDetail?.category_id}/>
+    <CategoryVertical typeActive={productDetail?.category_id} />
   </div>
-  <div class="sm:grid sm:grid-cols-12 flex flex-wrap justify-between w-full sm:mt-40">
+  <div
+    class="sm:grid sm:grid-cols-12 flex flex-wrap justify-between w-full sm:mt-40"
+  >
     {#if productList.length > 0}
       {#each productList as product, idx}
         <!-- {#if idx < limit} -->
-          <div class="col-span-3 mt-5">
-            <a
-              class="text-center cursor-pointer"
-              on:click={() => handelChangeProduct(idx)}
-            >
-              <img
-                alt=""
-                title=""
-                src={product?.image_url}
-                class="sm:w-[220px] w-[200px] ls-is-cached lazyloaded bg-gray-100 mx-auto scale-image"
-              />
-              <p class="text-[#EAA918] text-xl font-bold mt-3">
-                {product?.product_code}
-              </p>
-              <p class="uppercase text-gray-600 capitalize">{product?.product_name}</p>
-              <p></p></a
-            >
-          </div>
+        <div class="col-span-3 mt-5">
+          <a
+            class="text-center cursor-pointer"
+            on:click={() => handelChangeProduct(idx)}
+          >
+            <img
+              alt=""
+              title=""
+              src={product?.image_url}
+              class="sm:w-[220px] w-[190px] ls-is-cached lazyloaded bg-gray-100 mx-auto scale-image"
+            />
+            <p class="text-[#EAA918] text-xl font-bold mt-3">
+              {product?.product_code}
+            </p>
+            <p class="uppercase text-gray-600 capitalize">
+              {product?.product_name}
+            </p>
+            <p></p></a
+          >
+        </div>
         <!-- {/if} -->
       {/each}
     {/if}

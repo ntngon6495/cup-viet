@@ -3,7 +3,7 @@
   import { debounce } from "$lib/helpers";
   let listIcon = [
     {
-      id: 13,
+      id: 1,
       icon: "/icon/menu/1.1.png",
       icon_active: "/icon/menu/1.png",
       alt: "CUPVODICH",
@@ -85,7 +85,7 @@
   ];
 
   $: listCategory = subCategory.find(
-    (item) => item.categoryId == isTab
+    (item) => item.categoryId == isTab,
   )?.categorys;
 
   let isTab = 13;

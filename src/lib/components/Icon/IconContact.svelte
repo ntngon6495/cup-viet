@@ -1,46 +1,73 @@
 <script>
   import { fly } from "svelte/transition";
   let isShow = false;
+  let isShowZalo = false;
 </script>
 
 <!-- if gom all in one show -->
 <div id="button-contact-vr" class="sm:block hidden">
+  <!-- svelte-ignore a11y-no-static-element-interactions -->
   <div id="gom-all-in-one">
     <!-- v3 -->
 
     <!-- zalo -->
-    <div id="zalo-vr" class="button-contact">
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
+    <!-- svelte-ignore a11y-mouse-events-have-key-events -->
+    <div
+      id="zalo-vr"
+      class="button-contact"
+      on:mouseover={() => (isShowZalo = true)}
+      on:mouseleave={() => (isShowZalo = false)}
+    >
       <div class="phone-vr">
         <div class="phone-vr-circle-fill"></div>
         <div class="phone-vr-img-circle">
           <a target="_blank" href="/">
-            <img
-              alt="Zalo"
-              src="icon/zalo.png"
-            />
+            <img alt="Zalo" src="icon/zalo.png" />
           </a>
         </div>
       </div>
     </div>
+    <div class="phone-bar phone-bar-n">
+      {#if isShowZalo}
+        <a
+          href="tel:0908951621"
+          class="bg-[#2196f3] h-[40px]"
+          in:fly={{ x: -64 }}
+          out:fly={{ x: -64 }}
+        >
+          <span class="text-phone">0902 547 808</span>
+        </a>
+      {/if}
+    </div>
     <!-- end zalo -->
 
     <!-- Phone -->
-    <div id="phone-vr" class="button-contact"  on:mouseover={() => isShow = true }>
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
+    <!-- svelte-ignore a11y-mouse-events-have-key-events -->
+    <div
+      id="phone-vr"
+      class="button-contact"
+      on:mouseover={() => (isShow = true)}
+      on:mouseleave={() => (isShow = false)}
+    >
       <div class="phone-vr">
         <div class="phone-vr-circle-fill"></div>
         <div class="phone-vr-img-circle">
           <a href="tel:0908951621">
-            <img
-              alt="Phone"
-              src="icon/phone.png"
-            />
+            <img alt="Phone" src="icon/phone.png" />
           </a>
         </div>
       </div>
     </div>
     <div class="phone-bar phone-bar-n">
       {#if isShow}
-        <a href="tel:0908951621" class='bg-[#EAA918] h-[40px]' in:fly={{ x: -64 }} out:fly={{ x: -64 }}>
+        <a
+          href="tel:0908951621"
+          class="bg-[#EAA918] h-[40px]"
+          in:fly={{ x: -64 }}
+          out:fly={{ x: -64 }}
+        >
           <span class="text-phone">0902 547 808</span>
         </a>
       {/if}
@@ -85,7 +112,7 @@
     top: 12px;
     left: 12px;
     position: absolute;
-    box-shadow: 0 0 0 0 #EAA918;
+    box-shadow: 0 0 0 0 #eaa918;
     background-color: rgba(234, 169, 24, 0.7);
     border-radius: 50%;
     border: 2px solid transparent;
@@ -100,7 +127,7 @@
   }
 
   .phone-vr-img-circle {
-    background-color: #EAA918;
+    background-color: #eaa918;
     width: 40px;
     height: 40px;
     line-height: 40px;
