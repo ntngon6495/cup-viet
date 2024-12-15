@@ -185,14 +185,13 @@
       });
     }, 1000);
   });
-
 </script>
 
 <div class="relative">
   {#each productList as item, idx}
     {#if idx === 1 && y >= 900}
       <div class="sticky top-20 w-[65px] ml-[-20px] hidden sm:block">
-        <CategoryVertical {typeActive}/>
+        <CategoryVertical {typeActive} />
       </div>
     {/if}
     {#if item.products?.length > 0}
@@ -236,10 +235,10 @@
               >
               <li style="cursor:pointer;">
                 <img
-                loading="lazy"
+                  loading="lazy"
                   data-srcset="/images/product/7.png"
                   srcset={productSort[0]?.image_url}
-                  class="w-[470px] h-[470px] ls-is-cached lazyloaded bg-gray-100 hover:border-[#F3B81A] border-[3px] border-transparent"
+                  class="w-[470px] ls-is-cached lazyloaded bg-gray-100 hover:border-[#F3B81A] border-[3px] border-transparent"
                 />
               </li>
             </a>
@@ -249,14 +248,20 @@
               class="goodsnm flex justify-center !mb-0 pr-[50px]"
               style="cursor:pointer;"
             >
-              <p class="goodscd text-[#F3B81A] pr-2 border-r-2">
+              <p
+                class="goodscd text-[#F3B81A] pr-2 border-r-2 text-nowrap text-ellipsis overflow-hidden"
+              >
                 {productSort[0]?.product_code}
               </p>
-              <p class='capitalize'>{productSort[0]?.product_name}</p>
+              <p class="capitalize text-nowrap">
+                {productSort[0]?.product_name}
+              </p>
             </li>
           </ul>
         </div>
-        <div class="right_p small_right_goods_list col-span-7 justify-between sm:mt-0 mt-5">
+        <div
+          class="right_p small_right_goods_list col-span-7 justify-between sm:mt-0 mt-5"
+        >
           {#if productSort?.length > 0}
             {#each productSort as product, index}
               {#if index > 0 && index < 7}
@@ -274,11 +279,15 @@
                       alt=""
                       title=""
                       src={product?.image_url}
-                      class="sm:w-[230px] w-[190px] ls-is-cached lazyloaded bg-gray-100 hover:border-[#F3B81A] border-[3px] border-transparent"
+                      class="sm:w-[230px] w-[185px] ls-is-cached lazyloaded bg-gray-100 hover:border-[#F3B81A] border-[3px] border-transparent"
                     />
                   </span>
                   <div class="text-lg w-full mt-2">
-                    <p class="text-[#F3B81A] sm:w-[230px] w-[190px] text-ellipsis overflow-hidden whitespace-nowrap">{product?.product_code}</p>
+                    <p
+                      class="text-[#F3B81A] sm:w-[230px] w-[185px] text-ellipsis overflow-hidden whitespace-nowrap"
+                    >
+                      {product?.product_code}
+                    </p>
                     <div class="text-lg font-medium !mt-0 capitalize">
                       {product?.product_name}
                     </div>

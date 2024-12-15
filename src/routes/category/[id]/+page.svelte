@@ -1,5 +1,5 @@
 <script>
-	import { mergeClass } from '$lib/helpers.js';
+  import { mergeClass } from "$lib/helpers.js";
   import { Carousel } from "flowbite-svelte";
   import ProductTop from "$lib/components/product/productTop.svelte";
   import { onMount } from "svelte";
@@ -70,7 +70,7 @@
       `https://dgg300bw0j.execute-api.ap-southeast-1.amazonaws.com/dev/products?categoryId=${id}`,
       {
         method: "GET",
-      }
+      },
     );
     if (response) {
       const { products } = await response.json();
@@ -112,24 +112,31 @@
   {/if}
 
   <div class="sm:max-w-[1200px] max-h-[150px] my-5">
-    <Carousel class="rounded-md max-h-[150px] sm:!h-64 xl:!h-80 2xl:!h-96 !h-[55px]" {images} duration="3000" />
+    <Carousel
+      class="rounded-md max-h-[150px] sm:!h-64 xl:!h-80 2xl:!h-96 !h-[55px]"
+      {images}
+      duration="3000"
+    />
   </div>
   <div class="sticky top-20 w-[65px] ml-[-20px] hidden sm:block">
-    <CategoryVertical typeActive={data?.category}/>
+    <CategoryVertical typeActive={data?.category} />
   </div>
-  <div class="grid grid-cols-12 sm:gap-5 mt-24">
+  <div class="grid grid-cols-12 sm:gap-5 sm:mt-24">
     {#each productList as item, idx}
       <a
-        class={mergeClass("sm:col-span-4 col-span-6 text-center sm:max-w-[400px] max-w-[200px] mt-5 sm:mt-0", (idx === 0 || idx == 1) && "!mt-0")}
+        class={mergeClass(
+          "sm:col-span-4 col-span-6 text-center sm:max-w-[400px] max-w-[200px] mt-5 sm:mt-0",
+          (idx === 0 || idx == 1) && "!mt-0",
+        )}
         href={`detail/${item.product_code}`}
       >
         <img
           src={item.image_url}
-          class="sm:max-w-[386px] max-w-[200px] bg-gray-100 hover:border-[#F3B81A] border-[3px] border-transparent"
+          class="sm:max-w-[386px] max-w-[185px] bg-gray-100 hover:border-[#F3B81A] border-[3px] border-transparent"
           alt=""
         />
         <div
-          class="sm:text-2xl text-sm font-bold text-[#F3B81A] sm:px-0 flex w-full gap-2 justify-center sm:mt-5 mt-2"
+          class="sm:text-2xl text-sm font-bold text-[#F3B81A] sm:px-0 flex w-full gap-2 justify-center sm:mt-5 mt-2 text-nowrap text-ellipsis overflow-hidden"
         >
           {item.product_code}
         </div>

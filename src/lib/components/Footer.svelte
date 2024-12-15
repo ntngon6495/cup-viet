@@ -41,8 +41,12 @@
           </div>
         </div>
         <div class="col-span-3 sm:px-4 px-2 sm:mt-0 mt-10">
-          <div class='w-full'>
-            <img src="/images/ic-mangxahoi.png" alt="follow us" loading="lazy"/>
+          <div class="w-full">
+            <img
+              src="/images/ic-mangxahoi.png"
+              alt="follow us"
+              loading="lazy"
+            />
           </div>
           <div class="flex sm:justify-end justify-center w-full">
             <img
@@ -56,7 +60,12 @@
       </div>
     </div>
     <div class="w-full mt-5 sm:flex px-2 justify-between sm:px-24">
-      <img class="sm:w-[600px]" alt="" src="/images/card-list.png" loading="lazy"/>
+      <img
+        class="sm:w-[600px]"
+        alt=""
+        src="/images/card-list.png"
+        loading="lazy"
+      />
       <div
         class="text-white hidden font-semibold px-4 border-l-2 border-r-2 sm:flex items-center text-[18px]"
       >
@@ -75,7 +84,7 @@
       <div
         class="footer-info sm:w-1/2 sm:h-auto flex items-center sm:text-left text-center"
       >
-        <div class="border-l-white border-l pl-5 text-[#444444]">
+        <div class="border-l-white border-l sm:pl-5 text-[#444444]">
           <h4 class="company-name">
             CÔNG TY TNHH SẢN XUẤT THƯƠNG MẠI DỊCH VỤ VIỆT NAM TROPHY
           </h4>
