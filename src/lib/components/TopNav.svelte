@@ -1,6 +1,7 @@
 <script>
   import { goto } from "$app/navigation";
   import { debounce } from "$lib/helpers";
+  import { mergeClass } from "$lib/helpers";
   let listIcon = [
     {
       id: 1,
@@ -140,7 +141,7 @@
             on:mouseout={() => handleMouseout(id)}
           >
             <div
-              class="w-[135px] cursor-pointer background text-center h-full flex items-center justify-center"
+              class="w-[120px] cursor-pointer background text-center h-full flex items-center justify-center"
               class:!hidden={isTab == id}
             >
               <div>
@@ -157,12 +158,17 @@
                 </p>
               </div>
             </div>
-            <div class="cursor-pointer hidden h-full" class:!flex={isTab == id}>
-              <div class="background_left w-8"></div>
-              <div
-                class="bg-[#FFFFFF] w-[80px] flex items-center justify-center"
-              >
-                <div class="text-center">
+            <div
+              class="cursor-pointer hidden h-full ml-5"
+              class:!flex={isTab == id}
+            >
+              <div class="w-[80px] flex items-center justify-center relative">
+                <div
+                  class="w-[120px] h-[119px] div_skew bg-[#FFFFFF] absolute top-0 z-10"
+                />
+                <div
+                  class="text-center w-[80px] h-[120px] absolute top-5 z-20 pr-2"
+                >
                   <img
                     class="logo-header category_img mx-auto"
                     src={icon_active}
@@ -170,13 +176,15 @@
                     loading="lazy"
                   />
                   <p
-                    class="uppercase text-[10px] font-semibold mt-1 text-[#444444] mx-auto"
+                    class={mergeClass(
+                      "uppercase text-[10px] font-semibold mt-1 text-[#444444] text-nowrap",
+                      id === 9 && "mr-2",
+                    )}
                   >
                     {name}
                   </p>
                 </div>
               </div>
-              <div class="background_right w-8"></div>
             </div>
           </a>
         {/each}
@@ -340,6 +348,9 @@
     width: 90px;
   }
 
+  .div_skew {
+    transform: skewX(-15deg);
+  }
   // .category_img:hover {
   //   transition: 0.3s;
   //   transform: scale(1.2);

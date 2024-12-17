@@ -11,6 +11,14 @@
   let unable = true;
 
   export let data;
+  // let listImage = [];
+  // $: listImage = data?.products?.Items.map((item) => {
+  //   return item.image_url.replace(
+  //     "https://cupviet.s3.ap-southeast-1.amazonaws.com/",
+  //     "",
+  //   );
+  // });
+  // $: console.log(listImage);
   $: slides = data?.banners?.Items.filter((item) => item.banner_type === "1");
   $: discount = data?.banners?.Items.filter((item) => item.banner_type === "4");
   let disableComponent = false;
@@ -44,9 +52,9 @@
   //   slides = banners?.Items;
   // };
 
-  onMount(async () => {
-    await getSlides();
-  });
+  // onMount(async () => {
+  //   await getSlides();
+  // });
 </script>
 
 <div class="sm:pt-4 sm:mx-0 block">
