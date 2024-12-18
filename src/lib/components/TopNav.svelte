@@ -96,7 +96,7 @@
     if (id === 14) isTab = id;
     else {
       isTab = id;
-      goto(`/category/${id}`, { replaceState: true });
+      goto(`/category/${id}`);
     }
   };
 
@@ -149,7 +149,6 @@
                   class="logo-header category_img mx-auto"
                   src={icon}
                   {alt}
-                  loading="lazy"
                 />
                 <p
                   class="uppercase text-[10px] font-semibold mx-auto mt-1 text-white"
@@ -173,7 +172,6 @@
                     class="logo-header category_img mx-auto"
                     src={icon_active}
                     {alt}
-                    loading="lazy"
                   />
                   <p
                     class={mergeClass(
@@ -199,7 +197,7 @@
             <a
               class="text-[#EAA918] text-[16px] font-semibold h-full uppercase category-style"
               on:mouseover={() => (isSubTab = id)}
-              on:click={() => goto(`/category/${id}`, { replaceState: true })}
+              on:click={() => goto(`/category/${id}`)}
               on:mouseout={() =>
                 debounce(() => {
                   if (isSubTab == id) {

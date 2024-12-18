@@ -4,6 +4,7 @@
   import ProductTop from "$lib/components/product/productTop.svelte";
   import { onMount } from "svelte";
   import CategoryVertical from "./CategoryVertical.svelte";
+  import { goto } from "$app/navigation";
 
   export let images = [
     {
@@ -123,12 +124,12 @@
   </div>
   <div class="grid grid-cols-12 sm:gap-5 sm:mt-24">
     {#each productList as item, idx}
-      <a
+      <div
         class={mergeClass(
-          "sm:col-span-4 col-span-6 text-center sm:max-w-[400px] max-w-[200px] mt-5 sm:mt-0",
+          "sm:col-span-4 col-span-6 text-center sm:max-w-[400px] max-w-[200px] mt-5 sm:mt-0 cursor-pointer",
           (idx === 0 || idx == 1) && "!mt-0",
         )}
-        href={`detail/${item.product_code}`}
+        on:click={() => goto(`detail/${item.product_code}`)}
       >
         <img
           src={item.image_url}
@@ -147,7 +148,7 @@
         <a class="hover:text-yellow-400 sm:text-base text-sm" href="/"
           >Xin liên hệ...</a
         >
-      </a>
+      </div>
     {/each}
   </div>
 </div>
