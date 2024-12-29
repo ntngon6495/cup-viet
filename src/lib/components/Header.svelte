@@ -8,9 +8,8 @@
   let transitionParams = {
     x: -320,
     duration: 200,
-    easing: sineIn
+    easing: sineIn,
   };
-
 
   let listCategory = [
     {
@@ -91,7 +90,9 @@
   };
 </script>
 
-<div class="sm:relative fixed top-0 left-0 bg-white z-[49] sm:w-[1200px] w-full mx-auto">
+<div
+  class="sm:relative fixed top-0 left-0 bg-white z-[49] sm:w-[1200px] w-full mx-auto"
+>
   <div class="sm:flex justify-between items-center h-8 hidden">
     <div class="flex border-b w-[200px] h-8 justify-between">
       <input
@@ -104,24 +105,40 @@
     </div>
     <div class="flex gap-3 font-semibold">
       <div class="flex gap-2">
-        <img alt="" class="w-4 h-5" src="/images/ic-catolouge.png" loading="lazy"/>
+        <img
+          alt=""
+          class="w-4 h-5"
+          src="/images/ic-catolouge.png"
+          loading="lazy"
+        />
         <p class="border-r pr-3 cursor-pointer">Catalogue</p>
       </div>
       <p class="border-r pr-3 cursor-pointer">Hỏi đáp</p>
       <p class="border-r pr-3 cursor-pointer">Tin tức</p>
       <p class="border-r pr-3 cursor-pointer">Liên hệ</p>
       <div class="flex gap-1 font-semibold text-[16px]">
-        <img src='/ic-phone.png' atl='icon-phone' class="w-6 h-6 -mt-1" loading="lazy"/><span> 0902 547 808 </span>
+        <img
+          src="/ic-phone.png"
+          atl="icon-phone"
+          class="w-6 h-6 -mt-1"
+          loading="lazy"
+        /><span> 0902 547 808 </span>
       </div>
     </div>
   </div>
-  <div class='h-[70px] bg-[#EAA918] sm:hidden w-full border-b-2 border-b-[#444444]'>
+  <div
+    class="h-[70px] bg-[#EAA918] sm:hidden w-full border-b-2 border-b-[#444444]"
+  >
     <div class="flex items-center justify-between h-full">
       <Button class="p-0 w-9 h-9" on:click={() => (hidden1 = false)}>
         <BarsOutline class="w-9 h-9 text-gray-600" />
       </Button>
-      <a href='/home'>
-        <img src="/images/logo-header.png" class="w-[120px] h-[60px]" alt="logo header" />
+      <a href="/home">
+        <img
+          src="/images/logo-header.png"
+          class="w-[120px] h-[60px]"
+          alt="logo header"
+        />
       </a>
       <div></div>
     </div>
@@ -148,17 +165,17 @@
     <CloseButton on:click={() => (hidden1 = true)} class="mb-4" />
   </div>
   <div class="grid grid-cols-1 flex-row gap-4">
-
     {#each listCategory as item, idx}
-      <div class={mergeClass('flex gap-2 items-center')}>
+      <div
+        class={mergeClass("flex gap-2 items-center")}
+        on:click={() => handleChooseCategory(item.id)}
+      >
         <img
           src={item.img}
           alt="logo header"
           class={mergeClass("w-[90px] category_img")}
-          on:click={() => handleChooseCategory(item.id)}
-          loading="lazy"
         />
-        <p>{@html item.name}</p>
+        <p class="uppercase">{@html item.name}</p>
       </div>
     {/each}
     <!-- <div class="col-xs-8 gnb-menu pull-left">

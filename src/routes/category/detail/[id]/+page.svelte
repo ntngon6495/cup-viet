@@ -158,7 +158,7 @@
       <div class="flex">
         <p class="font-bold">Kích Thước:</p>
         <p class="text-gray-400 ml-2">
-          <span>{@html productDetail?.size.replaceAll(";", "</br>")}</span>
+          <span>{@html productDetail?.size?.replaceAll(";", "</br>")}</span>
         </p>
         <!-- <Select placeholder="kích thước" items={sizes}>
                 </Select> -->
