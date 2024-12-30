@@ -20,14 +20,14 @@
     >
       <!-- <p>Top</p>
       <p>{product.rank}</p> -->
-      <img src="/ic-new.png" class='mt-4 ml-4' alt=''>
+      <img src="/ic-new.png" class="mt-4 ml-4" alt="" />
     </div>
   {:else}
     <div
-      class="absolute sm:w-10 sm:h-10 h-9 w-9 flex items-center justify-center  text-white sm:font-semibold rounded-sm"
+      class="absolute sm:w-10 sm:h-10 h-9 w-9 flex items-center justify-center text-white sm:font-semibold rounded-sm"
     >
       <!-- <p>{product.rank}</p> -->
-      <img src="/ic-new.png" class='mt-3 ml-3' alt=''>
+      <img src="/ic-new.png" class="mt-3 ml-3" alt="" />
     </div>
   {/if}
   <!-- svelte-ignore a11y-mouse-events-have-key-events -->
@@ -43,7 +43,7 @@
     <a
       class="absolute top-0 left-0 font-bold w-full h-full z-[52] flex justify-center items-center"
       on:mouseout={() => handelHoverProduct("out")}
-      href={`detail/${product.product_code}`}
+      href={`detail/${product.id}`}
     >
       <div
         class="absolute top-0 left-0 h-full w-full bg-black opacity-65 z-50"

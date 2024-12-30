@@ -136,7 +136,7 @@
           "sm:col-span-4 col-span-6 text-center sm:max-w-[400px] max-w-[200px] mt-5 sm:mt-0 cursor-pointer",
           (idx === 0 || idx == 1) && "!mt-0",
         )}
-        on:click={() => goto(`detail/${item.product_code}`)}
+        on:click={() => goto(`detail/${item.id}`)}
       >
         <img
           src={item.image_url}

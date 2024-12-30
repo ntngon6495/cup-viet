@@ -238,7 +238,7 @@
             </div>
           </div>
           <ul class="big_goods_imgs">
-            <a href={`category/detail/${productSort[0]?.product_code}`}>
+            <a href={`category/detail/${productSort[0]?.id}`}>
               <span class="best-badge !w-[80px]"
                 ><img src="/ic-best-seller.png" alt="icon best" /></span
               >
