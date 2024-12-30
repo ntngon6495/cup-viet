@@ -82,6 +82,13 @@
       border_color: "border-category-500",
       bg_color: "bg-category-500",
     },
+    {
+      id: 14,
+      name: "pickelball",
+      img: "/icon/categoryVertical/11.png",
+      border_color: "border-category-500",
+      bg_color: "bg-category-500",
+    },
   ];
 
   const handleChooseCategory = (id) => {

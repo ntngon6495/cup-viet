@@ -55,6 +55,7 @@
     "Cúp Niken",
     "Theo Yêu Cầu",
     "Cúp Vô Địch",
+    "Pickelball",
   ];
 
   onMount(() => {
@@ -495,6 +496,7 @@
               <option value="11">Cúp Niken</option>
               <option value="12">Theo Yêu Cầu</option>
               <option value="13">Sản Phẩm Mới</option>
+              <option value="14">Pickelball</option>
             </select>
           </div>
         {/if}

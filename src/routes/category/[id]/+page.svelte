@@ -52,6 +52,8 @@
         return "Theo yêu cầu";
       // case "13":
       //   return "Cúp Vô Địch";
+      case "14":
+        return "Pickelball";
       default:
         break;
     }
@@ -119,7 +121,12 @@
       duration="3000"
     />
   </div>
-  <div class="sticky top-20 w-[65px] ml-[-20px] hidden sm:block">
+  <div
+    class={mergeClass(
+      "sticky w-[65px] ml-[-20px] hidden sm:block",
+      productList.length === 0 ? "top-[18rem] " : "top-20",
+    )}
+  >
     <CategoryVertical typeActive={data?.category} />
   </div>
   <div class="grid grid-cols-12 sm:gap-5 sm:mt-24">
@@ -129,7 +136,7 @@
           "sm:col-span-4 col-span-6 text-center sm:max-w-[400px] max-w-[200px] mt-5 sm:mt-0 cursor-pointer",
           (idx === 0 || idx == 1) && "!mt-0",
         )}
-        on:click={() => goto(`detail/${item.product_code}`)}
+        on:click={() => goto(`detail/${item.id}`)}
       >
         <img
           src={item.image_url}

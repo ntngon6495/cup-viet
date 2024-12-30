@@ -142,6 +142,15 @@
       offsetTop: 0,
       products: [],
     },
+    {
+      id: "14",
+      category: "pickelball",
+      banner: "/images/category/banners/CUP-HIO-EAGLE.png",
+      url: "category/14",
+      color: "bg-category-500",
+      offsetTop: 0,
+      products: [],
+    },
   ];
 
   export let products;
@@ -190,7 +199,7 @@
 <div class="relative">
   {#each productList as item, idx}
     {#if idx === 1 && y >= 900}
-      <div class="sticky top-20 w-[65px] ml-[-20px] hidden sm:block">
+      <div class="sticky top-10 w-[65px] ml-[-20px] hidden sm:block">
         <CategoryVertical {typeActive} />
       </div>
     {/if}
@@ -229,7 +238,7 @@
             </div>
           </div>
           <ul class="big_goods_imgs">
-            <a href={`category/detail/${productSort[0]?.product_code}`}>
+            <a href={`category/detail/${productSort[0]?.id}`}>
               <span class="best-badge !w-[80px]"
                 ><img src="/ic-best-seller.png" alt="icon best" /></span
               >

@@ -89,21 +89,25 @@
       border_color: "border-category-500",
       bg_color: "bg-category-500",
     },
+    {
+      id: 14,
+      name: "Pickelball",
+      img: "/icon/categoryVertical/11.png",
+      border_color: "border-category-500",
+      bg_color: "bg-category-500",
+    },
   ];
 </script>
 
 <div
   class={mergeClass(
-    "category sm:block w-[65px] ml-[-80px] -mt-[820px]"
+    "category sm:block w-[65px] ml-[-80px] -mt-[820px]",
     // isHome ? "xl:-mt-[675px]" : "2xl:-mt-[340px]"
   )}
 >
   <div class="inline-grid gap-1">
     {#each listCategory as item, idx}
-      <a
-        class="bg-white cursor-pointer"
-        href={`/category/${item.id}`}
-      >
+      <a class="bg-white cursor-pointer" href={`/category/${item.id}`}>
         <div
           class={`relative bg-white border w-16 h-16 ${item.border_color} ${
             (type == item.id || typeActive == item.id) && "border-2"
