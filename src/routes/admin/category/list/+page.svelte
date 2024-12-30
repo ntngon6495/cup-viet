@@ -51,6 +51,7 @@
     "Cúp Niken",
     "Theo Yêu Cầu",
     "Cúp Vô Địch",
+    "Pickelball",
   ];
 
   onMount(() => {
@@ -64,7 +65,7 @@
       `https://dgg300bw0j.execute-api.ap-southeast-1.amazonaws.com/dev/products?categoryId=${id}`,
       {
         method: "GET",
-      }
+      },
     );
     if (response) {
       const { products } = await response.json();
@@ -117,7 +118,7 @@
           {
             method: "POST",
             body: JSON.stringify({ image: $image_result }),
-          }
+          },
         );
         const { file_name } = await response.json();
         imageUrl = `https://cupviet.s3.ap-southeast-1.amazonaws.com/${file_name}`;
@@ -157,7 +158,7 @@
           image_url: imageUrl,
           create_at: new Date().toISOString(),
         }),
-      }
+      },
     );
 
     if (!response.ok) {
@@ -184,7 +185,7 @@
           body: JSON.stringify({
             productId: productDeleteId,
           }),
-        }
+        },
       );
 
       if (!response.ok) {
@@ -192,7 +193,7 @@
       }
       popupModal = false;
       productList = productListBackup.filter(
-        (product) => product.id !== productDeleteId
+        (product) => product.id !== productDeleteId,
       );
       productDeleteId = "";
     } catch (error) {
@@ -257,12 +258,17 @@
 
 <div class="mt-[200px]">
   <div class="w-full flex justify-center gap-4">
-    <div class='flex items-center justify-center w-40 h-10 bg-[#EAA918] rounded-lg text-white'>
-      <p class='uppercase'>Sản Phẩm</p>
+    <div
+      class="flex items-center justify-center w-40 h-10 bg-[#EAA918] rounded-lg text-white"
+    >
+      <p class="uppercase">Sản Phẩm</p>
     </div>
-      <button class='hover:text-white hover:bg-[#EAA918]  flex items-center justify-center w-40 h-10 border border-[#EAA918] rounded-lg uppercase' on:click={() => goto(`/admin/banner/list`)}>
-        Banner
-      </button>
+    <button
+      class="hover:text-white hover:bg-[#EAA918] flex items-center justify-center w-40 h-10 border border-[#EAA918] rounded-lg uppercase"
+      on:click={() => goto(`/admin/banner/list`)}
+    >
+      Banner
+    </button>
   </div>
   <div class="my-5 flex justify-between">
     <button
@@ -306,6 +312,7 @@
           <option value="11">Cúp Niken</option>
           <option value="12">Theo Yêu Cầu</option>
           <option value="13">Sản Phẩm Mới</option>
+          <option value="14">Pickelball</option>
         </select>
       </div>
     </div>
@@ -335,7 +342,7 @@
             <TableBodyCell>
               {nameCategory[product.category_id - 1]}
             </TableBodyCell>
-            <TableBodyCell class='text-center'>
+            <TableBodyCell class="text-center">
               {product.rank}
             </TableBodyCell>
             <TableBodyCell>
@@ -353,8 +360,7 @@
               >
               <button
                 class="px-5 py-2 bg-[#EAA918] rounded-lg uppercase"
-                on:click={() => handelDeleteProduct(product.id)}
-                >Xoá</button
+                on:click={() => handelDeleteProduct(product.id)}>Xoá</button
               >
             </TableBodyCell>
           </TableBodyRow>
@@ -453,6 +459,7 @@
             <option value="11">Cúp Niken</option>
             <option value="12">Theo Yêu Cầu</option>
             <option value="13">Sản Phẩm Mới</option>
+            <option value="14">Pickelball</option>
           </select>
         </div>
         <div>

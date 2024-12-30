@@ -86,6 +86,8 @@
         return "Theo Yêu Cầu";
       // case "13":
       //   return "Cúp Vô Địch";
+      case "14":
+        return "Pickelball";
       default:
         break;
     }

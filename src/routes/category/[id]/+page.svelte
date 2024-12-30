@@ -52,6 +52,8 @@
         return "Theo yêu cầu";
       // case "13":
       //   return "Cúp Vô Địch";
+      case "14":
+        return "Pickelball";
       default:
         break;
     }
@@ -119,7 +121,12 @@
       duration="3000"
     />
   </div>
-  <div class="sticky top-20 w-[65px] ml-[-20px] hidden sm:block">
+  <div
+    class={mergeClass(
+      "sticky w-[65px] ml-[-20px] hidden sm:block",
+      productList.length === 0 ? "top-[18rem] " : "top-20",
+    )}
+  >
     <CategoryVertical typeActive={data?.category} />
   </div>
   <div class="grid grid-cols-12 sm:gap-5 sm:mt-24">
