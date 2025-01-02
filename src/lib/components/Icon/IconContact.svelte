@@ -36,7 +36,7 @@
           in:fly={{ x: -64 }}
           out:fly={{ x: -64 }}
         >
-          <span class="text-phone">0902 547 808</span>
+          <span class="text-phone">0908 975 209 - 0358 335 813</span>
         </a>
       {/if}
     </div>
@@ -68,7 +68,7 @@
           in:fly={{ x: -64 }}
           out:fly={{ x: -64 }}
         >
-          <span class="text-phone">0902 547 808</span>
+          <span class="text-phone">0908 975 209 - 0358 335 813</span>
         </a>
       {/if}
     </div>
@@ -251,7 +251,7 @@
   .phone-bar a {
     position: absolute;
     margin-top: -65px;
-    left: -90px;
+    left: -180px;
     z-index: -1;
     color: #fff;
     font-size: 16px;
