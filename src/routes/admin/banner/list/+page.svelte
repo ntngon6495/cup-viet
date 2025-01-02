@@ -12,6 +12,7 @@
     Dropzone,
   } from "flowbite-svelte";
   import { base64 } from "@sveu/browser";
+  import { EyeSlashOutline, EyeOutline } from "flowbite-svelte-icons";
   import { toasts, ToastContainer, FlatToast } from "svelte-toasts";
   import { goto } from "$app/navigation";
 
@@ -30,6 +31,7 @@
   let endDate = "";
   let category_id = "";
   let image_align = "";
+  let enableBanner = true;
   let isEdit = false;
 
   let isUpload = false;
@@ -196,7 +198,6 @@
   };
 
   $: if (isUpload && isUploadSub) {
-    console.log("upload");
     createBanner();
   }
   const createBanner = async () => {
@@ -220,6 +221,7 @@
           sub_title: subTitle ? subTitle : "",
           date_start: startDate ? startDate : "",
           date_end: endDate ? endDate : "",
+          enableBanner: enableBanner,
           create_at: new Date().toISOString(),
         }),
       },
@@ -318,6 +320,40 @@
   const handelDelete = (id) => {
     popupModal = true;
     bannerDeleteId = id;
+  };
+
+  const handelEnableBanner = (banner) => {
+    // Add your logic here to enable the banner
+    banner_type = banner.banner_type;
+    banner_code = banner.banner_code;
+    category_id = banner.category_id;
+    backgroundUrl = banner.background_url;
+    valueBackground = banner.background_url;
+    imageUrl = banner.image_url;
+    valueImage = banner.image_url;
+    title = banner.title;
+    subTitle = banner.sub_title;
+    image_align = banner.image_align;
+    isEdit = true;
+    enableBanner = true;
+    createBanner();
+  };
+
+  const handelDisableBanner = (banner) => {
+    // Add your logic here to enable the banner
+    banner_type = banner.banner_type;
+    banner_code = banner.banner_code;
+    category_id = banner.category_id;
+    backgroundUrl = banner.background_url;
+    valueBackground = banner.background_url;
+    imageUrl = banner.image_url;
+    valueImage = banner.image_url;
+    title = banner.title;
+    subTitle = banner.sub_title;
+    image_align = banner.image_align;
+    isEdit = true;
+    enableBanner = false;
+    createBanner();
   };
 </script>
 
@@ -429,6 +465,19 @@
                 class="px-5 py-2 bg-[#EAA918] rounded-lg uppercase"
                 on:click={() => handelDelete(banner.banner_id)}>Xoá</button
               >
+              {#if banner.enableBanner}
+                <a on:click={() => handelDisableBanner(banner)}>
+                  <EyeOutline
+                    class="w-6 h-6 text-gray-500 dark:text-white cursor-pointer"
+                  />
+                </a>
+              {:else}
+                <a on:click={() => handelEnableBanner(banner)}>
+                  <EyeSlashOutline
+                    class="w-6 h-6 text-gray-500 dark:text-white cursor-pointer"
+                  />
+                </a>
+              {/if}
             </TableBodyCell>
           </TableBodyRow>
         {/each}

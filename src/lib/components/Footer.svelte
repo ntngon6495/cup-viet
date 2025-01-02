@@ -89,7 +89,7 @@
             CÔNG TY TNHH SẢN XUẤT THƯƠNG MẠI DỊCH VỤ VIỆT NAM TROPHY
           </h4>
           <p>Địa chỉ: 41F/5 Đặng Thuỳ Trâm, P13, Q.Bình Thạnh, TP.HCM</p>
-          <p>Điện thoại: 0902 547 808 - 0908 975 209</p>
+          <p>Điện thoại: 0908 975 209 - 0358 335 813</p>
           <p>Nơi cấp: Sở kế hoạch và đầu tư TP.HCM, Ngày cấp: 30/07/2018</p>
         </div>
       </div>

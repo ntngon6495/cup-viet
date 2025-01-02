@@ -12,7 +12,7 @@
       name: "cúp vô địch",
     },
     {
-      id: 14,
+      id: 99,
       icon: "/icon/menu/2.1.png",
       icon_active: "/icon/menu/2.png",
       alt: "CUPGOLF",
@@ -51,11 +51,19 @@
       url: "/category/8",
       name: "kỉ niệm chương",
     },
+    {
+      id: 14,
+      icon: "/icon/menu/pickel.png",
+      icon_active: "/icon/menu/pickel2.png",
+      alt: "PICKEL",
+      url: "/category/14",
+      name: "PICKELBALL",
+    },
   ];
 
   let subCategory = [
     {
-      categoryId: 14,
+      categoryId: 99,
       categorys: [
         {
           id: "2",
@@ -93,7 +101,7 @@
   let isSubTab = 0;
 
   const handleTabClick = (id) => {
-    if (id === 14) isTab = id;
+    if (id === 99) isTab = id;
     else {
       isTab = id;
       goto(`/category/${id}`);
@@ -163,7 +171,7 @@
             >
               <div class="w-[80px] flex items-center justify-center relative">
                 <div
-                  class="w-[120px] h-[119px] div_skew bg-[#FFFFFF] absolute top-0 z-10"
+                  class="w-[120px] h-[119px] div_skew bg-[#FFFFFF] absolute top-0 z-10 last:w-[150px]"
                 />
                 <div
                   class="text-center w-[80px] h-[120px] absolute top-5 z-20 pr-2"
