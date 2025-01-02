@@ -197,6 +197,14 @@
     }
   };
 
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  };
+
   $: if (isUpload && isUploadSub) {
     createBanner();
   }
@@ -443,7 +451,9 @@
             {#if bannerTypeSort === "1"}
               <TableBodyCell>
                 <img
-                  src={banner.image_url}
+                  src={banner.image_url
+                    ? banner.image_url
+                    : "/default-image.png"}
                   alt={banner.banner_code}
                   class="h-10"
                 />
@@ -455,29 +465,37 @@
               <TableBodyCell>{banner.date_start}</TableBodyCell>
               <TableBodyCell>{banner.date_end}</TableBodyCell>
             {/if}
-            <TableBodyCell>{banner.create_at}</TableBodyCell>
+            <TableBodyCell>{formatDate(banner?.create_at)}</TableBodyCell>
             <TableBodyCell>
-              <button
-                class="px-5 py-2 bg-[#EAA918] rounded-lg uppercase"
-                on:click={() => handelEdit(banner)}>Sửa</button
-              >
-              <button
-                class="px-5 py-2 bg-[#EAA918] rounded-lg uppercase"
-                on:click={() => handelDelete(banner.banner_id)}>Xoá</button
-              >
-              {#if banner.enableBanner}
-                <a on:click={() => handelDisableBanner(banner)}>
-                  <EyeOutline
-                    class="w-6 h-6 text-gray-500 dark:text-white cursor-pointer"
-                  />
-                </a>
-              {:else}
-                <a on:click={() => handelEnableBanner(banner)}>
-                  <EyeSlashOutline
-                    class="w-6 h-6 text-gray-500 dark:text-white cursor-pointer"
-                  />
-                </a>
-              {/if}
+              <div class="flex gap-4 items-center">
+                {#if banner.enableBanner}
+                  <div
+                    class="w-fit"
+                    on:click={() => handelDisableBanner(banner)}
+                  >
+                    <EyeOutline
+                      class="w-6 h-6 text-gray-500 dark:text-white cursor-pointer"
+                    />
+                  </div>
+                {:else}
+                  <div
+                    class="w-fit"
+                    on:click={() => handelEnableBanner(banner)}
+                  >
+                    <EyeSlashOutline
+                      class="w-6 h-6 text-gray-500 dark:text-white cursor-pointer"
+                    />
+                  </div>
+                {/if}
+                <button
+                  class="px-5 py-2 bg-[#EAA918] rounded-lg uppercase"
+                  on:click={() => handelEdit(banner)}>Sửa</button
+                >
+                <button
+                  class="px-5 py-2 bg-[#EAA918] rounded-lg uppercase"
+                  on:click={() => handelDelete(banner.banner_id)}>Xoá</button
+                >
+              </div>
             </TableBodyCell>
           </TableBodyRow>
         {/each}
