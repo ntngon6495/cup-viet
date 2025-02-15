@@ -540,7 +540,7 @@
             disabled={isEdit}
           />
         </div>
-        {#if banner_type === "3" || banner_type === "1"}
+        {#if banner_type === "1" || banner_type === "3" || banner_type === "4"}
           <div>
             <p for="category" class="mb-2">Loại sản phẩm</p>
             <select
