@@ -50,8 +50,8 @@
         return "Cúp Nikel";
       case "12":
         return "Theo yêu cầu";
-      // case "13":
-      //   return "Cúp Vô Địch";
+      case "13":
+        return "Sản phẩm mới";
       case "14":
         return "Pickelball";
       default:

@@ -8,6 +8,7 @@
   import IconContact from "$lib/components/Icon/IconContact.svelte";
   import { page } from "$app/stores";
   import SlideShowv2 from "$lib/components/slideShow/SlideShowv2.svelte";
+  import { goto } from "$app/navigation";
   let unable = true;
 
   export let data;
@@ -55,6 +56,10 @@
   // onMount(async () => {
   //   await getSlides();
   // });
+  const handleClickDiscountBanner = (category_id) => {
+    unable = false;
+    return goto(`category/${category_id}`);
+  };
 </script>
 
 <div class="sm:pt-4 sm:mx-0 block">
@@ -77,12 +82,18 @@
 </div>
 {#if discount.length > 0}
   <div class:disable={!unable}>
+    <img
+      src="/icons-close.svg"
+      class="w-10 h-10 fixed top-0 right-20 z-[105] cursor-pointer"
+      on:click={() => (unable = false)}
+    />
+
     <div class="fixed z-[100] top-0 bg-white w-full h-svh opacity-50"></div>
     <!-- svelte-ignore a11y-no-static-element-interactions -->
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div
       class="fixed z-[101] top-0 image_baotri w-screen h-screen cursor-pointer"
-      on:click={() => (unable = false)}
+      on:click={handleClickDiscountBanner(discount[0]?.category_id)}
     >
       <img src={discount[0]?.background_url} alt="loading" class="mx-auto" />
     </div>
